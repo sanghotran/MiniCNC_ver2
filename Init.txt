@@ -1,0 +1,11 @@
+Requirements:
+- draw the images.
+- display on a oled.
+- save the gcodes.
+- alarm when done.
+- connect with a GUI.
+- control by some buttons.
+- write the log on sdcard and send to GUI when it's connected.
+- chosse file on laptop or on sdcard.
+- 
+
