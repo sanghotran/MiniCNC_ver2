@@ -1,0 +1,5 @@
+Record=TopLevelDocument|FileName=Control_Display_SD.SchDoc|SheetNumber=4
+Record=NoMainPathDocument|SourceDocument=Control_Display_SD.SchDoc|FileName=MCU_Control.SchDoc|SheetNumber=3
+Record=NoMainPathDocument|SourceDocument=Control_Display_SD.SchDoc|FileName=MCU_Main.SchDoc|SheetNumber=2
+Record=NoMainPathDocument|SourceDocument=Control_Display_SD.SchDoc|FileName=Motor.SchDoc|SheetNumber=5
+Record=NoMainPathDocument|SourceDocument=Control_Display_SD.SchDoc|FileName=PowerSupply.SchDoc|SheetNumber=1

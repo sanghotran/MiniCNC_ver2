@@ -1,0 +1,45 @@
+Removed Member From Class: ClassName=Control_Display_SD Member=U*
+Change Class Name : Old Net Name=Control_Display_SD New Net Name=MCU_Control
+Change Class Name : Old Net Name=MCU_Control New Net Name=MCU_Main
+Added Class: Name=Control_Display_SD
+Added Member To Class: ClassName=MCU_Main Member=Component B? Buzzer
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C? Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C? Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component D? Super Red, 1.9V
+Added Member To Class: ClassName=MCU_Main Member=Component J? 105017-0001
+Added Member To Class: ClassName=MCU_Control Member=Component P? Header 4
+Added Member To Class: ClassName=MCU_Control Member=Component P? Header 3
+Added Member To Class: ClassName=MCU_Control Member=Component P? Header 3
+Added Member To Class: ClassName=MCU_Main Member=Component P? Header 3
+Added Member To Class: ClassName=MCU_Main Member=Component P? Header 3
+Added Member To Class: ClassName=MCU_Main Member=Component Q? C1815
+Added Member To Class: ClassName=MCU_Control Member=Component R? Res-10k-0805
+Added Member To Class: ClassName=MCU_Control Member=Component R? Res-100K-0805
+Added Member To Class: ClassName=MCU_Control Member=Component R? Res-100K-0805
+Added Member To Class: ClassName=MCU_Control Member=Component R? Res-10k-0805
+Added Member To Class: ClassName=MCU_Control Member=Component R? Res-10k-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-15K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-100K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-10k-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-270-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-100K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-270-0805
+Added Member To Class: ClassName=MCU_Control Member=Component S? 434113043826
+Added Member To Class: ClassName=MCU_Main Member=Component  Res-4.7K-0805
+Added Member To Class: ClassName=MCU_Control Member=Component U? STM32F103C8T6
+Added Member To Class: ClassName=MCU_Control Member=Component Y? 8MHz
+Added Room: Name=Control_Display_SD
+Added Room: Name=MCU_Control
+Added Room: Name=MCU_Main
+Added Room: Name=PowerSupply

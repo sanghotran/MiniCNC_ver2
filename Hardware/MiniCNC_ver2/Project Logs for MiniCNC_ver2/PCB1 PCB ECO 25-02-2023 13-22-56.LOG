@@ -1,0 +1,82 @@
+Removed Member From Class: ClassName=Control_Display_SD Member=U*
+Added Component: Designator=U?(LQFP-48)
+Add component (AddParameter): Name = "Local Supplier"; Value = "thegioiic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Local Supplier Link"; Value = "https://www.thegioiic.com/products/stm32f103c8t6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Local Supplier Part Number"; Value = "STM32F103C8T6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacture Part Number"; Value = "STM32F103C8T6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "ST Electronic"; VariantName = "[No Variations]"
+Added Component: Designator=U?(LQFP-48)
+Add component (AddParameter): Name = "Local Supplier"; Value = "thegioiic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Local Supplier Link"; Value = "https://www.thegioiic.com/products/stm32f103c8t6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Local Supplier Part Number"; Value = "STM32F103C8T6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacture Part Number"; Value = "STM32F103C8T6"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "ST Electronic"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=OSC_IN Pin=U?-5
+Added Pin To Net: NetName=OSC_OUT Pin=U?-6
+Added Pin To Net: NetName=NRST Pin=U?-7
+Added Pin To Net: NetName=GND Pin=U?-8
+Added Pin To Net: NetName=GND Pin=U?-8
+Added Pin To Net: NetName=MCU_3V3 Pin=U?-9
+Added Pin To Net: NetName=MCU_3V3 Pin=U?-9
+Added Pin To Net: NetName=BOOT1 Pin=U?-20
+Added Pin To Net: NetName=GND Pin=U?-23
+Added Pin To Net: NetName=GND Pin=U?-23
+Added Pin To Net: NetName=MCU_3V3 Pin=U?-24
+Added Pin To Net: NetName=MCU_3V3 Pin=U?-24
+Added Pin To Net: NetName=D- Pin=U?-32
+Added Pin To Net: NetName=D+ Pin=U?-33
+Added Pin To Net: NetName=SWDIO Pin=U?-34
+Added Pin To Net: NetName=GND Pin=U?-35
+Added Pin To Net: NetName=GND Pin=U?-35
+Added Pin To Net: NetName=MCU_3V3 Pin=U?-36
+Added Pin To Net: NetName=MCU_3V3 Pin=U?-36
+Added Pin To Net: NetName=SWDCLK Pin=U?-37
+Added Pin To Net: NetName=BOOT0 Pin=U?-44
+Added Pin To Net: NetName=GND Pin=U?-47
+Added Pin To Net: NetName=GND Pin=U?-47
+Added Pin To Net: NetName=MCU_3V3 Pin=U?-48
+Added Pin To Net: NetName=MCU_3V3 Pin=U?-48
+Change Class Name : Old Net Name=Control_Display_SD New Net Name=MCU_Main
+Added Class: Name=Control_Display_SD
+Added Member To Class: ClassName=MCU_Main Member=Component B? Buzzer
+Added Member To Class: ClassName=MCU_Main Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C? Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C? Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C? Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component D? Super Red, 1.9V
+Added Member To Class: ClassName=MCU_Main Member=Component J? 105017-0001
+Added Member To Class: ClassName=MCU_Main Member=Component P? Header 4
+Added Member To Class: ClassName=MCU_Main Member=Component P? Header 3
+Added Member To Class: ClassName=MCU_Main Member=Component P? Header 3
+Added Member To Class: ClassName=MCU_Control Member=Component P? Header 3
+Added Member To Class: ClassName=MCU_Control Member=Component P? Header 3
+Added Member To Class: ClassName=MCU_Main Member=Component Q? C1815
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-100K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-100K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-15K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-10k-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-270-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R? Res-270-0805
+Added Member To Class: ClassName=MCU_Control Member=Component R? Res-100K-0805
+Added Member To Class: ClassName=MCU_Control Member=Component R? Res-10k-0805
+Added Member To Class: ClassName=MCU_Control Member=Component R? Res-10k-0805
+Added Member To Class: ClassName=MCU_Control Member=Component R? Res-100K-0805
+Added Member To Class: ClassName=MCU_Control Member=Component R? Res-10k-0805
+Added Member To Class: ClassName=MCU_Main Member=Component S? 434113043826
+Added Member To Class: ClassName=MCU_Main Member=Component  Res-4.7K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component U? STM32F103C8T6
+Added Member To Class: ClassName=MCU_Control Member=Component U? STM32F103C8T6
+Added Member To Class: ClassName=MCU_Main Member=Component Y? 8MHz
+Added Room: Name=Control_Display_SD
+Added Room: Name=MCU_Control
+Added Room: Name=MCU_Main
+Added Room: Name=PowerSupply
