@@ -1,0 +1,91 @@
+Removed Pin From Net: NetName=GND Pin=CR1-1
+Removed Pin From Net: NetName=GND Pin=CR1-15
+Removed Pin From Net: NetName=GND Pin=CR2-1
+Removed Pin From Net: NetName=GND Pin=CR2-15
+Change Component Designator: OldDesignator= NewDesignator=1
+Change Component Designator: OldDesignator=U* NewDesignator=U*1
+Added Component: Designator=R23(RES-SM-0805)
+Add component (AddParameter): Name = "Local Supplier"; Value = "thegioiic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Local Supplier Link"; Value = "https://thegioiic.com/products/dien-tro-0-ohm-0805-5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "WSL080500000ZEA9"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1 Link"; Value = "https://www.digikey.com/product-detail/en/vishay-dale/WSL080500000ZEA9/541-3928-1-ND/7423223"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1 Part Number"; Value = "541-3928-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.5"; VariantName = "[No Variations]"
+Added Component: Designator=R24(RES-SM-0805)
+Add component (AddParameter): Name = "Local Supplier"; Value = "thegioiic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Local Supplier Link"; Value = "https://thegioiic.com/products/dien-tro-0-ohm-0805-5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "WSL080500000ZEA9"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1 Link"; Value = "https://www.digikey.com/product-detail/en/vishay-dale/WSL080500000ZEA9/541-3928-1-ND/7423223"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1 Part Number"; Value = "541-3928-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.5"; VariantName = "[No Variations]"
+Added Component: Designator=R25(RES-SM-0805)
+Add component (AddParameter): Name = "Local Supplier"; Value = "thegioiic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Local Supplier Link"; Value = "https://thegioiic.com/products/dien-tro-0-ohm-0805-5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "WSL080500000ZEA9"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1 Link"; Value = "https://www.digikey.com/product-detail/en/vishay-dale/WSL080500000ZEA9/541-3928-1-ND/7423223"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1 Part Number"; Value = "541-3928-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.5"; VariantName = "[No Variations]"
+Added Component: Designator=R26(RES-SM-0805)
+Add component (AddParameter): Name = "Local Supplier"; Value = "thegioiic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Local Supplier Link"; Value = "https://thegioiic.com/products/dien-tro-0-ohm-0805-5"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer"; Value = "Vishay Dale"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Manufacturer Part Number"; Value = "WSL080500000ZEA9"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1"; Value = "Digikey"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1 Link"; Value = "https://www.digikey.com/product-detail/en/vishay-dale/WSL080500000ZEA9/541-3928-1-ND/7423223"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Supplier 1 Part Number"; Value = "541-3928-1-ND"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Value"; Value = "0.5"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=GND Pin=R23-1
+Added Pin To Net: NetName=GND Pin=R24-1
+Added Pin To Net: NetName=GND Pin=R25-1
+Added Pin To Net: NetName=GND Pin=R26-1
+Added Pin To Net: NetName=NetCR1_1 Pin=CR1-1
+Added Pin To Net: NetName=NetCR1_1 Pin=R23-2
+Added Net: Name=NetCR1_1
+Added Pin To Net: NetName=NetCR1_15 Pin=CR1-15
+Added Pin To Net: NetName=NetCR1_15 Pin=R24-2
+Added Net: Name=NetCR1_15
+Added Pin To Net: NetName=NetCR2_1 Pin=CR2-1
+Added Pin To Net: NetName=NetCR2_1 Pin=R25-2
+Added Net: Name=NetCR2_1
+Added Pin To Net: NetName=NetCR2_15 Pin=CR2-15
+Added Pin To Net: NetName=NetCR2_15 Pin=R26-2
+Added Net: Name=NetCR2_15
+Added Member To Class: ClassName=MCU_Main Member=Component 1 Res-4.7K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component B1 Buzzer
+Added Member To Class: ClassName=MCU_Main Member=Component C6 Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C7 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C8 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C9 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C10 Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C11 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component D1 Super Red, 1.9V
+Added Member To Class: ClassName=MCU_Main Member=Component J1 105017-0001
+Added Member To Class: ClassName=MCU_Main Member=Component P3 Header 4
+Added Member To Class: ClassName=MCU_Main Member=Component P4 Header 3
+Added Member To Class: ClassName=MCU_Main Member=Component P5 Header 3
+Added Member To Class: ClassName=MCU_Main Member=Component Q1 C1815
+Added Member To Class: ClassName=MCU_Main Member=Component R1 Res-270-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R2 Res-100K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R3 Res-100K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R4 Res-270-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R5 Res-15K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R6 Res-1K-0805
+Added Member To Class: ClassName=MCU_Main Member=Component R7 Res-10k-0805
+Added Member To Class: ClassName=Motor Member=Component R23 Res-0-0805
+Added Member To Class: ClassName=Motor Member=Component R24 Res-0-0805
+Added Member To Class: ClassName=Motor Member=Component R25 Res-0-0805
+Added Member To Class: ClassName=Motor Member=Component R26 Res-0-0805
+Added Member To Class: ClassName=MCU_Main Member=Component S1 434113043826
+Added Member To Class: ClassName=MCU_Main Member=Component U4 STM32F103C8T6
+Added Member To Class: ClassName=MCU_Main Member=Component Y1 8MHz
+Added Room: Name=Control_Display_SD
+Added Room: Name=MCU_Control
+Added Room: Name=MCU_Main
+Added Room: Name=Motor
+Added Room: Name=PowerSupply

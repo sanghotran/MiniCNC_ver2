@@ -1,0 +1,14 @@
+Added Component: Designator=U*(SD_CONNECT)
+Added Pin To Net: NetName=DAT2 Pin=U*-1
+Added Pin To Net: NetName=CS Pin=U*-2
+Added Pin To Net: NetName=CMD Pin=U*-3
+Added Pin To Net: NetName=VDD Pin=U*-4
+Added Pin To Net: NetName=NetU4_15 Pin=U*-5
+Added Pin To Net: NetName=GND Pin=U*-6
+Added Pin To Net: NetName=DAT0 Pin=U*-7
+Added Pin To Net: NetName=DAT1 Pin=U*-8
+Added Pin To Net: NetName=GND Pin=U*-9
+Added Pin To Net: NetName=GND Pin=U*-10
+Added Pin To Net: NetName=GND Pin=U*-11
+Added Pin To Net: NetName=GND Pin=U*-11
+Added Member To Class: ClassName=Control_Display_SD Member=Component U* SD_Connect

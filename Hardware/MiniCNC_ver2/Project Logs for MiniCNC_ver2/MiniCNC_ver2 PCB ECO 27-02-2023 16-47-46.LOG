@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=CS Pin=R18-1
+Removed Pin From Net: NetName=CS Pin=U*-2
+Change Net Name : Old Net Name=CS New Net Name=GND
+Added Pin To Net: NetName=CS Pin=R18-1
+Added Pin To Net: NetName=CS Pin=U4-14
+Added Pin To Net: NetName=CS Pin=U*-2
+Added Net: Name=CS
+Added Room: Name=Control_Display_SD
+Added Room: Name=MCU_Control
+Added Room: Name=MCU_Main
+Added Room: Name=Motor
+Added Room: Name=PowerSupply

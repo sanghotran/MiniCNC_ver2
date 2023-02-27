@@ -1,0 +1,12 @@
+Added Component: Designator=B1(BUZZER)
+Add component (AddParameter): Name = "Local Supplier"; Value = "thegioiic"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Local Supplier Link"; Value = "https://www.thegioiic.com/products/1209-dip-buzzer-12x9mm"; VariantName = "[No Variations]"
+Add component (AddParameter): Name = "Local Supplier Part Number"; Value = "1209 DIP Buzzer 12x9mm"; VariantName = "[No Variations]"
+Added Pin To Net: NetName=5V Pin=B1-1
+Added Pin To Net: NetName=NetB1_2 Pin=B1-2
+Added Member To Class: ClassName=MCU_Main Member=Component B1 Buzzer
+Added Room: Name=Control_Display_SD
+Added Room: Name=MCU_Control
+Added Room: Name=MCU_Main
+Added Room: Name=Motor
+Added Room: Name=PowerSupply

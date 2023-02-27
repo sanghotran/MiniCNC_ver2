@@ -1,0 +1,9 @@
+Removed Pin From Net: NetName=CS Pin=R16-1
+Removed Pin From Net: NetName=DAT0 Pin=R18-1
+Added Pin To Net: NetName=DAT0 Pin=R16-1
+Added Pin To Net: NetName=CS Pin=R18-1
+Added Room: Name=Control_Display_SD
+Added Room: Name=MCU_Control
+Added Room: Name=MCU_Main
+Added Room: Name=Motor
+Added Room: Name=PowerSupply
