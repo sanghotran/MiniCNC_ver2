@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=NetC23_2 Pin=U4-25
+Removed Pin From Net: NetName=NetC24_2 Pin=U4-26
+Added Component: Designator=H1(LO KHOAN 3MM)
+Added Component: Designator=H2(LO KHOAN 3MM)
+Added Component: Designator=H3(LO KHOAN 3MM)
+Added Component: Designator=H4(LO KHOAN 3MM)
+Added Pin To Net: NetName=NetC24_2 Pin=U4-25
+Added Pin To Net: NetName=NetC23_2 Pin=U4-26
+Added Member To Class: ClassName=PowerSupply Member=Component H1 Hole
+Added Member To Class: ClassName=PowerSupply Member=Component H2 Hole
+Added Member To Class: ClassName=PowerSupply Member=Component H3 Hole
+Added Member To Class: ClassName=PowerSupply Member=Component H4 Hole
