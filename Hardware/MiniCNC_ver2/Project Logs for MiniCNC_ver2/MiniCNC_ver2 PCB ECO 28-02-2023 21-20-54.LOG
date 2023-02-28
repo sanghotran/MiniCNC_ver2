@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=DRILL_PWM_1 Pin=P14-1
+Removed Pin From Net: NetName=DRILL_PWM_2 Pin=P14-2
+Added Pin To Net: NetName=DRILL_PWM_2 Pin=P14-1
+Added Pin To Net: NetName=DRILL_PWM_1 Pin=P14-2

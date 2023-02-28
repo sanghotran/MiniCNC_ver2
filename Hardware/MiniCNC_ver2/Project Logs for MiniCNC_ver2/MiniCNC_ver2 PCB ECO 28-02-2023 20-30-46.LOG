@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=Z_PWM_1 Pin=P15-1
+Removed Pin From Net: NetName=Z_PWM_2 Pin=P15-6
+Added Pin To Net: NetName=Z_PWM_2 Pin=P15-1
+Added Pin To Net: NetName=Z_PWM_1 Pin=P15-6
+Change Net Name : Old Net Name=Z_PWM_1 New Net Name=Z_PWM_2
+Change Net Name : Old Net Name=Z_PWM_2 New Net Name=Z_PWM_1

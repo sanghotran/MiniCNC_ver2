@@ -1,0 +1,12 @@
+Removed Pin From Net: NetName=Y_PWM_1 Pin=P12-1
+Removed Pin From Net: NetName=Y_PWM_2 Pin=P12-6
+Removed Pin From Net: NetName=X_PWM_1 Pin=P13-1
+Removed Pin From Net: NetName=X_PWM_2 Pin=P13-6
+Added Pin To Net: NetName=X_PWM_1 Pin=P12-1
+Added Pin To Net: NetName=X_PWM_2 Pin=P12-6
+Added Pin To Net: NetName=Y_PWM_1 Pin=P13-1
+Added Pin To Net: NetName=Y_PWM_2 Pin=P13-6
+Change Net Name : Old Net Name=X_PWM_1 New Net Name=Y_PWM_1
+Change Net Name : Old Net Name=X_PWM_2 New Net Name=Y_PWM_2
+Change Net Name : Old Net Name=Y_PWM_1 New Net Name=X_PWM_1
+Change Net Name : Old Net Name=Y_PWM_2 New Net Name=X_PWM_2

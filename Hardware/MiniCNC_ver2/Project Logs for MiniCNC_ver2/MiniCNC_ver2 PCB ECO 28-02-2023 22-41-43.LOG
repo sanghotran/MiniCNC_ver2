@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=MCU_HOME_Z Pin=U5-25
+Removed Pin From Net: NetName=MCU_HOME_X Pin=U5-27
+Added Pin To Net: NetName=MCU_HOME_X Pin=U5-25
+Added Pin To Net: NetName=MCU_HOME_Z Pin=U5-27
+Change Net Name : Old Net Name=MCU_HOME_X New Net Name=MCU_HOME_Z
+Change Net Name : Old Net Name=MCU_HOME_Z New Net Name=MCU_HOME_X
