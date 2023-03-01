@@ -1,0 +1,4 @@
+Removed Pin From Net: NetName=Z_ENC_A Pin=P15-3
+Removed Pin From Net: NetName=Z_ENC_B Pin=P15-4
+Added Pin To Net: NetName=Z_ENC_B Pin=P15-3
+Added Pin To Net: NetName=Z_ENC_A Pin=P15-4
