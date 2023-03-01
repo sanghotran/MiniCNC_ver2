@@ -1,0 +1,6 @@
+Removed Pin From Net: NetName=MCU_HOME_Z Pin=U5-25
+Removed Pin From Net: NetName=MCU_HOME_Y Pin=U5-26
+Removed Pin From Net: NetName=MCU_HOME_X Pin=U5-27
+Added Pin To Net: NetName=MCU_HOME_Z Pin=U5-31
+Added Pin To Net: NetName=MCU_HOME_Y Pin=U5-32
+Added Pin To Net: NetName=MCU_HOME_X Pin=U5-33
