@@ -1,0 +1,16 @@
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\MiniCNC_ver2.exe.config
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\MiniCNC_ver2.exe
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\MiniCNC_ver2.pdb
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.csproj.AssemblyReference.cache
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.csproj.SuggestedBindingRedirects.cache
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MainWindow.g.cs
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\App.g.cs
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2_MarkupCompile.cache
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2_MarkupCompile.lref
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MainWindow.baml
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.g.resources
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.Properties.Resources.resources
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.csproj.GenerateResource.cache
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.csproj.CoreCompileInputs.cache
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.exe
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.pdb
