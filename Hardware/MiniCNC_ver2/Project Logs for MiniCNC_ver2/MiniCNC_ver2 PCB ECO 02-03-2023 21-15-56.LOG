@@ -1,0 +1,14 @@
+Change Component Designator: OldDesignator=1 NewDesignator=R
+Change Component Designator: OldDesignator=P9 NewDesignator=HOME_X
+Change Component Designator: OldDesignator=P10 NewDesignator=HOME_Y
+Change Component Designator: OldDesignator=P11 NewDesignator=HOME_Z
+Change Component Designator: OldDesignator=P12 NewDesignator=Y_AXIS
+Change Component Designator: OldDesignator=P13 NewDesignator=X_AXIS
+Change Component Designator: OldDesignator=P14 NewDesignator=DRILL
+Change Component Designator: OldDesignator=P15 NewDesignator=Z_AXIS
+Change Component Designator: OldDesignator=S1 NewDesignator=MRESET
+Change Component Designator: OldDesignator=S2 NewDesignator=RESET
+Change Component Designator: OldDesignator=S3 NewDesignator=UP
+Change Component Designator: OldDesignator=S4 NewDesignator=DOWN
+Change Component Designator: OldDesignator=S5 NewDesignator=OK
+Change Component Designator: OldDesignator=S6 NewDesignator=EXIT
