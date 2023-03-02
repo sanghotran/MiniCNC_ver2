@@ -1,0 +1,34 @@
+Removed Member From Class: ClassName=MCU_Main Member=C13
+Removed Member From Class: ClassName=Control_Display_SD Member=C33
+Removed Member From Class: ClassName=MCU_Control Member=C33
+Removed Member From Class: ClassName=Control_Display_SD Member=C34
+Removed Member From Class: ClassName=MCU_Control Member=C34
+Added Component: Designator=U6(LCD_OLED)
+Added Pin To Net: NetName=GND Pin=U6-1
+Added Pin To Net: NetName=VDD Pin=U6-2
+Added Pin To Net: NetName=NetU4_42 Pin=U6-3
+Added Pin To Net: NetName=NetU4_43 Pin=U6-4
+Added Member To Class: ClassName=MCU_Main Member=Component C6 Cap-10uF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C8 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C10 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Main Member=Component C12 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C14 Cap-10uF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C15 Cap-22pF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C16 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C17 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C18 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C19 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C20 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C21 Cap-100nF-50V-0805
+Added Member To Class: ClassName=MCU_Control Member=Component C22 Cap-100nF-50V-0805
+Added Member To Class: ClassName=Control_Display_SD Member=Component C23 Cap-100nF-50V-0805
+Added Member To Class: ClassName=Control_Display_SD Member=Component C24 Cap-100nF-50V-0805
+Added Member To Class: ClassName=Control_Display_SD Member=Component C25 Cap-100nF-50V-0805
+Added Member To Class: ClassName=Control_Display_SD Member=Component C26 Cap-100nF-50V-0805
+Added Member To Class: ClassName=Control_Display_SD Member=Component C27 Cap-100nF-50V-0805
+Added Member To Class: ClassName=Control_Display_SD Member=Component C28 Cap-100nF-50V-0805
+Added Member To Class: ClassName=Motor Member=Component C29 Cap-Al-220uF-35V-D8L10
+Added Member To Class: ClassName=Motor Member=Component C30 Cap-Al-220uF-35V-D8L10
+Added Member To Class: ClassName=Motor Member=Component C31 Cap-100nF-50V-0805
+Added Member To Class: ClassName=Motor Member=Component C32 Cap-Al-220uF-35V-D8L10
+Added Member To Class: ClassName=Control_Display_SD Member=Component U6 LCD_OLED
