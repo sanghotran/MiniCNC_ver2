@@ -115,5 +115,29 @@
   <ItemGroup>
     <Resource Include="Images\home.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\start.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\stop.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pause.png" />
+    <Resource Include="Images\resume.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\off.png" />
+    <Resource Include="Images\on.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\lampoff.png" />
+    <Resource Include="Images\lampon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\mainframe.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\logframe.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

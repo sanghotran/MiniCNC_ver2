@@ -66,8 +66,23 @@
         <Grid Margin="10 30 1230 600">
             <Image Source="Images/logo.png"/>
         </Grid>
+        <!-- Status-->
+        <Grid Margin="1150 30 100 650">
+            <Image>
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Source" Value="Images/lampoff.png"/>
+                        <Style.Triggers>
+                            <DataTrigger Binding="{Binding IsConnected}" Value="True">
+                                <Setter Property="Source" Value="Images/lampon.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </Grid>
         <!-- Task bar-->
-        <DockPanel Margin="400 30 10 650"
+        <DockPanel Margin="400 30 200 650"
                    LastChildFill="False"
                    Background="Transparent">
             <!-- Open button-->
@@ -138,7 +153,75 @@
                     </Style>
                 </Image.Style>
             </Image>
+            <!-- Start button-->
+            <Image DockPanel.Dock="Left"
+                   Margin="30 0 0 0"
+                   Cursor="Hand"
+                   PreviewMouseDown="Start">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="70"/>
+                        <Setter Property="Source" Value="Images/start.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="80"/>
+                            </Trigger>
+                            <DataTrigger Binding="{Binding IsStarted}" Value="True">
+                                <Setter Property="Source" Value="Images/stop.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <!-- Pause button-->
+            <Image DockPanel.Dock="Left"
+                   Margin="30 0 0 0"
+                   Cursor="Hand"
+                   PreviewMouseDown="Pause">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="70"/>
+                        <Setter Property="Source" Value="Images/pause.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="80"/>
+                            </Trigger>
+                            <DataTrigger Binding="{Binding IsPaused}" Value="True">
+                                <Setter Property="Source" Value="Images/resume.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <!-- Connect button-->
+            <Image DockPanel.Dock="Left"
+                   Margin="30 0 0 0"
+                   Cursor="Hand"
+                   PreviewMouseDown="Connect">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="70"/>
+                        <Setter Property="Source" Value="Images/on.png"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="80"/>
+                            </Trigger>
+                            <DataTrigger Binding="{Binding IsConnected}" Value="True">
+                                <Setter Property="Source" Value="Images/off.png"/>
+                            </DataTrigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
 
         </DockPanel>
+        <!-- Main frame-->
+        <Grid Margin="400 120 0 0">
+            <Image Source="Images/mainframe.png"/>
+        </Grid>
+        <!-- Dialogue frame-->
+        <Grid Margin="0 180 970 0">
+            <Image Source="Images/logframe.png"/>
+        </Grid>
     </Grid>
 </Window>
