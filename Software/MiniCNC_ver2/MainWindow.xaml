@@ -14,11 +14,131 @@
         <!-- Control bar-->
         <DockPanel HorizontalAlignment="Stretch"
                    VerticalAlignment="Top"
-                   Height="50"
+                   Height="30"
                    LastChildFill="False"
                    Background="Transparent"
                    PreviewMouseLeftButtonDown="DragWindow">
-            
+            <!-- Close button-->
+            <Image DockPanel.Dock="Right"
+                   Source="Images/x.png"
+                   Margin="0 0 10 0"
+                   Cursor="Hand"
+                   PreviewMouseDown="CloseApp">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="20"/>
+                        <Style.Triggers>
+                            <Trigger Property="Image.IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="30"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <!-- Minimize button-->
+            <Image DockPanel.Dock="Right"
+                   Source="Images/-.png"
+                   Margin="0 0 10 0"
+                   Cursor="Hand"
+                   PreviewMouseDown="MinimizeApp">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="20"/>
+                        <Style.Triggers>
+                            <Trigger Property="Image.IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="30"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+        </DockPanel>
+        <!-- Software's name-->
+        <Grid Margin="140 50 1000 600">
+            <TextBlock Text="CNC MINI"
+                       FontSize="50"
+                       Foreground="White"
+                       VerticalAlignment="Center"
+                       HorizontalAlignment="Stretch">                
+            </TextBlock>
+        </Grid>
+        <!-- Logo-->
+        <Grid Margin="10 30 1230 600">
+            <Image Source="Images/logo.png"/>
+        </Grid>
+        <!-- Task bar-->
+        <DockPanel Margin="400 30 10 650"
+                   LastChildFill="False"
+                   Background="Transparent">
+            <!-- Open button-->
+            <Image DockPanel.Dock="Left"
+                   Source="Images/open.png"
+                   Margin="0 0 0 0"
+                   Cursor="Hand"
+                   PreviewMouseDown="OpenFile">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="70"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="80"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <!-- Setting button-->
+            <Image DockPanel.Dock="Left"
+                   Source="Images/setting.png"
+                   Margin="30 0 0 0"
+                   Cursor="Hand"
+                   PreviewMouseDown="Setting">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="70"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="80"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <!-- Send button-->
+            <Image DockPanel.Dock="Left"
+                   Source="Images/send.png"
+                   Margin="30 0 0 0"
+                   Cursor="Hand"
+                   PreviewMouseDown="Send">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="70"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="80"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+            <!-- Home button-->
+            <Image DockPanel.Dock="Left"
+                   Source="Images/home.png"
+                   Margin="30 0 0 0"
+                   Cursor="Hand"
+                   PreviewMouseDown="Home">
+                <Image.Style>
+                    <Style TargetType="Image">
+                        <Setter Property="Width" Value="70"/>
+                        <Style.Triggers>
+                            <Trigger Property="IsMouseOver" Value="True">
+                                <Setter Property="Width" Value="80"/>
+                            </Trigger>
+                        </Style.Triggers>
+                    </Style>
+                </Image.Style>
+            </Image>
+
         </DockPanel>
     </Grid>
 </Window>

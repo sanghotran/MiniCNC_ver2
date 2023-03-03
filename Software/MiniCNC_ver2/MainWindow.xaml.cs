@@ -31,6 +31,32 @@ namespace MiniCNC_ver2
             base.OnMouseLeftButtonDown(e);
             this.DragMove();
         }
+        private void CloseApp(object sender, MouseButtonEventArgs e)
+        {
+            this.Close();
+        }
+        private void MinimizeApp(object sender, MouseButtonEventArgs e)
+        {
+            WindowState = WindowState.Minimized;
+        }
+        private void OpenFile(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+        private void Setting(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+        private void Send(object sender, MouseButtonEventArgs e)
+        {
+
+        }
+        private void Home(object sender, MouseButtonEventArgs e)
+        {
+
+        }
         #endregion
+
+
     }
 }
