@@ -31,7 +31,7 @@ ReportSuppressedErrorsInMessages=0
 FSMCodingStyle=eFMSDropDownList_OneProcess
 FSMEncodingStyle=eFMSDropDownList_OneHot
 IsProjectConflictPreventionWarningsEnabled=0
-OutputPath=
+OutputPath=Project Outputs for MiniCNC_ver2
 LogFolderPath=
 ManagedProjectGUID=
 IncludeDesignInRelease=0
@@ -140,7 +140,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=XYNEQVDB
 
 [Document7]
 DocumentPath=..\..\Ref\Hardware\lib\capacitor-th.PcbLib
@@ -174,7 +174,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=EUPNPBXO
 
 [Document9]
 DocumentPath=..\..\Ref\Hardware\lib\CNCMicaMini.PcbLib
@@ -208,7 +208,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=HPVDZTIT
 
 [Document11]
 DocumentPath=..\..\Ref\Hardware\lib\dev-board.PcbLib
@@ -242,7 +242,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=OCKQQWAQ
 
 [Document13]
 DocumentPath=..\..\Ref\Hardware\lib\diode-smd.PcbLib
@@ -276,7 +276,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=YBRYYTJX
 
 [Document15]
 DocumentPath=..\..\Ref\Hardware\lib\inductor-smd.PcbLib
@@ -310,7 +310,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=CRUMGFOI
 
 [Document17]
 DocumentPath=..\..\Ref\Hardware\lib\LogoCLB.PcbLib
@@ -344,7 +344,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=IQOTYVES
 
 [Document19]
 DocumentPath=..\..\Ref\Hardware\lib\PIF_Library.intlib
@@ -429,7 +429,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=VKSCYEKR
 
 [Document24]
 DocumentPath=..\..\Ref\Hardware\lib\resistor-th.PcbLib
@@ -463,7 +463,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=KKMLDFHN
 
 [Document26]
 DocumentPath=..\..\Ref\Hardware\lib\WR-TBL_Pluggable PCB Header.PcbLib
@@ -497,7 +497,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=HMCGWNOG
 
 [Document28]
 DocumentPath=..\..\Ref\Hardware\lib\WS-DITV.PcbLib
@@ -531,7 +531,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=APXVJJTK
 
 [Document30]
 DocumentPath=..\..\Ref\Hardware\lib\bjt-smd.PcbLib
@@ -565,7 +565,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=XRPVOBRF
 
 [Document32]
 DocumentPath=..\..\Ref\Hardware\lib\domino-rising-cage-clamp.PcbLib
@@ -599,7 +599,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=KRBEAHRO
 
 [Document34]
 DocumentPath=..\..\Ref\Hardware\lib\domino-spring-clamp.PcbLib
@@ -633,7 +633,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=REJSEXGD
 
 [Document36]
 DocumentPath=..\..\Ref\Hardware\lib\domino-wire-protector.PcbLib
@@ -667,7 +667,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=GBFPMAAF
 
 [Document38]
 DocumentPath=..\..\Ref\Hardware\lib\functional-ic.PcbLib
@@ -701,7 +701,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=KRCFONDK
 
 [Document40]
 DocumentPath=..\..\Ref\Hardware\lib\header-connector.PcbLib
@@ -735,7 +735,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=TSGCLNVU
 
 [Document42]
 DocumentPath=..\..\Ref\Hardware\lib\integrated_lib.LibPkg
@@ -786,7 +786,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=FQSHGLVN
 
 [Document45]
 DocumentPath=..\..\Ref\Hardware\lib\led-smd-0603-dome.SchLib
@@ -803,7 +803,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=SRVIROWU
 
 [Document46]
 DocumentPath=..\..\Ref\Hardware\lib\led-smd-0805.SchLib
@@ -820,7 +820,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=YPNWAHYG
 
 [Document47]
 DocumentPath=..\..\Ref\Hardware\lib\led-smd-1206.SchLib
@@ -837,7 +837,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=BFOJGDOB
 
 [Document48]
 DocumentPath=..\..\Ref\Hardware\lib\led-th.PcbLib
@@ -871,7 +871,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=NWTWVRTO
 
 [Document50]
 DocumentPath=..\..\Ref\Hardware\lib\mcu-smd.PcbLib
@@ -905,7 +905,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=BAPTHKTN
 
 [Document52]
 DocumentPath=..\..\Ref\Hardware\lib\miscellaneous.PcbLib
@@ -939,7 +939,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=LDDVAPSV
 
 [Document54]
 DocumentPath=..\..\Ref\Hardware\lib\module.PcbLib
@@ -973,7 +973,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=TKDKGRPP
 
 [Document56]
 DocumentPath=..\..\Ref\Hardware\lib\mosfet-smd.PcbLib
@@ -1007,7 +1007,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=LNXXSBOO
 
 [Document58]
 DocumentPath=..\..\Ref\Hardware\lib\power-ic-module.PcbLib
@@ -1041,7 +1041,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=HYAMIXMJ
 
 [Document60]
 DocumentPath=..\..\Ref\Hardware\lib\README.md
@@ -1092,7 +1092,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=XYVNBGXK
 
 [Document63]
 DocumentPath=..\..\Ref\Hardware\lib\swicth.PcbLib
@@ -1126,7 +1126,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=YEQWWCMT
 
 [Document65]
 DocumentPath=..\..\Ref\Hardware\lib\switch-dip.PcbLib
@@ -1160,7 +1160,7 @@ ClassGenCCAutoRoomEnabled=1
 ClassGenNCAutoScope=None
 DItemRevisionGUID=
 GenerateClassCluster=0
-DocumentUniqueId=
+DocumentUniqueId=PVAOMEEV
 
 [Document67]
 DocumentPath=MCU_Control.SchDoc
@@ -1264,6 +1264,119 @@ DItemRevisionGUID=
 GenerateClassCluster=0
 DocumentUniqueId=DGPDURUS
 
+[Document73]
+DocumentPath=MiniCNC_ver2.OutJob
+AnnotationEnabled=1
+AnnotateStartValue=1
+AnnotationIndexControlEnabled=0
+AnnotateSuffix=
+AnnotateScope=All
+AnnotateOrder=-1
+DoLibraryUpdate=1
+DoDatabaseUpdate=1
+ClassGenCCAutoEnabled=1
+ClassGenCCAutoRoomEnabled=1
+ClassGenNCAutoScope=None
+DItemRevisionGUID=
+GenerateClassCluster=0
+DocumentUniqueId=
+
+[GeneratedDocument1]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\NC Drill\MiniCNC_ver2.DRR
+DItemRevisionGUID=
+
+[GeneratedDocument2]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.EXTREP
+DItemRevisionGUID=
+
+[GeneratedDocument3]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GBL
+DItemRevisionGUID=
+
+[GeneratedDocument4]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GBO
+DItemRevisionGUID=
+
+[GeneratedDocument5]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GBP
+DItemRevisionGUID=
+
+[GeneratedDocument6]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GBS
+DItemRevisionGUID=
+
+[GeneratedDocument7]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GD1
+DItemRevisionGUID=
+
+[GeneratedDocument8]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GG1
+DItemRevisionGUID=
+
+[GeneratedDocument9]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GKO
+DItemRevisionGUID=
+
+[GeneratedDocument10]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GM1
+DItemRevisionGUID=
+
+[GeneratedDocument11]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GM5
+DItemRevisionGUID=
+
+[GeneratedDocument12]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GM13
+DItemRevisionGUID=
+
+[GeneratedDocument13]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GM14
+DItemRevisionGUID=
+
+[GeneratedDocument14]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GM15
+DItemRevisionGUID=
+
+[GeneratedDocument15]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GPB
+DItemRevisionGUID=
+
+[GeneratedDocument16]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GPT
+DItemRevisionGUID=
+
+[GeneratedDocument17]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GTL
+DItemRevisionGUID=
+
+[GeneratedDocument18]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GTO
+DItemRevisionGUID=
+
+[GeneratedDocument19]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GTP
+DItemRevisionGUID=
+
+[GeneratedDocument20]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.GTS
+DItemRevisionGUID=
+
+[GeneratedDocument21]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\NC Drill\MiniCNC_ver2.LDP
+DItemRevisionGUID=
+
+[GeneratedDocument22]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.REP
+DItemRevisionGUID=
+
+[GeneratedDocument23]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\Gerber\MiniCNC_ver2.RUL
+DItemRevisionGUID=
+
+[GeneratedDocument24]
+DocumentPath=Project Outputs for Free Documents\Gerber_MiniCNC_ver2(2023-03-04-09-32)\NC Drill\MiniCNC_ver2.TXT
+DItemRevisionGUID=
+
 [Parameter1]
 Name=MyAuthor
 Value=Tran Minh Sang
@@ -1285,6 +1398,9 @@ Variant=[No Variations]
 OutputJobsCount=0
 ContentTypeGUID=CB6F2064-E317-11DF-B822-12313F0024A2
 ConfigurationType=Source
+
+[Generic_EDE]
+OutputDir=Project Outputs for MiniCNC_ver2
 
 [OutputGroup1]
 Name=Netlist Outputs
