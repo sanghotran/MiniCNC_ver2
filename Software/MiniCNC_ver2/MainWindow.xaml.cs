@@ -67,6 +67,16 @@ namespace MiniCNC_ver2
                 OnPropertyChanged();
             }
         }
+        private bool _IsLaptop;
+        public bool IsLaptop
+        {
+            get => _IsLaptop;
+            set
+            {
+                _IsLaptop = value;
+                OnPropertyChanged();
+            }
+        }
         #endregion
 
         #region Functions
@@ -75,6 +85,7 @@ namespace MiniCNC_ver2
             IsStarted = false;
             IsPaused = false;
             IsConnected = false;
+            IsLaptop = true;
         }
         #endregion
 
@@ -120,6 +131,11 @@ namespace MiniCNC_ver2
         {
             IsConnected = !IsConnected;
         }
+        private void Log(object sender, MouseButtonEventArgs e)
+        {
+            IsLaptop = !IsLaptop;
+        }
+
         #endregion
 
 

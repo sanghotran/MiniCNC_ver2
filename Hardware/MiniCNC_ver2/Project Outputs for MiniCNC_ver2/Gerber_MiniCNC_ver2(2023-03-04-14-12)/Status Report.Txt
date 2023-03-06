@@ -1,0 +1,12 @@
+Output: NC Drill Files
+Type  : NC Drill
+From  : PCB Document [MiniCNC_ver2.PcbDoc]
+   Generated File[MiniCNC_ver2.TXT]
+   Generated File[MiniCNC_ver2.LDP]
+   Generated File[MiniCNC_ver2.DRR]
+
+
+Files Generated   : 3
+Documents Printed : 0
+
+Finished Output Generation At 14:12:12 On 04/03/2023

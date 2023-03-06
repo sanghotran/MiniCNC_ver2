@@ -139,5 +139,11 @@
   <ItemGroup>
     <Resource Include="Images\logframe.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\pctocnc.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\chiptochip.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
