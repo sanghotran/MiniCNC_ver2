@@ -14,3 +14,14 @@ E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.csproj.Gene
 E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.csproj.CoreCompileInputs.cache
 E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.exe
 E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.pdb
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\LibUsbDotNet.LibUsbDotNet.dll
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\System.Buffers.dll
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\System.Memory.dll
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\System.Numerics.Vectors.dll
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\System.Runtime.CompilerServices.Unsafe.dll
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\LibUsbDotNet.LibUsbDotNet.pdb
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\System.Buffers.xml
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\System.Memory.xml
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\System.Numerics.Vectors.xml
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\bin\Debug\System.Runtime.CompilerServices.Unsafe.xml
+E:\Project\MiniCNC_ver2\Software\MiniCNC_ver2\obj\Debug\MiniCNC_ver2.csproj.CopyComplete

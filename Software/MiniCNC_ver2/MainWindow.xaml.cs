@@ -14,6 +14,8 @@ using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
+using LibUsbDotNet;
+using LibUsbDotNet.Main;
 
 namespace MiniCNC_ver2
 {
@@ -35,7 +37,15 @@ namespace MiniCNC_ver2
             this.DataContext = this;
             firtLoad();
         }
+        #region Fields
+        private const int CNC_VID = 1156;
+        private const int CNC_PID = 22353;
 
+        public static UsbDevice myUsbDevice;
+        public static UsbDeviceFinder myUsbFinder = new UsbDeviceFinder(CNC_VID, CNC_PID);
+        UsbEndpointReader reader;
+        UsbEndpointWriter writer;
+        #endregion
         #region Properites
         private bool _IsStarted;
         public bool IsStarted
@@ -129,7 +139,57 @@ namespace MiniCNC_ver2
         }
         private void Connect(object sender, MouseButtonEventArgs e)
         {
-            IsConnected = !IsConnected;
+            if (!IsConnected) //kết nối
+            {
+                try
+                {
+                    myUsbDevice = UsbDevice.OpenUsbDevice(myUsbFinder);
+                    if (myUsbDevice == null) throw new Exception("Device Not Found.");
+                    IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
+                    if (!ReferenceEquals(wholeUsbDevice, null))
+                    {
+                        wholeUsbDevice.SetConfiguration(1);
+                        wholeUsbDevice.ClaimInterface(0);
+                    }
+                    reader = myUsbDevice.OpenEndpointReader(ReadEndpointID.Ep01);
+                    writer = myUsbDevice.OpenEndpointWriter(WriteEndpointID.Ep01);
+                    reader.DataReceived += (OnRxEndPointData);
+                    reader.DataReceivedEnabled = true;
+                    IsConnected = true;
+                }
+                catch
+                {
+
+                }
+            }
+            else // ngắt kết nối
+            {
+                reader.DataReceivedEnabled = false;
+                reader.DataReceived -= (OnRxEndPointData);
+                reader.Dispose();
+                writer.Dispose();
+                if (myUsbDevice != null)
+                {
+                    if (myUsbDevice.IsOpen)
+                    {
+                        IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
+                        if (!ReferenceEquals(wholeUsbDevice, null))
+                        {
+                            wholeUsbDevice.ReleaseInterface(0);
+                        }
+                        myUsbDevice.Close();
+
+                    }
+                    myUsbDevice = null;
+                    UsbDevice.Exit();
+                }
+                IsConnected = false;
+            }
+        }
+        private void OnRxEndPointData(object sender, EndpointDataEventArgs e)
+        {
+            //Action<string> Action = ProcessReceiveData;
+            //this.Dispatcher.Invoke(Action, (Encoding.Default.GetString(e.Buffer, 0, e.Count)));
         }
         private void Log(object sender, MouseButtonEventArgs e)
         {
