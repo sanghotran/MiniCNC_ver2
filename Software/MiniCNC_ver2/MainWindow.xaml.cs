@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.ComponentModel;
+using System.IO;
 using System.Linq;
 using System.Runtime.CompilerServices;
 using System.Text;
@@ -102,7 +103,7 @@ namespace MiniCNC_ver2
         #endregion
 
         #region Functions
-        public void firtLoad()
+        private void firtLoad()
         {
             IsStarted = false;
             IsPaused = false;
@@ -114,14 +115,31 @@ namespace MiniCNC_ver2
 
             PCchatMCU.ItemsSource = PCchatItems;
             MCUchatMCU.ItemsSource = MCUchatItems;
+
+            showFile();
         }
 
         //showMessage(controlMCUchatItem, scrollviewMCU, MCUchatItems, "X Y Z");
-        public void showMessage(ChatItem chatitem, ScrollViewer scrollViewer, ObservableCollection<ChatItem> chatItems,string message)
+        private void showMessage(ChatItem chatitem, ScrollViewer scrollViewer, ObservableCollection<ChatItem> chatItems,string message)
         {
             chatitem.UpdateChat(message);
             chatItems.Add(chatitem);
             scrollViewer.ScrollToEnd();
+        }
+
+        // Windows Explorer
+        private void showFile()
+        {
+            string path = @"E:\Project\MiniCNC_ver2\Ref\gcode";
+            string[] files = Directory.GetFiles(path);
+            List<FileItem> fileItems = new List<FileItem>();
+            foreach (string file in files)
+            {
+                FileInfo fileInfo = new FileInfo(file);
+                fileItems.Add(new FileItem(fileInfo.Name, fileInfo.Length, fileInfo.FullName));
+            }
+            PC_fileList.ItemsSource = fileItems;
+
         }
         #endregion
 
@@ -242,9 +260,18 @@ namespace MiniCNC_ver2
             scrollviewMCU.ScrollToVerticalOffset(scrollviewMCU.VerticalOffset - e.Delta);
             e.Handled = true;
         }
+        private void PC_fileList_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if (PC_fileList.SelectedItem is FileItem selectedFile)
+            {                
+                string x = selectedFile.FullName;
+            }
+        }
+        private void CNC_fileList_SelectionChaged(object sender, SelectionChangedEventArgs e)
+        {
+
+        }
 
         #endregion
-
-
     }
 }
