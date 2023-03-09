@@ -242,6 +242,24 @@
         <!-- Dialogue frame-->
         <Grid Margin="0 180 970 0">
             <Image Source="Images/logframe.png"/>
+            <!-- Pc and MCU-->
+            <Grid Margin="10 10 10 10">
+                <ScrollViewer VerticalScrollBarVisibility="Hidden" HorizontalScrollBarVisibility="Disabled"
+                              Name="scrollview" PreviewMouseWheel="ScrollChat">
+                    <ListBox Name="PCchatMCU"
+                             Background="Transparent">
+                        <ListBox.ItemTemplate>
+                            <DataTemplate>
+                                <StackPanel>
+                                    <TextBlock Text="{Binding Sender}" FontWeight="Bold" Foreground="White" FontSize="15"/>
+                                    <TextBlock Text="{Binding Message}" Foreground="White" FontSize="15"/>
+                                    <TextBlock Text="{Binding Time}" Margin="250 0 0 0" Foreground="White" FontSize="10"/>
+                                </StackPanel>
+                            </DataTemplate>
+                        </ListBox.ItemTemplate>
+                    </ListBox>
+                </ScrollViewer>
+            </Grid>
         </Grid>
     </Grid>
 </Window>

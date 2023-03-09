@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.Linq;
 using System.Runtime.CompilerServices;
@@ -24,6 +25,7 @@ namespace MiniCNC_ver2
     /// </summary>
     public partial class MainWindow : Window, INotifyPropertyChanged
     {
+        // Property Change
         public event PropertyChangedEventHandler PropertyChanged;
         protected virtual void OnPropertyChanged([CallerMemberName] string propertyName = null)
         {
@@ -31,6 +33,10 @@ namespace MiniCNC_ver2
             if (handler != null)
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
+
+        // Chat box
+        private ObservableCollection<ChatItem> chatItems = new ObservableCollection<ChatItem>();
+
         public MainWindow()
         {
             InitializeComponent();
@@ -45,6 +51,8 @@ namespace MiniCNC_ver2
         public static UsbDeviceFinder myUsbFinder = new UsbDeviceFinder(CNC_VID, CNC_PID);
         UsbEndpointReader reader;
         UsbEndpointWriter writer;
+
+        private ChatItem chatItem = new ChatItem();
         #endregion
         #region Properites
         private bool _IsStarted;
@@ -86,7 +94,7 @@ namespace MiniCNC_ver2
                 _IsLaptop = value;
                 OnPropertyChanged();
             }
-        }
+        }        
         #endregion
 
         #region Functions
@@ -96,6 +104,7 @@ namespace MiniCNC_ver2
             IsPaused = false;
             IsConnected = false;
             IsLaptop = true;
+            PCchatMCU.ItemsSource = chatItems;
         }
         #endregion
 
@@ -132,6 +141,9 @@ namespace MiniCNC_ver2
         private void Start(object sender, MouseButtonEventArgs e)
         {
             IsStarted = !IsStarted;
+            chatItem.UpdateChat("PC", "Start");
+            chatItems.Add(chatItem);
+            scrollview.ScrollToEnd();
         }
         private void Pause(object sender, MouseButtonEventArgs e)
         {
@@ -194,6 +206,11 @@ namespace MiniCNC_ver2
         private void Log(object sender, MouseButtonEventArgs e)
         {
             IsLaptop = !IsLaptop;
+        }
+        private void ScrollChat(object sender, MouseWheelEventArgs e)
+        {
+            scrollview.ScrollToVerticalOffset(scrollview.VerticalOffset - e.Delta);
+            e.Handled = true;
         }
 
         #endregion
