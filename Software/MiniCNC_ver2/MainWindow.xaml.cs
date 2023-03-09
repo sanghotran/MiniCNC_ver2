@@ -35,7 +35,8 @@ namespace MiniCNC_ver2
         }
 
         // Chat box
-        private ObservableCollection<ChatItem> chatItems = new ObservableCollection<ChatItem>();
+        private ObservableCollection<ChatItem> PCchatItems = new ObservableCollection<ChatItem>();
+        private ObservableCollection<ChatItem> MCUchatItems = new ObservableCollection<ChatItem>();
 
         public MainWindow()
         {
@@ -52,8 +53,11 @@ namespace MiniCNC_ver2
         UsbEndpointReader reader;
         UsbEndpointWriter writer;
 
-        private ChatItem chatItem = new ChatItem();
+        private ChatItem PCchatItem = new ChatItem("PC");
+        private ChatItem mainMCUchatItem = new ChatItem("MCU Main");
+        private ChatItem controlMCUchatItem = new ChatItem("MCU Control");
         #endregion
+
         #region Properites
         private bool _IsStarted;
         public bool IsStarted
@@ -94,7 +98,7 @@ namespace MiniCNC_ver2
                 _IsLaptop = value;
                 OnPropertyChanged();
             }
-        }        
+        }
         #endregion
 
         #region Functions
@@ -104,7 +108,20 @@ namespace MiniCNC_ver2
             IsPaused = false;
             IsConnected = false;
             IsLaptop = true;
-            PCchatMCU.ItemsSource = chatItems;
+
+            PCChatPage.Visibility = Visibility.Visible;
+            MCUChatPage.Visibility = Visibility.Hidden;
+
+            PCchatMCU.ItemsSource = PCchatItems;
+            MCUchatMCU.ItemsSource = MCUchatItems;
+        }
+
+        //showMessage(controlMCUchatItem, scrollviewMCU, MCUchatItems, "X Y Z");
+        public void showMessage(ChatItem chatitem, ScrollViewer scrollViewer, ObservableCollection<ChatItem> chatItems,string message)
+        {
+            chatitem.UpdateChat(message);
+            chatItems.Add(chatitem);
+            scrollViewer.ScrollToEnd();
         }
         #endregion
 
@@ -136,14 +153,11 @@ namespace MiniCNC_ver2
         }
         private void Home(object sender, MouseButtonEventArgs e)
         {
-
+            
         }
         private void Start(object sender, MouseButtonEventArgs e)
         {
             IsStarted = !IsStarted;
-            chatItem.UpdateChat("PC", "Start");
-            chatItems.Add(chatItem);
-            scrollview.ScrollToEnd();
         }
         private void Pause(object sender, MouseButtonEventArgs e)
         {
@@ -205,11 +219,27 @@ namespace MiniCNC_ver2
         }
         private void Log(object sender, MouseButtonEventArgs e)
         {
+            if (IsLaptop)
+            {
+                PCChatPage.Visibility = Visibility.Hidden;
+                MCUChatPage.Visibility = Visibility.Visible;
+            }
+            else
+            {
+                PCChatPage.Visibility = Visibility.Visible;
+                MCUChatPage.Visibility = Visibility.Hidden;
+            }
+
             IsLaptop = !IsLaptop;
         }
-        private void ScrollChat(object sender, MouseWheelEventArgs e)
+        private void ScrollChatPC(object sender, MouseWheelEventArgs e)
         {
-            scrollview.ScrollToVerticalOffset(scrollview.VerticalOffset - e.Delta);
+            scrollviewPC.ScrollToVerticalOffset(scrollviewPC.VerticalOffset - e.Delta);
+            e.Handled = true;
+        }
+        private void ScrollChatMCU(object sender, MouseWheelEventArgs e)
+        {
+            scrollviewMCU.ScrollToVerticalOffset(scrollviewMCU.VerticalOffset - e.Delta);
             e.Handled = true;
         }
 

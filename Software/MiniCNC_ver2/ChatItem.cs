@@ -11,10 +11,13 @@ namespace MiniCNC_ver2
         public string Sender { get; set; }
         public string Message { get; set; }
         public DateTime Time { get; set; }
-
-        public void UpdateChat(string sender, string message)
+        
+        public ChatItem( string sender)
         {
-            this.Sender = sender;
+            Sender = sender;
+        }
+        public void UpdateChat(string message)
+        {
             this.Message = message;
             this.Time = DateTime.Now;
         }
