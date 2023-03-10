@@ -239,13 +239,17 @@
         <Grid Margin="400 120 0 0">
             <Image Source="Images/mainframe.png"/>
             <Grid Margin="10 10 10 10">
+                <!-- Main-->
+                <Grid Name="MainShow">
+                    
+                </Grid>
                 <!-- Windows Explorer-->
                 <Grid Name="FolderShow">
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition />
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
-                    <!-- PC-->
+                    <!-- PC-->                    
                     <ListView Name="PC_fileList" Grid.Column="0" Background="Transparent" Foreground="Red"
                               SelectionChanged="PC_fileList_SelectionChanged" >
                         <ListView.View>
@@ -264,6 +268,19 @@
                     <!-- CNC-->
                     <ListView Name="CNC_fileList" Grid.Column="1" Background="Transparent" Foreground="White"
                               SelectionChanged="CNC_fileList_SelectionChaged"/>
+                </Grid>
+                <!-- Setting-->
+                <Grid Name="SettingShow">
+                    <StackPanel>
+                        <!-- thinkness of material-->
+                        <DockPanel LastChildFill="False" Height="50">
+                            <TextBlock DockPanel.Dock="Left" Text="Thinkness of material" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                            <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="thinkness" 
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center"/>
+                            <TextBlock DockPanel.Dock="Left" Margin="10 0 0 0" Text="mm" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                        </DockPanel>
+                    </StackPanel>
                 </Grid>
             </Grid>
         </Grid>

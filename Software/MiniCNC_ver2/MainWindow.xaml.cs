@@ -54,6 +54,8 @@ namespace MiniCNC_ver2
         UsbEndpointReader reader;
         UsbEndpointWriter writer;
 
+        private List<Grid> Pages = new List<Grid>();
+
         private ChatItem PCchatItem = new ChatItem("PC");
         private ChatItem mainMCUchatItem = new ChatItem("MCU Main");
         private ChatItem controlMCUchatItem = new ChatItem("MCU Control");
@@ -105,6 +107,10 @@ namespace MiniCNC_ver2
         #region Functions
         private void firtLoad()
         {
+            Pages.Add(FolderShow);
+            Pages.Add(SettingShow);
+            Pages.Add(MainShow);
+
             IsStarted = false;
             IsPaused = false;
             IsConnected = false;
@@ -116,7 +122,7 @@ namespace MiniCNC_ver2
             PCchatMCU.ItemsSource = PCchatItems;
             MCUchatMCU.ItemsSource = MCUchatItems;
 
-            showFile();
+            showPage(MainShow);
         }
 
         //showMessage(controlMCUchatItem, scrollviewMCU, MCUchatItems, "X Y Z");
@@ -141,6 +147,18 @@ namespace MiniCNC_ver2
             PC_fileList.ItemsSource = fileItems;
 
         }
+
+        // show page
+        private void showPage(Grid grid)
+        {
+            foreach( Grid page in Pages)
+            {
+                if (page == grid)
+                    page.Visibility = Visibility.Visible;
+                else
+                    page.Visibility = Visibility.Hidden;
+            }    
+        }
         #endregion
 
         #region Event
@@ -159,11 +177,12 @@ namespace MiniCNC_ver2
         }
         private void OpenFile(object sender, MouseButtonEventArgs e)
         {
-
+            showPage(FolderShow);
+            showFile();
         }
         private void Setting(object sender, MouseButtonEventArgs e)
         {
-
+            showPage(SettingShow);
         }
         private void Send(object sender, MouseButtonEventArgs e)
         {
@@ -263,7 +282,8 @@ namespace MiniCNC_ver2
         private void PC_fileList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (PC_fileList.SelectedItem is FileItem selectedFile)
-            {                
+            {                                
+                string data = File.ReadAllText(selectedFile.FullName);
                 string x = selectedFile.FullName;
             }
         }
@@ -271,7 +291,6 @@ namespace MiniCNC_ver2
         {
 
         }
-
         #endregion
     }
 }
