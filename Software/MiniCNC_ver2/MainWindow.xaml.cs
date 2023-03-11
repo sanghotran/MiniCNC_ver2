@@ -35,9 +35,7 @@ namespace MiniCNC_ver2
                 handler(this, new PropertyChangedEventArgs(propertyName));
         }
 
-        // Chat box
-        private ObservableCollection<ChatItem> PCchatItems = new ObservableCollection<ChatItem>();
-        private ObservableCollection<ChatItem> MCUchatItems = new ObservableCollection<ChatItem>();
+
 
         public MainWindow()
         {
@@ -45,6 +43,7 @@ namespace MiniCNC_ver2
             this.DataContext = this;
             firtLoad();
         }
+
         #region Fields
         private const int CNC_VID = 1156;
         private const int CNC_PID = 22353;
@@ -56,6 +55,11 @@ namespace MiniCNC_ver2
 
         private List<Grid> Pages = new List<Grid>();
 
+        CNCMachine gCNCMachine = new CNCMachine();
+
+        // Chat box
+        private ObservableCollection<ChatItem> PCchatItems = new ObservableCollection<ChatItem>();
+        private ObservableCollection<ChatItem> MCUchatItems = new ObservableCollection<ChatItem>();
         private ChatItem PCchatItem = new ChatItem("PC");
         private ChatItem mainMCUchatItem = new ChatItem("MCU Main");
         private ChatItem controlMCUchatItem = new ChatItem("MCU Control");
@@ -219,6 +223,7 @@ namespace MiniCNC_ver2
                     reader.DataReceived += (OnRxEndPointData);
                     reader.DataReceivedEnabled = true;
                     IsConnected = true;
+                    gCNCMachine.AutoCheckConnect(true);
                 }
                 catch
                 {
@@ -241,12 +246,12 @@ namespace MiniCNC_ver2
                             wholeUsbDevice.ReleaseInterface(0);
                         }
                         myUsbDevice.Close();
-
                     }
                     myUsbDevice = null;
                     UsbDevice.Exit();
                 }
                 IsConnected = false;
+                gCNCMachine.AutoCheckConnect(false);
             }
         }
         private void OnRxEndPointData(object sender, EndpointDataEventArgs e)
