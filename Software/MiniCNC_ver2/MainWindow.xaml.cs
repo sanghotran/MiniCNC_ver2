@@ -45,8 +45,8 @@ namespace MiniCNC_ver2
         }
 
         #region Fields
-        private const int CNC_VID = 1156;
-        private const int CNC_PID = 22353;
+        private const int CNC_VID = 1115;
+        private const int CNC_PID = 22370;
 
         public static UsbDevice myUsbDevice;
         public static UsbDeviceFinder myUsbFinder = new UsbDeviceFinder(CNC_VID, CNC_PID);
