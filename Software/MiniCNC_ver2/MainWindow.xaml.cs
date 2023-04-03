@@ -45,17 +45,16 @@ namespace MiniCNC_ver2
         }
 
         #region Fields
-        private const int CNC_VID = 1115;
-        private const int CNC_PID = 22370;
+        CNCMachine gCNCMachine = new CNCMachine();
 
         public static UsbDevice myUsbDevice;
-        public static UsbDeviceFinder myUsbFinder = new UsbDeviceFinder(CNC_VID, CNC_PID);
-        UsbEndpointReader reader;
-        UsbEndpointWriter writer;
+        public static UsbDeviceFinder myUsbFinder = new UsbDeviceFinder(CNCMachine.CNC_VID, CNCMachine.CNC_PID);
+        public static UsbEndpointReader reader;
+        public static UsbEndpointWriter writer;
 
         private List<Grid> Pages = new List<Grid>();
 
-        CNCMachine gCNCMachine = new CNCMachine();
+        
 
         // Chat box
         private ObservableCollection<ChatItem> PCchatItems = new ObservableCollection<ChatItem>();
@@ -228,7 +227,7 @@ namespace MiniCNC_ver2
                 catch
                 {
 
-                }
+                }                
             }
             else // ngắt kết nối
             {
@@ -288,8 +287,8 @@ namespace MiniCNC_ver2
         {
             if (PC_fileList.SelectedItem is FileItem selectedFile)
             {                                
-                string data = File.ReadAllText(selectedFile.FullName);
-                string x = selectedFile.FullName;
+                //string data = File.ReadAllText(selectedFile.FullName);
+                //string x = selectedFile.FullName;
             }
         }
         private void CNC_fileList_SelectionChaged(object sender, SelectionChangedEventArgs e)

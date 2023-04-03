@@ -23,6 +23,7 @@
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "TaskCNC.h"
 
 /* USER CODE END Includes */
 
@@ -49,7 +50,12 @@ UART_HandleTypeDef huart1;
 
 osThreadId defaultTaskHandle;
 /* USER CODE BEGIN PV */
+extern USBD_HandleTypeDef hUsbDeviceFS;
 
+osSemaphoreId xSemaphoreUSB;
+osThreadId ReceiveDataFromGUITaksHandle;
+
+CNC cnc;
 /* USER CODE END PV */
 
 /* Private function prototypes -----------------------------------------------*/
@@ -61,6 +67,7 @@ static void MX_USART1_UART_Init(void);
 void StartDefaultTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
+void StartReceiveDataFromGUI(void const *argument);
 
 /* USER CODE END PFP */
 
@@ -100,6 +107,7 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   MX_USART1_UART_Init();
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
 
   /* USER CODE END 2 */
@@ -110,6 +118,8 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
+  osSemaphoreDef(semaphore);
+  xSemaphoreUSB = osSemaphoreCreate(osSemaphore(semaphore), 0);
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
@@ -127,6 +137,8 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
+  osThreadDef(ReceiveDataFromGUITask, ReceiveDataFromGUI, osPriorityAboveNormal, 0, 128);
+  ReceiveDataFromGUITaksHandle = osThreadCreate(osThread(ReceiveDataFromGUITask), NULL);
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -138,7 +150,6 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
-
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -348,6 +359,11 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
+void StartReceiveDataFromGUI(void const *argument)
+{
+  ReceiveDataFromGUI(&cnc,&hUsbDeviceFS, xSemaphoreUSB); 
+}
+
 /* USER CODE END 4 */
 
 /* USER CODE BEGIN Header_StartDefaultTask */
@@ -360,7 +376,7 @@ static void MX_GPIO_Init(void)
 void StartDefaultTask(void const * argument)
 {
   /* init code for USB_DEVICE */
-  MX_USB_DEVICE_Init();
+  //MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
   for(;;)

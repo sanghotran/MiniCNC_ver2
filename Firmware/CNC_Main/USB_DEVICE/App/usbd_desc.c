@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2022 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -389,4 +389,3 @@ static void IntToUnicode(uint32_t value, uint8_t * pbuf, uint8_t len)
 /**
   * @}
   */
-

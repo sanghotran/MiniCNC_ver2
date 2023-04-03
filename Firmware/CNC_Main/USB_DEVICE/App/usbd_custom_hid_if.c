@@ -22,7 +22,8 @@
 #include "usbd_custom_hid_if.h"
 
 /* USER CODE BEGIN INCLUDE */
-
+#include "cmsis_os.h"
+#include "TaskCNC.h"
 /* USER CODE END INCLUDE */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -31,7 +32,9 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
+extern osSemaphoreId xSemaphoreUSB;
 
+extern CNC cnc;
 /* USER CODE END PV */
 
 /** @addtogroup STM32_USB_OTG_DEVICE_LIBRARY
@@ -190,6 +193,16 @@ static int8_t CUSTOM_HID_DeInit_FS(void)
 static int8_t CUSTOM_HID_OutEvent_FS(uint8_t event_idx, uint8_t state)
 {
   /* USER CODE BEGIN 6 */
+  USBD_CUSTOM_HID_HandleTypeDef* hhid = (USBD_CUSTOM_HID_HandleTypeDef*)hUsbDeviceFS.pClassData;
+	for(uint8_t i = 0; i < 64; i++)
+	{
+		cnc.DataReceiveFromGUI[i] =  hhid -> Report_buf[i];
+	}  
+	memset(hhid ->Report_buf , 0, 64);
+
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  osSemaphoreRelease(xSemaphoreUSB);
+  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
   return (USBD_OK);
   /* USER CODE END 6 */
 }
