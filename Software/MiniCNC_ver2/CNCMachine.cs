@@ -6,6 +6,7 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using System.Windows.Threading;
 using LibUsbDotNet;
 using LibUsbDotNet.Main;
 
@@ -30,14 +31,31 @@ namespace MiniCNC_ver2
 
         private void checkConnect()
         {
-            while (_autoCheckConnet)
-            {
-                if (!MainWindow.myUsbDevice.IsOpen)
-                {
 
-                }
+            WqlEventQuery query = new WqlEventQuery("SELECT * FROM Win32_DeviceChangeEvent WHERE EventType = 3");
+            ManagementEventWatcher watcher = new ManagementEventWatcher(query);
+            watcher.EventArrived += new EventArrivedEventHandler(DeviceRemoved);
+            watcher.Start();
+            while (_autoCheckConnet)
+            {                
                 Thread.Sleep(1000);
             }
+            watcher.Stop();
+        }
+
+        static void DeviceRemoved(object sender, EventArrivedEventArgs e)
+        {
+            string query = "SELECT * FROM Win32_USBControllerDevice";
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
+            foreach (ManagementObject usbDevice in searcher.Get())
+            {
+                // Kiểm tra xem thiết bị có phải là CNC Mini không
+                if (usbDevice["Dependent"].ToString().Contains("5762"))
+                {
+                    return;
+                }
+            }
+            
         }
     }
 }

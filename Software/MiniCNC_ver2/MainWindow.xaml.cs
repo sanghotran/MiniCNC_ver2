@@ -113,6 +113,7 @@ namespace MiniCNC_ver2
             Pages.Add(FolderShow);
             Pages.Add(SettingShow);
             Pages.Add(MainShow);
+            Pages.Add(WarningShow);
 
             IsStarted = false;
             IsPaused = false;
@@ -162,6 +163,59 @@ namespace MiniCNC_ver2
                     page.Visibility = Visibility.Hidden;
             }    
         }
+
+        // Connect
+        private void checkConnect()
+        {
+            if (!IsConnected) //kết nối
+            {
+                try
+                {
+                    myUsbDevice = UsbDevice.OpenUsbDevice(myUsbFinder);
+                    if (myUsbDevice == null) throw new Exception("Device Not Found.");
+                    IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
+                    if (!ReferenceEquals(wholeUsbDevice, null))
+                    {
+                        wholeUsbDevice.SetConfiguration(1);
+                        wholeUsbDevice.ClaimInterface(0);
+                    }
+                    reader = myUsbDevice.OpenEndpointReader(ReadEndpointID.Ep01);
+                    writer = myUsbDevice.OpenEndpointWriter(WriteEndpointID.Ep01);
+                    reader.DataReceived += (OnRxEndPointData);
+                    reader.DataReceivedEnabled = true;
+                    IsConnected = true;
+                    gCNCMachine.AutoCheckConnect(true);
+                }
+                catch
+                {
+
+                }
+            }
+            else // ngắt kết nối
+            {
+                reader.DataReceivedEnabled = false;
+                reader.DataReceived -= (OnRxEndPointData);
+                reader.Dispose();
+                writer.Dispose();
+                if (myUsbDevice != null)
+                {
+                    if (myUsbDevice.IsOpen)
+                    {
+                        IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
+                        if (!ReferenceEquals(wholeUsbDevice, null))
+                        {
+                            wholeUsbDevice.ReleaseInterface(0);
+                        }
+                        myUsbDevice.Close();
+                    }
+                    myUsbDevice = null;
+                    UsbDevice.Exit();
+                }
+                IsConnected = false;
+                gCNCMachine.AutoCheckConnect(false);
+            }
+        }
+
         #endregion
 
         #region Event
@@ -205,53 +259,7 @@ namespace MiniCNC_ver2
         }
         private void Connect(object sender, MouseButtonEventArgs e)
         {
-            if (!IsConnected) //kết nối
-            {
-                try
-                {
-                    myUsbDevice = UsbDevice.OpenUsbDevice(myUsbFinder);
-                    if (myUsbDevice == null) throw new Exception("Device Not Found.");
-                    IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
-                    if (!ReferenceEquals(wholeUsbDevice, null))
-                    {
-                        wholeUsbDevice.SetConfiguration(1);
-                        wholeUsbDevice.ClaimInterface(0);
-                    }
-                    reader = myUsbDevice.OpenEndpointReader(ReadEndpointID.Ep01);
-                    writer = myUsbDevice.OpenEndpointWriter(WriteEndpointID.Ep01);
-                    reader.DataReceived += (OnRxEndPointData);
-                    reader.DataReceivedEnabled = true;
-                    IsConnected = true;
-                    gCNCMachine.AutoCheckConnect(true);
-                }
-                catch
-                {
-
-                }                
-            }
-            else // ngắt kết nối
-            {
-                reader.DataReceivedEnabled = false;
-                reader.DataReceived -= (OnRxEndPointData);
-                reader.Dispose();
-                writer.Dispose();
-                if (myUsbDevice != null)
-                {
-                    if (myUsbDevice.IsOpen)
-                    {
-                        IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
-                        if (!ReferenceEquals(wholeUsbDevice, null))
-                        {
-                            wholeUsbDevice.ReleaseInterface(0);
-                        }
-                        myUsbDevice.Close();
-                    }
-                    myUsbDevice = null;
-                    UsbDevice.Exit();
-                }
-                IsConnected = false;
-                gCNCMachine.AutoCheckConnect(false);
-            }
+            checkConnect();
         }
         private void OnRxEndPointData(object sender, EndpointDataEventArgs e)
         {

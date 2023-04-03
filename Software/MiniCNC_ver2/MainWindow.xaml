@@ -327,5 +327,22 @@
                 </Grid>
             </Grid>
         </Grid>
+        <!-- Warning-->
+        <Grid Name="WarningShow">
+            <Grid Background="Red" Opacity="0.6"/>
+            <Grid Margin="0 150 0 150">                
+                <TextBlock Text="ERROR CONNECT!!"
+                           FontSize="65"
+                           TextAlignment="Center"
+                           Margin="0 220 0 140"/>
+                <Grid Margin="500 300 500 0">
+                    <TextBlock Text="OK"
+                               FontSize="50"
+                               TextAlignment="Center"
+                               Margin="0 50 0 0"
+                               Cursor="Hand"/>
+                </Grid>
+            </Grid>
+        </Grid>
     </Grid>
 </Window>
