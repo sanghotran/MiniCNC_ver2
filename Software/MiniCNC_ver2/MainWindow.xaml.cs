@@ -4,8 +4,10 @@ using System.Collections.ObjectModel;
 using System.ComponentModel;
 using System.IO;
 using System.Linq;
+using System.Management;
 using System.Runtime.CompilerServices;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
@@ -45,10 +47,11 @@ namespace MiniCNC_ver2
         }
 
         #region Fields
-        CNCMachine gCNCMachine = new CNCMachine();
+        public const int CNC_PID = 22370;
+        public const int CNC_VID = 1115;
 
         public static UsbDevice myUsbDevice;
-        public static UsbDeviceFinder myUsbFinder = new UsbDeviceFinder(CNCMachine.CNC_VID, CNCMachine.CNC_PID);
+        public static UsbDeviceFinder myUsbFinder = new UsbDeviceFinder(CNC_VID, CNC_PID);
         public static UsbEndpointReader reader;
         public static UsbEndpointWriter writer;
 
@@ -105,6 +108,7 @@ namespace MiniCNC_ver2
                 OnPropertyChanged();
             }
         }
+        private bool _autoCheckConnet { get; set; }
         #endregion
 
         #region Functions
@@ -128,7 +132,7 @@ namespace MiniCNC_ver2
 
             showPage(MainShow);
         }
-
+        
         //showMessage(controlMCUchatItem, scrollviewMCU, MCUchatItems, "X Y Z");
         private void showMessage(ChatItem chatitem, ScrollViewer scrollViewer, ObservableCollection<ChatItem> chatItems,string message)
         {
@@ -163,9 +167,32 @@ namespace MiniCNC_ver2
                     page.Visibility = Visibility.Hidden;
             }    
         }
+        // autocheck connect
+        public void AutoCheckConnect(bool state)
+        {
+            _autoCheckConnet = state;
+            if (_autoCheckConnet)
+            {
+                Thread autoCheckConnect = new Thread(checkConnect);
+                autoCheckConnect.Start();
+            }
+        }
+        private void checkConnect()
+        {
+
+            WqlEventQuery query = new WqlEventQuery("SELECT * FROM Win32_DeviceChangeEvent WHERE EventType = 3");
+            ManagementEventWatcher watcher = new ManagementEventWatcher(query);
+            watcher.EventArrived += new EventArrivedEventHandler(DeviceRemoved);
+            watcher.Start();
+            while (_autoCheckConnet)
+            {
+                Thread.Sleep(1000);
+            }
+            watcher.Stop();
+        }
 
         // Connect
-        private void checkConnect()
+        public void checkConnected()
         {
             if (!IsConnected) //kết nối
             {
@@ -184,7 +211,7 @@ namespace MiniCNC_ver2
                     reader.DataReceived += (OnRxEndPointData);
                     reader.DataReceivedEnabled = true;
                     IsConnected = true;
-                    gCNCMachine.AutoCheckConnect(true);
+                    AutoCheckConnect(true);
                 }
                 catch
                 {
@@ -212,10 +239,9 @@ namespace MiniCNC_ver2
                     UsbDevice.Exit();
                 }
                 IsConnected = false;
-                gCNCMachine.AutoCheckConnect(false);
+                AutoCheckConnect(false);
             }
         }
-
         #endregion
 
         #region Event
@@ -259,7 +285,7 @@ namespace MiniCNC_ver2
         }
         private void Connect(object sender, MouseButtonEventArgs e)
         {
-            checkConnect();
+            checkConnected();
         }
         private void OnRxEndPointData(object sender, EndpointDataEventArgs e)
         {
@@ -303,6 +329,28 @@ namespace MiniCNC_ver2
         {
 
         }
+        private void DeviceRemoved(object sender, EventArrivedEventArgs e)
+        {
+            string query = "SELECT * FROM Win32_USBControllerDevice";
+            ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
+            foreach (ManagementObject usbDevice in searcher.Get())
+            {
+                // Kiểm tra xem thiết bị có phải là CNC Mini không
+                if (usbDevice["Dependent"].ToString().Contains("5762"))
+                {
+                    return;
+                }
+            }
+            WarningShow.Dispatcher.Invoke(() => WarningShow.Visibility = Visibility.Visible);
+        }
+
+        private void Ok_Warning(object sender, MouseButtonEventArgs e)
+        {
+            checkConnected();
+            WarningShow.Visibility = Visibility.Hidden;
+        }
         #endregion
+
+
     }
 }

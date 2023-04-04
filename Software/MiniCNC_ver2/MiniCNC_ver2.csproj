@@ -167,5 +167,8 @@
   <ItemGroup>
     <Resource Include="Images\chiptochip.png" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\warning.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

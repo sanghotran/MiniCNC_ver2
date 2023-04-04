@@ -330,17 +330,19 @@
         <!-- Warning-->
         <Grid Name="WarningShow">
             <Grid Background="Red" Opacity="0.6"/>
-            <Grid Margin="0 150 0 150">                
+            <Grid Margin="0 0 0 0">
+                <Image Source="Images/warning.png"/>
                 <TextBlock Text="ERROR CONNECT!!"
                            FontSize="65"
                            TextAlignment="Center"
-                           Margin="0 220 0 140"/>
-                <Grid Margin="500 300 500 0">
+                           Margin="300 340 300 140"/>
+                <Grid Margin="550 500 550 180" Background="Red">
                     <TextBlock Text="OK"
                                FontSize="50"
                                TextAlignment="Center"
-                               Margin="0 50 0 0"
-                               Cursor="Hand"/>
+                               Cursor="Hand"
+                               Margin="0 6 0 0"
+                               PreviewMouseDown="Ok_Warning"/>
                 </Grid>
             </Grid>
         </Grid>

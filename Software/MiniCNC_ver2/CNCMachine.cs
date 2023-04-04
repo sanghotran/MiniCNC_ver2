@@ -1,7 +1,9 @@
-﻿using System;
+﻿/*using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Management;
+using System.Runtime.CompilerServices;
 using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
@@ -12,12 +14,12 @@ using LibUsbDotNet.Main;
 
 namespace MiniCNC_ver2
 {
-    public class CNCMachine
-    {
-
+    public class CNCMachine 
+    {      
         public const int CNC_PID = 22370;
         public const int CNC_VID = 1115;
         private bool _autoCheckConnet { get; set; }
+        private bool _warning { get; set; }
 
         public void AutoCheckConnect(bool state)
         {   
@@ -25,25 +27,26 @@ namespace MiniCNC_ver2
             if(_autoCheckConnet)
             {
                 Thread autoCheckConnect = new Thread(checkConnect);
+                autoCheckConnect.SetApartmentState(ApartmentState.STA);
                 autoCheckConnect.Start();
             }    
         }
 
         private void checkConnect()
         {
-
+            
             WqlEventQuery query = new WqlEventQuery("SELECT * FROM Win32_DeviceChangeEvent WHERE EventType = 3");
             ManagementEventWatcher watcher = new ManagementEventWatcher(query);
             watcher.EventArrived += new EventArrivedEventHandler(DeviceRemoved);
             watcher.Start();
             while (_autoCheckConnet)
-            {                
+            {
                 Thread.Sleep(1000);
             }
-            watcher.Stop();
+            watcher.Stop();            
         }
 
-        static void DeviceRemoved(object sender, EventArrivedEventArgs e)
+        private void DeviceRemoved(object sender, EventArrivedEventArgs e)
         {
             string query = "SELECT * FROM Win32_USBControllerDevice";
             ManagementObjectSearcher searcher = new ManagementObjectSearcher(query);
@@ -55,7 +58,8 @@ namespace MiniCNC_ver2
                     return;
                 }
             }
-            
+            _warning = true;
         }
     }
 }
+*/
