@@ -2,13 +2,15 @@
 
 void InitCNC(CNC* cnc)
 {
-    cnc->btnOK = GPIO_PIN_4;
-    cnc->btnExit = GPIO_PIN_5;
-    cnc->btnUp = GPIO_PIN_3;
-    cnc->btnDown = GPIO_PIN_15;
+  cnc->enbCheckConnect = false;
 
-    cnc->Led = GPIO_PIN_0;
-    cnc->Buzzer = GPIO_PIN_1; 
+  cnc->btnOK = GPIO_PIN_4;
+  cnc->btnExit = GPIO_PIN_5;
+  cnc->btnUp = GPIO_PIN_3;
+  cnc->btnDown = GPIO_PIN_15;
+
+  cnc->Led = GPIO_PIN_0;
+  cnc->Buzzer = GPIO_PIN_1; 
 
     
 }
@@ -23,6 +25,7 @@ void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSem
       {
       case '0': // check connect
         sprintf(cnc->DataSendToGUI, "0");
+        cnc->enbCheckConnect = true;
         break;
       
       default:

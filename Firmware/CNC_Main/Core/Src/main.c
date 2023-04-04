@@ -54,6 +54,7 @@ extern USBD_HandleTypeDef hUsbDeviceFS;
 
 osSemaphoreId xSemaphoreUSB;
 osThreadId ReceiveDataFromGUITaksHandle;
+osThreadId CheckUSBConnectTaskHandle;
 
 CNC cnc;
 /* USER CODE END PV */
@@ -68,6 +69,7 @@ void StartDefaultTask(void const * argument);
 
 /* USER CODE BEGIN PFP */
 void StartReceiveDataFromGUI(void const *argument);
+void StartCheckUSBConnect(void const *argument);
 
 /* USER CODE END PFP */
 
@@ -137,8 +139,12 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_THREADS */
   /* add threads, ... */
-  osThreadDef(ReceiveDataFromGUITask, ReceiveDataFromGUI, osPriorityAboveNormal, 0, 128);
+  osThreadDef(ReceiveDataFromGUITask, StartReceiveDataFromGUI, osPriorityAboveNormal, 0, 128);
   ReceiveDataFromGUITaksHandle = osThreadCreate(osThread(ReceiveDataFromGUITask), NULL);
+
+  osThreadDef(CheckUSBConnectTask, StartCheckUSBConnect, osPriorityAboveNormal, 0, 128);
+  CheckUSBConnectTaskHandle = osThreadCreate(osThread(CheckUSBConnectTask), NULL);
+
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -362,6 +368,22 @@ static void MX_GPIO_Init(void)
 void StartReceiveDataFromGUI(void const *argument)
 {
   ReceiveDataFromGUI(&cnc,&hUsbDeviceFS, xSemaphoreUSB); 
+}
+
+void StartCheckUSBConnect(void const *argument)
+{
+  for(;;)
+    {
+      osDelay(1000);
+      if(cnc.enbCheckConnect)
+      {
+        if(!(hUsbDeviceFS.dev_state == USBD_STATE_CONFIGURED))
+        {
+          // alarm when error connect
+          cnc.enbCheckConnect = false;
+        }    
+      }      
+    } 
 }
 
 /* USER CODE END 4 */
