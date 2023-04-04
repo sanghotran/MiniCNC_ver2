@@ -5,6 +5,7 @@
 #include "cmsis_os.h"
 #include <stdbool.h>
 #include "usb_device.h"
+#include "usbd_customhid.h"
 
 typedef struct
 {
@@ -17,7 +18,7 @@ typedef struct
     uint16_t Buzzer;
 
     char DataReceiveFromGUI[64];
-    char DataSendToGUI[64];
+    char DataSendToGUI[65];
 
     bool enbCheckConnect;
 

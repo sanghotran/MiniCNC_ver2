@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s 			page 1
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -40,7 +40,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s 			page 1
   33              		.loc 1 5 3 view .LVU1
   34              		.loc 1 5 24 is_stmt 0 view .LVU2
   35 0000 0023     		movs	r3, #0
-  36 0002 80F88C30 		strb	r3, [r0, #140]
+  36 0002 80F88D30 		strb	r3, [r0, #141]
    6:Lib/Src/TaskCNC.c **** 
    7:Lib/Src/TaskCNC.c ****   cnc->btnOK = GPIO_PIN_4;
   37              		.loc 1 7 3 is_stmt 1 view .LVU3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s 			page 1
   47 000e 0823     		movs	r3, #8
   48 0010 8380     		strh	r3, [r0, #4]	@ movhi
   10:Lib/Src/TaskCNC.c ****   cnc->btnDown = GPIO_PIN_15;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s 			page 2
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s 			page 2
 
 
   49              		.loc 1 10 3 is_stmt 1 view .LVU9
@@ -86,7 +86,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s 			page 1
   66              		.section	.rodata.ReceiveDataFromGUI.str1.4,"aMS",%progbits,1
   67              		.align	2
   68              	.LC0:
-  69 0000 3000     		.ascii	"0\000"
+  69 0000 48616100 		.ascii	"Haa\000"
   70              		.section	.text.ReceiveDataFromGUI,"ax",%progbits
   71              		.align	1
   72              		.global	ReceiveDataFromGUI
@@ -104,136 +104,160 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s 			page 1
   82              		@ args = 0, pretend = 0, frame = 0
   83              		@ frame_needed = 0, uses_anonymous_args = 0
   84              		.loc 1 19 1 is_stmt 0 view .LVU17
-  85 0000 38B5     		push	{r3, r4, r5, lr}
+  85 0000 70B5     		push	{r4, r5, r6, lr}
   86              	.LCFI0:
   87              		.cfi_def_cfa_offset 16
-  88              		.cfi_offset 3, -16
-  89              		.cfi_offset 4, -12
-  90              		.cfi_offset 5, -8
+  88              		.cfi_offset 4, -16
+  89              		.cfi_offset 5, -12
+  90              		.cfi_offset 6, -8
   91              		.cfi_offset 14, -4
   92 0002 0546     		mov	r5, r0
-  93 0004 1446     		mov	r4, r2
-  20:Lib/Src/TaskCNC.c ****   if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
-  94              		.loc 1 20 3 is_stmt 1 view .LVU18
-  95              		.loc 1 20 6 is_stmt 0 view .LVU19
-  96 0006 4FF0FF31 		mov	r1, #-1
-  97              	.LVL2:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s 			page 3
+  93 0004 0E46     		mov	r6, r1
+  94 0006 1446     		mov	r4, r2
+  20:Lib/Src/TaskCNC.c ****   // vì lúc đầu semaphore không được là 0 nên phải lấy đi 1 ngay chỗ này để 
+  21:Lib/Src/TaskCNC.c ****   if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
+  95              		.loc 1 21 3 is_stmt 1 view .LVU18
+  96              		.loc 1 21 6 is_stmt 0 view .LVU19
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s 			page 3
 
 
-  98              		.loc 1 20 6 view .LVU20
-  99 000a 1046     		mov	r0, r2
- 100              	.LVL3:
- 101              		.loc 1 20 6 view .LVU21
- 102 000c FFF7FEFF 		bl	osSemaphoreWait
- 103              	.LVL4:
- 104              		.loc 1 20 5 view .LVU22
- 105 0010 88B9     		cbnz	r0, .L6
- 106              	.L3:
-  21:Lib/Src/TaskCNC.c ****   {
-  22:Lib/Src/TaskCNC.c ****     for(;;)
- 107              		.loc 1 22 5 is_stmt 1 view .LVU23
-  23:Lib/Src/TaskCNC.c ****     {
-  24:Lib/Src/TaskCNC.c ****       if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
- 108              		.loc 1 24 7 view .LVU24
- 109              		.loc 1 24 10 is_stmt 0 view .LVU25
- 110 0012 4FF0FF31 		mov	r1, #-1
- 111 0016 2046     		mov	r0, r4
- 112 0018 FFF7FEFF 		bl	osSemaphoreWait
- 113              	.LVL5:
- 114              		.loc 1 24 9 view .LVU26
- 115 001c 0028     		cmp	r0, #0
- 116 001e F8D1     		bne	.L3
-  25:Lib/Src/TaskCNC.c ****       {
-  26:Lib/Src/TaskCNC.c ****         switch (cnc->DataReceiveFromGUI[0])
- 117              		.loc 1 26 9 is_stmt 1 view .LVU27
- 118              		.loc 1 26 40 is_stmt 0 view .LVU28
- 119 0020 2B7B     		ldrb	r3, [r5, #12]	@ zero_extendqisi2
- 120              		.loc 1 26 9 view .LVU29
- 121 0022 302B     		cmp	r3, #48
- 122 0024 F5D1     		bne	.L3
-  27:Lib/Src/TaskCNC.c ****         {
-  28:Lib/Src/TaskCNC.c ****         case '0': // check connect
-  29:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "0");
- 123              		.loc 1 29 11 is_stmt 1 view .LVU30
- 124 0026 044B     		ldr	r3, .L8
- 125 0028 1B88     		ldrh	r3, [r3]	@ unaligned
- 126 002a A5F84C30 		strh	r3, [r5, #76]	@ unaligned
-  30:Lib/Src/TaskCNC.c ****           cnc->enbCheckConnect = true;
- 127              		.loc 1 30 11 view .LVU31
- 128              		.loc 1 30 32 is_stmt 0 view .LVU32
- 129 002e 0123     		movs	r3, #1
- 130 0030 85F88C30 		strb	r3, [r5, #140]
-  31:Lib/Src/TaskCNC.c ****           break;
- 131              		.loc 1 31 11 is_stmt 1 view .LVU33
- 132 0034 EDE7     		b	.L3
- 133              	.L6:
-  32:Lib/Src/TaskCNC.c ****           
-  33:Lib/Src/TaskCNC.c ****         default:
-  34:Lib/Src/TaskCNC.c ****           break;
-  35:Lib/Src/TaskCNC.c ****         }
-  36:Lib/Src/TaskCNC.c ****         //USBD_CUSTOM_HID_SendReport(husbd, (uint8_t*)cnc->DataSendToGUI, 64);     
+  97 0008 4FF0FF31 		mov	r1, #-1
+  98              	.LVL2:
+  99              		.loc 1 21 6 view .LVU20
+ 100 000c 1046     		mov	r0, r2
+ 101              	.LVL3:
+ 102              		.loc 1 21 6 view .LVU21
+ 103 000e FFF7FEFF 		bl	osSemaphoreWait
+ 104              	.LVL4:
+ 105              		.loc 1 21 5 view .LVU22
+ 106 0012 30B1     		cbz	r0, .L4
+  22:Lib/Src/TaskCNC.c ****   {
+  23:Lib/Src/TaskCNC.c ****     for(;;)
+  24:Lib/Src/TaskCNC.c ****     {
+  25:Lib/Src/TaskCNC.c ****       if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
+  26:Lib/Src/TaskCNC.c ****       {
+  27:Lib/Src/TaskCNC.c ****         switch (cnc->DataReceiveFromGUI[0])
+  28:Lib/Src/TaskCNC.c ****         {
+  29:Lib/Src/TaskCNC.c ****         case '0': // check connect
+  30:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "Haa");
+  31:Lib/Src/TaskCNC.c ****           cnc->enbCheckConnect = true;
+  32:Lib/Src/TaskCNC.c ****           break;
+  33:Lib/Src/TaskCNC.c ****           
+  34:Lib/Src/TaskCNC.c ****         default:
+  35:Lib/Src/TaskCNC.c ****           break;
+  36:Lib/Src/TaskCNC.c ****         }
+  37:Lib/Src/TaskCNC.c ****         USBD_CUSTOM_HID_SendReport(husbd, (uint8_t*)cnc->DataSendToGUI, 65);     
+  38:Lib/Src/TaskCNC.c ****       }        
+  39:Lib/Src/TaskCNC.c ****     }
+  40:Lib/Src/TaskCNC.c ****   }  
+  41:Lib/Src/TaskCNC.c **** }
+ 107              		.loc 1 41 1 view .LVU23
+ 108 0014 70BD     		pop	{r4, r5, r6, pc}
+ 109              	.LVL5:
+ 110              	.L5:
   37:Lib/Src/TaskCNC.c ****       }        
-  38:Lib/Src/TaskCNC.c ****     }
-  39:Lib/Src/TaskCNC.c ****   }  
-  40:Lib/Src/TaskCNC.c **** }
- 134              		.loc 1 40 1 is_stmt 0 view .LVU34
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s 			page 4
+ 111              		.loc 1 37 9 is_stmt 1 view .LVU24
+ 112 0016 4122     		movs	r2, #65
+ 113 0018 05F14C01 		add	r1, r5, #76
+ 114 001c 3046     		mov	r0, r6
+ 115 001e FFF7FEFF 		bl	USBD_CUSTOM_HID_SendReport
+ 116              	.LVL6:
+ 117              	.L4:
+  23:Lib/Src/TaskCNC.c ****     {
+ 118              		.loc 1 23 5 view .LVU25
+  25:Lib/Src/TaskCNC.c ****       {
+ 119              		.loc 1 25 7 view .LVU26
+  25:Lib/Src/TaskCNC.c ****       {
+ 120              		.loc 1 25 10 is_stmt 0 view .LVU27
+ 121 0022 4FF0FF31 		mov	r1, #-1
+ 122 0026 2046     		mov	r0, r4
+ 123 0028 FFF7FEFF 		bl	osSemaphoreWait
+ 124              	.LVL7:
+  25:Lib/Src/TaskCNC.c ****       {
+ 125              		.loc 1 25 9 view .LVU28
+ 126 002c 0028     		cmp	r0, #0
+ 127 002e F8D1     		bne	.L4
+  27:Lib/Src/TaskCNC.c ****         {
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s 			page 4
 
 
- 135 0036 38BD     		pop	{r3, r4, r5, pc}
- 136              	.LVL6:
- 137              	.L9:
- 138              		.loc 1 40 1 view .LVU35
- 139              		.align	2
- 140              	.L8:
- 141 0038 00000000 		.word	.LC0
- 142              		.cfi_endproc
- 143              	.LFE74:
- 145              		.section	.text.ReceiveDataFromCNC,"ax",%progbits
- 146              		.align	1
- 147              		.global	ReceiveDataFromCNC
- 148              		.syntax unified
- 149              		.thumb
- 150              		.thumb_func
- 152              	ReceiveDataFromCNC:
- 153              	.LFB75:
-  41:Lib/Src/TaskCNC.c **** 
-  42:Lib/Src/TaskCNC.c **** void ReceiveDataFromCNC(void)
-  43:Lib/Src/TaskCNC.c **** {
- 154              		.loc 1 43 1 is_stmt 1 view -0
- 155              		.cfi_startproc
- 156              		@ args = 0, pretend = 0, frame = 0
- 157              		@ frame_needed = 0, uses_anonymous_args = 0
- 158              		@ link register save eliminated.
-  44:Lib/Src/TaskCNC.c **** 
-  45:Lib/Src/TaskCNC.c **** }...
- 159              		.loc 1 45 1 view .LVU37
- 160 0000 7047     		bx	lr
- 161              		.cfi_endproc
- 162              	.LFE75:
- 164              		.text
- 165              	.Letext0:
- 166              		.file 2 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 167              		.file 3 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 168              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 169              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
- 170              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
- 171              		.file 7 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
- 172              		.file 8 "Lib/Inc/TaskCNC.h"
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s 			page 5
+ 128              		.loc 1 27 9 is_stmt 1 view .LVU29
+  27:Lib/Src/TaskCNC.c ****         {
+ 129              		.loc 1 27 40 is_stmt 0 view .LVU30
+ 130 0030 2B7B     		ldrb	r3, [r5, #12]	@ zero_extendqisi2
+  27:Lib/Src/TaskCNC.c ****         {
+ 131              		.loc 1 27 9 view .LVU31
+ 132 0032 302B     		cmp	r3, #48
+ 133 0034 EFD1     		bne	.L5
+  30:Lib/Src/TaskCNC.c ****           cnc->enbCheckConnect = true;
+ 134              		.loc 1 30 11 is_stmt 1 view .LVU32
+ 135 0036 034B     		ldr	r3, .L8
+ 136 0038 1868     		ldr	r0, [r3]
+ 137 003a E864     		str	r0, [r5, #76]	@ unaligned
+  31:Lib/Src/TaskCNC.c ****           break;
+ 138              		.loc 1 31 11 view .LVU33
+  31:Lib/Src/TaskCNC.c ****           break;
+ 139              		.loc 1 31 32 is_stmt 0 view .LVU34
+ 140 003c 0123     		movs	r3, #1
+ 141 003e 85F88D30 		strb	r3, [r5, #141]
+  32:Lib/Src/TaskCNC.c ****           
+ 142              		.loc 1 32 11 is_stmt 1 view .LVU35
+ 143 0042 E8E7     		b	.L5
+ 144              	.L9:
+ 145              		.align	2
+ 146              	.L8:
+ 147 0044 00000000 		.word	.LC0
+ 148              		.cfi_endproc
+ 149              	.LFE74:
+ 151              		.section	.text.ReceiveDataFromCNC,"ax",%progbits
+ 152              		.align	1
+ 153              		.global	ReceiveDataFromCNC
+ 154              		.syntax unified
+ 155              		.thumb
+ 156              		.thumb_func
+ 158              	ReceiveDataFromCNC:
+ 159              	.LFB75:
+  42:Lib/Src/TaskCNC.c **** 
+  43:Lib/Src/TaskCNC.c **** void ReceiveDataFromCNC(void)
+  44:Lib/Src/TaskCNC.c **** {
+ 160              		.loc 1 44 1 view -0
+ 161              		.cfi_startproc
+ 162              		@ args = 0, pretend = 0, frame = 0
+ 163              		@ frame_needed = 0, uses_anonymous_args = 0
+ 164              		@ link register save eliminated.
+  45:Lib/Src/TaskCNC.c **** 
+  46:Lib/Src/TaskCNC.c **** }...
+ 165              		.loc 1 46 1 view .LVU37
+ 166 0000 7047     		bx	lr
+ 167              		.cfi_endproc
+ 168              	.LFE75:
+ 170              		.text
+ 171              	.Letext0:
+ 172              		.file 2 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 173              		.file 3 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 174              		.file 4 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 175              		.file 5 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 176              		.file 6 "Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h"
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s 			page 5
+
+
+ 177              		.file 7 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 178              		.file 8 "Lib/Inc/TaskCNC.h"
+ 179              		.file 9 "Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h"
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s 			page 6
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 TaskCNC.c
-C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s:18     .text.InitCNC:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s:24     .text.InitCNC:00000000 InitCNC
-C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s:67     .rodata.ReceiveDataFromGUI.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s:71     .text.ReceiveDataFromGUI:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s:77     .text.ReceiveDataFromGUI:00000000 ReceiveDataFromGUI
-C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s:141    .text.ReceiveDataFromGUI:00000038 $d
-C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s:146    .text.ReceiveDataFromCNC:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\cc0fwlRo.s:152    .text.ReceiveDataFromCNC:00000000 ReceiveDataFromCNC
+C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s:18     .text.InitCNC:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s:24     .text.InitCNC:00000000 InitCNC
+C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s:67     .rodata.ReceiveDataFromGUI.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s:71     .text.ReceiveDataFromGUI:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s:77     .text.ReceiveDataFromGUI:00000000 ReceiveDataFromGUI
+C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s:147    .text.ReceiveDataFromGUI:00000044 $d
+C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s:152    .text.ReceiveDataFromCNC:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccklTrG4.s:158    .text.ReceiveDataFromCNC:00000000 ReceiveDataFromCNC
 
 UNDEFINED SYMBOLS
 osSemaphoreWait
+USBD_CUSTOM_HID_SendReport

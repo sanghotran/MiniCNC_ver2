@@ -57,7 +57,8 @@ namespace MiniCNC_ver2
 
         private List<Grid> Pages = new List<Grid>();
 
-        
+        // Data
+        CNCMachine cnc = new CNCMachine();
 
         // Chat box
         private ObservableCollection<ChatItem> PCchatItems = new ObservableCollection<ChatItem>();
@@ -247,7 +248,16 @@ namespace MiniCNC_ver2
         private void SendData(string input)
         {
             int bytesWritten;
+            if ((input.Length % 2) == 0)
+            {
+                input += ' ';
+            }
             writer.Write(Encoding.Default.GetBytes(input), 1000, out bytesWritten);
+        }
+        // process data
+        private void ProcessData(string input)
+        {
+            cnc.DataReceive = input.Split(' ');
         }
         #endregion
 
@@ -276,7 +286,7 @@ namespace MiniCNC_ver2
         }
         private void Send(object sender, MouseButtonEventArgs e)
         {
-            SendData("0");
+            SendData("01");
         }
         private void Home(object sender, MouseButtonEventArgs e)
         {
@@ -296,8 +306,8 @@ namespace MiniCNC_ver2
         }
         private void OnRxEndPointData(object sender, EndpointDataEventArgs e)
         {
-            //Action<string> Action = ProcessReceiveData;
-            //this.Dispatcher.Invoke(Action, (Encoding.Default.GetString(e.Buffer, 0, e.Count)));
+            Action<string> Action = ProcessData;
+            this.Dispatcher.Invoke(Action, (Encoding.Default.GetString(e.Buffer, 0, e.Count)));
         }
         private void Log(object sender, MouseButtonEventArgs e)
         {
