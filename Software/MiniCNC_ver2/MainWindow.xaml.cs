@@ -168,7 +168,7 @@ namespace MiniCNC_ver2
             }    
         }
         // autocheck connect
-        public void AutoCheckConnect(bool state)
+        private void AutoCheckConnect(bool state)
         {
             _autoCheckConnet = state;
             if (_autoCheckConnet)
@@ -192,7 +192,7 @@ namespace MiniCNC_ver2
         }
 
         // Connect
-        public void checkConnected()
+        private void checkConnected()
         {
             if (!IsConnected) //kết nối
             {
@@ -242,6 +242,13 @@ namespace MiniCNC_ver2
                 AutoCheckConnect(false);
             }
         }
+
+        // send data
+        private void SendData(string input)
+        {
+            int bytesWritten;
+            writer.Write(Encoding.Default.GetBytes(input), 1000, out bytesWritten);
+        }
         #endregion
 
         #region Event
@@ -269,7 +276,7 @@ namespace MiniCNC_ver2
         }
         private void Send(object sender, MouseButtonEventArgs e)
         {
-
+            SendData("0");
         }
         private void Home(object sender, MouseButtonEventArgs e)
         {

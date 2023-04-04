@@ -121,7 +121,7 @@ int main(void)
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
   osSemaphoreDef(semaphore);
-  xSemaphoreUSB = osSemaphoreCreate(osSemaphore(semaphore), 0);
+  xSemaphoreUSB = osSemaphoreCreate(osSemaphore(semaphore), 1); // giá trị ban đầu của semaphore không được là 0
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
