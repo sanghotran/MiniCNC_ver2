@@ -26,12 +26,27 @@ void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSem
       {
         switch (cnc->DataReceiveFromGUI[0])
         {
-        case '0': // check connect
-          sprintf(cnc->DataSendToGUI, "Haa");
-          cnc->enbCheckConnect = true;
-          break;
+        case 'C': // command          
+          switch (cnc->DataReceiveFromGUI[2])
+          {
+          case '0': // connected
+            cnc->enbCheckConnect = true;
+            sprintf(cnc->DataSendToGUI, "C CONNECTED ");
+            break;
+          case '1': // disconnected
+            cnc->enbCheckConnect = false;
+            sprintf(cnc->DataSendToGUI, "C DISCONNECTED ");
+            break;
+          default:
+            break;
+          }
           
+          break;
+        case 'D': // data
+
+          break;
         default:
+          return;
           break;
         }
         USBD_CUSTOM_HID_SendReport(husbd, (uint8_t*)cnc->DataSendToGUI, 65);     

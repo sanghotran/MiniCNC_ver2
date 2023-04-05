@@ -125,6 +125,8 @@ namespace MiniCNC_ver2
             IsConnected = false;
             IsLaptop = true;
 
+            cnc.State = 0; // mode disconect
+
             PCChatPage.Visibility = Visibility.Visible;
             MCUChatPage.Visibility = Visibility.Hidden;
 
@@ -156,7 +158,6 @@ namespace MiniCNC_ver2
             PC_fileList.ItemsSource = fileItems;
 
         }
-
         // show page
         private void showPage(Grid grid)
         {
@@ -191,59 +192,57 @@ namespace MiniCNC_ver2
             }
             watcher.Stop();
         }
-
         // Connect
-        private void checkConnected()
+        private void connect()
         {
-            if (!IsConnected) //kết nối
+            try
             {
-                try
+                myUsbDevice = UsbDevice.OpenUsbDevice(myUsbFinder);
+                if (myUsbDevice == null) throw new Exception("Device Not Found.");
+                IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
+                if (!ReferenceEquals(wholeUsbDevice, null))
                 {
-                    myUsbDevice = UsbDevice.OpenUsbDevice(myUsbFinder);
-                    if (myUsbDevice == null) throw new Exception("Device Not Found.");
+                    wholeUsbDevice.SetConfiguration(1);
+                    wholeUsbDevice.ClaimInterface(0);
+                }
+                reader = myUsbDevice.OpenEndpointReader(ReadEndpointID.Ep01);
+                writer = myUsbDevice.OpenEndpointWriter(WriteEndpointID.Ep01);
+                reader.DataReceived += (OnRxEndPointData);
+                reader.DataReceivedEnabled = true;
+                IsConnected = true;
+                AutoCheckConnect(true);
+                SendData("C 0");// 0 is command connect
+                showMessage(PCchatItem, scrollviewPC, PCchatItems, "Let's connect with me");
+            }
+            catch
+            {
+
+            }
+        }
+        // Disconnect
+        private void disconnect()
+        {
+            reader.DataReceivedEnabled = false;
+            reader.DataReceived -= (OnRxEndPointData);
+            reader.Dispose();
+            writer.Dispose();
+            if (myUsbDevice != null)
+            {
+                if (myUsbDevice.IsOpen)
+                {
                     IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
                     if (!ReferenceEquals(wholeUsbDevice, null))
                     {
-                        wholeUsbDevice.SetConfiguration(1);
-                        wholeUsbDevice.ClaimInterface(0);
+                        wholeUsbDevice.ReleaseInterface(0);
                     }
-                    reader = myUsbDevice.OpenEndpointReader(ReadEndpointID.Ep01);
-                    writer = myUsbDevice.OpenEndpointWriter(WriteEndpointID.Ep01);
-                    reader.DataReceived += (OnRxEndPointData);
-                    reader.DataReceivedEnabled = true;
-                    IsConnected = true;
-                    AutoCheckConnect(true);
+                    myUsbDevice.Close();
                 }
-                catch
-                {
-
-                }
+                myUsbDevice = null;
+                UsbDevice.Exit();
             }
-            else // ngắt kết nối
-            {
-                reader.DataReceivedEnabled = false;
-                reader.DataReceived -= (OnRxEndPointData);
-                reader.Dispose();
-                writer.Dispose();
-                if (myUsbDevice != null)
-                {
-                    if (myUsbDevice.IsOpen)
-                    {
-                        IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
-                        if (!ReferenceEquals(wholeUsbDevice, null))
-                        {
-                            wholeUsbDevice.ReleaseInterface(0);
-                        }
-                        myUsbDevice.Close();
-                    }
-                    myUsbDevice = null;
-                    UsbDevice.Exit();
-                }
-                IsConnected = false;
-                AutoCheckConnect(false);
-            }
-        }
-
+            IsConnected = false;
+            AutoCheckConnect(false);
+        }        
         // send data
         private void SendData(string input)
         {
@@ -258,6 +257,28 @@ namespace MiniCNC_ver2
         private void ProcessData(string input)
         {
             cnc.DataReceive = input.Split(' ');
+
+            switch(cnc.DataReceive[0])
+            {
+                case "C":
+                    switch(cnc.DataReceive[1])
+                    {
+                        case "CONNECTED":
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Connected");
+                            break;
+                        case "DISCONNECTED":                            
+                            disconnect();
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Disconnected");
+                            break;
+                        default:
+                            break;
+                    }
+                    break;
+                case "D":
+                    break;
+                default:
+                    break;
+            }
         }
         #endregion
 
@@ -277,32 +298,62 @@ namespace MiniCNC_ver2
         }
         private void OpenFile(object sender, MouseButtonEventArgs e)
         {
+            // not press when running state
+            if (cnc.State == 2)
+                return;
             showPage(FolderShow);
             showFile();
         }
         private void Setting(object sender, MouseButtonEventArgs e)
         {
+            // not press when running state
+            if (cnc.State == 2)
+                return;
             showPage(SettingShow);
         }
         private void Send(object sender, MouseButtonEventArgs e)
         {
-            SendData("01");
+            // only press when connect state
+            if (cnc.State == 1)
+            {
+
+            }
         }
         private void Home(object sender, MouseButtonEventArgs e)
         {
-            
+            // only press when connect state
+            if(cnc.State == 1)
+            {
+
+            }
         }
         private void Start(object sender, MouseButtonEventArgs e)
         {
+            // not press when disconnect state
+            if (cnc.State == 0)
+                return;
+
             IsStarted = !IsStarted;
         }
         private void Pause(object sender, MouseButtonEventArgs e)
         {
+            // not press when disconnect and connect state
+            if (cnc.State == 0 || cnc.State == 1)
+                return;
+
             IsPaused = !IsPaused;
         }
         private void Connect(object sender, MouseButtonEventArgs e)
         {
-            checkConnected();
+            if (!IsConnected) //kết nối
+            {
+                connect();
+            }
+            else // ngắt kết nối
+            {
+                SendData("C 1");// 1 is command disconnect
+                showMessage(PCchatItem, scrollviewPC, PCchatItems, "Let's disconnect with me");
+            }
         }
         private void OnRxEndPointData(object sender, EndpointDataEventArgs e)
         {
@@ -360,10 +411,9 @@ namespace MiniCNC_ver2
             }
             WarningShow.Dispatcher.Invoke(() => WarningShow.Visibility = Visibility.Visible);
         }
-
         private void Ok_Warning(object sender, MouseButtonEventArgs e)
         {
-            checkConnected();
+            disconnect();
             WarningShow.Visibility = Visibility.Hidden;
         }
         #endregion

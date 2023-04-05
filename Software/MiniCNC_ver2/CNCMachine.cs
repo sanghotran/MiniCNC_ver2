@@ -17,5 +17,6 @@ namespace MiniCNC_ver2
     public class CNCMachine 
     {
         public string[] DataReceive;
+        public int State;
     }
 }

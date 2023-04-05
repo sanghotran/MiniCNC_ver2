@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
   11:Core/Src/main.c ****   *
   12:Core/Src/main.c ****   * This software is licensed under terms that can be found in the LICENSE file
   13:Core/Src/main.c ****   * in the root directory of this software component.
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 2
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 2
 
 
   14:Core/Src/main.c ****   * If no LICENSE file comes with this software, it is provided AS-IS.
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
   68:Core/Src/main.c **** void StartDefaultTask(void const * argument);
   69:Core/Src/main.c **** 
   70:Core/Src/main.c **** /* USER CODE BEGIN PFP */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 3
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 3
 
 
   71:Core/Src/main.c **** void StartReceiveDataFromGUI(void const *argument);
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  125:Core/Src/main.c ****   /* USER CODE END RTOS_SEMAPHORES */
  126:Core/Src/main.c **** 
  127:Core/Src/main.c ****   /* USER CODE BEGIN RTOS_TIMERS */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 4
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 4
 
 
  128:Core/Src/main.c ****   /* start timers, add new ones, ... */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  182:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
  183:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLMUL = RCC_PLL_MUL9;
  184:Core/Src/main.c ****   if (HAL_RCC_OscConfig(&RCC_OscInitStruct) != HAL_OK)
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 5
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 5
 
 
  185:Core/Src/main.c ****   {
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  239:Core/Src/main.c ****   /* USER CODE END I2C1_Init 2 */
  240:Core/Src/main.c **** 
  241:Core/Src/main.c **** }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 6
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 6
 
 
  242:Core/Src/main.c **** 
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  296:Core/Src/main.c ****   huart1.Instance = USART1;
  297:Core/Src/main.c ****   huart1.Init.BaudRate = 115200;
  298:Core/Src/main.c ****   huart1.Init.WordLength = UART_WORDLENGTH_8B;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 7
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 7
 
 
  299:Core/Src/main.c ****   huart1.Init.StopBits = UART_STOPBITS_1;
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
   64 0012 9A69     		ldr	r2, [r3, #24]
   65 0014 42F02002 		orr	r2, r2, #32
   66 0018 9A61     		str	r2, [r3, #24]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 8
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 8
 
 
   67              		.loc 1 324 3 view .LVU6
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  113 0054 1F4D     		ldr	r5, .L3+8
  114 0056 2246     		mov	r2, r4
  115 0058 0321     		movs	r1, #3
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 9
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 9
 
 
  116 005a 2846     		mov	r0, r5
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  156              	.LVL3:
  347:Core/Src/main.c **** 
  348:Core/Src/main.c ****   /*Configure GPIO pin : PA15 */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 10
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 10
 
 
  349:Core/Src/main.c ****   GPIO_InitStruct.Pin = GPIO_PIN_15;
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  197              	.LVL7:
  363:Core/Src/main.c **** 
  364:Core/Src/main.c **** }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 11
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 11
 
 
  198              		.loc 1 364 1 is_stmt 0 view .LVU57
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  247              	.L7:
  248 0010 00000000 		.word	.LANCHOR0
  249 0014 00000000 		.word	hUsbDeviceFS
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 12
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 12
 
 
  250 0018 00000000 		.word	.LANCHOR1
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  382:Core/Src/main.c ****           // alarm when error connect
  383:Core/Src/main.c ****           cnc.enbCheckConnect = false;
  296              		.loc 1 383 11 is_stmt 1 view .LVU73
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 13
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 13
 
 
  297              		.loc 1 383 31 is_stmt 0 view .LVU74
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  404:Core/Src/main.c ****   for(;;)
  333              		.loc 1 404 3 is_stmt 1 discriminator 1 view .LVU77
  405:Core/Src/main.c ****   {
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 14
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 14
 
 
  406:Core/Src/main.c ****     osDelay(1);
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  370              	.LVL18:
  371              	.L18:
  425:Core/Src/main.c ****     HAL_IncTick();
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 15
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 15
 
 
  426:Core/Src/main.c ****   }
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
    6:Drivers/CMSIS/Include/cmsis_gcc.h ****  ******************************************************************************/
    7:Drivers/CMSIS/Include/cmsis_gcc.h **** /*
    8:Drivers/CMSIS/Include/cmsis_gcc.h ****  * Copyright (c) 2009-2018 Arm Limited. All rights reserved.
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 16
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 16
 
 
    9:Drivers/CMSIS/Include/cmsis_gcc.h ****  *
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
   63:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
   64:Drivers/CMSIS/Include/cmsis_gcc.h **** #ifndef   __PACKED_STRUCT
   65:Drivers/CMSIS/Include/cmsis_gcc.h ****   #define __PACKED_STRUCT                        struct __attribute__((packed, aligned(1)))
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 17
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 17
 
 
   66:Drivers/CMSIS/Include/cmsis_gcc.h **** #endif
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  120:Drivers/CMSIS/Include/cmsis_gcc.h ****     \defgroup CMSIS_Core_RegAccFunctions CMSIS Core Register Access Functions
  121:Drivers/CMSIS/Include/cmsis_gcc.h ****   @{
  122:Drivers/CMSIS/Include/cmsis_gcc.h ****  */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 18
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 18
 
 
  123:Drivers/CMSIS/Include/cmsis_gcc.h **** 
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  438 0000 08B5     		push	{r3, lr}
  439              	.LCFI7:
  440              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 19
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 19
 
 
  441              		.cfi_offset 3, -8
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  233:Core/Src/main.c ****   {
  476              		.loc 1 233 7 is_stmt 0 view .LVU115
  477 0020 FFF7FEFF 		bl	HAL_I2C_Init
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 20
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 20
 
 
  478              	.LVL21:
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  524 000e 0023     		movs	r3, #0
  525 0010 8360     		str	r3, [r0, #8]
  262:Core/Src/main.c ****   hspi1.Init.CLKPolarity = SPI_POLARITY_LOW;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 21
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 21
 
 
  526              		.loc 1 262 3 is_stmt 1 view .LVU126
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  560              		.loc 1 271 6 view .LVU146
  561 0030 00B9     		cbnz	r0, .L35
  279:Core/Src/main.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 22
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 22
 
 
  562              		.loc 1 279 1 view .LVU147
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  608 0012 C360     		str	r3, [r0, #12]
  300:Core/Src/main.c ****   huart1.Init.Mode = UART_MODE_TX_RX;
  609              		.loc 1 300 3 is_stmt 1 view .LVU158
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 23
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 23
 
 
  300:Core/Src/main.c ****   huart1.Init.Mode = UART_MODE_TX_RX;
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  653              		@ args = 0, pretend = 0, frame = 80
  654              		@ frame_needed = 0, uses_anonymous_args = 0
  655 0000 00B5     		push	{lr}
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 24
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 24
 
 
  656              	.LCFI10:
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  181:Core/Src/main.c ****   RCC_OscInitStruct.PLL.PLLSource = RCC_PLLSOURCE_HSE;
  696              		.loc 1 181 34 is_stmt 0 view .LVU186
  697 0030 0222     		movs	r2, #2
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 25
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 25
 
 
  698 0032 1192     		str	r2, [sp, #68]
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  733              		.loc 1 197 7 is_stmt 0 view .LVU205
  734 0058 05A8     		add	r0, sp, #20
  735 005a FFF7FEFF 		bl	HAL_RCC_ClockConfig
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 26
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 26
 
 
  736              	.LVL29:
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  779              		.align	1
  780              		.global	main
  781              		.syntax unified
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 27
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 27
 
 
  782              		.thumb
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  826 0026 0121     		movs	r1, #1
  827 0028 16A8     		add	r0, sp, #88
  828 002a FFF7FEFF 		bl	osSemaphoreCreate
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 28
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 28
 
 
  829              	.LVL41:
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  146:Core/Src/main.c **** 
  873              		.loc 1 146 3 view .LVU239
  146:Core/Src/main.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 29
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 29
 
 
  874              		.loc 1 146 31 is_stmt 0 view .LVU240
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  924 0024 0100     		.short	1
  925 0026 0000     		.space	2
  926 0028 00000000 		.word	0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 30
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 30
 
 
  927 002c 80000000 		.word	128
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  981              		.section	.bss.huart1,"aw",%nobits
  982              		.align	2
  983              		.set	.LANCHOR4,. + 0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 31
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 31
 
 
  986              	huart1:
@@ -1838,59 +1838,59 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 1
  1018              		.file 24 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_cortex.h"
  1019              		.file 25 "USB_DEVICE/App/usb_device.h"
  1020              		.file 26 "<built-in>"
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 32
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 32
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 main.c
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:15     .rodata.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:28     .text.MX_GPIO_Init:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:33     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:207    .text.MX_GPIO_Init:000000cc $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:215    .text.StartReceiveDataFromGUI:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:221    .text.StartReceiveDataFromGUI:00000000 StartReceiveDataFromGUI
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:248    .text.StartReceiveDataFromGUI:00000010 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:255    .text.StartCheckUSBConnect:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:261    .text.StartCheckUSBConnect:00000000 StartCheckUSBConnect
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:305    .text.StartCheckUSBConnect:00000028 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:311    .text.StartDefaultTask:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:317    .text.StartDefaultTask:00000000 StartDefaultTask
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:344    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:350    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:384    .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:389    .text.Error_Handler:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:395    .text.Error_Handler:00000000 Error_Handler
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:427    .text.MX_I2C1_Init:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:432    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:490    .text.MX_I2C1_Init:0000002c $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:497    .text.MX_SPI1_Init:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:502    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:571    .text.MX_SPI1_Init:00000038 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:577    .text.MX_USART1_UART_Init:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:582    .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:637    .text.MX_USART1_UART_Init:0000002c $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:643    .text.SystemClock_Config:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:649    .text.SystemClock_Config:00000000 SystemClock_Config
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:779    .text.main:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:785    .text.main:00000000 main
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:893    .text.main:000000a4 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:958    .bss.cnc:00000000 cnc
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:944    .bss.CheckUSBConnectTaskHandle:00000000 CheckUSBConnectTaskHandle
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:951    .bss.ReceiveDataFromGUITaksHandle:00000000 ReceiveDataFromGUITaksHandle
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:993    .bss.xSemaphoreUSB:00000000 xSemaphoreUSB
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:965    .bss.defaultTaskHandle:00000000 defaultTaskHandle
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:986    .bss.huart1:00000000 huart1
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:979    .bss.hspi1:00000000 hspi1
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:972    .bss.hi2c1:00000000 hi2c1
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:910    .rodata:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:940    .bss.CheckUSBConnectTaskHandle:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:947    .bss.ReceiveDataFromGUITaksHandle:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:954    .bss.cnc:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:961    .bss.defaultTaskHandle:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:968    .bss.hi2c1:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:975    .bss.hspi1:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:982    .bss.huart1:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s:989    .bss.xSemaphoreUSB:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:15     .rodata.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:28     .text.MX_GPIO_Init:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:33     .text.MX_GPIO_Init:00000000 MX_GPIO_Init
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:207    .text.MX_GPIO_Init:000000cc $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:215    .text.StartReceiveDataFromGUI:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:221    .text.StartReceiveDataFromGUI:00000000 StartReceiveDataFromGUI
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:248    .text.StartReceiveDataFromGUI:00000010 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:255    .text.StartCheckUSBConnect:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:261    .text.StartCheckUSBConnect:00000000 StartCheckUSBConnect
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:305    .text.StartCheckUSBConnect:00000028 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:311    .text.StartDefaultTask:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:317    .text.StartDefaultTask:00000000 StartDefaultTask
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:344    .text.HAL_TIM_PeriodElapsedCallback:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:350    .text.HAL_TIM_PeriodElapsedCallback:00000000 HAL_TIM_PeriodElapsedCallback
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:384    .text.HAL_TIM_PeriodElapsedCallback:00000014 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:389    .text.Error_Handler:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:395    .text.Error_Handler:00000000 Error_Handler
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:427    .text.MX_I2C1_Init:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:432    .text.MX_I2C1_Init:00000000 MX_I2C1_Init
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:490    .text.MX_I2C1_Init:0000002c $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:497    .text.MX_SPI1_Init:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:502    .text.MX_SPI1_Init:00000000 MX_SPI1_Init
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:571    .text.MX_SPI1_Init:00000038 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:577    .text.MX_USART1_UART_Init:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:582    .text.MX_USART1_UART_Init:00000000 MX_USART1_UART_Init
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:637    .text.MX_USART1_UART_Init:0000002c $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:643    .text.SystemClock_Config:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:649    .text.SystemClock_Config:00000000 SystemClock_Config
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:779    .text.main:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:785    .text.main:00000000 main
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:893    .text.main:000000a4 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:958    .bss.cnc:00000000 cnc
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:944    .bss.CheckUSBConnectTaskHandle:00000000 CheckUSBConnectTaskHandle
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:951    .bss.ReceiveDataFromGUITaksHandle:00000000 ReceiveDataFromGUITaksHandle
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:993    .bss.xSemaphoreUSB:00000000 xSemaphoreUSB
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:965    .bss.defaultTaskHandle:00000000 defaultTaskHandle
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:986    .bss.huart1:00000000 huart1
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:979    .bss.hspi1:00000000 hspi1
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:972    .bss.hi2c1:00000000 hi2c1
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:910    .rodata:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:940    .bss.CheckUSBConnectTaskHandle:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:947    .bss.ReceiveDataFromGUITaksHandle:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:954    .bss.cnc:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:961    .bss.defaultTaskHandle:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:968    .bss.hi2c1:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:975    .bss.hspi1:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:982    .bss.huart1:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s:989    .bss.xSemaphoreUSB:00000000 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
@@ -1898,7 +1898,7 @@ HAL_GPIO_Init
 HAL_NVIC_SetPriority
 HAL_NVIC_EnableIRQ
 ReceiveDataFromGUI
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccwkE3Jk.s 			page 33
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccQo1xNe.s 			page 33
 
 
 hUsbDeviceFS
