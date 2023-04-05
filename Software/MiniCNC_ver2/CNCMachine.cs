@@ -23,6 +23,9 @@ namespace MiniCNC_ver2
         public int State;
         public string[] gcode;
 
+        private string gcodeConvert;
+        public string[] cncGcode;
+
         private const int maxCNCGrid = 600;
         private const int maxCNC = 150;
         private const int pixelCNC = maxCNCGrid / maxCNC;
@@ -38,8 +41,15 @@ namespace MiniCNC_ver2
             public string[] buff;
         }
         private Draw draw;
+
+        private string convertGcode(string g, double x, double y)
+        {
+            string gcode = g + " X" + x.ToString() + " Y" + y.ToString() + '\n';
+            return gcode;
+        }
         public void drawFromGcode(string[] data, Grid main)
-        {            
+        {
+            gcodeConvert = string.Empty;
             for (int i = 0; i < data.Length; i++)
             {
                 while (!(data[i].Contains("G0") && data[i].Contains("X")))
@@ -47,13 +57,14 @@ namespace MiniCNC_ver2
                     i++;
                     if (i == data.Length)
                     {
+                        cncGcode = gcodeConvert.Split('\n');
                         return;
                     }
                 }
                 draw.buff = data[i].Split(' ');
                 gcodeProcess(main);
             }
-
+            cncGcode = gcodeConvert.Split('\n');
         }
         private void gcodeProcess(Grid main)
         {
@@ -62,6 +73,7 @@ namespace MiniCNC_ver2
                 case "G00":
                     draw.xLast = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
                     draw.yLast = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
+                    gcodeConvert += convertGcode("G00", draw.xLast, draw.yLast);
                     break;
                 case "G01":
                     draw.xNext = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
@@ -97,6 +109,7 @@ namespace MiniCNC_ver2
             //CNCGrid.Children.Add(gcodeLine);
             draw.xLast = xNext;
             draw.yLast = yNext;
+            gcodeConvert += convertGcode("G01", draw.xLast, draw.yLast);
             return gcodeLine;
         }
         private void drawArcCw(Grid main)

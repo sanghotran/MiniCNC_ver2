@@ -59,7 +59,7 @@ namespace MiniCNC_ver2
 
         // Data
         CNCMachine cnc = new CNCMachine();
-
+                
         // Chat box
         private ObservableCollection<ChatItem> PCchatItems = new ObservableCollection<ChatItem>();
         private ObservableCollection<ChatItem> MCUchatItems = new ObservableCollection<ChatItem>();
