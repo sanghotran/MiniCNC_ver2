@@ -216,32 +216,39 @@ namespace MiniCNC_ver2
             }
             catch
             {
-
+                WarningShow.Visibility = Visibility.Visible;
             }
         }
         // Disconnect
         private void disconnect()
         {
-            reader.DataReceivedEnabled = false;
-            reader.DataReceived -= (OnRxEndPointData);
-            reader.Dispose();
-            writer.Dispose();
-            if (myUsbDevice != null)
+            try
             {
-                if (myUsbDevice.IsOpen)
+                reader.DataReceivedEnabled = false;
+                reader.DataReceived -= (OnRxEndPointData);
+                reader.Dispose();
+                writer.Dispose();
+                if (myUsbDevice != null)
                 {
-                    IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
-                    if (!ReferenceEquals(wholeUsbDevice, null))
+                    if (myUsbDevice.IsOpen)
                     {
-                        wholeUsbDevice.ReleaseInterface(0);
+                        IUsbDevice wholeUsbDevice = myUsbDevice as IUsbDevice;
+                        if (!ReferenceEquals(wholeUsbDevice, null))
+                        {
+                            wholeUsbDevice.ReleaseInterface(0);
+                        }
+                        myUsbDevice.Close();
                     }
-                    myUsbDevice.Close();
+                    myUsbDevice = null;
+                    UsbDevice.Exit();
                 }
-                myUsbDevice = null;
-                UsbDevice.Exit();
+                IsConnected = false;
+                AutoCheckConnect(false);
             }
-            IsConnected = false;
-            AutoCheckConnect(false);
+            catch
+            {
+
+            }            
         }        
         // send data
         private void SendData(string input)
@@ -388,9 +395,12 @@ namespace MiniCNC_ver2
         private void PC_fileList_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
             if (PC_fileList.SelectedItem is FileItem selectedFile)
-            {                                
-                //string data = File.ReadAllText(selectedFile.FullName);
-                //string x = selectedFile.FullName;
+            {
+                MainShow.Children.Clear();
+                string data = File.ReadAllText(selectedFile.FullName);
+                cnc.gcode = data.Split('\n');
+                cnc.drawFromGcode(cnc.gcode, MainShow);
+                showPage(MainShow);                
             }
         }
         private void CNC_fileList_SelectionChaged(object sender, SelectionChangedEventArgs e)
