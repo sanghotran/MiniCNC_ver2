@@ -106,7 +106,6 @@ namespace MiniCNC_ver2
             gcodeLine.Y1 = maxCNCGrid - draw.yLast * pixelCNC;
             gcodeLine.X2 = xNext * pixelCNC;
             gcodeLine.Y2 = maxCNCGrid - yNext * pixelCNC;
-            //CNCGrid.Children.Add(gcodeLine);
             draw.xLast = xNext;
             draw.yLast = yNext;
             gcodeConvert += convertGcode("G01", draw.xLast, draw.yLast);

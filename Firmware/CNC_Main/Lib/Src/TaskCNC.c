@@ -3,6 +3,7 @@
 void InitCNC(CNC* cnc)
 {
   cnc->enbCheckConnect = false;
+  cnc->mode = 0; // mode disconect with GUI
 
   cnc->btnOK = GPIO_PIN_4;
   cnc->btnExit = GPIO_PIN_5;
@@ -31,10 +32,12 @@ void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSem
           {
           case '0': // connected
             cnc->enbCheckConnect = true;
+            cnc->mode = 1; // mode connect with GUI
             sprintf(cnc->DataSendToGUI, "C CONNECTED ");
             break;
           case '1': // disconnected
             cnc->enbCheckConnect = false;
+            cnc->mode = 0; // mode disconect with GUI
             sprintf(cnc->DataSendToGUI, "C DISCONNECTED ");
             break;
           default:

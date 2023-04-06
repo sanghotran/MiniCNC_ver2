@@ -111,6 +111,7 @@ int main(void)
   MX_USART1_UART_Init();
   MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
+  InitCNC(&cnc);
 
   /* USER CODE END 2 */
 
@@ -329,7 +330,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PA4 */
   GPIO_InitStruct.Pin = GPIO_PIN_4;
@@ -375,11 +377,14 @@ void StartCheckUSBConnect(void const *argument)
   for(;;)
     {
       osDelay(1000);
-      if(cnc.enbCheckConnect)
+      if(cnc.mode == 1)
       {
         if(!(hUsbDeviceFS.dev_state == USBD_STATE_CONFIGURED))
         {
-          // alarm when error connect
+          // alarm when error connect 
+          HAL_GPIO_WritePin(GPIOB, cnc.Led, GPIO_PIN_RESET);
+          HAL_GPIO_WritePin(GPIOB, cnc.Buzzer, GPIO_PIN_SET);
+          cnc.mode = 3; // mode error connect with GUI
           cnc.enbCheckConnect = false;
         }    
       }      

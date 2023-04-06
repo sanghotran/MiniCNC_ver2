@@ -21,6 +21,7 @@ typedef struct
     char DataSendToGUI[65];
 
     bool enbCheckConnect;
+    uint8_t mode;
 
 
     char Send[10];
