@@ -56,6 +56,9 @@ osSemaphoreId xSemaphoreUSB;
 osThreadId ReceiveDataFromGUITaksHandle;
 osThreadId CheckUSBConnectTaskHandle;
 
+osSemaphoreId xSemaphoreBtn;
+osThreadId ProcessBtnPressTaskHandle;
+
 CNC cnc;
 /* USER CODE END PV */
 
@@ -71,10 +74,36 @@ void StartDefaultTask(void const * argument);
 void StartReceiveDataFromGUI(void const *argument);
 void StartCheckUSBConnect(void const *argument);
 
+void StartProcessBtnPress(void const *argument);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
+{
+  /* Prevent unused argument(s) compilation warning */
+  UNUSED(GPIO_Pin);
+  if(GPIO_Pin == cnc.btnOK)
+  {
+    cnc.btnPress = 1;
+  }
+  else if(GPIO_Pin == cnc.btnExit)
+  {
+    cnc.btnPress = 2;
+  }
+  else if(GPIO_Pin == cnc.btnUp)
+  {
+    cnc.btnPress = 3;
+  }
+  else if(GPIO_Pin == cnc.btnDown)
+  {
+    cnc.btnPress = 4;
+  }
+  BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+  osSemaphoreRelease(xSemaphoreBtn);
+  portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+}
 
 /* USER CODE END 0 */
 
@@ -109,7 +138,6 @@ int main(void)
   MX_I2C1_Init();
   MX_SPI1_Init();
   MX_USART1_UART_Init();
-  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 2 */
   InitCNC(&cnc);
 
@@ -123,6 +151,9 @@ int main(void)
   /* add semaphores, ... */
   osSemaphoreDef(semaphore);
   xSemaphoreUSB = osSemaphoreCreate(osSemaphore(semaphore), 1); // giá trị ban đầu của semaphore không được là 0
+
+  //osSemaphoreDef(semaphore);
+  xSemaphoreBtn = osSemaphoreCreate(osSemaphore(semaphore),1);
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
@@ -146,6 +177,9 @@ int main(void)
   osThreadDef(CheckUSBConnectTask, StartCheckUSBConnect, osPriorityAboveNormal, 0, 128);
   CheckUSBConnectTaskHandle = osThreadCreate(osThread(CheckUSBConnectTask), NULL);
 
+
+  osThreadDef(ProcessBtnPressTask, StartProcessBtnPress, osPriorityAboveNormal, 0, 128);
+  ProcessBtnPressTaskHandle = osThreadCreate(osThread(ProcessBtnPressTask), NULL);
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -157,6 +191,7 @@ int main(void)
   while (1)
   {
     /* USER CODE END WHILE */
+
     /* USER CODE BEGIN 3 */
   }
   /* USER CODE END 3 */
@@ -330,8 +365,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PA4 */
   GPIO_InitStruct.Pin = GPIO_PIN_4;
@@ -360,8 +394,17 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_Init(GPIOB, &GPIO_InitStruct);
 
   /* EXTI interrupt init*/
-  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_SetPriority(EXTI3_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI3_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI4_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI4_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 5, 0);
   HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
+
+  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 5, 0);
+  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
 
 }
 
@@ -385,10 +428,14 @@ void StartCheckUSBConnect(void const *argument)
           HAL_GPIO_WritePin(GPIOB, cnc.Led, GPIO_PIN_RESET);
           HAL_GPIO_WritePin(GPIOB, cnc.Buzzer, GPIO_PIN_SET);
           cnc.mode = 3; // mode error connect with GUI
-          cnc.enbCheckConnect = false;
         }    
       }      
     } 
+}
+
+void StartProcessBtnPress(void const *argument)
+{
+  ProcessBtnPress(&cnc, xSemaphoreBtn);
 }
 
 /* USER CODE END 4 */
@@ -403,7 +450,7 @@ void StartCheckUSBConnect(void const *argument)
 void StartDefaultTask(void const * argument)
 {
   /* init code for USB_DEVICE */
-  //MX_USB_DEVICE_Init();
+  MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
   for(;;)

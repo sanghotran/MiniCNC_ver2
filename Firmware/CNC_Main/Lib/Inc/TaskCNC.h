@@ -14,13 +14,14 @@ typedef struct
     uint16_t btnUp;
     uint16_t btnDown;
 
+    uint8_t btnPress;
+
     uint16_t Led;
     uint16_t Buzzer;
 
     char DataReceiveFromGUI[64];
     char DataSendToGUI[65];
 
-    bool enbCheckConnect;
     uint8_t mode;
 
 
@@ -32,6 +33,8 @@ typedef struct
 } CNC;
 
 void InitCNC(CNC*);
+
+void ProcessBtnPress(CNC*, osSemaphoreId);
 
 void ReceiveDataFromGUI(CNC*,USBD_HandleTypeDef*, osSemaphoreId);
 

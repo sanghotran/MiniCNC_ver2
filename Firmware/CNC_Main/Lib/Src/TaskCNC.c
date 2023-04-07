@@ -2,7 +2,6 @@
 
 void InitCNC(CNC* cnc)
 {
-  cnc->enbCheckConnect = false;
   cnc->mode = 0; // mode disconect with GUI
 
   cnc->btnOK = GPIO_PIN_4;
@@ -14,6 +13,34 @@ void InitCNC(CNC* cnc)
   cnc->Buzzer = GPIO_PIN_1; 
 
     
+}
+
+void ProcessBtnPress(CNC *cnc, osSemaphoreId xSemaphore)
+{
+  if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
+  {
+    for(;;)
+    {
+      if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
+      {
+        switch (cnc->mode)
+        {
+        case 3: // mode error connect
+          if(cnc-> btnPress == 1)// press OK button
+          {
+            HAL_GPIO_WritePin(GPIOB, cnc->Led, GPIO_PIN_SET);
+            HAL_GPIO_WritePin(GPIOB, cnc->Buzzer, GPIO_PIN_RESET);
+            cnc->mode = 0;
+          }
+          break;
+        
+        default:
+          break;
+        }
+
+      }
+    }
+  }
 }
 
 void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSemaphore)
@@ -31,12 +58,10 @@ void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSem
           switch (cnc->DataReceiveFromGUI[2])
           {
           case '0': // connected
-            cnc->enbCheckConnect = true;
             cnc->mode = 1; // mode connect with GUI
             sprintf(cnc->DataSendToGUI, "C CONNECTED ");
             break;
           case '1': // disconnected
-            cnc->enbCheckConnect = false;
             cnc->mode = 0; // mode disconect with GUI
             sprintf(cnc->DataSendToGUI, "C DISCONNECTED ");
             break;
