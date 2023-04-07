@@ -1,0 +1,158 @@
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cczixjML.s 			page 1
+
+
+   1              		.cpu cortex-m3
+   2              		.arch armv7-m
+   3              		.fpu softvfp
+   4              		.eabi_attribute 20, 1
+   5              		.eabi_attribute 21, 1
+   6              		.eabi_attribute 23, 3
+   7              		.eabi_attribute 24, 1
+   8              		.eabi_attribute 25, 1
+   9              		.eabi_attribute 26, 1
+  10              		.eabi_attribute 30, 1
+  11              		.eabi_attribute 34, 1
+  12              		.eabi_attribute 18, 4
+  13              		.file	"MyMath.c"
+  14              		.text
+  15              	.Ltext0:
+  16              		.cfi_sections	.debug_frame
+  17              		.section	.text.int_abs,"ax",%progbits
+  18              		.align	1
+  19              		.global	int_abs
+  20              		.syntax unified
+  21              		.thumb
+  22              		.thumb_func
+  24              	int_abs:
+  25              	.LVL0:
+  26              	.LFB0:
+  27              		.file 1 "Lib/Src/MyMath.c"
+   1:Lib/Src/MyMath.c **** #include "MyMath.h"
+   2:Lib/Src/MyMath.c **** 
+   3:Lib/Src/MyMath.c **** int int_abs(int number)
+   4:Lib/Src/MyMath.c **** {
+  28              		.loc 1 4 1 view -0
+  29              		.cfi_startproc
+  30              		@ args = 0, pretend = 0, frame = 0
+  31              		@ frame_needed = 0, uses_anonymous_args = 0
+  32              		@ link register save eliminated.
+   5:Lib/Src/MyMath.c **** 	if (number < 0)
+  33              		.loc 1 5 2 view .LVU1
+  34              		.loc 1 5 5 is_stmt 0 view .LVU2
+  35 0000 0028     		cmp	r0, #0
+  36              		.loc 1 5 5 view .LVU3
+  37 0002 00DB     		blt	.L3
+  38              	.L2:
+   6:Lib/Src/MyMath.c **** 		number = -number;
+   7:Lib/Src/MyMath.c **** 	return number;
+  39              		.loc 1 7 2 is_stmt 1 view .LVU4
+   8:Lib/Src/MyMath.c **** }
+  40              		.loc 1 8 1 is_stmt 0 view .LVU5
+  41 0004 7047     		bx	lr
+  42              	.L3:
+   6:Lib/Src/MyMath.c **** 		number = -number;
+  43              		.loc 1 6 3 is_stmt 1 view .LVU6
+   6:Lib/Src/MyMath.c **** 		number = -number;
+  44              		.loc 1 6 10 is_stmt 0 view .LVU7
+  45 0006 4042     		rsbs	r0, r0, #0
+  46              	.LVL1:
+   6:Lib/Src/MyMath.c **** 		number = -number;
+  47              		.loc 1 6 10 view .LVU8
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cczixjML.s 			page 2
+
+
+  48 0008 FCE7     		b	.L2
+  49              		.cfi_endproc
+  50              	.LFE0:
+  52              		.section	.text.int_min,"ax",%progbits
+  53              		.align	1
+  54              		.global	int_min
+  55              		.syntax unified
+  56              		.thumb
+  57              		.thumb_func
+  59              	int_min:
+  60              	.LVL2:
+  61              	.LFB1:
+   9:Lib/Src/MyMath.c **** 
+  10:Lib/Src/MyMath.c **** int int_min(int number1, int number2)
+  11:Lib/Src/MyMath.c **** {
+  62              		.loc 1 11 1 is_stmt 1 view -0
+  63              		.cfi_startproc
+  64              		@ args = 0, pretend = 0, frame = 0
+  65              		@ frame_needed = 0, uses_anonymous_args = 0
+  66              		@ link register save eliminated.
+  67              		.loc 1 11 1 is_stmt 0 view .LVU10
+  68 0000 0346     		mov	r3, r0
+  69 0002 0846     		mov	r0, r1
+  70              	.LVL3:
+  12:Lib/Src/MyMath.c **** 	if(number1 < number2)
+  71              		.loc 1 12 2 is_stmt 1 view .LVU11
+  72              		.loc 1 12 4 is_stmt 0 view .LVU12
+  73 0004 8B42     		cmp	r3, r1
+  74 0006 00DA     		bge	.L5
+  13:Lib/Src/MyMath.c **** 		return number1;
+  75              		.loc 1 13 10 view .LVU13
+  76 0008 1846     		mov	r0, r3
+  77              	.L5:
+  14:Lib/Src/MyMath.c **** 	else
+  15:Lib/Src/MyMath.c **** 		return number2;
+  16:Lib/Src/MyMath.c **** }
+  78              		.loc 1 16 1 view .LVU14
+  79 000a 7047     		bx	lr
+  80              		.cfi_endproc
+  81              	.LFE1:
+  83              		.section	.text.int_max,"ax",%progbits
+  84              		.align	1
+  85              		.global	int_max
+  86              		.syntax unified
+  87              		.thumb
+  88              		.thumb_func
+  90              	int_max:
+  91              	.LVL4:
+  92              	.LFB2:
+  17:Lib/Src/MyMath.c **** 
+  18:Lib/Src/MyMath.c **** int int_max(int number1, int number2)
+  19:Lib/Src/MyMath.c **** {
+  93              		.loc 1 19 1 is_stmt 1 view -0
+  94              		.cfi_startproc
+  95              		@ args = 0, pretend = 0, frame = 0
+  96              		@ frame_needed = 0, uses_anonymous_args = 0
+  97              		@ link register save eliminated.
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cczixjML.s 			page 3
+
+
+  98              		.loc 1 19 1 is_stmt 0 view .LVU16
+  99 0000 0346     		mov	r3, r0
+ 100 0002 0846     		mov	r0, r1
+ 101              	.LVL5:
+  20:Lib/Src/MyMath.c **** 	if(number1 > number2)
+ 102              		.loc 1 20 2 is_stmt 1 view .LVU17
+ 103              		.loc 1 20 4 is_stmt 0 view .LVU18
+ 104 0004 8B42     		cmp	r3, r1
+ 105 0006 00DD     		ble	.L7
+  21:Lib/Src/MyMath.c **** 		return number1;
+ 106              		.loc 1 21 10 view .LVU19
+ 107 0008 1846     		mov	r0, r3
+ 108              	.L7:
+  22:Lib/Src/MyMath.c **** 	else
+  23:Lib/Src/MyMath.c **** 		return number2;
+  24:Lib/Src/MyMath.c **** }
+ 109              		.loc 1 24 1 view .LVU20
+ 110 000a 7047     		bx	lr
+ 111              		.cfi_endproc
+ 112              	.LFE2:
+ 114              		.text
+ 115              	.Letext0:
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cczixjML.s 			page 4
+
+
+DEFINED SYMBOLS
+                            *ABS*:00000000 MyMath.c
+C:\Users\Chicken\AppData\Local\Temp\cczixjML.s:18     .text.int_abs:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cczixjML.s:24     .text.int_abs:00000000 int_abs
+C:\Users\Chicken\AppData\Local\Temp\cczixjML.s:53     .text.int_min:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cczixjML.s:59     .text.int_min:00000000 int_min
+C:\Users\Chicken\AppData\Local\Temp\cczixjML.s:84     .text.int_max:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cczixjML.s:90     .text.int_max:00000000 int_max
+
+NO UNDEFINED SYMBOLS
