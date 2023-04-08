@@ -224,6 +224,7 @@ namespace MiniCNC_ver2
         {
             try
             {
+                if (myUsbDevice == null) throw new Exception("Device Not Found.");
                 reader.DataReceivedEnabled = false;
                 reader.DataReceived -= (OnRxEndPointData);
                 reader.Dispose();
