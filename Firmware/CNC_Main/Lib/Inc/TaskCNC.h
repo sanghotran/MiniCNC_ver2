@@ -22,6 +22,7 @@ typedef struct
     char DataReceiveFromGUI[64];
     char DataSendToGUI[65];
 
+    uint8_t state;
     uint8_t mode;
 
 
@@ -36,7 +37,9 @@ void InitCNC(CNC*);
 
 void ProcessBtnPress(CNC*, osSemaphoreId);
 
-void ReceiveDataFromGUI(CNC*,USBD_HandleTypeDef*, osSemaphoreId);
+void ProcessMode(CNC*, osSemaphoreId);
+
+void ReceiveDataFromGUI(CNC*,USBD_HandleTypeDef*, osSemaphoreId, osSemaphoreId);
 
 void ReceiveDataFromCNC(void);
 

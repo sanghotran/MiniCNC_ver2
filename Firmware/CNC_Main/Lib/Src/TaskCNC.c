@@ -2,7 +2,8 @@
 
 void InitCNC(CNC* cnc)
 {
-  cnc->mode = 0; // mode disconect with GUI
+  cnc->state = 0; // state disconect with GUI
+  cnc->mode = 0; // mode idle
 
   cnc->btnOK = GPIO_PIN_4;
   cnc->btnExit = GPIO_PIN_5;
@@ -23,14 +24,14 @@ void ProcessBtnPress(CNC *cnc, osSemaphoreId xSemaphore)
     {
       if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
       {
-        switch (cnc->mode)
+        switch (cnc->state)
         {
-        case 3: // mode error connect
+        case 2: // mode error connect
           if(cnc-> btnPress == 1)// press OK button
           {
             HAL_GPIO_WritePin(GPIOB, cnc->Led, GPIO_PIN_SET);
             HAL_GPIO_WritePin(GPIOB, cnc->Buzzer, GPIO_PIN_RESET);
-            cnc->mode = 0;
+            cnc->state = 0;
           }
           break;
         
@@ -43,7 +44,30 @@ void ProcessBtnPress(CNC *cnc, osSemaphoreId xSemaphore)
   }
 }
 
-void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSemaphore)
+void ProcessMode(CNC *cnc, osSemaphoreId xSemaphore)
+{
+  if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
+  {
+    for(;;)
+    {
+      if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
+      {
+        switch (cnc->mode)
+        {
+        case 3: // mode home
+          cnc->state = 1; // mode connect with GUI
+          sprintf(cnc->DataSendToGUI, "C CONNECTED ");
+          break;
+        
+        default:
+          break;
+        }
+      }
+    }
+  }
+}
+
+void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSemaphore, osSemaphoreId xSemaphoreMode)
 {
   // vì lúc đầu semaphore không được là 0 nên phải lấy đi 1 ngay chỗ này để không chạy func này khi mới vào
   if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
@@ -58,13 +82,28 @@ void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSem
           switch (cnc->DataReceiveFromGUI[2])
           {
           case '0': // connected
-            cnc->mode = 1; // mode connect with GUI
+            cnc->state = 1; // mode connect with GUI
             sprintf(cnc->DataSendToGUI, "C CONNECTED ");
             break;
+
           case '1': // disconnected
-            cnc->mode = 0; // mode disconect with GUI
+            cnc->state = 0; // mode disconect with GUI
             sprintf(cnc->DataSendToGUI, "C DISCONNECTED ");
             break;
+
+          case '3': // home
+            cnc->mode = 3; // mode home
+            osSemaphoreRelease(xSemaphoreMode);
+            break;
+
+          case '4': // start
+            cnc->mode = 4; // mode running
+            break;
+          
+          case '5': // receive data
+            cnc->mode = 5; // mode receive data
+            break;
+
           default:
             break;
           }

@@ -59,6 +59,9 @@ osThreadId CheckUSBConnectTaskHandle;
 osSemaphoreId xSemaphoreBtn;
 osThreadId ProcessBtnPressTaskHandle;
 
+osSemaphoreId xSemaphoreMode;
+osThreadId ProcessModeTaskHandle;
+
 CNC cnc;
 /* USER CODE END PV */
 
@@ -75,6 +78,8 @@ void StartReceiveDataFromGUI(void const *argument);
 void StartCheckUSBConnect(void const *argument);
 
 void StartProcessBtnPress(void const *argument);
+
+void StartProcessMode(void const *argument);
 
 /* USER CODE END PFP */
 
@@ -152,8 +157,9 @@ int main(void)
   osSemaphoreDef(semaphore);
   xSemaphoreUSB = osSemaphoreCreate(osSemaphore(semaphore), 1); // giá trị ban đầu của semaphore không được là 0
 
-  //osSemaphoreDef(semaphore);
-  xSemaphoreBtn = osSemaphoreCreate(osSemaphore(semaphore),1);
+  xSemaphoreBtn = osSemaphoreCreate(osSemaphore(semaphore), 1);
+
+  xSemaphoreMode = osSemaphoreCreate(osSemaphore(semaphore), 1);
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
@@ -180,6 +186,9 @@ int main(void)
 
   osThreadDef(ProcessBtnPressTask, StartProcessBtnPress, osPriorityAboveNormal, 0, 128);
   ProcessBtnPressTaskHandle = osThreadCreate(osThread(ProcessBtnPressTask), NULL);
+
+  osThreadDef(ProcessModeTask, StartProcessMode, osPriorityNormal, 0 , 128);
+  ProcessModeTaskHandle = osThreadCreate(osThread(ProcessModeTask), NULL);
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -365,7 +374,8 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
 
   /*Configure GPIO pin : PA4 */
   GPIO_InitStruct.Pin = GPIO_PIN_4;
@@ -412,7 +422,7 @@ static void MX_GPIO_Init(void)
 
 void StartReceiveDataFromGUI(void const *argument)
 {
-  ReceiveDataFromGUI(&cnc,&hUsbDeviceFS, xSemaphoreUSB); 
+  ReceiveDataFromGUI(&cnc,&hUsbDeviceFS, xSemaphoreUSB, xSemaphoreMode); 
 }
 
 void StartCheckUSBConnect(void const *argument)
@@ -420,14 +430,14 @@ void StartCheckUSBConnect(void const *argument)
   for(;;)
     {
       osDelay(1000);
-      if(cnc.mode == 1)
+      if(cnc.state == 1) 
       {
         if(!(hUsbDeviceFS.dev_state == USBD_STATE_CONFIGURED))
         {
           // alarm when error connect 
           HAL_GPIO_WritePin(GPIOB, cnc.Led, GPIO_PIN_RESET);
           HAL_GPIO_WritePin(GPIOB, cnc.Buzzer, GPIO_PIN_SET);
-          cnc.mode = 3; // mode error connect with GUI
+          cnc.state = 2; // mode error connect with GUI
         }    
       }      
     } 
@@ -436,6 +446,11 @@ void StartCheckUSBConnect(void const *argument)
 void StartProcessBtnPress(void const *argument)
 {
   ProcessBtnPress(&cnc, xSemaphoreBtn);
+}
+
+void StartProcessMode(void const *argument)
+{
+  ProcessMode(&cnc, xSemaphoreMode);
 }
 
 /* USER CODE END 4 */

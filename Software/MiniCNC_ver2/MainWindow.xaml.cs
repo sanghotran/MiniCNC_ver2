@@ -213,6 +213,7 @@ namespace MiniCNC_ver2
                 AutoCheckConnect(true);
                 SendData("C 0");// 0 is command connect
                 showMessage(PCchatItem, scrollviewPC, PCchatItems, "Let's connect with me");
+                cnc.State = 1;
             }
             catch
             {
@@ -245,6 +246,7 @@ namespace MiniCNC_ver2
                 }
                 IsConnected = false;
                 AutoCheckConnect(false);
+                cnc.State = 0;
             }
             catch
             {
@@ -332,6 +334,8 @@ namespace MiniCNC_ver2
             // only press when connect state
             if(cnc.State == 1)
             {
+                SendData("C 3");// 1 is command disconnect
+                showMessage(PCchatItem, scrollviewPC, PCchatItems, "Let's go to home");
 
             }
         }
@@ -359,6 +363,9 @@ namespace MiniCNC_ver2
             }
             else // ngắt kết nối
             {
+                // not press when disconnect state
+                if (cnc.State == 0)
+                    return;
                 SendData("C 1");// 1 is command disconnect
                 showMessage(PCchatItem, scrollviewPC, PCchatItems, "Let's disconnect with me");
             }
