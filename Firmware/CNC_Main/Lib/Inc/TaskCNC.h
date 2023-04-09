@@ -9,6 +9,16 @@
 
 typedef struct
 {
+    UART_HandleTypeDef *huart;
+    uint8_t SendToControl[10];
+    char Receive;
+    uint8_t index;
+    char ReceiveFromControl[10];
+} UART;
+
+
+typedef struct
+{
     uint16_t btnOK;
     uint16_t btnExit;
     uint16_t btnUp;
@@ -24,12 +34,8 @@ typedef struct
 
     uint8_t state;
     uint8_t mode;
-
-
-    char Send[10];
-    char Receive[10];
-
-
+   
+    UART uart;
 
 } CNC;
 

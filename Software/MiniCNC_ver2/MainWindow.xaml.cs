@@ -280,6 +280,9 @@ namespace MiniCNC_ver2
                             disconnect();
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Disconnected");
                             break;
+                        case "DOING":
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I am going to home");
+                            break;
                         default:
                             break;
                     }

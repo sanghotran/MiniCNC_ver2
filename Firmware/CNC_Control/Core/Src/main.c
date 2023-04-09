@@ -100,17 +100,17 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 
 void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
+  UNUSED(huart);
 	if(huart->Instance == huart2.Instance)
 	{
-		if(data.Receive != '\n') //line feed Ascii
+		if(data.Receive != '.') //line feed Ascii
 		{
 			data.ReceiveBuff[data.index++] = data.Receive; //Save data in Rxbuff
 		}
-		else if (data.Receive == '\n')
+		else if (data.Receive == '.')
 		{
 			data.index = 0;
-			ProcessData(&data, &x_axis, &y_axis, &z_axis, &Mode);
-	
+			ProcessData(&data, &x_axis, &y_axis, &z_axis, &Mode);	
 		}
 		HAL_UART_Receive_IT(&huart2, &data.Receive, 1);
 	}
@@ -223,6 +223,11 @@ int main(void)
     switch (Mode)
     {
     case 1: // mode Home
+
+      //sprintf(data.TransBuff, "H.");
+      //HAL_UART_Transmit(&huart2, data.TransBuff, sizeof(data.TransBuff), 100);
+      //Mode = 0;
+      //data.index = 0; // because data.index auto increase after Transmit so should set it = 0 at the end of function
       // goto x home
 			HOME(&x_axis);
 			
@@ -587,7 +592,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 115200;
+  huart2.Init.BaudRate = 9600;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;

@@ -1,4 +1,5 @@
 #include "MotorControl.h"
+#include "string.h"
 
 void ProcessData(DATA *data, AXIS *x_axis, AXIS *y_axis, AXIS *z_axis, uint8_t *mode)
 {

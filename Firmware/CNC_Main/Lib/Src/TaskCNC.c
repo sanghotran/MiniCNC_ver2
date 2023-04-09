@@ -13,7 +13,8 @@ void InitCNC(CNC* cnc)
   cnc->Led = GPIO_PIN_0;
   cnc->Buzzer = GPIO_PIN_1; 
 
-    
+  cnc->uart.index = 0;
+     
 }
 
 void ProcessBtnPress(CNC *cnc, osSemaphoreId xSemaphore)
@@ -55,10 +56,18 @@ void ProcessMode(CNC *cnc, osSemaphoreId xSemaphore)
         switch (cnc->mode)
         {
         case 3: // mode home
-          cnc->state = 1; // mode connect with GUI
-          sprintf(cnc->DataSendToGUI, "C CONNECTED ");
+          sprintf(cnc->uart.SendToControl, "H.");
+          HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 100);
+          break;
+
+        case 4: // mode running
+
           break;
         
+        case 5: // mode receive data
+
+          break;
+
         default:
           break;
         }
@@ -93,6 +102,7 @@ void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSem
 
           case '3': // home
             cnc->mode = 3; // mode home
+            sprintf(cnc->DataSendToGUI, "C DOING ");
             osSemaphoreRelease(xSemaphoreMode);
             break;
 

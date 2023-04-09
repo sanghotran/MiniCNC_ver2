@@ -52,13 +52,11 @@ typedef struct
 
 typedef struct
 {
-	char TransBuff[45];
-	char ReceiveBuff[127];
-	char Command[55];
-
 	char Receive;
 	uint8_t index;
 
+	char TransBuff[10];
+	char ReceiveBuff[10];
 	uint8_t temp;
 } DATA;
 
