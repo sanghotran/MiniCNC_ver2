@@ -49,9 +49,9 @@ UART_HandleTypeDef huart2;
 /* USER CODE BEGIN PV */
 
 DATA data;
-AXIS x_axis;
 AXIS y_axis;
 AXIS z_axis;
+AXIS x_axis;
 
 uint8_t Mode = 0;
 bool drill_status = false;
@@ -130,12 +130,12 @@ void axisInit()
 	y_axis.GPIO_DIR = GPIOB;
 	z_axis.GPIO_DIR = GPIOA;
 	
-	x_axis.PIN_DIR = GPIO_PIN_9;
-	y_axis.PIN_DIR = GPIO_PIN_8;
+	x_axis.PIN_DIR = GPIO_PIN_8;
+	y_axis.PIN_DIR = GPIO_PIN_9;
 	z_axis.PIN_DIR = GPIO_PIN_5;
 	
-	x_axis.CHANNEL = TIM_CHANNEL_4;
-	y_axis.CHANNEL = TIM_CHANNEL_3;
+	x_axis.CHANNEL = TIM_CHANNEL_3;
+	y_axis.CHANNEL = TIM_CHANNEL_4;
 	z_axis.CHANNEL = TIM_CHANNEL_2;
 	
 	x_axis.GPIO_HOME = GPIOA;
@@ -204,10 +204,7 @@ int main(void)
 	axisInit();
 
   // Start PWM
-	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
-	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
-	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
-	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_4);
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1|TIM_CHANNEL_2|TIM_CHANNEL_3|TIM_CHANNEL_4);
 	
 	// Start Encoder
 	HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_1 | TIM_CHANNEL_2);

@@ -9,7 +9,7 @@ void ProcessData(DATA *data, AXIS *x_axis, AXIS *y_axis, AXIS *z_axis, uint8_t *
 		x_axis->home = false;
 		y_axis->home = false;
 		z_axis->home = false;
-		*mode = 1; // mode goto home
+		*mode = 2; // mode goto home
 		break;
 	case 'G':
 		sscanf(data->ReceiveBuff, "G0%u X%f Y%f",data->temp, x_axis->next, y_axis->next);		
@@ -41,6 +41,7 @@ void PWM(AXIS *axis)
 		{
 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, 0);
 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+			axis->pwm = 0;
 		}
 	else if (pwm < 0)
 		{
@@ -106,7 +107,7 @@ void move(AXIS *axis, float pos)
 	if( axis->pid_process == false)
 	{
 		axis->setpoint = (int)(pos*axis->mm_pulse);
-	  axis->pid_process = true;
+	  	axis->pid_process = true;
 	}
 	PWM(axis);	
 	if( axis->finish)

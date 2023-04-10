@@ -22,6 +22,7 @@
 #include "stm32f1xx_it.h"
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
+#include "MyStruct.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -57,6 +58,15 @@
 /* External variables --------------------------------------------------------*/
 extern UART_HandleTypeDef huart2;
 /* USER CODE BEGIN EV */
+
+extern TIM_HandleTypeDef htim1;
+extern TIM_HandleTypeDef htim2;
+extern TIM_HandleTypeDef htim4;
+
+
+extern AXIS x_axis;
+extern AXIS y_axis;
+extern AXIS z_axis;
 
 /* USER CODE END EV */
 
@@ -183,6 +193,15 @@ void PendSV_Handler(void)
 void SysTick_Handler(void)
 {
   /* USER CODE BEGIN SysTick_IRQn 0 */
+  // PID X axis
+	sample(&x_axis);
+	
+	// PID Y axis
+	sample(&y_axis);
+	
+	// PID Z axis
+	sample(&z_axis);
+
 
   /* USER CODE END SysTick_IRQn 0 */
   HAL_IncTick();
