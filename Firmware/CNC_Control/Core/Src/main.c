@@ -48,13 +48,7 @@ UART_HandleTypeDef huart2;
 
 /* USER CODE BEGIN PV */
 
-DATA data;
-AXIS y_axis;
-AXIS z_axis;
-AXIS x_axis;
-
-uint8_t Mode = 0;
-bool drill_status = false;
+CNC cnc;
 
 /* USER CODE END PV */
 
@@ -76,25 +70,25 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   UNUSED(GPIO_Pin);
 	// X Home
-	if( GPIO_Pin == x_axis.PIN_HOME)
+	if( GPIO_Pin == cnc.x_axis.PIN_HOME)
 	{
-		x_axis.pwm = 0;
-		PWM(&x_axis);
-		x_axis.home = true;
+		cnc.x_axis.pwm = 0;
+		PWM(&cnc.x_axis);
+		cnc.x_axis.home = true;
 	}
 	// Y Home
-	if( GPIO_Pin == y_axis.PIN_HOME)
+	if( GPIO_Pin == cnc.y_axis.PIN_HOME)
 	{
-		y_axis.pwm = 0;
-		PWM(&y_axis);
-		y_axis.home = true;
+		cnc.y_axis.pwm = 0;
+		PWM(&cnc.y_axis);
+		cnc.y_axis.home = true;
 	}
 	// Z Home
-	if( GPIO_Pin == z_axis.PIN_HOME)
+	if( GPIO_Pin == cnc.z_axis.PIN_HOME)
 	{
-		z_axis.pwm = 0;
-		PWM(&z_axis);
-		z_axis.home = true;
+		cnc.z_axis.pwm = 0;
+		PWM(&cnc.z_axis);
+		cnc.z_axis.home = true;
 	}
 }
 
@@ -103,64 +97,64 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   UNUSED(huart);
 	if(huart->Instance == huart2.Instance)
 	{
-		if(data.Receive != '.') //line feed Ascii
+		if(cnc.data.Receive != '.') //line feed Ascii
 		{
-			data.ReceiveBuff[data.index++] = data.Receive; //Save data in Rxbuff
+			cnc.data.ReceiveBuff[cnc.data.index++] = cnc.data.Receive; //Save data in Rxbuff
 		}
-		else if (data.Receive == '.')
+		else if (cnc.data.Receive == '.')
 		{
-			data.index = 0;
-			ProcessData(&data, &x_axis, &y_axis, &z_axis, &Mode);	
+			cnc.data.index = 0;
+			ProcessData(&cnc);	
 		}
-		HAL_UART_Receive_IT(&huart2, &data.Receive, 1);
+		HAL_UART_Receive_IT(&huart2, &cnc.data.Receive, 1);
 	}
 }
 
 void axisInit()
 {
-	x_axis.htim_motor = &htim3;
-	y_axis.htim_motor = &htim3;
-	z_axis.htim_motor = &htim3;
+	cnc.x_axis.htim_motor = &htim3;
+	cnc.y_axis.htim_motor = &htim3;
+	cnc.z_axis.htim_motor = &htim3;
 	
-	x_axis.htim_enc = &htim4;
-	y_axis.htim_enc = &htim2;
-	z_axis.htim_enc = &htim1;
+	cnc.x_axis.htim_enc = &htim4;
+	cnc.y_axis.htim_enc = &htim2;
+	cnc.z_axis.htim_enc = &htim1;
 	
-	x_axis.GPIO_DIR = GPIOB;
-	y_axis.GPIO_DIR = GPIOB;
-	z_axis.GPIO_DIR = GPIOA;
+	cnc.x_axis.GPIO_DIR = GPIOB;
+	cnc.y_axis.GPIO_DIR = GPIOB;
+	cnc.z_axis.GPIO_DIR = GPIOA;
 	
-	x_axis.PIN_DIR = GPIO_PIN_8;
-	y_axis.PIN_DIR = GPIO_PIN_9;
-	z_axis.PIN_DIR = GPIO_PIN_5;
+	cnc.x_axis.PIN_DIR = GPIO_PIN_8;
+	cnc.y_axis.PIN_DIR = GPIO_PIN_9;
+	cnc.z_axis.PIN_DIR = GPIO_PIN_5;
 	
-	x_axis.CHANNEL = TIM_CHANNEL_3;
-	y_axis.CHANNEL = TIM_CHANNEL_4;
-	z_axis.CHANNEL = TIM_CHANNEL_2;
+	cnc.x_axis.CHANNEL = TIM_CHANNEL_3;
+	cnc.y_axis.CHANNEL = TIM_CHANNEL_4;
+	cnc.z_axis.CHANNEL = TIM_CHANNEL_2;
 	
-	x_axis.GPIO_HOME = GPIOA;
-	y_axis.GPIO_HOME = GPIOA;
-	z_axis.GPIO_HOME = GPIOA;
+	cnc.x_axis.GPIO_HOME = GPIOA;
+	cnc.y_axis.GPIO_HOME = GPIOA;
+	cnc.z_axis.GPIO_HOME = GPIOA;
 	
-	x_axis.PIN_HOME = GPIO_PIN_12;
-	y_axis.PIN_HOME = GPIO_PIN_11;
-	z_axis.PIN_HOME = GPIO_PIN_10;
+	cnc.x_axis.PIN_HOME = GPIO_PIN_12;
+	cnc.y_axis.PIN_HOME = GPIO_PIN_11;
+	cnc.z_axis.PIN_HOME = GPIO_PIN_10;
 	
-	x_axis.Kp = 2;
-	y_axis.Kp = 20;
-	z_axis.Kp = 0.7;
+	cnc.x_axis.Kp = 2;
+	cnc.y_axis.Kp = 20;
+	cnc.z_axis.Kp = 0.7;
 	
-	x_axis.Ki = 0.0001;
-	y_axis.Ki = 0.0001;
-	z_axis.Ki = 0.0001;
+	cnc.x_axis.Ki = 0.0001;
+	cnc.y_axis.Ki = 0.0001;
+	cnc.z_axis.Ki = 0.0001;
 	
-	x_axis.Kd = 0.15;
-	y_axis.Kd = 0.2;
-	z_axis.Kd = 0.02;
+	cnc.x_axis.Kd = 0.15;
+	cnc.y_axis.Kd = 0.2;
+	cnc.z_axis.Kd = 0.02;
 	
-	x_axis.mm_pulse = 249.8886;//142.8571;
-	y_axis.mm_pulse = 495.1475;//333.3333;
-	z_axis.mm_pulse = 500;
+	cnc.x_axis.mm_pulse = 249.8886;//142.8571;
+	cnc.y_axis.mm_pulse = 495.1475;//333.3333;
+	cnc.z_axis.mm_pulse = 500;
 }
 /* USER CODE END 0 */
 
@@ -198,7 +192,7 @@ int main(void)
   MX_TIM4_Init();
   MX_USART2_UART_Init();
   /* USER CODE BEGIN 2 */
-  HAL_UART_Receive_IT(&huart2, &data.Receive, 1);
+  HAL_UART_Receive_IT(&huart2, &cnc.data.Receive, 1);
 
   // Init axis
 	axisInit();
@@ -217,7 +211,7 @@ int main(void)
   /* USER CODE BEGIN WHILE */
   while (1)
   {
-    switch (Mode)
+    switch (cnc.Mode)
     {
     case 1: // mode Home
 
@@ -226,84 +220,84 @@ int main(void)
       //Mode = 0;
       //data.index = 0; // because data.index auto increase after Transmit so should set it = 0 at the end of function
       // goto x home
-			HOME(&x_axis);
+			HOME(&cnc.x_axis);
 			
 			// goto y home
-			HOME(&y_axis);
+			HOME(&cnc.y_axis);
 			
 			// goto z home
-			HOME(&z_axis);
+			HOME(&cnc.z_axis);
 			
-			if( x_axis.home && y_axis.home && z_axis.home)
+			if( cnc.x_axis.home && cnc.y_axis.home && cnc.z_axis.home)
 			{
-				x_axis.htim_enc->Instance->CNT = 0;
-				y_axis.htim_enc->Instance->CNT = 0;
-				z_axis.htim_enc->Instance->CNT = 0;
+				cnc.x_axis.htim_enc->Instance->CNT = 0;
+				cnc.y_axis.htim_enc->Instance->CNT = 0;
+				cnc.z_axis.htim_enc->Instance->CNT = 0;
 				
-				x_axis.pos = 0;
-				y_axis.pos = 0;
-				z_axis.pos = 0;
+				cnc.x_axis.pos = 0;
+				cnc.y_axis.pos = 0;
+				cnc.z_axis.pos = 0;
 				
-			  Mode = 2; // to protect switch, goto home 1cm mode				
+			  cnc.Mode = 2; // to protect switch, goto home 1cm mode				
 			}
       break;
 
     case 2: // mode Home 1cm
-      move(&x_axis, 10);
-			move(&y_axis, 10);
-			move(&z_axis, 10);
-			if( x_axis.finish && y_axis.finish && z_axis.finish)
+      move(&cnc.x_axis, 10);
+			move(&cnc.y_axis, 10);
+			move(&cnc.z_axis, 10);
+			if( cnc.x_axis.finish && cnc.y_axis.finish && cnc.z_axis.finish)
 			{
-				x_axis.finish = false;
-				y_axis.finish = false;
-				z_axis.finish = false;
+				cnc.x_axis.finish = false;
+				cnc.y_axis.finish = false;
+				cnc.z_axis.finish = false;
 
-				x_axis.htim_enc->Instance->CNT = 0;
-				y_axis.htim_enc->Instance->CNT = 0;
-				z_axis.htim_enc->Instance->CNT = 0;
+				cnc.x_axis.htim_enc->Instance->CNT = 0;
+				cnc.y_axis.htim_enc->Instance->CNT = 0;
+				cnc.z_axis.htim_enc->Instance->CNT = 0;
 				
-				x_axis.pos = 0;
-				y_axis.pos = 0;
-				z_axis.pos = 0;				
+				cnc.x_axis.pos = 0;
+				cnc.y_axis.pos = 0;
+				cnc.z_axis.pos = 0;				
 			
-				Mode = 0;
+				cnc.Mode = 0;
 			}
       break;
 
     case 3: // check drill
-      if(drill_status != z_axis.drill)
+      if(cnc.drill_status != cnc.drill_enb)
 			{
-				if(z_axis.drill)
-					z_axis.next = 1;//thickness;
+				if(cnc.drill_enb)
+					cnc.z_axis.next = 1;//thickness;
 				else
-					z_axis.next = 0;					
-				while(!z_axis.finish)
+					cnc.z_axis.next = 0;					
+				while(!cnc.z_axis.finish)
 				{
-					move(&z_axis, z_axis.next);
+					move(&cnc.z_axis, cnc.z_axis.next);
 				}
-				z_axis.finish = false;
-				drill_status = z_axis.drill;
+				cnc.z_axis.finish = false;
+				cnc.drill_status = cnc.drill_enb;
 			}
-      if(z_axis.drill)
-        Mode = 5; // mode G01
+      if(cnc.drill_enb)
+        cnc.Mode = 5; // mode G01
       else
-        Mode = 4; // mode G00      
+        cnc.Mode = 4; // mode G00      
       break;
 
     case 4: // mode G00
-      while(!(x_axis.finish && y_axis.finish))
+      while(!(cnc.x_axis.finish && cnc.y_axis.finish))
 			{
-				move(&x_axis, x_axis.next);
-				move(&y_axis, y_axis.next);	
+				move(&cnc.x_axis, cnc.x_axis.next);
+				move(&cnc.y_axis, cnc.y_axis.next);	
 			}
-			x_axis.finish = false;
-			y_axis.finish = false;
-			x_axis.last = x_axis.next;
-			y_axis.last = y_axis.next;
+			cnc.x_axis.finish = false;
+			cnc.y_axis.finish = false;
+			cnc.x_axis.last = cnc.x_axis.next;
+			cnc.y_axis.last = cnc.y_axis.next;
       break;
 
     case 5: // mode G01
-      drawLine(&x_axis, &y_axis);
+      drawLine(&cnc.x_axis, &cnc.y_axis);
       break;
 
     default:

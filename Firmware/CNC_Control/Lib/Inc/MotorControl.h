@@ -24,7 +24,7 @@
 	
 #define LINE_MAX 2 // max line lengh (mm) when draw circle
 
-void ProcessData(DATA*, AXIS*, AXIS*, AXIS*, uint8_t*);
+void ProcessData(CNC*);
 
 void PWM(AXIS *axis);
 
@@ -41,10 +41,6 @@ void move(AXIS *axis, float pos);
 void moveGcode(AXIS *pAxis);
 
 void drawLine(AXIS *pXAxis, AXIS *pYAxis);
-
-//void drawArcCw(AXIS *pXAxis, AXIS *pYAxis, float i, float j);
-
-//void drawArcCcw(AXIS *pXAxis, AXIS *pYAxis, float i, float j);
 
 
 

@@ -40,8 +40,6 @@ typedef struct
 	
 	bool pid_process;
 	
-	bool drill;
-	
 	bool home;
 	
 	float next;
@@ -59,6 +57,20 @@ typedef struct
 	char ReceiveBuff[10];
 	uint8_t temp;
 } DATA;
+
+
+typedef struct 
+{
+	AXIS x_axis;
+	AXIS y_axis;
+	AXIS z_axis;
+
+	uint8_t Mode;
+	bool drill_status;
+	bool drill_enb;
+
+	DATA data;
+} CNC;
 
 
 #endif

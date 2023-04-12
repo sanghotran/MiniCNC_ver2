@@ -1,23 +1,23 @@
 #include "MotorControl.h"
 #include "string.h"
 
-void ProcessData(DATA *data, AXIS *x_axis, AXIS *y_axis, AXIS *z_axis, uint8_t *mode)
+void ProcessData(CNC *cnc)
 {
-	switch (data->ReceiveBuff[0])
+	switch (cnc->data.ReceiveBuff[0])
 	{
 	case 'H':
-		x_axis->home = false;
-		y_axis->home = false;
-		z_axis->home = false;
-		*mode = 2; // mode goto home
+		cnc->x_axis.home = false;
+		cnc->y_axis.home = false;
+		cnc->z_axis.home = false;
+		cnc->Mode = 2; // mode goto home
 		break;
 	case 'G':
-		sscanf(data->ReceiveBuff, "G0%u X%f Y%f",data->temp, x_axis->next, y_axis->next);		
-		if(data->temp == 1)
-			z_axis->drill =true;
+		sscanf(cnc->data.ReceiveBuff, "G0%u X%f Y%f",cnc->data.temp, cnc->x_axis.next, cnc->y_axis.next);		
+		if(cnc->data.temp == 1)
+			cnc->drill_enb =true;
 		else
-			z_axis->drill = false;
-		*mode = 3; // check drill
+			cnc->drill_enb = false;
+		cnc->Mode = 3; // check drill
 		break;	
 	default:
 		break;
