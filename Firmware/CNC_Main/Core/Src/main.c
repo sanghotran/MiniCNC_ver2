@@ -82,6 +82,8 @@ void StartProcessBtnPress(void const *argument);
 
 void StartProcessMode(void const *argument);
 
+void StartProcessSD(void const *argument);
+
 /* USER CODE END PFP */
 
 /* Private user code ---------------------------------------------------------*/
@@ -169,6 +171,7 @@ int main(void)
   InitCNC(&cnc);
 
   cnc.uart.huart = &huart2;
+  cnc.husb = &hUsbDeviceFS;
 
   HAL_UART_Receive_IT(&huart2, &cnc.uart.Receive, 1);
 
@@ -213,7 +216,7 @@ int main(void)
   osThreadDef(ProcessBtnPressTask, StartProcessBtnPress, osPriorityAboveNormal, 0, 128);
   ProcessBtnPressTaskHandle = osThreadCreate(osThread(ProcessBtnPressTask), NULL);
 
-  osThreadDef(ProcessModeTask, StartProcessMode, osPriorityNormal, 0 , 128);
+  osThreadDef(ProcessModeTask, StartProcessMode, osPriorityAboveNormal, 0 , 128);
   ProcessModeTaskHandle = osThreadCreate(osThread(ProcessModeTask), NULL);
   /* USER CODE END RTOS_THREADS */
 
@@ -400,8 +403,7 @@ static void MX_GPIO_Init(void)
   HAL_GPIO_WritePin(GPIOA, GPIO_PIN_4, GPIO_PIN_RESET);
 
   /*Configure GPIO pin Output Level */
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_1, GPIO_PIN_RESET);
-  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0, GPIO_PIN_SET);
+  HAL_GPIO_WritePin(GPIOB, GPIO_PIN_0|GPIO_PIN_1, GPIO_PIN_RESET);
 
   /*Configure GPIO pin : PA4 */
   GPIO_InitStruct.Pin = GPIO_PIN_4;
@@ -448,7 +450,17 @@ static void MX_GPIO_Init(void)
 
 void StartReceiveDataFromGUI(void const *argument)
 {
-  ReceiveDataFromGUI(&cnc,&hUsbDeviceFS, xSemaphoreUSB, xSemaphoreMode); 
+  // vì lúc đầu semaphore không được là 0 nên phải lấy đi 1 ngay chỗ này để không chạy func này khi mới vào
+  if(osSemaphoreWait(xSemaphoreUSB, osWaitForever) == osOK)
+  {
+    for(;;)
+    {
+      if(osSemaphoreWait(xSemaphoreUSB, osWaitForever) == osOK)
+      {
+        ReceiveDataFromGUI(&cnc, xSemaphoreMode); 
+      }
+    }
+  }
 }
 
 void StartCheckUSBConnect(void const *argument)
@@ -471,13 +483,33 @@ void StartCheckUSBConnect(void const *argument)
 
 void StartProcessBtnPress(void const *argument)
 {
-  ProcessBtnPress(&cnc, xSemaphoreBtn);
+  if(osSemaphoreWait(xSemaphoreBtn, osWaitForever) == osOK)
+  {
+    for(;;)
+    {
+      if(osSemaphoreWait(xSemaphoreBtn, osWaitForever) == osOK)
+      {
+        ProcessBtnPress(&cnc);
+      }
+    }
+  }
 }
 
 void StartProcessMode(void const *argument)
 {
-  ProcessMode(&cnc, xSemaphoreMode);
+  if(osSemaphoreWait(xSemaphoreMode, osWaitForever) == osOK)
+  {
+    for(;;)
+    {
+      if(osSemaphoreWait(xSemaphoreMode, osWaitForever) == osOK)
+      {
+        ProcessMode(&cnc);
+      }
+    }
+  }
 }
+
+//-----------SD config-------------------------
 
 volatile uint8_t FatFsCnt = 0;
 volatile uint8_t Timer1, Timer2;
@@ -502,7 +534,7 @@ void SDTimer_Handler(void)
 void StartDefaultTask(void const * argument)
 {
   /* init code for USB_DEVICE */
-  MX_USB_DEVICE_Init();
+  //MX_USB_DEVICE_Init();
   /* USER CODE BEGIN 5 */
   /* Infinite loop */
   for(;;)
@@ -525,6 +557,10 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
+  if (htim->Instance == TIM1) {
+    HAL_IncTick();
+  }
+  /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM1) {
 
     FatFsCnt ++;

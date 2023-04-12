@@ -263,6 +263,21 @@ namespace MiniCNC_ver2
             }
             writer.Write(Encoding.Default.GetBytes(input), 1000, out bytesWritten);
         }
+        // send gcode
+        private void SendGcode()
+        {
+            if(cnc.index < cnc.cncGcode.Length)
+            {
+                SendData("D 1 " + cnc.cncGcode[cnc.index]); // sending  gcode
+                cnc.index++;
+            }
+            else
+            {
+                cnc.index = 0;
+                SendData("D 0"); //finish send gcode
+            }
+            
+        }
         // process data
         private void ProcessData(string input)
         {
@@ -282,6 +297,16 @@ namespace MiniCNC_ver2
                             break;
                         case "DOING":
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I am going to home");
+                            break;
+                        case "YES":
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I readdy for receive a gcode");
+                            SendGcode();
+                            break;
+                        case "ACK":
+                            SendGcode();
+                            break;
+                        case "DONE":
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Receive gcode Succesfully");
                             break;
                         default:
                             break;
@@ -329,7 +354,8 @@ namespace MiniCNC_ver2
             // only press when connect state
             if (cnc.State == 1)
             {
-
+                SendData("C 5 " + cnc.fileName);
+                showMessage(PCchatItem, scrollviewPC, PCchatItems, "I will send you a gcode");
             }
         }
         private void Home(object sender, MouseButtonEventArgs e)
@@ -337,7 +363,7 @@ namespace MiniCNC_ver2
             // only press when connect state
             if(cnc.State == 1)
             {
-                SendData("C 3");// 1 is command disconnect
+                SendData("C 3");// 3 is command disconnect
                 showMessage(PCchatItem, scrollviewPC, PCchatItems, "Let's go to home");
 
             }
@@ -408,9 +434,11 @@ namespace MiniCNC_ver2
             if (PC_fileList.SelectedItem is FileItem selectedFile)
             {
                 MainShow.Children.Clear();
+                cnc.fileName = selectedFile.Name;
                 string data = File.ReadAllText(selectedFile.FullName);
                 cnc.gcode = data.Split('\n');
                 cnc.drawFromGcode(cnc.gcode, MainShow);
+                cnc.index = 0;
                 showPage(MainShow);                
             }
         }

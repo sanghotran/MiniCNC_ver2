@@ -1,5 +1,12 @@
 #include "TaskCNC.h"
 
+int bufsize (char *buf)
+{
+	int i=0;
+	while (*buf++ != '\0') i++;
+	return i;
+}
+
 void InitCNC(CNC* cnc)
 {
   cnc->state = 0; // state disconect with GUI
@@ -14,122 +21,126 @@ void InitCNC(CNC* cnc)
   cnc->Buzzer = GPIO_PIN_1; 
 
   cnc->uart.index = 0;
+
+  cnc->sd.fresult = f_mount(cnc->sd.FileSystem, "/", 1);
      
 }
 
-void ProcessBtnPress(CNC *cnc, osSemaphoreId xSemaphore)
+void SaveDataToSD(CNC *cnc)
 {
-  if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
-  {
-    for(;;)
-    {
-      if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
-      {
-        switch (cnc->state)
-        {
-        case 2: // state error connect
-          if(cnc-> btnPress == 1)// press OK button
-          {
-            HAL_GPIO_WritePin(GPIOB, cnc->Led, GPIO_PIN_SET);
-            HAL_GPIO_WritePin(GPIOB, cnc->Buzzer, GPIO_PIN_RESET);
-            cnc->state = 0;
-          }
-          break;
-        
-        default:
-          break;
-        }
+  cnc->sd.fresult = f_open(cnc->sd.File, cnc->sd.FileName, FA_OPEN_ALWAYS | FA_READ | FA_WRITE);
 
+  	/* Move to offset to the end of the file */
+  	cnc->sd.fresult = f_lseek(cnc->sd.File, f_size(cnc->sd.File)); 
+
+  	/* write the string to the file */
+  	cnc->sd.fresult = f_puts(cnc->sd.data, cnc->sd.File);
+
+  	//f_close (&fil);
+}
+
+void ProcessBtnPress(CNC *cnc)
+{  
+  switch (cnc->state)
+  {
+    case 2: // state error connect
+      if(cnc-> btnPress == 1)// press OK button
+      {
+        HAL_GPIO_WritePin(GPIOB, cnc->Led, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOB, cnc->Buzzer, GPIO_PIN_RESET);
+        cnc->state = 0;
       }
-    }
+      break;
+        
+    default:
+      break;
   }
 }
 
-void ProcessMode(CNC *cnc, osSemaphoreId xSemaphore)
+void ProcessMode(CNC *cnc)
 {
-  if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
+  switch (cnc->mode)
   {
-    for(;;)
-    {
-      if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
-      {
-        switch (cnc->mode)
-        {
-        case 3: // mode home
-          sprintf(cnc->uart.SendToControl, "H.");
-          HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 100);
-          break;
+    case 3: // mode home
+      sprintf(cnc->uart.SendToControl, "H.");
+      HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 100);
+      break;
 
-        case 4: // mode running
+    case 4: // mode running
 
-          break;
-        
-        case 5: // mode receive data
+      break;
+          
+    case 5: // mode receive file name of gcode
+      sscanf(cnc->DataReceiveFromGUI, "C 5 %s", cnc->sd.FileName);
+      break;
 
-          break;
+    case 6: // mode receive data of gcode          
+      sscanf(cnc->DataReceiveFromGUI, "D 1 %s", cnc->sd.data);
+      //SaveDataToSD(cnc);
+      sprintf(cnc->DataSendToGUI, "C ACK ");
+      USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
+      break;
 
-        default:
-          break;
-        }
-      }
-    }
-  }
+    default:
+      break;
+  } 
 }
 
-void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSemaphore, osSemaphoreId xSemaphoreMode)
+
+void ReceiveDataFromGUI(CNC *cnc, osSemaphoreId xSemaphoreMode)
 {
-  // vì lúc đầu semaphore không được là 0 nên phải lấy đi 1 ngay chỗ này để không chạy func này khi mới vào
-  if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
+  switch (cnc->DataReceiveFromGUI[0])
   {
-    for(;;)
-    {
-      if(osSemaphoreWait(xSemaphore, osWaitForever) == osOK)
+    case 'C': // command          
+      switch (cnc->DataReceiveFromGUI[2])
       {
-        switch (cnc->DataReceiveFromGUI[0])
-        {
-        case 'C': // command          
-          switch (cnc->DataReceiveFromGUI[2])
-          {
-          case '0': // connected
-            cnc->state = 1; // mode connect with GUI
-            sprintf(cnc->DataSendToGUI, "C CONNECTED ");
-            break;
-
-          case '1': // disconnected
-            cnc->state = 0; // mode disconect with GUI
-            sprintf(cnc->DataSendToGUI, "C DISCONNECTED ");
-            break;
-
-          case '3': // home
-            cnc->mode = 3; // mode home
-            sprintf(cnc->DataSendToGUI, "C DOING ");
-            osSemaphoreRelease(xSemaphoreMode);
-            break;
-
-          case '4': // start
-            cnc->mode = 4; // mode running
-            break;
-          
-          case '5': // receive data
-            cnc->mode = 5; // mode receive data
-            break;
-
-          default:
-            break;
-          }
-          
+        case '0': // connected
+          cnc->state = 1; // mode connect with GUI
+          sprintf(cnc->DataSendToGUI, "C CONNECTED ");
           break;
-        case 'D': // data
 
+        case '1': // disconnected
+          cnc->state = 0; // mode disconect with GUI
+          sprintf(cnc->DataSendToGUI, "C DISCONNECTED ");
           break;
+
+        case '3': // home
+          cnc->mode = 3; // mode home
+          sprintf(cnc->DataSendToGUI, "C DOING ");
+          break;
+
+        case '4': // start
+          cnc->mode = 4; // mode running
+          break;
+          
+        case '5': // receive file name of gcode
+          cnc->mode = 5; // mode receive file name of gcode
+          sprintf(cnc->DataSendToGUI, "C YES ");
+          break;
+
         default:
-          return;
           break;
-        }
-        USBD_CUSTOM_HID_SendReport(husbd, (uint8_t*)cnc->DataSendToGUI, 15);     
-      }        
-    }
-  }  
+      }     
+      break;
+    case 'D': // data
+      if(cnc->DataReceiveFromGUI[2] == 0)
+      {
+        sprintf(cnc->DataSendToGUI, "C DONE ");
+        f_close (cnc->sd.File);
+        cnc->mode = 0;
+      }
+      else
+      {
+        cnc->mode = 6; // mode receive data of gcode
+      }          
+      break;
+
+    default:
+      return;
+  }
+  USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
+  if(cnc->mode > 2)   
+    osSemaphoreRelease(xSemaphoreMode);
 }
 
 void ReceiveDataFromCNC(void)

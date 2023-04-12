@@ -9,7 +9,8 @@
 			"fatfs_sd.h": "c",
 			"main.h": "c",
 			"cmsis_os.h": "c",
-			"fatfs.h": "c"
+			"fatfs.h": "c",
+			"string.h": "c"
 		}
 	}
 }

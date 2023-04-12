@@ -23,8 +23,11 @@ namespace MiniCNC_ver2
         public int State;
         public string[] gcode;
 
+        public string fileName;
+
         private string gcodeConvert;
         public string[] cncGcode;
+        public int index;
 
         private const int maxCNCGrid = 600;
         private const int maxCNC = 150;

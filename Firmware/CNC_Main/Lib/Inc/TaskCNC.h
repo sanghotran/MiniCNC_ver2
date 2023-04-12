@@ -19,10 +19,11 @@ typedef struct
 
 typedef struct
 {
-    FATFS FileSystem;
-    FIL File;
+    FATFS *FileSystem;
+    FIL *File;
     FRESULT fresult;
-    char data[1024];
+    char data[64];
+    char FileName[15];
 
     int br, bw;
 
@@ -45,7 +46,8 @@ typedef struct
     uint16_t Buzzer;
 
     char DataReceiveFromGUI[64];
-    char DataSendToGUI[15];
+    char DataSendToGUI[19];
+    USBD_HandleTypeDef *husb;
 
     uint8_t state;
     uint8_t mode;
@@ -58,11 +60,13 @@ typedef struct
 
 void InitCNC(CNC*);
 
-void ProcessBtnPress(CNC*, osSemaphoreId);
+void SaveDataToSD(CNC*);
 
-void ProcessMode(CNC*, osSemaphoreId);
+void ProcessBtnPress(CNC*);
 
-void ReceiveDataFromGUI(CNC*,USBD_HandleTypeDef*, osSemaphoreId, osSemaphoreId);
+void ProcessMode(CNC*);
+
+void ReceiveDataFromGUI(CNC*, osSemaphoreId);
 
 void ReceiveDataFromCNC(void);
 
