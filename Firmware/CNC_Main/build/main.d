@@ -44,6 +44,11 @@ build/main.o: Core/Src/main.c Core/Inc/main.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
+ FATFS/App/fatfs.h Middlewares/Third_Party/FatFs/src/ff.h \
+ Middlewares/Third_Party/FatFs/src/integer.h FATFS/Target/ffconf.h \
+ Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
+ Middlewares/Third_Party/FatFs/src/diskio.h \
+ Middlewares/Third_Party/FatFs/src/ff.h FATFS/Target/user_diskio.h \
  USB_DEVICE/App/usb_device.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
  USB_DEVICE/Target/usbd_conf.h Lib/Inc/TaskCNC.h \
@@ -52,7 +57,8 @@ build/main.o: Core/Src/main.c Core/Inc/main.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
+ Lib/Inc/fatfs_sd.h Middlewares/Third_Party/FatFs/src/diskio.h
 Core/Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
 Core/Inc/stm32f1xx_hal_conf.h:
@@ -101,6 +107,14 @@ Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
+FATFS/App/fatfs.h:
+Middlewares/Third_Party/FatFs/src/ff.h:
+Middlewares/Third_Party/FatFs/src/integer.h:
+FATFS/Target/ffconf.h:
+Middlewares/Third_Party/FatFs/src/ff_gen_drv.h:
+Middlewares/Third_Party/FatFs/src/diskio.h:
+Middlewares/Third_Party/FatFs/src/ff.h:
+FATFS/Target/user_diskio.h:
 USB_DEVICE/App/usb_device.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
 USB_DEVICE/Target/usbd_conf.h:
@@ -111,3 +125,5 @@ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
+Lib/Inc/fatfs_sd.h:
+Middlewares/Third_Party/FatFs/src/diskio.h:

@@ -4,5 +4,12 @@
 			"path": "."
 		}
 	],
-	"settings": {}
+	"settings": {
+		"files.associations": {
+			"fatfs_sd.h": "c",
+			"main.h": "c",
+			"cmsis_os.h": "c",
+			"fatfs.h": "c"
+		}
+	}
 }

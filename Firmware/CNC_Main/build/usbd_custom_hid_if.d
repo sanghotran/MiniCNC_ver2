@@ -53,7 +53,12 @@ build/usbd_custom_hid_if.o: USB_DEVICE/App/usbd_custom_hid_if.c \
  Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
  Lib/Inc/TaskCNC.h USB_DEVICE/App/usb_device.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
+ FATFS/App/fatfs.h Middlewares/Third_Party/FatFs/src/ff.h \
+ Middlewares/Third_Party/FatFs/src/integer.h FATFS/Target/ffconf.h \
+ Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
+ Middlewares/Third_Party/FatFs/src/diskio.h \
+ Middlewares/Third_Party/FatFs/src/ff.h FATFS/Target/user_diskio.h
 USB_DEVICE/App/usbd_custom_hid_if.h:
 Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
@@ -113,3 +118,11 @@ Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
 Lib/Inc/TaskCNC.h:
 USB_DEVICE/App/usb_device.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
+FATFS/App/fatfs.h:
+Middlewares/Third_Party/FatFs/src/ff.h:
+Middlewares/Third_Party/FatFs/src/integer.h:
+FATFS/Target/ffconf.h:
+Middlewares/Third_Party/FatFs/src/ff_gen_drv.h:
+Middlewares/Third_Party/FatFs/src/diskio.h:
+Middlewares/Third_Party/FatFs/src/ff.h:
+FATFS/Target/user_diskio.h:

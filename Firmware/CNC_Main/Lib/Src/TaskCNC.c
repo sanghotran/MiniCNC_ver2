@@ -27,7 +27,7 @@ void ProcessBtnPress(CNC *cnc, osSemaphoreId xSemaphore)
       {
         switch (cnc->state)
         {
-        case 2: // mode error connect
+        case 2: // state error connect
           if(cnc-> btnPress == 1)// press OK button
           {
             HAL_GPIO_WritePin(GPIOB, cnc->Led, GPIO_PIN_SET);
@@ -126,7 +126,7 @@ void ReceiveDataFromGUI(CNC *cnc, USBD_HandleTypeDef * husbd, osSemaphoreId xSem
           return;
           break;
         }
-        USBD_CUSTOM_HID_SendReport(husbd, (uint8_t*)cnc->DataSendToGUI, 65);     
+        USBD_CUSTOM_HID_SendReport(husbd, (uint8_t*)cnc->DataSendToGUI, 15);     
       }        
     }
   }  

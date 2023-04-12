@@ -6,6 +6,7 @@
 #include <stdbool.h>
 #include "usb_device.h"
 #include "usbd_customhid.h"
+#include "fatfs.h"
 
 typedef struct
 {
@@ -15,6 +16,20 @@ typedef struct
     uint8_t index;
     char ReceiveFromControl[10];
 } UART;
+
+typedef struct
+{
+    FATFS FileSystem;
+    FIL File;
+    FRESULT fresult;
+    char data[1024];
+
+    int br, bw;
+
+    FATFS *pfs;
+    DWORD fre_clust;
+    uint32_t total, free_space;
+} SD;
 
 
 typedef struct
@@ -30,12 +45,14 @@ typedef struct
     uint16_t Buzzer;
 
     char DataReceiveFromGUI[64];
-    char DataSendToGUI[65];
+    char DataSendToGUI[15];
 
     uint8_t state;
     uint8_t mode;
    
     UART uart;
+
+    SD sd;
 
 } CNC;
 

@@ -52,7 +52,12 @@ build/TaskCNC.o: Lib/Src/TaskCNC.c Lib/Inc/TaskCNC.h Core/Inc/main.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
+ FATFS/App/fatfs.h Middlewares/Third_Party/FatFs/src/ff.h \
+ Middlewares/Third_Party/FatFs/src/integer.h FATFS/Target/ffconf.h \
+ Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
+ Middlewares/Third_Party/FatFs/src/diskio.h \
+ Middlewares/Third_Party/FatFs/src/ff.h FATFS/Target/user_diskio.h
 Lib/Inc/TaskCNC.h:
 Core/Inc/main.h:
 Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal.h:
@@ -111,3 +116,11 @@ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
+FATFS/App/fatfs.h:
+Middlewares/Third_Party/FatFs/src/ff.h:
+Middlewares/Third_Party/FatFs/src/integer.h:
+FATFS/Target/ffconf.h:
+Middlewares/Third_Party/FatFs/src/ff_gen_drv.h:
+Middlewares/Third_Party/FatFs/src/diskio.h:
+Middlewares/Third_Party/FatFs/src/ff.h:
+FATFS/Target/user_diskio.h:
