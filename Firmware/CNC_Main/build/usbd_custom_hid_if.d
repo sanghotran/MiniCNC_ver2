@@ -35,7 +35,8 @@ build/usbd_custom_hid_if.o: USB_DEVICE/App/usbd_custom_hid_if.c \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h \
  Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h \
- Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h \
+ Lib/Inc/TaskCNC.h USB_DEVICE/App/usb_device.h \
+ Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h \
  Core/Inc/FreeRTOSConfig.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h \
@@ -45,20 +46,8 @@ build/usbd_custom_hid_if.o: USB_DEVICE/App/usbd_custom_hid_if.c \
  Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/list.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/task.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
  Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/queue.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h \
- Middlewares/Third_Party/FreeRTOS/Source/include/timers.h \
- Lib/Inc/TaskCNC.h USB_DEVICE/App/usb_device.h \
- Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h \
- FATFS/App/fatfs.h Middlewares/Third_Party/FatFs/src/ff.h \
- Middlewares/Third_Party/FatFs/src/integer.h FATFS/Target/ffconf.h \
- Middlewares/Third_Party/FatFs/src/ff_gen_drv.h \
- Middlewares/Third_Party/FatFs/src/diskio.h \
- Middlewares/Third_Party/FatFs/src/ff.h FATFS/Target/user_diskio.h
+ Middlewares/Third_Party/FreeRTOS/Source/include/queue.h
 USB_DEVICE/App/usbd_custom_hid_if.h:
 Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
@@ -98,7 +87,9 @@ Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_pcd_ex.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_core.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ioreq.h:
 Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h:
-Middlewares/Third_Party/FreeRTOS/Source/CMSIS_RTOS/cmsis_os.h:
+Lib/Inc/TaskCNC.h:
+USB_DEVICE/App/usb_device.h:
+Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/FreeRTOS.h:
 Core/Inc/FreeRTOSConfig.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/projdefs.h:
@@ -108,21 +99,5 @@ Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/mpu_wrappers.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/list.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/task.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h:
 Middlewares/Third_Party/FreeRTOS/Source/include/queue.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/event_groups.h:
-Middlewares/Third_Party/FreeRTOS/Source/include/timers.h:
-Lib/Inc/TaskCNC.h:
-USB_DEVICE/App/usb_device.h:
-Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h:
-FATFS/App/fatfs.h:
-Middlewares/Third_Party/FatFs/src/ff.h:
-Middlewares/Third_Party/FatFs/src/integer.h:
-FATFS/Target/ffconf.h:
-Middlewares/Third_Party/FatFs/src/ff_gen_drv.h:
-Middlewares/Third_Party/FatFs/src/diskio.h:
-Middlewares/Third_Party/FatFs/src/ff.h:
-FATFS/Target/user_diskio.h:

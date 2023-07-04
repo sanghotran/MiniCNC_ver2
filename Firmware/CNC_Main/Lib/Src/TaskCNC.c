@@ -22,19 +22,19 @@ void InitCNC(CNC* cnc)
 
   cnc->uart.index = 0;
 
-  cnc->sd.fresult = f_mount(cnc->sd.FileSystem, "/", 1);
+  //cnc->sd.fresult = f_mount(cnc->sd.FileSystem, "/", 1);
      
 }
 
 void SaveDataToSD(CNC *cnc)
 {
-  cnc->sd.fresult = f_open(cnc->sd.File, cnc->sd.FileName, FA_OPEN_ALWAYS | FA_READ | FA_WRITE);
+  //cnc->sd.fresult = f_open(cnc->sd.File, cnc->sd.FileName, FA_OPEN_ALWAYS | FA_READ | FA_WRITE);
 
-  	/* Move to offset to the end of the file */
-  	cnc->sd.fresult = f_lseek(cnc->sd.File, f_size(cnc->sd.File)); 
+  	// Move to offset to the end of the file 
+  	//cnc->sd.fresult = f_lseek(cnc->sd.File, f_size(cnc->sd.File)); 
 
-  	/* write the string to the file */
-  	cnc->sd.fresult = f_puts(cnc->sd.data, cnc->sd.File);
+  	// write the string to the file 
+  	//cnc->sd.fresult = f_puts(cnc->sd.data, cnc->sd.File);
 
   	//f_close (&fil);
 }
@@ -62,6 +62,7 @@ void ProcessMode(CNC *cnc)
   switch (cnc->mode)
   {
     case 3: // mode home
+      memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));
       sprintf(cnc->uart.SendToControl, "H.");
       HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 100);
       break;
@@ -71,14 +72,17 @@ void ProcessMode(CNC *cnc)
       break;
           
     case 5: // mode receive file name of gcode
-      sscanf(cnc->DataReceiveFromGUI, "C 5 %s", cnc->sd.FileName);
+      //sscanf(cnc->DataReceiveFromGUI, "C 5 %s", cnc->sd.FileName);
       break;
 
-    case 6: // mode receive data of gcode          
-      sscanf(cnc->DataReceiveFromGUI, "D 1 %s", cnc->sd.data);
+    case 6: // mode receive data of gcode
+      memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));          
+      sscanf(cnc->DataReceiveFromGUI, "D 1 %s", cnc->uart.SendToControl);
+      HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 100);
       //SaveDataToSD(cnc);
-      sprintf(cnc->DataSendToGUI, "C ACK ");
-      USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
+      //sprintf(cnc->DataSendToGUI, "C ACK ");
+      //USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
+      
       break;
 
     default:
@@ -87,7 +91,7 @@ void ProcessMode(CNC *cnc)
 }
 
 
-void ReceiveDataFromGUI(CNC *cnc, osSemaphoreId xSemaphoreMode)
+void ReceiveDataFromGUI(CNC *cnc, SemaphoreHandle_t xSemaphoreMode)
 {
   switch (cnc->DataReceiveFromGUI[0])
   {
@@ -111,6 +115,7 @@ void ReceiveDataFromGUI(CNC *cnc, osSemaphoreId xSemaphoreMode)
 
         case '4': // start
           cnc->mode = 4; // mode running
+          sprintf(cnc->DataSendToGUI, "C RUNNING ");
           break;
           
         case '5': // receive file name of gcode
@@ -126,7 +131,7 @@ void ReceiveDataFromGUI(CNC *cnc, osSemaphoreId xSemaphoreMode)
       if(cnc->DataReceiveFromGUI[2] == 0)
       {
         sprintf(cnc->DataSendToGUI, "C DONE ");
-        f_close (cnc->sd.File);
+        //f_close (cnc->sd.File);
         cnc->mode = 0;
       }
       else
@@ -140,10 +145,21 @@ void ReceiveDataFromGUI(CNC *cnc, osSemaphoreId xSemaphoreMode)
   }
   USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
   if(cnc->mode > 2)   
-    osSemaphoreRelease(xSemaphoreMode);
+    xSemaphoreGive(xSemaphoreMode);
 }
 
-void ReceiveDataFromCNC(void)
+void ReceiveDataFromCNC(CNC *cnc)
 {
-
+  switch (cnc->uart.ReceiveFromControl[0])
+	{
+	case 'H':
+		sprintf(cnc->DataSendToGUI, "C DONE ");
+		break;
+	case 'G':
+		sprintf(cnc->DataSendToGUI, "C ACK ");
+		break;	
+	default:
+		return;
+  }
+  USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
 }

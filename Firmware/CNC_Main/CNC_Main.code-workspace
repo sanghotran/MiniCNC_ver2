@@ -10,7 +10,9 @@
 			"main.h": "c",
 			"cmsis_os.h": "c",
 			"fatfs.h": "c",
-			"string.h": "c"
+			"string.h": "c",
+			"freertos.h": "c",
+			"usb_device.h": "c"
 		}
 	}
 }

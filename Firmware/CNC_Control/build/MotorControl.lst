@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,12 +58,12 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
   48              		.cfi_def_cfa_offset 40
   49 0004 0446     		mov	r4, r0
    6:Lib/Src/MotorControl.c **** 	switch (cnc->data.ReceiveBuff[0])
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 2
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 2
 
 
   50              		.loc 1 6 2 is_stmt 1 view .LVU2
   51              		.loc 1 6 31 is_stmt 0 view .LVU3
-  52 0006 90F80B31 		ldrb	r3, [r0, #267]	@ zero_extendqisi2
+  52 0006 90F81C31 		ldrb	r3, [r0, #284]	@ zero_extendqisi2
   53              		.loc 1 6 2 view .LVU4
   54 000a 472B     		cmp	r3, #71
   55 000c 0DD0     		beq	.L2
@@ -84,10 +84,10 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
   65              		.loc 1 11 3 is_stmt 1 view .LVU9
   66              		.loc 1 11 20 is_stmt 0 view .LVU10
   67 001c 80F8EE30 		strb	r3, [r0, #238]
-  12:Lib/Src/MotorControl.c **** 		cnc->Mode = 2; // mode goto home
+  12:Lib/Src/MotorControl.c **** 		cnc->Mode = 1; // mode goto home
   68              		.loc 1 12 3 is_stmt 1 view .LVU11
   69              		.loc 1 12 13 is_stmt 0 view .LVU12
-  70 0020 0223     		movs	r3, #2
+  70 0020 0123     		movs	r3, #1
   71 0022 80F8FC30 		strb	r3, [r0, #252]
   13:Lib/Src/MotorControl.c **** 		break;
   72              		.loc 1 13 3 is_stmt 1 view .LVU13
@@ -96,9 +96,9 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
   14:Lib/Src/MotorControl.c **** 	case 'G':
   15:Lib/Src/MotorControl.c **** 		sscanf(cnc->data.ReceiveBuff, "G0%u X%f Y%f",cnc->data.temp, cnc->x_axis.next, cnc->y_axis.next);
   16:Lib/Src/MotorControl.c **** 		if(cnc->data.temp == 1)
-  17:Lib/Src/MotorControl.c **** 			cnc->drill_enb =true;
+  17:Lib/Src/MotorControl.c **** 			cnc->drill.enb =true;
   18:Lib/Src/MotorControl.c **** 		else
-  19:Lib/Src/MotorControl.c **** 			cnc->drill_enb = false;
+  19:Lib/Src/MotorControl.c **** 			cnc->drill.enb = false;
   20:Lib/Src/MotorControl.c **** 		cnc->Mode = 3; // check drill
   21:Lib/Src/MotorControl.c **** 		break;	
   22:Lib/Src/MotorControl.c **** 	default:
@@ -118,15 +118,15 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
   85              		.cfi_restore_state
   15:Lib/Src/MotorControl.c **** 		if(cnc->data.temp == 1)
   86              		.loc 1 15 3 is_stmt 1 view .LVU15
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 3
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 3
 
 
   15:Lib/Src/MotorControl.c **** 		if(cnc->data.temp == 1)
   87              		.loc 1 15 19 is_stmt 0 view .LVU16
-  88 002a 00F20B15 		addw	r5, r0, #267
+  88 002a 00F58E75 		add	r5, r0, #284
   15:Lib/Src/MotorControl.c **** 		if(cnc->data.temp == 1)
   89              		.loc 1 15 57 view .LVU17
-  90 002e 90F81561 		ldrb	r6, [r0, #277]	@ zero_extendqisi2
+  90 002e 90F82661 		ldrb	r6, [r0, #294]	@ zero_extendqisi2
   15:Lib/Src/MotorControl.c **** 		if(cnc->data.temp == 1)
   91              		.loc 1 15 75 view .LVU18
   92 0032 876C     		ldr	r7, [r0, #72]	@ float
@@ -148,12 +148,12 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  106 004e 2846     		mov	r0, r5
  107 0050 FFF7FEFF 		bl	sscanf
  108              	.LVL6:
-  16:Lib/Src/MotorControl.c **** 			cnc->drill_enb =true;
+  16:Lib/Src/MotorControl.c **** 			cnc->drill.enb =true;
  109              		.loc 1 16 3 is_stmt 1 view .LVU21
-  16:Lib/Src/MotorControl.c **** 			cnc->drill_enb =true;
+  16:Lib/Src/MotorControl.c **** 			cnc->drill.enb =true;
  110              		.loc 1 16 15 is_stmt 0 view .LVU22
- 111 0054 94F81531 		ldrb	r3, [r4, #277]	@ zero_extendqisi2
-  16:Lib/Src/MotorControl.c **** 			cnc->drill_enb =true;
+ 111 0054 94F82631 		ldrb	r3, [r4, #294]	@ zero_extendqisi2
+  16:Lib/Src/MotorControl.c **** 			cnc->drill.enb =true;
  112              		.loc 1 16 5 view .LVU23
  113 0058 012B     		cmp	r3, #1
  114 005a 06D0     		beq	.L7
@@ -162,7 +162,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
   19:Lib/Src/MotorControl.c **** 		cnc->Mode = 3; // check drill
  116              		.loc 1 19 19 is_stmt 0 view .LVU25
  117 005c 0023     		movs	r3, #0
- 118 005e 84F8FE30 		strb	r3, [r4, #254]
+ 118 005e 84F80F31 		strb	r3, [r4, #271]
  119              	.L5:
   20:Lib/Src/MotorControl.c **** 		break;	
  120              		.loc 1 20 3 is_stmt 1 view .LVU26
@@ -178,11 +178,11 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
   17:Lib/Src/MotorControl.c **** 		else
  128              		.loc 1 17 4 is_stmt 1 view .LVU30
   17:Lib/Src/MotorControl.c **** 		else
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 4
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 4
 
 
  129              		.loc 1 17 19 is_stmt 0 view .LVU31
- 130 006a 84F8FE30 		strb	r3, [r4, #254]
+ 130 006a 84F80F31 		strb	r3, [r4, #271]
  131 006e F8E7     		b	.L5
  132              	.L9:
  133              		.align	2
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  180              		.loc 1 30 21 view .LVU39
  181 0012 4FF07E55 		mov	r5, #1065353216
  182              	.LVL11:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 5
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 5
 
 
  183              	.L11:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
   51:Lib/Src/MotorControl.c **** 
   52:Lib/Src/MotorControl.c **** 		}
   53:Lib/Src/MotorControl.c **** }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 6
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 6
 
 
  217              		.loc 1 53 1 is_stmt 0 view .LVU49
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  260              	.LVL24:
   37:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
  261              		.loc 1 37 4 discriminator 7 view .LVU61
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 7
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 7
 
 
  262 0070 1864     		str	r0, [r3, #64]
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
   44:Lib/Src/MotorControl.c **** 		}
  306              		.loc 1 44 4 is_stmt 1 view .LVU72
   44:Lib/Src/MotorControl.c **** 		}
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 8
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 8
 
 
  307              		.loc 1 44 14 is_stmt 0 view .LVU73
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
   49:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
  351              		.loc 1 49 4 is_stmt 1 view .LVU84
  352 00d8 E36A     		ldr	r3, [r4, #44]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 9
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 9
 
 
  353 00da 43B9     		cbnz	r3, .L23
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  399              		.cfi_endproc
  400              	.LFE69:
  402              		.section	.text.readEncoder,"ax",%progbits
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 10
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 10
 
 
  403              		.align	1
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  454              	.LVL39:
  455              	.LFB72:
   60:Lib/Src/MotorControl.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 11
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 11
 
 
   61:Lib/Src/MotorControl.c **** void sample(AXIS * axis)
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  491 001c 0F46     		mov	r7, r1
  492              		.loc 1 79 14 view .LVU114
  493 001e E068     		ldr	r0, [r4, #12]	@ float
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 12
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 12
 
 
  494 0020 FFF7FEFF 		bl	__aeabi_f2d
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  547 007c 0246     		mov	r2, r0
  548 007e 0B46     		mov	r3, r1
  549              		.loc 1 80 45 view .LVU124
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 13
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 13
 
 
  550 0080 3046     		mov	r0, r6
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  598              	.LVL60:
  599              	.LFB71:
   62:Lib/Src/MotorControl.c **** 	if(axis->pid_process)
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 14
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 14
 
 
  600              		.loc 1 62 1 is_stmt 1 view -0
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  641 0022 2146     		mov	r1, r4
  642 0024 206A     		ldr	r0, [r4, #32]
  643 0026 FFF7FEFF 		bl	PID_control
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 15
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 15
 
 
  644              	.LVL65:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  692 000c 0128     		cmp	r0, #1
  693 000e 08D0     		beq	.L57
   93:Lib/Src/MotorControl.c **** 		{
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 16
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 16
 
 
   94:Lib/Src/MotorControl.c **** 			axis->pwm = -0.7;
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  733              		.global	move
  734              		.syntax unified
  735              		.thumb
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 17
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 17
 
 
  736              		.thumb_func
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  782 0026 03B9     		cbnz	r3, .L64
  783              	.L60:
  114:Lib/Src/MotorControl.c **** 	{
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 18
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 18
 
 
  115:Lib/Src/MotorControl.c **** 		axis->pwm = 0;
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  825              		.cfi_def_cfa_offset 8
  826              		.cfi_offset 4, -8
  827              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 19
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 19
 
 
  828 0002 0446     		mov	r4, r0
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  872              		.loc 1 132 23 is_stmt 0 view .LVU218
  873 0036 0023     		movs	r3, #0
  874 0038 84F84530 		strb	r3, [r4, #69]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 20
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 20
 
 
  133:Lib/Src/MotorControl.c **** 			pAxis->time_sample = 0;		
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  924 0008 8946     		mov	r9, r1
  140:Lib/Src/MotorControl.c **** 	// declare variable
  141:Lib/Src/MotorControl.c **** 	int dx = round(pXAxis->next - pXAxis->last);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 21
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 21
 
 
  925              		.loc 1 141 2 is_stmt 1 view .LVU227
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  977 004e FFF7FEFF 		bl	int_max
  978              	.LVL103:
  979 0052 8246     		mov	r10, r0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 22
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 22
 
 
  980              	.LVL104:
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  1025 0084 8742     		cmp	r7, r0
  1026 0086 06DC     		bgt	.L87
  149:Lib/Src/MotorControl.c **** 	bool swapXY = true;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 23
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 23
 
 
  1027              		.loc 1 149 7 view .LVU258
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  1068 00b6 59E0     		b	.L76
  1069              	.L74:
  164:Lib/Src/MotorControl.c **** 			moveGcode(pYAxis);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 24
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 24
 
 
  165:Lib/Src/MotorControl.c **** 		}
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  180:Lib/Src/MotorControl.c **** 				if( dy > 0)
  181:Lib/Src/MotorControl.c **** 					pYAxis->last += STEP;
  182:Lib/Src/MotorControl.c **** 				else
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 25
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 25
 
 
  183:Lib/Src/MotorControl.c **** 					pYAxis->last -= STEP;
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  1152              		.loc 1 158 3 is_stmt 1 view .LVU285
  158:Lib/Src/MotorControl.c **** 		{
  1153              		.loc 1 158 5 is_stmt 0 view .LVU286
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 26
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 26
 
 
  1154 0148 002D     		cmp	r5, #0
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  1194              		.loc 1 180 5 is_stmt 1 view .LVU300
  180:Lib/Src/MotorControl.c **** 					pYAxis->last += STEP;
  1195              		.loc 1 180 7 is_stmt 0 view .LVU301
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 27
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 27
 
 
  1196 017c 029B     		ldr	r3, [sp, #8]
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  1238 01c6 D8F84C00 		ldr	r0, [r8, #76]	@ float
  1239 01ca FFF7FEFF 		bl	__aeabi_f2d
  1240              	.LVL153:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 28
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 28
 
 
  1241 01ce 06A3     		adr	r3, .L90
@@ -1652,48 +1652,358 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 1
  1264 01ec 9999C93F 		.word	1070176665
  1265              		.cfi_endproc
  1266              	.LFE76:
- 1268              		.text
- 1269              	.Letext0:
- 1270              		.file 2 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 1271              		.file 3 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 1272              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 1273              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 1274              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
- 1275              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 1276              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 1277              		.file 9 "Lib/Inc/MyStruct.h"
- 1278              		.file 10 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 1279              		.file 11 "Lib/Inc/MyMath.h"
- 1280              		.file 12 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s 			page 29
+ 1268              		.global	__aeabi_f2uiz
+ 1269              		.section	.text.runDrill,"ax",%progbits
+ 1270              		.align	1
+ 1271              		.global	runDrill
+ 1272              		.syntax unified
+ 1273              		.thumb
+ 1274              		.thumb_func
+ 1276              	runDrill:
+ 1277              	.LVL157:
+ 1278              	.LFB77:
+ 197:Lib/Src/MotorControl.c **** 
+ 198:Lib/Src/MotorControl.c **** void runDrill(DRILL *drill, float pwm)
+ 199:Lib/Src/MotorControl.c **** {
+ 1279              		.loc 1 199 1 is_stmt 1 view -0
+ 1280              		.cfi_startproc
+ 1281              		@ args = 0, pretend = 0, frame = 0
+ 1282              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1283              		.loc 1 199 1 is_stmt 0 view .LVU315
+ 1284 0000 38B5     		push	{r3, r4, r5, lr}
+ 1285              	.LCFI14:
+ 1286              		.cfi_def_cfa_offset 16
+ 1287              		.cfi_offset 3, -16
+ 1288              		.cfi_offset 4, -12
+ 1289              		.cfi_offset 5, -8
+ 1290              		.cfi_offset 14, -4
+ 1291 0002 0446     		mov	r4, r0
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 29
+
+
+ 1292 0004 0D46     		mov	r5, r1
+ 200:Lib/Src/MotorControl.c **** 	if (pwm > 0)
+ 1293              		.loc 1 200 2 is_stmt 1 view .LVU316
+ 1294              		.loc 1 200 5 is_stmt 0 view .LVU317
+ 1295 0006 0021     		movs	r1, #0
+ 1296              	.LVL158:
+ 1297              		.loc 1 200 5 view .LVU318
+ 1298 0008 2846     		mov	r0, r5
+ 1299              	.LVL159:
+ 1300              		.loc 1 200 5 view .LVU319
+ 1301 000a FFF7FEFF 		bl	__aeabi_fcmpgt
+ 1302              	.LVL160:
+ 1303 000e 0028     		cmp	r0, #0
+ 1304 0010 32D0     		beq	.L114
+ 201:Lib/Src/MotorControl.c **** 	{
+ 202:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, 100 - pwm);
+ 1305              		.loc 1 202 3 is_stmt 1 view .LVU320
+ 1306 0012 6368     		ldr	r3, [r4, #4]
+ 1307 0014 73B9     		cbnz	r3, .L95
+ 1308              		.loc 1 202 3 is_stmt 0 discriminator 1 view .LVU321
+ 1309 0016 2946     		mov	r1, r5
+ 1310 0018 3F48     		ldr	r0, .L123
+ 1311 001a FFF7FEFF 		bl	__aeabi_fsub
+ 1312              	.LVL161:
+ 1313 001e 2368     		ldr	r3, [r4]
+ 1314 0020 1D68     		ldr	r5, [r3]
+ 1315              	.LVL162:
+ 1316              		.loc 1 202 3 discriminator 1 view .LVU322
+ 1317 0022 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1318              	.LVL163:
+ 1319 0026 6863     		str	r0, [r5, #52]
+ 1320              	.L96:
+ 203:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1321              		.loc 1 203 3 is_stmt 1 view .LVU323
+ 1322 0028 0122     		movs	r2, #1
+ 1323 002a A189     		ldrh	r1, [r4, #12]
+ 1324 002c A068     		ldr	r0, [r4, #8]
+ 1325 002e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1326              	.LVL164:
+ 1327              	.L92:
+ 204:Lib/Src/MotorControl.c **** 	}
+ 205:Lib/Src/MotorControl.c **** 	else if (pwm == 0)
+ 206:Lib/Src/MotorControl.c **** 	{
+ 207:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, 0);
+ 208:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 209:Lib/Src/MotorControl.c **** 	}
+ 210:Lib/Src/MotorControl.c **** 	else if (pwm < 0)
+ 211:Lib/Src/MotorControl.c **** 	{
+ 212:Lib/Src/MotorControl.c **** 		pwm *= -1;
+ 213:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, pwm);
+ 214:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 215:Lib/Src/MotorControl.c **** 	}
+ 216:Lib/Src/MotorControl.c **** }
+ 1328              		.loc 1 216 1 is_stmt 0 view .LVU324
+ 1329 0032 38BD     		pop	{r3, r4, r5, pc}
+ 1330              	.LVL165:
+ 1331              	.L95:
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 30
+
+
+ 202:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1332              		.loc 1 202 3 discriminator 2 view .LVU325
+ 1333 0034 042B     		cmp	r3, #4
+ 1334 0036 0BD0     		beq	.L117
+ 202:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1335              		.loc 1 202 3 discriminator 4 view .LVU326
+ 1336 0038 082B     		cmp	r3, #8
+ 1337 003a 13D0     		beq	.L118
+ 202:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1338              		.loc 1 202 3 discriminator 7 view .LVU327
+ 1339 003c 2946     		mov	r1, r5
+ 1340 003e 3648     		ldr	r0, .L123
+ 1341 0040 FFF7FEFF 		bl	__aeabi_fsub
+ 1342              	.LVL166:
+ 1343 0044 2368     		ldr	r3, [r4]
+ 1344 0046 1D68     		ldr	r5, [r3]
+ 1345              	.LVL167:
+ 202:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1346              		.loc 1 202 3 discriminator 7 view .LVU328
+ 1347 0048 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1348              	.LVL168:
+ 1349 004c 2864     		str	r0, [r5, #64]
+ 1350 004e EBE7     		b	.L96
+ 1351              	.LVL169:
+ 1352              	.L117:
+ 202:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1353              		.loc 1 202 3 discriminator 3 view .LVU329
+ 1354 0050 2946     		mov	r1, r5
+ 1355 0052 3148     		ldr	r0, .L123
+ 1356 0054 FFF7FEFF 		bl	__aeabi_fsub
+ 1357              	.LVL170:
+ 1358 0058 2368     		ldr	r3, [r4]
+ 1359 005a 1D68     		ldr	r5, [r3]
+ 1360              	.LVL171:
+ 202:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1361              		.loc 1 202 3 discriminator 3 view .LVU330
+ 1362 005c FFF7FEFF 		bl	__aeabi_f2uiz
+ 1363              	.LVL172:
+ 1364 0060 A863     		str	r0, [r5, #56]
+ 1365 0062 E1E7     		b	.L96
+ 1366              	.LVL173:
+ 1367              	.L118:
+ 202:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1368              		.loc 1 202 3 discriminator 6 view .LVU331
+ 1369 0064 2946     		mov	r1, r5
+ 1370 0066 2C48     		ldr	r0, .L123
+ 1371 0068 FFF7FEFF 		bl	__aeabi_fsub
+ 1372              	.LVL174:
+ 1373 006c 2368     		ldr	r3, [r4]
+ 1374 006e 1D68     		ldr	r5, [r3]
+ 1375              	.LVL175:
+ 202:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1376              		.loc 1 202 3 discriminator 6 view .LVU332
+ 1377 0070 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1378              	.LVL176:
+ 1379 0074 E863     		str	r0, [r5, #60]
+ 1380 0076 D7E7     		b	.L96
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 31
+
+
+ 1381              	.LVL177:
+ 1382              	.L114:
+ 205:Lib/Src/MotorControl.c **** 	{
+ 1383              		.loc 1 205 7 is_stmt 1 view .LVU333
+ 205:Lib/Src/MotorControl.c **** 	{
+ 1384              		.loc 1 205 10 is_stmt 0 view .LVU334
+ 1385 0078 0021     		movs	r1, #0
+ 1386 007a 2846     		mov	r0, r5
+ 1387 007c FFF7FEFF 		bl	__aeabi_fcmpeq
+ 1388              	.LVL178:
+ 1389 0080 F0B1     		cbz	r0, .L115
+ 207:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1390              		.loc 1 207 3 is_stmt 1 view .LVU335
+ 1391 0082 6368     		ldr	r3, [r4, #4]
+ 1392 0084 4BB9     		cbnz	r3, .L102
+ 207:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1393              		.loc 1 207 3 is_stmt 0 discriminator 1 view .LVU336
+ 1394 0086 2368     		ldr	r3, [r4]
+ 1395 0088 1B68     		ldr	r3, [r3]
+ 1396 008a 0022     		movs	r2, #0
+ 1397 008c 5A63     		str	r2, [r3, #52]
+ 1398              	.L103:
+ 208:Lib/Src/MotorControl.c **** 	}
+ 1399              		.loc 1 208 3 is_stmt 1 view .LVU337
+ 1400 008e 0022     		movs	r2, #0
+ 1401 0090 A189     		ldrh	r1, [r4, #12]
+ 1402 0092 A068     		ldr	r0, [r4, #8]
+ 1403 0094 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1404              	.LVL179:
+ 1405 0098 CBE7     		b	.L92
+ 1406              	.L102:
+ 207:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1407              		.loc 1 207 3 is_stmt 0 discriminator 2 view .LVU338
+ 1408 009a 042B     		cmp	r3, #4
+ 1409 009c 06D0     		beq	.L119
+ 207:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1410              		.loc 1 207 3 discriminator 4 view .LVU339
+ 1411 009e 082B     		cmp	r3, #8
+ 1412 00a0 09D0     		beq	.L120
+ 207:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1413              		.loc 1 207 3 discriminator 7 view .LVU340
+ 1414 00a2 2368     		ldr	r3, [r4]
+ 1415 00a4 1B68     		ldr	r3, [r3]
+ 1416 00a6 0022     		movs	r2, #0
+ 1417 00a8 1A64     		str	r2, [r3, #64]
+ 1418 00aa F0E7     		b	.L103
+ 1419              	.L119:
+ 207:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1420              		.loc 1 207 3 discriminator 3 view .LVU341
+ 1421 00ac 2368     		ldr	r3, [r4]
+ 1422 00ae 1B68     		ldr	r3, [r3]
+ 1423 00b0 0022     		movs	r2, #0
+ 1424 00b2 9A63     		str	r2, [r3, #56]
+ 1425 00b4 EBE7     		b	.L103
+ 1426              	.L120:
+ 207:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1427              		.loc 1 207 3 discriminator 6 view .LVU342
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 32
+
+
+ 1428 00b6 2368     		ldr	r3, [r4]
+ 1429 00b8 1B68     		ldr	r3, [r3]
+ 1430 00ba 0022     		movs	r2, #0
+ 1431 00bc DA63     		str	r2, [r3, #60]
+ 1432 00be E6E7     		b	.L103
+ 1433              	.L115:
+ 210:Lib/Src/MotorControl.c **** 	{
+ 1434              		.loc 1 210 7 is_stmt 1 view .LVU343
+ 210:Lib/Src/MotorControl.c **** 	{
+ 1435              		.loc 1 210 10 is_stmt 0 view .LVU344
+ 1436 00c0 0021     		movs	r1, #0
+ 1437 00c2 2846     		mov	r0, r5
+ 1438 00c4 FFF7FEFF 		bl	__aeabi_fcmplt
+ 1439              	.LVL180:
+ 1440 00c8 0028     		cmp	r0, #0
+ 1441 00ca B2D0     		beq	.L92
+ 212:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, pwm);
+ 1442              		.loc 1 212 3 is_stmt 1 view .LVU345
+ 212:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, pwm);
+ 1443              		.loc 1 212 7 is_stmt 0 view .LVU346
+ 1444 00cc 05F10040 		add	r0, r5, #-2147483648
+ 1445              	.LVL181:
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1446              		.loc 1 213 3 is_stmt 1 view .LVU347
+ 1447 00d0 6368     		ldr	r3, [r4, #4]
+ 1448 00d2 53B9     		cbnz	r3, .L107
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1449              		.loc 1 213 3 is_stmt 0 discriminator 1 view .LVU348
+ 1450 00d4 2368     		ldr	r3, [r4]
+ 1451 00d6 1D68     		ldr	r5, [r3]
+ 1452 00d8 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1453              	.LVL182:
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1454              		.loc 1 213 3 discriminator 1 view .LVU349
+ 1455 00dc 6863     		str	r0, [r5, #52]
+ 1456              	.L108:
+ 214:Lib/Src/MotorControl.c **** 	}
+ 1457              		.loc 1 214 3 is_stmt 1 view .LVU350
+ 1458 00de 0022     		movs	r2, #0
+ 1459 00e0 A189     		ldrh	r1, [r4, #12]
+ 1460 00e2 A068     		ldr	r0, [r4, #8]
+ 1461 00e4 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1462              	.LVL183:
+ 1463              		.loc 1 216 1 is_stmt 0 view .LVU351
+ 1464 00e8 A3E7     		b	.L92
+ 1465              	.LVL184:
+ 1466              	.L107:
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1467              		.loc 1 213 3 discriminator 2 view .LVU352
+ 1468 00ea 042B     		cmp	r3, #4
+ 1469 00ec 07D0     		beq	.L121
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1470              		.loc 1 213 3 discriminator 4 view .LVU353
+ 1471 00ee 082B     		cmp	r3, #8
+ 1472 00f0 0BD0     		beq	.L122
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1473              		.loc 1 213 3 discriminator 7 view .LVU354
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 33
+
+
+ 1474 00f2 2368     		ldr	r3, [r4]
+ 1475 00f4 1D68     		ldr	r5, [r3]
+ 1476 00f6 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1477              	.LVL185:
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1478              		.loc 1 213 3 discriminator 7 view .LVU355
+ 1479 00fa 2864     		str	r0, [r5, #64]
+ 1480 00fc EFE7     		b	.L108
+ 1481              	.LVL186:
+ 1482              	.L121:
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1483              		.loc 1 213 3 discriminator 3 view .LVU356
+ 1484 00fe 2368     		ldr	r3, [r4]
+ 1485 0100 1D68     		ldr	r5, [r3]
+ 1486 0102 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1487              	.LVL187:
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1488              		.loc 1 213 3 discriminator 3 view .LVU357
+ 1489 0106 A863     		str	r0, [r5, #56]
+ 1490 0108 E9E7     		b	.L108
+ 1491              	.LVL188:
+ 1492              	.L122:
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1493              		.loc 1 213 3 discriminator 6 view .LVU358
+ 1494 010a 2368     		ldr	r3, [r4]
+ 1495 010c 1D68     		ldr	r5, [r3]
+ 1496 010e FFF7FEFF 		bl	__aeabi_f2uiz
+ 1497              	.LVL189:
+ 213:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1498              		.loc 1 213 3 discriminator 6 view .LVU359
+ 1499 0112 E863     		str	r0, [r5, #60]
+ 1500 0114 E3E7     		b	.L108
+ 1501              	.L124:
+ 1502 0116 00BF     		.align	2
+ 1503              	.L123:
+ 1504 0118 0000C842 		.word	1120403456
+ 1505              		.cfi_endproc
+ 1506              	.LFE77:
+ 1508              		.text
+ 1509              	.Letext0:
+ 1510              		.file 2 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 1511              		.file 3 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 1512              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 1513              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1514              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 1515              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1516              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 1517              		.file 9 "Lib/Inc/MyStruct.h"
+ 1518              		.file 10 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 1519              		.file 11 "Lib/Inc/MyMath.h"
+ 1520              		.file 12 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s 			page 34
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 MotorControl.c
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:18     .rodata.ProcessData.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:23     .text.ProcessData:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:29     .text.ProcessData:00000000 ProcessData
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:135    .text.ProcessData:00000070 $d
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:145    .text.PWM:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:151    .text.PWM:00000000 PWM
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:397    .text.PWM:00000110 $d
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:403    .text.readEncoder:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:409    .text.readEncoder:00000000 readEncoder
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:447    .text.PID_control:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:453    .text.PID_control:00000000 PID_control
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:585    .text.PID_control:000000a8 $d
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:591    .text.sample:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:597    .text.sample:00000000 sample
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:663    .text.HOME:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:669    .text.HOME:00000000 HOME
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:727    .text.HOME:00000034 $d
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:732    .text.move:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:738    .text.move:00000000 move
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:809    .text.moveGcode:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:815    .text.moveGcode:00000000 moveGcode
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:894    .text.drawLine:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:900    .text.drawLine:00000000 drawLine
-C:\Users\Chicken\AppData\Local\Temp\ccpN5cng.s:1263   .text.drawLine:000001e8 $d
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:18     .rodata.ProcessData.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:23     .text.ProcessData:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:29     .text.ProcessData:00000000 ProcessData
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:135    .text.ProcessData:00000070 $d
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:145    .text.PWM:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:151    .text.PWM:00000000 PWM
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:397    .text.PWM:00000110 $d
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:403    .text.readEncoder:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:409    .text.readEncoder:00000000 readEncoder
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:447    .text.PID_control:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:453    .text.PID_control:00000000 PID_control
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:585    .text.PID_control:000000a8 $d
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:591    .text.sample:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:597    .text.sample:00000000 sample
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:663    .text.HOME:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:669    .text.HOME:00000000 HOME
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:727    .text.HOME:00000034 $d
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:732    .text.move:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:738    .text.move:00000000 move
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:809    .text.moveGcode:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:815    .text.moveGcode:00000000 moveGcode
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:894    .text.drawLine:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:900    .text.drawLine:00000000 drawLine
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:1263   .text.drawLine:000001e8 $d
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:1270   .text.runDrill:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:1276   .text.runDrill:00000000 runDrill
+C:\Users\Chicken\AppData\Local\Temp\cctxXM8x.s:1504   .text.runDrill:00000118 $d
 
 UNDEFINED SYMBOLS
 __aeabi_f2d
@@ -1720,3 +2030,4 @@ __aeabi_dcmplt
 round
 int_max
 int_min
+__aeabi_f2uiz

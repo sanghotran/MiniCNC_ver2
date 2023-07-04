@@ -115,6 +115,7 @@ void axisInit()
 	cnc.x_axis.htim_motor = &htim3;
 	cnc.y_axis.htim_motor = &htim3;
 	cnc.z_axis.htim_motor = &htim3;
+  cnc.drill.htim_motor = &htim3;
 	
 	cnc.x_axis.htim_enc = &htim4;
 	cnc.y_axis.htim_enc = &htim2;
@@ -123,14 +124,17 @@ void axisInit()
 	cnc.x_axis.GPIO_DIR = GPIOB;
 	cnc.y_axis.GPIO_DIR = GPIOB;
 	cnc.z_axis.GPIO_DIR = GPIOA;
+  cnc.drill.GPIO_DIR = GPIOA;
 	
 	cnc.x_axis.PIN_DIR = GPIO_PIN_8;
 	cnc.y_axis.PIN_DIR = GPIO_PIN_9;
 	cnc.z_axis.PIN_DIR = GPIO_PIN_5;
+  cnc.drill.PIN_DIR = GPIO_PIN_4;
 	
 	cnc.x_axis.CHANNEL = TIM_CHANNEL_3;
 	cnc.y_axis.CHANNEL = TIM_CHANNEL_4;
 	cnc.z_axis.CHANNEL = TIM_CHANNEL_2;
+  cnc.drill.CHANNEL = TIM_CHANNEL_1;
 	
 	cnc.x_axis.GPIO_HOME = GPIOA;
 	cnc.y_axis.GPIO_HOME = GPIOA;
@@ -140,7 +144,7 @@ void axisInit()
 	cnc.y_axis.PIN_HOME = GPIO_PIN_11;
 	cnc.z_axis.PIN_HOME = GPIO_PIN_10;
 	
-	cnc.x_axis.Kp = 2;
+	cnc.x_axis.Kp = 20;//2
 	cnc.y_axis.Kp = 20;
 	cnc.z_axis.Kp = 0.7;
 	
@@ -198,7 +202,10 @@ int main(void)
 	axisInit();
 
   // Start PWM
-	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1|TIM_CHANNEL_2|TIM_CHANNEL_3|TIM_CHANNEL_4);
+	HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_1);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_2);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_3);
+  HAL_TIM_PWM_Start(&htim3, TIM_CHANNEL_4);
 	
 	// Start Encoder
 	HAL_TIM_Encoder_Start(&htim1, TIM_CHANNEL_1 | TIM_CHANNEL_2);
@@ -220,17 +227,20 @@ int main(void)
       //Mode = 0;
       //data.index = 0; // because data.index auto increase after Transmit so should set it = 0 at the end of function
       // goto x home
-			HOME(&cnc.x_axis);
-			
+			//HOME(&cnc.x_axis);
+
 			// goto y home
-			HOME(&cnc.y_axis);
+			//HOME(&cnc.y_axis);
 			
 			// goto z home
-			HOME(&cnc.z_axis);
+			//HOME(&cnc.z_axis);
+
+      //test drill
+      runDrill(&cnc.drill, 70);
 			
-			if( cnc.x_axis.home && cnc.y_axis.home && cnc.z_axis.home)
+			if(cnc.x_axis.home && cnc.y_axis.home && cnc.z_axis.home)
 			{
-				cnc.x_axis.htim_enc->Instance->CNT = 0;
+			  cnc.x_axis.htim_enc->Instance->CNT = 0;
 				cnc.y_axis.htim_enc->Instance->CNT = 0;
 				cnc.z_axis.htim_enc->Instance->CNT = 0;
 				
@@ -238,8 +248,9 @@ int main(void)
 				cnc.y_axis.pos = 0;
 				cnc.z_axis.pos = 0;
 				
-			  cnc.Mode = 2; // to protect switch, goto home 1cm mode				
+			  cnc.Mode = 2; // to protect switch, goto home 1cm mode					
 			}
+        
       break;
 
     case 2: // mode Home 1cm
@@ -258,16 +269,19 @@ int main(void)
 				
 				cnc.x_axis.pos = 0;
 				cnc.y_axis.pos = 0;
-				cnc.z_axis.pos = 0;				
-			
+				cnc.z_axis.pos = 0;
+        memset(cnc.data.TransBuff, 0, sizeof(cnc.data.TransBuff));
+        sprintf(cnc.data.TransBuff, "H.");
+        HAL_UART_Transmit(&huart2, cnc.data.TransBuff, sizeof(cnc.data.TransBuff), 100);
+        cnc.data.index = 0;
 				cnc.Mode = 0;
 			}
       break;
 
     case 3: // check drill
-      if(cnc.drill_status != cnc.drill_enb)
+      if(cnc.drill.status != cnc.drill.enb)
 			{
-				if(cnc.drill_enb)
+				if(cnc.drill.enb)
 					cnc.z_axis.next = 1;//thickness;
 				else
 					cnc.z_axis.next = 0;					
@@ -276,9 +290,9 @@ int main(void)
 					move(&cnc.z_axis, cnc.z_axis.next);
 				}
 				cnc.z_axis.finish = false;
-				cnc.drill_status = cnc.drill_enb;
+				cnc.drill.status = cnc.drill.enb;
 			}
-      if(cnc.drill_enb)
+      if(cnc.drill.enb)
         cnc.Mode = 5; // mode G01
       else
         cnc.Mode = 4; // mode G00      
@@ -294,10 +308,20 @@ int main(void)
 			cnc.y_axis.finish = false;
 			cnc.x_axis.last = cnc.x_axis.next;
 			cnc.y_axis.last = cnc.y_axis.next;
+      memset(cnc.data.TransBuff, 0, sizeof(cnc.data.TransBuff));
+      sprintf(cnc.data.TransBuff, "G.");
+      HAL_UART_Transmit(&huart2, cnc.data.TransBuff, sizeof(cnc.data.TransBuff), 100);
+      cnc.data.index = 0;
+      cnc.Mode = 0;
       break;
 
     case 5: // mode G01
       drawLine(&cnc.x_axis, &cnc.y_axis);
+      memset(cnc.data.TransBuff, 0, sizeof(cnc.data.TransBuff));
+      sprintf(cnc.data.TransBuff, "G.");
+      HAL_UART_Transmit(&huart2, cnc.data.TransBuff, sizeof(cnc.data.TransBuff), 100);
+      cnc.data.index = 0;
+      cnc.Mode = 0;
       break;
 
     default:
@@ -583,7 +607,7 @@ static void MX_USART2_UART_Init(void)
 
   /* USER CODE END USART2_Init 1 */
   huart2.Instance = USART2;
-  huart2.Init.BaudRate = 9600;
+  huart2.Init.BaudRate = 115200;
   huart2.Init.WordLength = UART_WORDLENGTH_8B;
   huart2.Init.StopBits = UART_STOPBITS_1;
   huart2.Init.Parity = UART_PARITY_NONE;

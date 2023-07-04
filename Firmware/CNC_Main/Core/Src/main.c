@@ -18,14 +18,14 @@
 /* USER CODE END Header */
 /* Includes ------------------------------------------------------------------*/
 #include "main.h"
-#include "cmsis_os.h"
-#include "fatfs.h"
+//#include "fatfs.h"
 #include "usb_device.h"
 
 /* Private includes ----------------------------------------------------------*/
 /* USER CODE BEGIN Includes */
 #include "TaskCNC.h"
-#include "fatfs_sd.h"
+#include "FreeRTOS.h"
+//#include "fatfs_sd.h"
 /* USER CODE END Includes */
 
 /* Private typedef -----------------------------------------------------------*/
@@ -49,19 +49,22 @@ SPI_HandleTypeDef hspi1;
 
 UART_HandleTypeDef huart2;
 
-osThreadId defaultTaskHandle;
+TaskHandle_t defaultTask;
 /* USER CODE BEGIN PV */
 extern USBD_HandleTypeDef hUsbDeviceFS;
 
-osSemaphoreId xSemaphoreUSB;
-osThreadId ReceiveDataFromGUITaksHandle;
-osThreadId CheckUSBConnectTaskHandle;
+SemaphoreHandle_t xSemaphoreUSB;
+TaskHandle_t ReceiveDataFromGUITask;
+TaskHandle_t CheckUSBConnectTask;
 
-osSemaphoreId xSemaphoreBtn;
-osThreadId ProcessBtnPressTaskHandle;
+SemaphoreHandle_t xSemaphoreBtn;
+TaskHandle_t ProcessBtnPressTask;
 
-osSemaphoreId xSemaphoreMode;
-osThreadId ProcessModeTaskHandle;
+SemaphoreHandle_t xSemaphoreMode;
+TaskHandle_t ProcessModeTask;
+
+SemaphoreHandle_t xSemaphoreUART;
+TaskHandle_t ReceiveDataFromCNCTask;
 
 CNC cnc;
 /* USER CODE END PV */
@@ -72,17 +75,20 @@ static void MX_GPIO_Init(void);
 static void MX_I2C1_Init(void);
 static void MX_SPI1_Init(void);
 static void MX_USART2_UART_Init(void);
-void StartDefaultTask(void const * argument);
+void DefaultTask(void *pvParameters);
 
 /* USER CODE BEGIN PFP */
-void StartReceiveDataFromGUI(void const *argument);
-void StartCheckUSBConnect(void const *argument);
+void StartReceiveDataFromGUI(void *pvParameters);
 
-void StartProcessBtnPress(void const *argument);
+void StartCheckUSBConnect(void *pvParameters);
 
-void StartProcessMode(void const *argument);
+void StartProcessBtnPress(void *pvParameters);
 
-void StartProcessSD(void const *argument);
+void StartProcessMode(void *pvParameters);
+
+void StartProcessSD(void *pvParameters);
+
+void StartReceiveDataFromCNC(void *pvParameters);
 
 /* USER CODE END PFP */
 
@@ -109,7 +115,7 @@ void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
     cnc.btnPress = 4;
   }
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  osSemaphoreRelease(xSemaphoreBtn);
+  xSemaphoreGiveFromISR(xSemaphoreBtn, xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 }
 
@@ -124,11 +130,12 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		else if (cnc.uart.Receive == '.')
 		{
 			cnc.uart.index = 0;
-			//ProcessData(&data, &x_axis, &y_axis, &z_axis, &Mode);	
+			//ProcessData(&data, &x_axis, &y_axis, &z_axis, &Mode);
+      BaseType_t xHigherPriorityTaskWoken = pdFALSE;
+      xSemaphoreGiveFromISR(xSemaphoreUART, xHigherPriorityTaskWoken);
+      portYIELD_FROM_ISR(xHigherPriorityTaskWoken);	
 		}	
 		HAL_UART_Receive_IT(&huart2, &cnc.uart.Receive, 1);
-    BaseType_t xHigherPriorityTaskWoken = pdFALSE;  
-    portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
 	}
 }
 
@@ -163,9 +170,9 @@ int main(void)
   /* Initialize all configured peripherals */
   MX_GPIO_Init();
   MX_I2C1_Init();
-  MX_SPI1_Init();
+  //MX_SPI1_Init();
   MX_USART2_UART_Init();
-  MX_FATFS_Init();
+  //MX_FATFS_Init();
   /* USER CODE BEGIN 2 */
   MX_USB_DEVICE_Init();
   InitCNC(&cnc);
@@ -183,12 +190,14 @@ int main(void)
 
   /* USER CODE BEGIN RTOS_SEMAPHORES */
   /* add semaphores, ... */
-  osSemaphoreDef(semaphore);
-  xSemaphoreUSB = osSemaphoreCreate(osSemaphore(semaphore), 1); // giá trị ban đầu của semaphore không được là 0
+  
+  xSemaphoreUSB = xSemaphoreCreateBinary();
 
-  xSemaphoreBtn = osSemaphoreCreate(osSemaphore(semaphore), 1);
+  xSemaphoreBtn = xSemaphoreCreateBinary();
 
-  xSemaphoreMode = osSemaphoreCreate(osSemaphore(semaphore), 1);
+  xSemaphoreMode = xSemaphoreCreateBinary();
+
+  xSemaphoreUART = xSemaphoreCreateBinary();
   /* USER CODE END RTOS_SEMAPHORES */
 
   /* USER CODE BEGIN RTOS_TIMERS */
@@ -201,27 +210,23 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
-  defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
+  xTaskCreate(&DefaultTask, "Default", 128, NULL, 1, &defaultTask);
 
   /* USER CODE BEGIN RTOS_THREADS */
-  /* add threads, ... */
-  osThreadDef(ReceiveDataFromGUITask, StartReceiveDataFromGUI, osPriorityAboveNormal, 0, 128);
-  ReceiveDataFromGUITaksHandle = osThreadCreate(osThread(ReceiveDataFromGUITask), NULL);
+  /* add threads, ... */  
+  xTaskCreate(&StartReceiveDataFromGUI, "ReceiveDataFromGUI", 128, NULL, 2, &ReceiveDataFromGUITask);
 
-  osThreadDef(CheckUSBConnectTask, StartCheckUSBConnect, osPriorityAboveNormal, 0, 128);
-  CheckUSBConnectTaskHandle = osThreadCreate(osThread(CheckUSBConnectTask), NULL);
+  xTaskCreate(&StartCheckUSBConnect, "CheckUSBConnect", 128, NULL, 2, &CheckUSBConnectTask);
 
+  xTaskCreate(&StartProcessBtnPress, "ProcessBtnPress", 128, NULL, 2, &ProcessBtnPressTask);
 
-  osThreadDef(ProcessBtnPressTask, StartProcessBtnPress, osPriorityAboveNormal, 0, 128);
-  ProcessBtnPressTaskHandle = osThreadCreate(osThread(ProcessBtnPressTask), NULL);
+  xTaskCreate(&StartProcessMode, "ProcessMode", 128, NULL, 2, &ProcessModeTask);
 
-  osThreadDef(ProcessModeTask, StartProcessMode, osPriorityAboveNormal, 0 , 128);
-  ProcessModeTaskHandle = osThreadCreate(osThread(ProcessModeTask), NULL);
+  xTaskCreate(&StartReceiveDataFromCNC, "ReceiveDataFromCNC", 128, NULL, 2, &ReceiveDataFromCNCTask);
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
-  osKernelStart();
+  vTaskStartScheduler();
 
   /* We should never get here as control is now taken by the scheduler */
   /* Infinite loop */
@@ -448,22 +453,19 @@ static void MX_GPIO_Init(void)
 
 /* USER CODE BEGIN 4 */
 
-void StartReceiveDataFromGUI(void const *argument)
+void StartReceiveDataFromGUI(void *pvParameters)
 {
   // vì lúc đầu semaphore không được là 0 nên phải lấy đi 1 ngay chỗ này để không chạy func này khi mới vào
-  if(osSemaphoreWait(xSemaphoreUSB, osWaitForever) == osOK)
+  for(;;)
   {
-    for(;;)
+    if(xSemaphoreTake(xSemaphoreUSB, portMAX_DELAY) == pdTRUE)
     {
-      if(osSemaphoreWait(xSemaphoreUSB, osWaitForever) == osOK)
-      {
-        ReceiveDataFromGUI(&cnc, xSemaphoreMode); 
-      }
+      ReceiveDataFromGUI(&cnc, xSemaphoreMode); 
     }
   }
 }
 
-void StartCheckUSBConnect(void const *argument)
+void StartCheckUSBConnect(void *pvParameters)
 {
   for(;;)
     {
@@ -481,46 +483,51 @@ void StartCheckUSBConnect(void const *argument)
     } 
 }
 
-void StartProcessBtnPress(void const *argument)
+void StartProcessBtnPress(void *pvParameters)
 {
-  if(osSemaphoreWait(xSemaphoreBtn, osWaitForever) == osOK)
+  for(;;)
   {
-    for(;;)
+    if(xSemaphoreTake(xSemaphoreBtn, portMAX_DELAY) == pdTRUE)
     {
-      if(osSemaphoreWait(xSemaphoreBtn, osWaitForever) == osOK)
-      {
-        ProcessBtnPress(&cnc);
-      }
+      ProcessBtnPress(&cnc);
+    }
+  }    
+}
+
+void StartProcessMode(void *pvParameters)
+{
+  for(;;)
+  {
+    if(xSemaphoreTake(xSemaphoreMode, portMAX_DELAY) == pdTRUE)
+    {
+      ProcessMode(&cnc);
     }
   }
 }
 
-void StartProcessMode(void const *argument)
+void StartReceiveDataFromCNC(void *pvParameters)
 {
-  if(osSemaphoreWait(xSemaphoreMode, osWaitForever) == osOK)
+  for(;;)
   {
-    for(;;)
+    if(xSemaphoreTake(xSemaphoreUART, portMAX_DELAY) == pdTRUE)
     {
-      if(osSemaphoreWait(xSemaphoreMode, osWaitForever) == osOK)
-      {
-        ProcessMode(&cnc);
-      }
+      ReceiveDataFromCNC(&cnc);
     }
   }
 }
 
 //-----------SD config-------------------------
 
-volatile uint8_t FatFsCnt = 0;
-volatile uint8_t Timer1, Timer2;
+// volatile uint8_t FatFsCnt = 0;
+// volatile uint8_t Timer1, Timer2;
 
-void SDTimer_Handler(void)
-{
-  if(Timer1 > 0)
-    Timer1--;
-  if(Timer2 > 0);
-    Timer2--;
-}
+// void SDTimer_Handler(void)
+// {
+//   if(Timer1 > 0)
+//     Timer1--;
+//   if(Timer2 > 0);
+//     Timer2--;
+// }
 
 /* USER CODE END 4 */
 
@@ -531,7 +538,7 @@ void SDTimer_Handler(void)
   * @retval None
   */
 /* USER CODE END Header_StartDefaultTask */
-void StartDefaultTask(void const * argument)
+void DefaultTask(void *pvParameters)
 {
   /* init code for USB_DEVICE */
   //MX_USB_DEVICE_Init();
@@ -539,7 +546,7 @@ void StartDefaultTask(void const * argument)
   /* Infinite loop */
   for(;;)
   {
-    osDelay(1);
+    vTaskDelay(1);
   }
   /* USER CODE END 5 */
 }
@@ -557,18 +564,16 @@ void HAL_TIM_PeriodElapsedCallback(TIM_HandleTypeDef *htim)
   /* USER CODE BEGIN Callback 0 */
 
   /* USER CODE END Callback 0 */
-  if (htim->Instance == TIM1) {
-    HAL_IncTick();
-  }
+
   /* USER CODE BEGIN Callback 1 */
   if (htim->Instance == TIM1) {
 
-    FatFsCnt ++;
-    if(FatFsCnt >= 10)
-    {
-      FatFsCnt = 0;
-      SDTimer_Handler();
-    }
+    // FatFsCnt ++;
+    // if(FatFsCnt >= 10)
+    // {
+    //   FatFsCnt = 0;
+    //   SDTimer_Handler();
+    // }
     HAL_IncTick();
   }
   /* USER CODE BEGIN Callback 1 */

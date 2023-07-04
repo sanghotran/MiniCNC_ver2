@@ -25,6 +25,8 @@ namespace MiniCNC_ver2
 
         public string fileName;
 
+        public bool readyReceiveGcode;
+
         private string gcodeConvert;
         public string[] cncGcode;
         public int index;

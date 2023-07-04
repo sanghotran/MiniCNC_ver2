@@ -48,6 +48,19 @@ typedef struct
 
 } AXIS;
 
+typedef struct MyStruct
+{
+	TIM_HandleTypeDef* htim_motor;
+	uint32_t CHANNEL;
+	
+	GPIO_TypeDef* GPIO_DIR;
+	uint16_t PIN_DIR;
+
+	bool status;
+	bool enb;
+} DRILL;
+
+
 typedef struct
 {
 	char Receive;
@@ -66,8 +79,10 @@ typedef struct
 	AXIS z_axis;
 
 	uint8_t Mode;
-	bool drill_status;
-	bool drill_enb;
+	
+	DRILL drill;
+	//bool drill_status;
+	//bool drill_enb;
 
 	DATA data;
 } CNC;

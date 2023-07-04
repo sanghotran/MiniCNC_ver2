@@ -9,14 +9,14 @@ void ProcessData(CNC *cnc)
 		cnc->x_axis.home = false;
 		cnc->y_axis.home = false;
 		cnc->z_axis.home = false;
-		cnc->Mode = 2; // mode goto home
+		cnc->Mode = 1; // mode goto home
 		break;
 	case 'G':
 		sscanf(cnc->data.ReceiveBuff, "G0%u X%f Y%f",cnc->data.temp, cnc->x_axis.next, cnc->y_axis.next);		
 		if(cnc->data.temp == 1)
-			cnc->drill_enb =true;
+			cnc->drill.enb =true;
 		else
-			cnc->drill_enb = false;
+			cnc->drill.enb = false;
 		cnc->Mode = 3; // check drill
 		break;	
 	default:
@@ -192,5 +192,25 @@ void drawLine(AXIS *pXAxis, AXIS *pYAxis)
 				moveGcode(pXAxis);
 			}
 		}
+	}
+}
+
+void runDrill(DRILL *drill, float pwm)
+{
+	if (pwm > 0)
+	{
+		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, 100 - pwm);
+		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+	}
+	else if (pwm == 0)
+	{
+		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, 0);
+		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+	}
+	else if (pwm < 0)
+	{
+		pwm *= -1;
+		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, pwm);
+		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
 	}
 }

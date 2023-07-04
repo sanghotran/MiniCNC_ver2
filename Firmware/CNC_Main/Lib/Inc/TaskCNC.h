@@ -2,11 +2,12 @@
 #define __TASKCNC_H
 
 #include "main.h"
-#include "cmsis_os.h"
 #include <stdbool.h>
 #include "usb_device.h"
 #include "usbd_customhid.h"
-#include "fatfs.h"
+#include "FreeRTOS.h"
+#include "task.h"
+#include "semphr.h"
 
 typedef struct
 {
@@ -17,20 +18,20 @@ typedef struct
     char ReceiveFromControl[10];
 } UART;
 
-typedef struct
-{
-    FATFS *FileSystem;
-    FIL *File;
-    FRESULT fresult;
-    char data[64];
-    char FileName[15];
+// typedef struct
+// {
+//     FATFS *FileSystem;
+//     FIL *File;
+//     FRESULT fresult;
+//     char data[64];
+//     char FileName[15];
 
-    int br, bw;
+//     int br, bw;
 
-    FATFS *pfs;
-    DWORD fre_clust;
-    uint32_t total, free_space;
-} SD;
+//     FATFS *pfs;
+//     DWORD fre_clust;
+//     uint32_t total, free_space;
+// } SD;
 
 
 typedef struct
@@ -54,7 +55,7 @@ typedef struct
    
     UART uart;
 
-    SD sd;
+    //SD sd;
 
 } CNC;
 
@@ -66,9 +67,9 @@ void ProcessBtnPress(CNC*);
 
 void ProcessMode(CNC*);
 
-void ReceiveDataFromGUI(CNC*, osSemaphoreId);
+void ReceiveDataFromGUI(CNC*, SemaphoreHandle_t);
 
-void ReceiveDataFromCNC(void);
+void ReceiveDataFromCNC(CNC*);
 
 
 #endif

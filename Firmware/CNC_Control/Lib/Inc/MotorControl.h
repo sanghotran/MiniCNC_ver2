@@ -42,6 +42,8 @@ void moveGcode(AXIS *pAxis);
 
 void drawLine(AXIS *pXAxis, AXIS *pYAxis);
 
+void runDrill(DRILL *drill, float pwm);
+
 
 
 #endif /* __MOTORCONTROL_H */

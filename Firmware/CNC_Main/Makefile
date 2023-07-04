@@ -79,14 +79,7 @@ Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_core.c \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ctlreq.c \
 Middlewares/ST/STM32_USB_Device_Library/Core/Src/usbd_ioreq.c \
 Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Src/usbd_customhid.c \
-Lib/Src/TaskCNC.c \
-Lib/Src/fatfs_sd.c \
-FATFS/Target/user_diskio.c \
-FATFS/App/fatfs.c \
-Middlewares/Third_Party/FatFs/src/diskio.c \
-Middlewares/Third_Party/FatFs/src/ff.c \
-Middlewares/Third_Party/FatFs/src/ff_gen_drv.c \
-Middlewares/Third_Party/FatFs/src/option/syscall.c
+Lib/Src/TaskCNC.c 
 
 # ASM sources
 ASM_SOURCES =  \
@@ -156,10 +149,7 @@ C_INCLUDES =  \
 -IMiddlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc \
 -IDrivers/CMSIS/Device/ST/STM32F1xx/Include \
 -IDrivers/CMSIS/Include \
--ILib/Inc \
--IFATFS/Target \
--IFATFS/App \
--IMiddlewares/Third_Party/FatFs/src
+-ILib/Inc 
 
 
 # compile gcc flags

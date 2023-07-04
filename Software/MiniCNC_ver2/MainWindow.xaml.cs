@@ -126,6 +126,7 @@ namespace MiniCNC_ver2
             IsLaptop = true;
 
             cnc.State = 0; // mode disconect
+            cnc.readyReceiveGcode = false; 
 
             PCChatPage.Visibility = Visibility.Visible;
             MCUChatPage.Visibility = Visibility.Hidden;
@@ -176,6 +177,7 @@ namespace MiniCNC_ver2
             if (_autoCheckConnet)
             {
                 Thread autoCheckConnect = new Thread(checkConnect);
+                autoCheckConnect.IsBackground = true;
                 autoCheckConnect.Start();
             }
         }
@@ -297,16 +299,22 @@ namespace MiniCNC_ver2
                             break;
                         case "DOING":
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I am going to home");
+                            //showMessage(mainMCUchatItem, scrollviewMCU, MCUchatItems, "Let's go to home");
                             break;
                         case "YES":
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I readdy for receive a gcode");
+                            cnc.readyReceiveGcode = true;
+                            //SendGcode();
+                            break;
+                        case "RUNNING":
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Started");
                             SendGcode();
                             break;
                         case "ACK":
                             SendGcode();
                             break;
                         case "DONE":
-                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Receive gcode Succesfully");
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Succesfully");
                             break;
                         default:
                             break;
@@ -370,10 +378,21 @@ namespace MiniCNC_ver2
         }
         private void Start(object sender, MouseButtonEventArgs e)
         {
-            // not press when disconnect state
-            if (cnc.State == 0)
+            // not press when disconnect state or not ready receive gcode
+            if (cnc.State == 0 || !cnc.readyReceiveGcode)
                 return;
-
+            if(!IsStarted)
+            {
+                SendData("C 4");
+                showMessage(PCchatItem, scrollviewPC, PCchatItems, "Let's start");
+                cnc.State = 2; // mode running
+            }
+            else
+            {
+                cnc.State = 1; // mode connect
+                cnc.readyReceiveGcode = false;
+            }
+            
             IsStarted = !IsStarted;
         }
         private void Pause(object sender, MouseButtonEventArgs e)
@@ -391,8 +410,7 @@ namespace MiniCNC_ver2
                 connect();
             }
             else // ngắt kết nối
-            {
-                // not press when disconnect state
+            {                
                 if (cnc.State == 0)
                     return;
                 SendData("C 1");// 1 is command disconnect

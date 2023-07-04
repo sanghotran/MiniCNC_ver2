@@ -22,7 +22,6 @@
 #include "usbd_custom_hid_if.h"
 
 /* USER CODE BEGIN INCLUDE */
-#include "cmsis_os.h"
 #include "TaskCNC.h"
 /* USER CODE END INCLUDE */
 
@@ -32,7 +31,7 @@
 
 /* USER CODE BEGIN PV */
 /* Private variables ---------------------------------------------------------*/
-extern osSemaphoreId xSemaphoreUSB;
+extern SemaphoreHandle_t xSemaphoreUSB;
 
 extern CNC cnc;
 /* USER CODE END PV */
@@ -202,7 +201,7 @@ static int8_t CUSTOM_HID_OutEvent_FS(uint8_t event_idx, uint8_t state)
   memset(cnc.DataSendToGUI, 0, sizeof(cnc.DataSendToGUI));
 
   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
-  osSemaphoreRelease(xSemaphoreUSB);
+  xSemaphoreGiveFromISR(xSemaphoreUSB, xHigherPriorityTaskWoken);
   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
   return (USBD_OK);
   /* USER CODE END 6 */
