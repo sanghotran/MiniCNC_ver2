@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
   29:USB_DEVICE/App/usbd_desc.c **** 
   30:USB_DEVICE/App/usbd_desc.c **** /* Private typedef -----------------------------------------------------------*/
   31:USB_DEVICE/App/usbd_desc.c **** /* Private define ------------------------------------------------------------*/
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 2
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 2
 
 
   32:USB_DEVICE/App/usbd_desc.c **** /* Private macro -------------------------------------------------------------*/
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
   86:USB_DEVICE/App/usbd_desc.c ****   * @brief Private macros.
   87:USB_DEVICE/App/usbd_desc.c ****   * @{
   88:USB_DEVICE/App/usbd_desc.c ****   */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 3
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 3
 
 
   89:USB_DEVICE/App/usbd_desc.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  143:USB_DEVICE/App/usbd_desc.c **** #if defined ( __ICCARM__ ) /* IAR Compiler */
  144:USB_DEVICE/App/usbd_desc.c ****   #pragma data_alignment=4
  145:USB_DEVICE/App/usbd_desc.c **** #endif /* defined ( __ICCARM__ ) */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 4
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 4
 
 
  146:USB_DEVICE/App/usbd_desc.c **** /** USB standard device descriptor. */
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  200:USB_DEVICE/App/usbd_desc.c ****   #pragma data_alignment=4
  201:USB_DEVICE/App/usbd_desc.c **** #endif
  202:USB_DEVICE/App/usbd_desc.c **** __ALIGN_BEGIN uint8_t USBD_StringSerial[USB_SIZ_STRING_SERIAL] __ALIGN_END = {
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 5
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 5
 
 
  203:USB_DEVICE/App/usbd_desc.c ****   USB_SIZ_STRING_SERIAL,
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
   59              	.LVL2:
   60              	.LFB69:
  228:USB_DEVICE/App/usbd_desc.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 6
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 6
 
 
  229:USB_DEVICE/App/usbd_desc.c **** /**
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  253:USB_DEVICE/App/usbd_desc.c ****   }
  254:USB_DEVICE/App/usbd_desc.c ****   else
  255:USB_DEVICE/App/usbd_desc.c ****   {
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 7
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 7
 
 
  256:USB_DEVICE/App/usbd_desc.c ****     USBD_GetString((uint8_t *)USBD_PRODUCT_STRING_FS, USBD_StrDesc, length);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  310:USB_DEVICE/App/usbd_desc.c ****   return USBD_StrDesc;
  311:USB_DEVICE/App/usbd_desc.c **** }
  312:USB_DEVICE/App/usbd_desc.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 8
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 8
 
 
  313:USB_DEVICE/App/usbd_desc.c **** /**
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  363:USB_DEVICE/App/usbd_desc.c ****   uint8_t idx = 0;
   97              		.loc 1 363 3 view .LVU15
  364:USB_DEVICE/App/usbd_desc.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 9
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 9
 
 
  365:USB_DEVICE/App/usbd_desc.c ****   for (idx = 0; idx < len; idx++)
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  365:USB_DEVICE/App/usbd_desc.c ****   {
  135              		.loc 1 365 31 discriminator 2 view .LVU32
  136 0026 DBB2     		uxtb	r3, r3
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 10
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 10
 
 
  137              	.LVL8:
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  182              		.cfi_offset 3, -16
  183              		.cfi_offset 4, -12
  184              		.cfi_offset 5, -8
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 11
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 11
 
 
  185              		.cfi_offset 14, -4
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  352:USB_DEVICE/App/usbd_desc.c **** 
  225              		.loc 1 352 1 is_stmt 0 view .LVU58
  226 002c F2E7     		b	.L17
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 12
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 12
 
 
  227              	.L22:
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  276              	.LC0:
  277 0000 434E434D 		.ascii	"CNCMica\000"
  277      69636100 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 13
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 13
 
 
  278              		.section	.text.USBD_FS_ProductStrDescriptor,"ax",%progbits
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  322 0014 0248     		ldr	r0, .L31+4
  323              	.LVL25:
  256:USB_DEVICE/App/usbd_desc.c ****   }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 14
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 14
 
 
  324              		.loc 1 256 5 view .LVU78
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  270:USB_DEVICE/App/usbd_desc.c ****   return USBD_StrDesc;
  370              		.loc 1 270 3 view .LVU85
  371 000a FFF7FEFF 		bl	USBD_GetString
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 15
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 15
 
 
  372              	.LVL30:
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  416              		.loc 1 304 5 is_stmt 0 view .LVU93
  417 0008 0548     		ldr	r0, .L41+4
  418              	.LVL33:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 16
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 16
 
 
  304:USB_DEVICE/App/usbd_desc.c ****   }
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  463              		.cfi_startproc
  464              		@ args = 0, pretend = 0, frame = 0
  465              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 17
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 17
 
 
  320:USB_DEVICE/App/usbd_desc.c ****   if(speed == 0)
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  508              		.cfi_endproc
  509              	.LFE74:
  511              		.global	USBD_StringSerial
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 18
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 18
 
 
  512              		.global	USBD_StrDesc
@@ -1075,51 +1075,51 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 1
  562              		.file 4 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
  563              		.file 5 "USB_DEVICE/App/usbd_desc.h"
  564              		.file 6 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_ctlreq.h"
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s 			page 19
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s 			page 19
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_desc.c
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:18     .text.USBD_FS_DeviceDescriptor:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:24     .text.USBD_FS_DeviceDescriptor:00000000 USBD_FS_DeviceDescriptor
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:47     .text.USBD_FS_DeviceDescriptor:00000008 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:52     .text.USBD_FS_LangIDStrDescriptor:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:58     .text.USBD_FS_LangIDStrDescriptor:00000000 USBD_FS_LangIDStrDescriptor
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:80     .text.USBD_FS_LangIDStrDescriptor:00000008 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:85     .text.IntToUnicode:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:90     .text.IntToUnicode:00000000 IntToUnicode
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:168    .text.Get_SerialNum:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:173    .text.Get_SerialNum:00000000 Get_SerialNum
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:230    .text.Get_SerialNum:00000030 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:236    .text.USBD_FS_SerialStrDescriptor:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:242    .text.USBD_FS_SerialStrDescriptor:00000000 USBD_FS_SerialStrDescriptor
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:270    .text.USBD_FS_SerialStrDescriptor:00000010 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:275    .rodata.USBD_FS_ProductStrDescriptor.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:279    .text.USBD_FS_ProductStrDescriptor:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:285    .text.USBD_FS_ProductStrDescriptor:00000000 USBD_FS_ProductStrDescriptor
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:332    .text.USBD_FS_ProductStrDescriptor:0000001c $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:338    .rodata.USBD_FS_ManufacturerStrDescriptor.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:342    .text.USBD_FS_ManufacturerStrDescriptor:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:348    .text.USBD_FS_ManufacturerStrDescriptor:00000000 USBD_FS_ManufacturerStrDescriptor
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:380    .text.USBD_FS_ManufacturerStrDescriptor:00000014 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:386    .rodata.USBD_FS_ConfigStrDescriptor.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:390    .text.USBD_FS_ConfigStrDescriptor:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:396    .text.USBD_FS_ConfigStrDescriptor:00000000 USBD_FS_ConfigStrDescriptor
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:443    .text.USBD_FS_ConfigStrDescriptor:0000001c $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:449    .rodata.USBD_FS_InterfaceStrDescriptor.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:453    .text.USBD_FS_InterfaceStrDescriptor:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:459    .text.USBD_FS_InterfaceStrDescriptor:00000000 USBD_FS_InterfaceStrDescriptor
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:506    .text.USBD_FS_InterfaceStrDescriptor:0000001c $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:555    .data.USBD_StringSerial:00000000 USBD_StringSerial
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:521    .bss.USBD_StrDesc:00000000 USBD_StrDesc
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:548    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:540    .data.USBD_FS_DeviceDesc:00000000 USBD_FS_DeviceDesc
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:527    .data.FS_Desc:00000000 FS_Desc
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:517    .bss.USBD_StrDesc:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:524    .data.FS_Desc:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:536    .data.USBD_FS_DeviceDesc:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:544    .data.USBD_LangIDDesc:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccdl0NM6.s:551    .data.USBD_StringSerial:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:18     .text.USBD_FS_DeviceDescriptor:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:24     .text.USBD_FS_DeviceDescriptor:00000000 USBD_FS_DeviceDescriptor
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:47     .text.USBD_FS_DeviceDescriptor:00000008 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:52     .text.USBD_FS_LangIDStrDescriptor:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:58     .text.USBD_FS_LangIDStrDescriptor:00000000 USBD_FS_LangIDStrDescriptor
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:80     .text.USBD_FS_LangIDStrDescriptor:00000008 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:85     .text.IntToUnicode:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:90     .text.IntToUnicode:00000000 IntToUnicode
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:168    .text.Get_SerialNum:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:173    .text.Get_SerialNum:00000000 Get_SerialNum
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:230    .text.Get_SerialNum:00000030 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:236    .text.USBD_FS_SerialStrDescriptor:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:242    .text.USBD_FS_SerialStrDescriptor:00000000 USBD_FS_SerialStrDescriptor
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:270    .text.USBD_FS_SerialStrDescriptor:00000010 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:275    .rodata.USBD_FS_ProductStrDescriptor.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:279    .text.USBD_FS_ProductStrDescriptor:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:285    .text.USBD_FS_ProductStrDescriptor:00000000 USBD_FS_ProductStrDescriptor
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:332    .text.USBD_FS_ProductStrDescriptor:0000001c $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:338    .rodata.USBD_FS_ManufacturerStrDescriptor.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:342    .text.USBD_FS_ManufacturerStrDescriptor:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:348    .text.USBD_FS_ManufacturerStrDescriptor:00000000 USBD_FS_ManufacturerStrDescriptor
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:380    .text.USBD_FS_ManufacturerStrDescriptor:00000014 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:386    .rodata.USBD_FS_ConfigStrDescriptor.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:390    .text.USBD_FS_ConfigStrDescriptor:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:396    .text.USBD_FS_ConfigStrDescriptor:00000000 USBD_FS_ConfigStrDescriptor
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:443    .text.USBD_FS_ConfigStrDescriptor:0000001c $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:449    .rodata.USBD_FS_InterfaceStrDescriptor.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:453    .text.USBD_FS_InterfaceStrDescriptor:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:459    .text.USBD_FS_InterfaceStrDescriptor:00000000 USBD_FS_InterfaceStrDescriptor
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:506    .text.USBD_FS_InterfaceStrDescriptor:0000001c $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:555    .data.USBD_StringSerial:00000000 USBD_StringSerial
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:521    .bss.USBD_StrDesc:00000000 USBD_StrDesc
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:548    .data.USBD_LangIDDesc:00000000 USBD_LangIDDesc
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:540    .data.USBD_FS_DeviceDesc:00000000 USBD_FS_DeviceDesc
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:527    .data.FS_Desc:00000000 FS_Desc
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:517    .bss.USBD_StrDesc:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:524    .data.FS_Desc:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:536    .data.USBD_FS_DeviceDesc:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:544    .data.USBD_LangIDDesc:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccBCGAdm.s:551    .data.USBD_StringSerial:00000000 $d
 
 UNDEFINED SYMBOLS
 USBD_GetString

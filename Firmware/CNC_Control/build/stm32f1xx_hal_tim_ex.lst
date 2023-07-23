@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
   30:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   ==============================================================================
   31:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     [..]
   32:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****      (#) Initialize the TIM low level resources by implementing the following functions
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 2
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 2
 
 
   33:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****          depending on the selected feature:
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
   87:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** /** @defgroup TIMEx TIMEx
   88:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @brief TIM Extended HAL module driver
   89:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @{
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 3
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 3
 
 
   90:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   */
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  144:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  145:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     return HAL_ERROR;
  146:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 4
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 4
 
 
  147:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  201:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   htim->Instance->SMCR |= TIM_SLAVEMODE_RESET;
  202:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  203:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Program channel 2 in PWM 2 mode with the desired Commutation_Delay*/
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 5
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 5
 
 
  204:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   OC_Config.OCFastMode = TIM_OCFAST_DISABLE;
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  258:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIMEx_HallSensor_MspDeInit(htim);
  259:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
  260:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 6
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 6
 
 
  261:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Change the DMA burst operation state */
@@ -358,7 +358,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  315:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** {
  316:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   uint32_t tmpsmcr;
  317:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_1_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_1);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 7
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 7
 
 
  318:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_2_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_2);
@@ -418,7 +418,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  372:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  373:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Disable the Input Capture channels 1, 2 and 3
  374:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   (in the Hall Sensor Interface the three possible channels that can be used are TIM_CHANNEL_1,
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 8
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 8
 
 
  375:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   TIM_CHANNEL_2 and TIM_CHANNEL_3) */
@@ -478,7 +478,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  429:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  430:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Enable the Peripheral, except in trigger mode where enable is automatically done with trigger 
  431:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   if (IS_TIM_SLAVE_INSTANCE(htim->Instance))
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 9
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 9
 
 
  432:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
@@ -538,7 +538,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  486:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** HAL_StatusTypeDef HAL_TIMEx_HallSensor_Start_DMA(TIM_HandleTypeDef *htim, uint32_t *pData, uint16_t
  487:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** {
  488:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   uint32_t tmpsmcr;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 10
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 10
 
 
  489:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_1_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_1);
@@ -598,7 +598,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  543:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     if (!IS_TIM_SLAVEMODE_TRIGGER_ENABLED(tmpsmcr))
  544:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     {
  545:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       __HAL_TIM_ENABLE(htim);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 11
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 11
 
 
  546:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     }
@@ -658,7 +658,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  600:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   [..]
  601:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     This section provides functions allowing to:
  602:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     (+) Start the Complementary Output Compare/PWM.
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 12
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 12
 
 
  603:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     (+) Stop the Complementary Output Compare/PWM.
@@ -718,7 +718,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  657:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     __HAL_TIM_ENABLE(htim);
  658:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   }
  659:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 13
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 13
 
 
  660:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Return function status */
@@ -778,7 +778,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  714:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Check the TIM complementary channel state */
  715:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   if (TIM_CHANNEL_N_STATE_GET(htim, Channel) != HAL_TIM_CHANNEL_STATE_READY)
  716:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 14
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 14
 
 
  717:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     return HAL_ERROR;
@@ -838,7 +838,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  771:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     __HAL_TIM_ENABLE(htim);
  772:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   }
  773:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 15
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 15
 
 
  774:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Return function status */
@@ -898,7 +898,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  828:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  829:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     __HAL_TIM_DISABLE_IT(htim, TIM_IT_BREAK);
  830:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 16
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 16
 
 
  831:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -958,7 +958,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  885:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  886:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   switch (Channel)
  887:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 17
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 17
 
 
  888:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     case TIM_CHANNEL_1:
@@ -1018,7 +1018,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  942:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       {
  943:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****         /* Return error status */
  944:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****         return HAL_ERROR;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 18
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 18
 
 
  945:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       }
@@ -1078,7 +1078,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  999:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       /* Disable the TIM Output Compare DMA request */
 1000:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       __HAL_TIM_DISABLE_DMA(htim, TIM_DMA_CC1);
 1001:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       (void)HAL_DMA_Abort_IT(htim->hdma[TIM_DMA_ID_CC1]);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 19
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 19
 
 
 1002:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       break;
@@ -1138,7 +1138,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1056:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     (+) Start the Complementary PWM and enable interrupts.
 1057:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     (+) Stop the Complementary PWM and disable interrupts.
 1058:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     (+) Start the Complementary PWM and enable DMA transfers.
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 20
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 20
 
 
 1059:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     (+) Stop the Complementary PWM and disable DMA transfers.
@@ -1198,7 +1198,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1113:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       __HAL_TIM_ENABLE(htim);
 1114:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     }
 1115:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 21
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 21
 
 
 1116:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   else
@@ -1258,7 +1258,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1170:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
 1171:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Check the parameters */
 1172:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   assert_param(IS_TIM_CCXN_INSTANCE(htim->Instance, Channel));
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 22
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 22
 
 
 1173:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -1318,7 +1318,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1227:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   }
 1228:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   else
 1229:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 23
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 23
 
 
 1230:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     __HAL_TIM_ENABLE(htim);
@@ -1378,7 +1378,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1284:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
 1285:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Disable the TIM Break interrupt (only if no more channel is active) */
 1286:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   tmpccer = htim->Instance->CCER;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 24
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 24
 
 
 1287:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   if ((tmpccer & (TIM_CCER_CC1NE | TIM_CCER_CC2NE | TIM_CCER_CC3NE)) == (uint32_t)RESET)
@@ -1438,7 +1438,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1341:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   else
 1342:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
 1343:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     return HAL_ERROR;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 25
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 25
 
 
 1344:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   }
@@ -1498,7 +1498,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1398:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
 1399:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       /* Enable the DMA channel */
 1400:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       if (HAL_DMA_Start_IT(htim->hdma[TIM_DMA_ID_CC3], (uint32_t)pData, (uint32_t)&htim->Instance->
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 26
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 26
 
 
 1401:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****                          Length) != HAL_OK)
@@ -1558,7 +1558,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1455:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   switch (Channel)
 1456:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
 1457:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     case TIM_CHANNEL_1:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 27
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 27
 
 
 1458:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     {
@@ -1618,7 +1618,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1512:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   [..]
 1513:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     This section provides functions allowing to:
 1514:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     (+) Start the Complementary One Pulse generation.
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 28
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 28
 
 
 1515:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     (+) Stop the Complementary One Pulse.
@@ -1678,7 +1678,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1569:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   return HAL_OK;
 1570:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** }
 1571:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 29
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 29
 
 
 1572:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** /**
@@ -1738,7 +1738,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1626:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_1_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_1);
 1627:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_2_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_2);
 1628:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef complementary_channel_1_state = TIM_CHANNEL_N_STATE_GET(htim, TIM_CHA
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 30
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 30
 
 
 1629:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef complementary_channel_2_state = TIM_CHANNEL_N_STATE_GET(htim, TIM_CHA
@@ -1798,7 +1798,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1683:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   assert_param(IS_TIM_CCXN_INSTANCE(htim->Instance, OutputChannel));
 1684:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
 1685:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Disable the TIM Capture/Compare 1 interrupt */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 31
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 31
 
 
 1686:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   __HAL_TIM_DISABLE_IT(htim, TIM_IT_CC1);
@@ -1858,7 +1858,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1740:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   *        configured in Hall sensor interface, this interface Timer will generate the
 1741:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   *        commutation at its TRGO output (connected to Timer used in this function) each time
 1742:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   *        the TI1 of the Interface Timer detect a commutation at its input TI1.
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 32
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 32
 
 
 1743:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @param  htim TIM handle
@@ -1918,7 +1918,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1797:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   *        commutation at its TRGO output (connected to Timer used in this function) each time
 1798:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   *        the TI1 of the Interface Timer detect a commutation at its input TI1.
 1799:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @param  htim TIM handle
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 33
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 33
 
 
 1800:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @param  InputTrigger the Internal trigger corresponding to the Timer Interfacing with the Hall 
@@ -1978,7 +1978,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1854:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   *        the TI1 of the Interface Timer detect a commutation at its input TI1.
 1855:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @note  The user should configure the DMA in his own software, in This function only the COMDE b
 1856:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @param  htim TIM handle
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 34
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 34
 
 
 1857:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @param  InputTrigger the Internal trigger corresponding to the Timer Interfacing with the Hall 
@@ -2038,7 +2038,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1911:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** /**
 1912:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @brief  Configures the TIM in master mode.
 1913:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @param  htim TIM handle.
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 35
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 35
 
 
 1914:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @param  sMasterConfig pointer to a TIM_MasterConfigTypeDef structure that
@@ -2098,7 +2098,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1968:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
 1969:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** /**
 1970:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @brief  Configures the Break feature, dead time, Lock level, OSSI/OSSR State
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 36
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 36
 
 
 1971:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   *         and the AOE(automatic output enable).
@@ -2158,7 +2158,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 2025:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   * @retval HAL status
 2026:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   */
 2027:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** HAL_StatusTypeDef HAL_TIMEx_RemapConfig(TIM_HandleTypeDef *htim, uint32_t Remap)
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 37
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 37
 
 
 2028:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** {
@@ -2218,7 +2218,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 2082:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****    */
 2083:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** }
 2084:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 38
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 38
 
 
 2085:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** /**
@@ -2278,7 +2278,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 2139:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** {
 2140:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_state;
 2141:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 39
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 39
 
 
 2142:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Check the parameters */
@@ -2338,7 +2338,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 2196:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIMEx_CommutHalfCpltCallback(htim);
 2197:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
 2198:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 40
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 40
 
 
 2199:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -2398,7 +2398,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 2253:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** #else
 2254:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_PWM_PulseFinishedCallback(htim);
 2255:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** #endif /* USE_HAL_TIM_REGISTER_CALLBACKS */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 41
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 41
 
 
 2256:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -2458,7 +2458,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 2310:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** static void TIM_CCxNChannelCmd(TIM_TypeDef *TIMx, uint32_t Channel, uint32_t ChannelNState)
 2311:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** {
   27              		.loc 1 2311 1 view -0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 42
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 42
 
 
   28              		.cfi_startproc
@@ -2518,7 +2518,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
   72              		.loc 1 2266 1 is_stmt 0 view .LVU13
   73 0000 10B5     		push	{r4, lr}
   74              	.LCFI0:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 43
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 43
 
 
   75              		.cfi_def_cfa_offset 8
@@ -2578,7 +2578,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  112              		.loc 1 2296 1 view .LVU30
  113 0020 10BD     		pop	{r4, pc}
  114              	.LVL7:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 44
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 44
 
 
  115              	.L7:
@@ -2638,7 +2638,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  160              		.cfi_def_cfa_offset 8
  161              		.cfi_offset 4, -8
  162              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 45
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 45
 
 
 2208:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -2698,7 +2698,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  199              		.loc 1 2257 3 is_stmt 1 view .LVU59
 2257:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** }
  200              		.loc 1 2257 17 is_stmt 0 view .LVU60
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 46
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 46
 
 
  201 0022 0023     		movs	r3, #0
@@ -2758,7 +2758,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  240 004e 2377     		strb	r3, [r4, #28]
 2232:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     {
  241              		.loc 1 2232 5 is_stmt 1 view .LVU76
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 47
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 47
 
 
 2232:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     {
@@ -2818,7 +2818,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  286 0000 7047     		bx	lr
  287              		.cfi_endproc
  288              	.LFE67:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 48
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 48
 
 
  290              		.section	.text.HAL_TIMEx_HallSensor_Init,"ax",%progbits
@@ -2878,7 +2878,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  331 000c 90F83D30 		ldrb	r3, [r0, #61]	@ zero_extendqisi2
  157:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  332              		.loc 1 157 6 view .LVU103
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 49
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 49
 
 
  333 0010 002B     		cmp	r3, #0
@@ -2938,7 +2938,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  193:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  373              		.loc 1 193 23 view .LVU118
  374 0046 5368     		ldr	r3, [r2, #4]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 50
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 50
 
 
  375 0048 43F08003 		orr	r3, r3, #128
@@ -2998,7 +2998,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  412              		.loc 1 206 3 is_stmt 1 view .LVU135
  206:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   OC_Config.OCNIdleState = TIM_OCNIDLESTATE_RESET;
  413              		.loc 1 206 20 is_stmt 0 view .LVU136
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 51
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 51
 
 
  414 007c 7023     		movs	r3, #112
@@ -3058,7 +3058,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  450              		.loc 1 220 23 is_stmt 0 view .LVU154
  451 00a6 0123     		movs	r3, #1
  452 00a8 84F84630 		strb	r3, [r4, #70]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 52
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 52
 
 
  223:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   TIM_CHANNEL_STATE_SET(htim, TIM_CHANNEL_2, HAL_TIM_CHANNEL_STATE_READY);
@@ -3118,7 +3118,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  145:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   }
  494              		.loc 1 145 12 view .LVU168
  495 00d0 0120     		movs	r0, #1
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 53
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 53
 
 
  496              	.LVL22:
@@ -3178,7 +3178,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  244:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  546              		.loc 1 244 15 is_stmt 0 view .LVU177
  547 0004 0223     		movs	r3, #2
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 54
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 54
 
 
  548 0006 80F83D30 		strb	r3, [r0, #61]
@@ -3238,7 +3238,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  587 0044 84F83D00 		strb	r0, [r4, #61]
  274:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  588              		.loc 1 274 3 is_stmt 1 discriminator 5 view .LVU193
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 55
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 55
 
 
  274:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -3298,7 +3298,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  319:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef complementary_channel_2_state = TIM_CHANNEL_N_STATE_GET(htim, TIM_CHA
  632              		.loc 1 319 3 is_stmt 1 view .LVU207
  319:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef complementary_channel_2_state = TIM_CHANNEL_N_STATE_GET(htim, TIM_CHA
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 56
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 56
 
 
  633              		.loc 1 319 31 is_stmt 0 view .LVU208
@@ -3358,7 +3358,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  672 0036 84F83F30 		strb	r3, [r4, #63]
  337:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   TIM_CHANNEL_N_STATE_SET(htim, TIM_CHANNEL_2, HAL_TIM_CHANNEL_STATE_BUSY);
  673              		.loc 1 337 3 view .LVU224
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 57
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 57
 
 
  674 003a 84F84230 		strb	r3, [r4, #66]
@@ -3418,7 +3418,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  714 0074 9A68     		ldr	r2, [r3, #8]
  348:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     if (!IS_TIM_SLAVEMODE_TRIGGER_ENABLED(tmpsmcr))
  715              		.loc 1 348 13 view .LVU239
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 58
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 58
 
 
  716 0076 02F00702 		and	r2, r2, #7
@@ -3478,7 +3478,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  761              		.syntax unified
  762              		.thumb
  763              		.thumb_func
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 59
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 59
 
 
  765              	HAL_TIMEx_HallSensor_Stop:
@@ -3538,7 +3538,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  808 002e 84F83E30 		strb	r3, [r4, #62]
  383:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   TIM_CHANNEL_N_STATE_SET(htim, TIM_CHANNEL_1, HAL_TIM_CHANNEL_STATE_READY);
  809              		.loc 1 383 3 discriminator 5 view .LVU261
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 60
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 60
 
 
  810 0032 84F83F30 		strb	r3, [r4, #63]
@@ -3598,7 +3598,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  853              		.loc 1 400 31 is_stmt 0 view .LVU274
  854 000a 94F83F30 		ldrb	r3, [r4, #63]	@ zero_extendqisi2
  855              	.LVL52:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 61
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 61
 
 
  401:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef complementary_channel_2_state = TIM_CHANNEL_N_STATE_GET(htim, TIM_CHA
@@ -3658,7 +3658,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  894 0032 84F83E30 		strb	r3, [r4, #62]
  418:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   TIM_CHANNEL_N_STATE_SET(htim, TIM_CHANNEL_1, HAL_TIM_CHANNEL_STATE_BUSY);
  895              		.loc 1 418 3 is_stmt 1 view .LVU291
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 62
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 62
 
 
  896 0036 84F83F30 		strb	r3, [r4, #63]
@@ -3718,7 +3718,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  936              		.loc 1 441 5 is_stmt 1 view .LVU305
  937 0074 1A68     		ldr	r2, [r3]
  938 0076 42F00102 		orr	r2, r2, #1
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 63
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 63
 
 
  939 007a 1A60     		str	r2, [r3]
@@ -3778,7 +3778,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  445:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** }
  980              		.loc 1 445 10 view .LVU319
  981 009e 0020     		movs	r0, #0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 64
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 64
 
 
  982 00a0 FAE7     		b	.L50
@@ -3838,7 +3838,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1030 0020 1142     		tst	r1, r2
  1031 0022 08D1     		bne	.L62
  467:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 65
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 65
 
 
  1032              		.loc 1 467 3 discriminator 1 view .LVU328
@@ -3898,7 +3898,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1077              		.cfi_def_cfa_offset 24
  1078              		.cfi_offset 3, -24
  1079              		.cfi_offset 4, -20
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 66
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 66
 
 
  1080              		.cfi_offset 5, -16
@@ -3958,7 +3958,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1119 002c 0223     		movs	r3, #2
  1120 002e 84F83E30 		strb	r3, [r4, #62]
  511:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 67
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 67
 
 
  1121              		.loc 1 511 7 view .LVU355
@@ -4018,7 +4018,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1159 0058 3431     		adds	r1, r1, #52
  1160 005a 606A     		ldr	r0, [r4, #36]
  1161 005c FFF7FEFF 		bl	HAL_DMA_Start_IT
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 68
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 68
 
 
  1162              	.LVL79:
@@ -4078,7 +4078,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1204              	.L67:
  542:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     if (!IS_TIM_SLAVEMODE_TRIGGER_ENABLED(tmpsmcr))
  1205              		.loc 1 542 5 is_stmt 1 view .LVU384
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 69
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 69
 
 
  542:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     if (!IS_TIM_SLAVEMODE_TRIGGER_ENABLED(tmpsmcr))
@@ -4138,7 +4138,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1249              		.cfi_endproc
  1250              	.LFE73:
  1252              		.section	.text.HAL_TIMEx_HallSensor_Stop_DMA,"ax",%progbits
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 70
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 70
 
 
  1253              		.align	1
@@ -4198,7 +4198,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1298 0028 08D1     		bne	.L78
  579:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  1299              		.loc 1 579 3 discriminator 1 view .LVU406
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 71
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 71
 
 
  1300 002a 196A     		ldr	r1, [r3, #32]
@@ -4258,7 +4258,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1345              		.loc 1 629 3 view .LVU417
  632:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  1346              		.loc 1 632 3 view .LVU418
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 72
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 72
 
 
  632:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
@@ -4318,7 +4318,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  647:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  1388              		.loc 1 647 6 view .LVU432
  1389 0038 254A     		ldr	r2, .L99
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 73
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 73
 
 
  1390 003a 9342     		cmp	r3, r2
@@ -4378,7 +4378,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1433 0080 0123     		movne	r3, #1
  1434 0082 C7E7     		b	.L82
  1435              	.L96:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 74
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 74
 
 
  632:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
@@ -4438,7 +4438,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1477              		.loc 1 652 7 is_stmt 1 view .LVU456
  1478 00bc 1A68     		ldr	r2, [r3]
  1479              	.LVL102:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 75
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 75
 
 
  652:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     }
@@ -4498,7 +4498,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1529 0004 0D46     		mov	r5, r1
  678:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  1530              		.loc 1 678 3 is_stmt 1 view .LVU464
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 76
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 76
 
 
  681:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -4558,7 +4558,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1573              		.loc 1 687 3 discriminator 5 view .LVU476
  690:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  1574              		.loc 1 690 3 discriminator 5 view .LVU477
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 77
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 77
 
 
  1575 004a 25B9     		cbnz	r5, .L104
@@ -4618,7 +4618,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1622              		@ frame_needed = 0, uses_anonymous_args = 0
  708:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   uint32_t tmpsmcr;
  1623              		.loc 1 708 1 is_stmt 0 view .LVU487
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 78
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 78
 
 
  1624 0000 10B5     		push	{r4, lr}
@@ -4678,7 +4678,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1666 0030 2268     		ldr	r2, [r4]
  1667 0032 D368     		ldr	r3, [r2, #12]
  1668 0034 43F08003 		orr	r3, r3, #128
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 79
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 79
 
 
  1669 0038 D360     		str	r3, [r2, #12]
@@ -4738,7 +4738,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1711              	.L112:
  715:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  1712              		.loc 1 715 46 discriminator 2 view .LVU512
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 80
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 80
 
 
  1713 0078 0429     		cmp	r1, #4
@@ -4798,7 +4798,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1756              		.loc 1 721 3 discriminator 3 view .LVU523
  1757 00ba 0223     		movs	r3, #2
  1758 00bc 84F84330 		strb	r3, [r4, #67]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 81
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 81
 
 
  1759 00c0 B0E7     		b	.L118
@@ -4858,7 +4858,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  766:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     }
  1801              		.loc 1 766 7 is_stmt 1 view .LVU536
  1802 00f8 1A68     		ldr	r2, [r3]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 82
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 82
 
 
  1803              	.LVL118:
@@ -4918,7 +4918,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1852 0002 0546     		mov	r5, r0
  1853 0004 0C46     		mov	r4, r1
  791:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Check the parameters */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 83
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 83
 
 
  1854              		.loc 1 791 3 is_stmt 1 view .LVU544
@@ -4978,7 +4978,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  833:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  1895              		.loc 1 833 3 is_stmt 0 view .LVU558
  1896 0034 41F21112 		movw	r2, #4369
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 84
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 84
 
 
  1897 0038 1142     		tst	r1, r2
@@ -5038,7 +5038,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1939              	.L148:
  800:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       break;
  1940              		.loc 1 800 7 is_stmt 1 view .LVU571
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 85
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 85
 
 
  1941 0078 0268     		ldr	r2, [r0]
@@ -5098,7 +5098,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  1985              		.cfi_endproc
  1986              	.LFE78:
  1988              		.section	.text.HAL_TIMEx_OCN_Start_DMA,"ax",%progbits
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 86
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 86
 
 
  1989              		.align	1
@@ -5158,7 +5158,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2033              		.loc 1 870 8 is_stmt 1 view .LVU592
  870:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  2034              		.loc 1 870 51 is_stmt 0 view .LVU593
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 87
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 87
 
 
  2035 0020 002D     		cmp	r5, #0
@@ -5218,7 +5218,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2078              		.loc 1 959 3 view .LVU604
  2079 0060 2268     		ldr	r2, [r4]
  2080 0062 536C     		ldr	r3, [r2, #68]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 88
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 88
 
 
  2081 0064 43F40043 		orr	r3, r3, #32768
@@ -5278,7 +5278,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2122 00aa 0228     		cmp	r0, #2
  2123 00ac 14BF     		ite	ne
  2124 00ae 0020     		movne	r0, #0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 89
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 89
 
 
  2125 00b0 0120     		moveq	r0, #1
@@ -5338,7 +5338,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2168 00e6 0022     		movne	r2, #0
  2169 00e8 0122     		moveq	r2, #1
  2170 00ea A2E7     		b	.L158
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 90
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 90
 
 
  2171              	.LVL142:
@@ -5398,7 +5398,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2214 0122 90E7     		b	.L163
  2215              	.L185:
  878:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 91
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 91
 
 
  2216              		.loc 1 878 7 discriminator 3 view .LVU640
@@ -5458,7 +5458,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2255              		.loc 1 898 10 view .LVU655
  2256 0152 0028     		cmp	r0, #0
  2257 0154 41D1     		bne	.L174
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 92
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 92
 
 
  905:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       break;
@@ -5518,7 +5518,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2296              		.loc 1 919 10 view .LVU671
  2297 0180 0028     		cmp	r0, #0
  2298 0182 2CD1     		bne	.L175
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 93
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 93
 
 
  926:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       break;
@@ -5578,7 +5578,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2337              		.loc 1 940 10 view .LVU687
  2338 01ae C0B9     		cbnz	r0, .L176
  947:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       break;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 94
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 94
 
 
  2339              		.loc 1 947 7 is_stmt 1 view .LVU688
@@ -5638,7 +5638,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  902:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****       }
  2381              		.loc 1 902 16 view .LVU701
  2382 01da 0120     		movs	r0, #1
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 95
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 95
 
 
  2383 01dc FCE7     		b	.L156
@@ -5698,7 +5698,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2432              		.loc 1 995 3 view .LVU708
  2433 0006 0429     		cmp	r1, #4
  2434 0008 34D0     		beq	.L190
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 96
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 96
 
 
  2435 000a 0829     		cmp	r1, #8
@@ -5758,7 +5758,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2479 0054 1A60     		str	r2, [r3]
  2480              	.L194:
 1032:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 97
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 97
 
 
  2481              		.loc 1 1032 3 discriminator 5 view .LVU719
@@ -5818,7 +5818,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1010:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     }
  2522              		.loc 1 1010 7 is_stmt 1 view .LVU733
  2523 0084 C4E7     		b	.L192
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 98
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 98
 
 
  2524              	.LVL170:
@@ -5878,7 +5878,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2569              		.thumb_func
  2571              	HAL_TIMEx_PWMN_Start:
  2572              	.LVL173:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 99
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 99
 
 
  2573              	.LFB81:
@@ -5938,7 +5938,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2614              	.LVL175:
 1102:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  2615              		.loc 1 1102 3 is_stmt 0 view .LVU757
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 100
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 100
 
 
  2616 0026 2068     		ldr	r0, [r4]
@@ -5998,7 +5998,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2658 0066 0DD0     		beq	.L219
 1093:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  2659              		.loc 1 1093 7 discriminator 8 view .LVU770
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 101
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 101
 
 
  2660 0068 94F84530 		ldrb	r3, [r4, #69]	@ zero_extendqisi2
@@ -6058,7 +6058,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2704 00ac 84F84430 		strb	r3, [r4, #68]
  2705 00b0 B7E7     		b	.L210
  2706              	.LVL179:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 102
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 102
 
 
  2707              	.L213:
@@ -6118,7 +6118,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2751              		.thumb
  2752              		.thumb_func
  2754              	HAL_TIMEx_PWMN_Stop:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 103
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 103
 
 
  2755              	.LVL185:
@@ -6178,7 +6178,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1147:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  2798              		.loc 1 1147 3 discriminator 5 view .LVU803
  2799 002c 2368     		ldr	r3, [r4]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 104
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 104
 
 
  2800 002e 196A     		ldr	r1, [r3, #32]
@@ -6238,7 +6238,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1150:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  2843              		.loc 1 1150 3 discriminator 6 view .LVU815
  2844 006e 0123     		movs	r3, #1
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 105
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 105
 
 
  2845 0070 84F84430 		strb	r3, [r4, #68]
@@ -6298,7 +6298,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1181:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  2891              		.loc 1 1181 3 is_stmt 1 view .LVU826
  2892 001a 0028     		cmp	r0, #0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 106
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 106
 
 
  2893 001c 45D1     		bne	.L240
@@ -6358,7 +6358,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1220:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  2936              		.loc 1 1220 7 discriminator 2 view .LVU838
  2937 005c A2F59432 		sub	r2, r2, #75776
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 107
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 107
 
 
  2938 0060 9342     		cmp	r3, r2
@@ -6418,7 +6418,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  2981 00a2 013B     		subs	r3, r3, #1
  2982 00a4 18BF     		it	ne
  2983 00a6 0123     		movne	r3, #1
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 108
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 108
 
 
  2984 00a8 B5E7     		b	.L236
@@ -6478,7 +6478,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1203:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     }
  3028              		.loc 1 1203 7 view .LVU860
  3029 00ec A0E7     		b	.L246
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 109
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 109
 
 
  3030              	.LVL195:
@@ -6538,7 +6538,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3074              		.syntax unified
  3075              		.thumb
  3076              		.thumb_func
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 110
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 110
 
 
  3078              	HAL_TIMEx_PWMN_Stop_IT:
@@ -6598,7 +6598,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1287:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  3121              		.loc 1 1287 3 is_stmt 1 view .LVU883
 1287:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 111
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 111
 
 
  3122              		.loc 1 1287 6 is_stmt 0 view .LVU884
@@ -6658,7 +6658,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3165 0066 22F00102 		bic	r2, r2, #1
  3166 006a 1A60     		str	r2, [r3]
  3167              	.L265:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 112
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 112
 
 
 1296:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -6718,7 +6718,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3209              		.loc 1 1299 3 discriminator 4 view .LVU908
  3210 00a0 082C     		cmp	r4, #8
  3211 00a2 07D0     		beq	.L273
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 113
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 113
 
 
 1299:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -6778,7 +6778,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3259 000a 47D1     		bne	.L275
 1326:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  3260              		.loc 1 1326 7 discriminator 1 view .LVU918
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 114
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 114
 
 
  3261 000c 90F84200 		ldrb	r0, [r0, #66]	@ zero_extendqisi2
@@ -6838,7 +6838,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3302 0042 84F84220 		strb	r2, [r4, #66]
  3303              	.L286:
 1346:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 115
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 115
 
 
  3304              		.loc 1 1346 3 is_stmt 1 view .LVU932
@@ -6898,7 +6898,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3348 009a 9DE0     		b	.L279
  3349              	.LVL214:
  3350              	.L275:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 116
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 116
 
 
 1326:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
@@ -6958,7 +6958,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3394              	.L280:
 1330:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   {
  3395              		.loc 1 1330 51 discriminator 2 view .LVU954
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 117
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 117
 
 
  3396 00d4 042D     		cmp	r5, #4
@@ -7018,7 +7018,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3439              		.loc 1 1332 25 discriminator 1 view .LVU965
  3440 010c 002B     		cmp	r3, #0
  3441 010e 95D0     		beq	.L284
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 118
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 118
 
 
 1334:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     }
@@ -7078,7 +7078,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1355:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  3482              		.loc 1 1355 17 is_stmt 0 view .LVU980
  3483 0140 626A     		ldr	r2, [r4, #36]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 119
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 119
 
 
 1355:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -7138,7 +7138,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1376:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  3523              		.loc 1 1376 17 is_stmt 0 view .LVU996
  3524 016e A26A     		ldr	r2, [r4, #40]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 120
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 120
 
 
 1376:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -7198,7 +7198,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1397:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  3564              		.loc 1 1397 17 is_stmt 0 view .LVU1012
  3565 019c E26A     		ldr	r2, [r4, #44]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 121
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 121
 
 
 1397:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -7258,7 +7258,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3605 01ce 0020     		movs	r0, #0
  3606 01d0 02E0     		b	.L279
  3607              	.LVL235:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 122
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 122
 
 
  3608              	.L294:
@@ -7318,7 +7318,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3657              	.LFB86:
 1451:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Check the parameters */
  3658              		.loc 1 1451 1 is_stmt 1 view -0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 123
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 123
 
 
  3659              		.cfi_startproc
@@ -7378,7 +7378,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3704              		.loc 1 1489 3 discriminator 5 view .LVU1044
 1492:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  3705              		.loc 1 1492 3 discriminator 5 view .LVU1045
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 124
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 124
 
 
 1492:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -7438,7 +7438,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3747              		.loc 1 1462 7 is_stmt 1 view .LVU1058
  3748 0072 CDE7     		b	.L315
  3749              	.LVL246:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 125
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 125
 
 
  3750              	.L313:
@@ -7498,7 +7498,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3791 00a6 DAE7     		b	.L319
  3792              	.L324:
 1495:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 126
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 126
 
 
  3793              		.loc 1 1495 3 discriminator 3 view .LVU1072
@@ -7558,7 +7558,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3841              	.LVL255:
 1539:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef complementary_channel_1_state = TIM_CHANNEL_N_STATE_GET(htim, TIM_CHA
  3842              		.loc 1 1539 3 is_stmt 1 discriminator 4 view .LVU1081
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 127
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 127
 
 
 1539:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef complementary_channel_1_state = TIM_CHANNEL_N_STATE_GET(htim, TIM_CHA
@@ -7618,7 +7618,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1556:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   TIM_CHANNEL_STATE_SET(htim, TIM_CHANNEL_2, HAL_TIM_CHANNEL_STATE_BUSY);
  3883              		.loc 1 1556 3 is_stmt 1 view .LVU1096
  3884 003e 0223     		movs	r3, #2
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 128
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 128
 
 
  3885              	.LVL262:
@@ -7678,7 +7678,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3926              	.L328:
 1570:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  3927              		.loc 1 1570 1 view .LVU1110
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 129
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 129
 
 
  3928 0074 38BD     		pop	{r3, r4, r5, pc}
@@ -7738,7 +7738,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  3975 000e FFF7FEFF 		bl	TIM_CCxNChannelCmd
  3976              	.LVL275:
 1593:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 130
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 130
 
 
  3977              		.loc 1 1593 3 is_stmt 1 discriminator 4 view .LVU1120
@@ -7798,7 +7798,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4020 0058 0123     		movs	r3, #1
  4021 005a 84F83E30 		strb	r3, [r4, #62]
 1603:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   TIM_CHANNEL_N_STATE_SET(htim, TIM_CHANNEL_1, HAL_TIM_CHANNEL_STATE_READY);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 131
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 131
 
 
  4022              		.loc 1 1603 3 discriminator 5 view .LVU1132
@@ -7858,7 +7858,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4069              	.LVL279:
 1626:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_2_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_2);
  4070              		.loc 1 1626 3 is_stmt 1 discriminator 4 view .LVU1142
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 132
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 132
 
 
 1626:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   HAL_TIM_ChannelStateTypeDef channel_2_state = TIM_CHANNEL_STATE_GET(htim, TIM_CHANNEL_2);
@@ -7918,7 +7918,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4109              		.loc 1 1640 12 view .LVU1158
  4110 0038 26E0     		b	.L343
  4111              	.LVL286:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 133
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 133
 
 
  4112              	.L344:
@@ -7978,7 +7978,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4153 0070 2946     		mov	r1, r5
  4154 0072 2068     		ldr	r0, [r4]
  4155 0074 FFF7FEFF 		bl	TIM_CCxChannelCmd
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 134
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 134
 
 
  4156              	.LVL293:
@@ -8038,7 +8038,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4203              		.cfi_offset 4, -12
  4204              		.cfi_offset 5, -8
  4205              		.cfi_offset 14, -4
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 135
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 135
 
 
  4206 0002 0446     		mov	r4, r0
@@ -8098,7 +8098,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4249 0044 03D1     		bne	.L352
 1696:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  4250              		.loc 1 1696 3 discriminator 3 view .LVU1192
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 136
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 136
 
 
  4251 0046 5A6C     		ldr	r2, [r3, #68]
@@ -8158,7 +8158,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4292              		.cfi_endproc
  4293              	.LFE90:
  4295              		.section	.text.HAL_TIMEx_ConfigCommutEvent,"ax",%progbits
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 137
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 137
 
 
  4296              		.align	1
@@ -8218,7 +8218,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4338              	.L358:
 1770:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     htim->Instance->SMCR |= InputTrigger;
  4339              		.loc 1 1770 5 is_stmt 1 view .LVU1219
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 138
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 138
 
 
 1770:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****     htim->Instance->SMCR |= InputTrigger;
@@ -8278,7 +8278,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4378 004a 4A60     		str	r2, [r1, #4]
 1781:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  4379              		.loc 1 1781 3 is_stmt 1 view .LVU1236
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 139
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 139
 
 
  4380 004c 0268     		ldr	r2, [r0]
@@ -8338,7 +8338,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4426              		@ args = 0, pretend = 0, frame = 0
  4427              		@ frame_needed = 0, uses_anonymous_args = 0
  4428              		@ link register save eliminated.
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 140
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 140
 
 
 1817:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   assert_param(IS_TIM_INTERNAL_TRIGGEREVENT_SELECTION(InputTrigger));
@@ -8398,7 +8398,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4466              		.loc 1 1827 9 is_stmt 0 view .LVU1263
  4467 0028 0468     		ldr	r4, [r0]
 1827:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 141
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 141
 
 
  4468              		.loc 1 1827 26 view .LVU1264
@@ -8458,7 +8458,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4508              		.loc 1 1842 3 view .LVU1278
 1842:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  4509              		.loc 1 1842 3 view .LVU1279
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 142
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 142
 
 
  4510 0060 0023     		movs	r3, #0
@@ -8518,7 +8518,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1872:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Check the parameters */
  4555              		.loc 1 1872 1 is_stmt 0 discriminator 2 view .LVU1291
  4556 0008 10B4     		push	{r4}
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 143
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 143
 
 
  4557              	.LCFI34:
@@ -8578,7 +8578,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4595              		.loc 1 1888 7 is_stmt 0 view .LVU1307
  4596 0030 0168     		ldr	r1, [r0]
 1888:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Select the Commutation event source */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 144
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 144
 
 
  4597              		.loc 1 1888 23 view .LVU1308
@@ -8638,7 +8638,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1901:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  4635              		.loc 1 1901 3 is_stmt 1 view .LVU1325
  4636 005e 0268     		ldr	r2, [r0]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 145
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 145
 
 
  4637 0060 D368     		ldr	r3, [r2, #12]
@@ -8698,7 +8698,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4684              	.LVL322:
  4685              	.LFB94:
 1921:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   uint32_t tmpcr2;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 146
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 146
 
 
  4686              		.loc 1 1921 1 is_stmt 1 view -0
@@ -8758,7 +8758,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4723              	.LVL324:
 1943:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Select the TRGO source */
  4724              		.loc 1 1943 3 is_stmt 1 discriminator 2 view .LVU1353
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 147
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 147
 
 
 1943:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   /* Select the TRGO source */
@@ -8818,7 +8818,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 1955:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  4763              		.loc 1 1955 29 is_stmt 0 view .LVU1370
  4764 004a 4A68     		ldr	r2, [r1, #4]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 148
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 148
 
 
 1955:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
@@ -8878,7 +8878,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4805              	.LFE94:
  4807              		.section	.text.HAL_TIMEx_ConfigBreakDeadTime,"ax",%progbits
  4808              		.align	1
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 149
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 149
 
 
  4809              		.global	HAL_TIMEx_ConfigBreakDeadTime
@@ -8938,7 +8938,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4847 0014 8A68     		ldr	r2, [r1, #8]
  4848 0016 1343     		orrs	r3, r3, r2
  4849              	.LVL337:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 150
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 150
 
 
 2005:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   MODIFY_REG(tmpbdtr, TIM_BDTR_OSSR, sBreakDeadTimeConfig->OffStateRunMode);
@@ -8998,7 +8998,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4890 003c CA69     		ldr	r2, [r1, #28]
  4891              	.LVL351:
 2009:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 151
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 151
 
 
  4892              		.loc 1 2009 3 discriminator 2 view .LVU1416
@@ -9058,7 +9058,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4935              		.cfi_startproc
  4936              		@ args = 0, pretend = 0, frame = 0
  4937              		@ frame_needed = 0, uses_anonymous_args = 0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 152
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 152
 
 
  4938              		@ link register save eliminated.
@@ -9118,7 +9118,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  4986 0000 08B5     		push	{r3, lr}
  4987              	.LCFI38:
  4988              		.cfi_def_cfa_offset 8
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 153
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 153
 
 
  4989              		.cfi_offset 3, -8
@@ -9178,7 +9178,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
 2187:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c ****   TIM_HandleTypeDef *htim = (TIM_HandleTypeDef *)((DMA_HandleTypeDef *)hdma)->Parent;
  5038              		.loc 1 2187 1 is_stmt 1 view -0
  5039              		.cfi_startproc
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 154
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 154
 
 
  5040              		@ args = 0, pretend = 0, frame = 0
@@ -9238,7 +9238,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  5087              		.global	HAL_TIMEx_HallSensor_GetState
  5088              		.syntax unified
  5089              		.thumb
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 155
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 155
 
 
  5090              		.thumb_func
@@ -9298,7 +9298,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  5136              	.L409:
 2145:Drivers/STM32F1xx_HAL_Driver/Src/stm32f1xx_hal_tim_ex.c **** 
  5137              		.loc 1 2145 19 discriminator 2 view .LVU1471
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 156
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 156
 
 
  5138 000a 0429     		cmp	r1, #4
@@ -9352,109 +9352,109 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 1
  5178              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
  5179              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
  5180              		.file 9 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim_ex.h"
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 157
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 157
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 stm32f1xx_hal_tim_ex.c
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:18     .text.TIM_CCxNChannelCmd:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:23     .text.TIM_CCxNChannelCmd:00000000 TIM_CCxNChannelCmd
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:60     .text.TIM_DMAErrorCCxN:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:65     .text.TIM_DMAErrorCCxN:00000000 TIM_DMAErrorCCxN
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:145    .text.TIM_DMADelayPulseNCplt:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:150    .text.TIM_DMADelayPulseNCplt:00000000 TIM_DMADelayPulseNCplt
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:270    .text.HAL_TIMEx_HallSensor_MspInit:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:276    .text.HAL_TIMEx_HallSensor_MspInit:00000000 HAL_TIMEx_HallSensor_MspInit
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:291    .text.HAL_TIMEx_HallSensor_Init:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:297    .text.HAL_TIMEx_HallSensor_Init:00000000 HAL_TIMEx_HallSensor_Init
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:503    .text.HAL_TIMEx_HallSensor_MspDeInit:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:509    .text.HAL_TIMEx_HallSensor_MspDeInit:00000000 HAL_TIMEx_HallSensor_MspDeInit
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:524    .text.HAL_TIMEx_HallSensor_DeInit:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:530    .text.HAL_TIMEx_HallSensor_DeInit:00000000 HAL_TIMEx_HallSensor_DeInit
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:600    .text.HAL_TIMEx_HallSensor_Start:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:606    .text.HAL_TIMEx_HallSensor_Start:00000000 HAL_TIMEx_HallSensor_Start
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:754    .text.HAL_TIMEx_HallSensor_Start:00000098 $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:759    .text.HAL_TIMEx_HallSensor_Stop:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:765    .text.HAL_TIMEx_HallSensor_Stop:00000000 HAL_TIMEx_HallSensor_Stop
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:824    .text.HAL_TIMEx_HallSensor_Start_IT:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:830    .text.HAL_TIMEx_HallSensor_Start_IT:00000000 HAL_TIMEx_HallSensor_Start_IT
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:986    .text.HAL_TIMEx_HallSensor_Start_IT:000000a4 $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:991    .text.HAL_TIMEx_HallSensor_Stop_IT:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:997    .text.HAL_TIMEx_HallSensor_Stop_IT:00000000 HAL_TIMEx_HallSensor_Stop_IT
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1061   .text.HAL_TIMEx_HallSensor_Start_DMA:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1067   .text.HAL_TIMEx_HallSensor_Start_DMA:00000000 HAL_TIMEx_HallSensor_Start_DMA
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1245   .text.HAL_TIMEx_HallSensor_Start_DMA:000000bc $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1253   .text.HAL_TIMEx_HallSensor_Stop_DMA:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1259   .text.HAL_TIMEx_HallSensor_Stop_DMA:00000000 HAL_TIMEx_HallSensor_Stop_DMA
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1324   .text.HAL_TIMEx_OCN_Start:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1330   .text.HAL_TIMEx_OCN_Start:00000000 HAL_TIMEx_OCN_Start
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1502   .text.HAL_TIMEx_OCN_Start:000000d0 $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1507   .text.HAL_TIMEx_OCN_Stop:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1513   .text.HAL_TIMEx_OCN_Stop:00000000 HAL_TIMEx_OCN_Stop
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1610   .text.HAL_TIMEx_OCN_Start_IT:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1616   .text.HAL_TIMEx_OCN_Start_IT:00000000 HAL_TIMEx_OCN_Start_IT
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1826   .text.HAL_TIMEx_OCN_Start_IT:0000010c $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1831   .text.HAL_TIMEx_OCN_Stop_IT:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1837   .text.HAL_TIMEx_OCN_Stop_IT:00000000 HAL_TIMEx_OCN_Stop_IT
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1989   .text.HAL_TIMEx_OCN_Start_DMA:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:1995   .text.HAL_TIMEx_OCN_Start_DMA:00000000 HAL_TIMEx_OCN_Start_DMA
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:2400   .text.HAL_TIMEx_OCN_Start_DMA:000001ec $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:2408   .text.HAL_TIMEx_OCN_Stop_DMA:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:2414   .text.HAL_TIMEx_OCN_Stop_DMA:00000000 HAL_TIMEx_OCN_Stop_DMA
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:2565   .text.HAL_TIMEx_PWMN_Start:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:2571   .text.HAL_TIMEx_PWMN_Start:00000000 HAL_TIMEx_PWMN_Start
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:2743   .text.HAL_TIMEx_PWMN_Start:000000d0 $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:2748   .text.HAL_TIMEx_PWMN_Stop:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:2754   .text.HAL_TIMEx_PWMN_Stop:00000000 HAL_TIMEx_PWMN_Stop
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:2851   .text.HAL_TIMEx_PWMN_Start_IT:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:2857   .text.HAL_TIMEx_PWMN_Start_IT:00000000 HAL_TIMEx_PWMN_Start_IT
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3067   .text.HAL_TIMEx_PWMN_Start_IT:0000010c $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3072   .text.HAL_TIMEx_PWMN_Stop_IT:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3078   .text.HAL_TIMEx_PWMN_Stop_IT:00000000 HAL_TIMEx_PWMN_Stop_IT
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3230   .text.HAL_TIMEx_PWMN_Start_DMA:00000000 $t
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s 			page 158
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:18     .text.TIM_CCxNChannelCmd:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:23     .text.TIM_CCxNChannelCmd:00000000 TIM_CCxNChannelCmd
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:60     .text.TIM_DMAErrorCCxN:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:65     .text.TIM_DMAErrorCCxN:00000000 TIM_DMAErrorCCxN
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:145    .text.TIM_DMADelayPulseNCplt:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:150    .text.TIM_DMADelayPulseNCplt:00000000 TIM_DMADelayPulseNCplt
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:270    .text.HAL_TIMEx_HallSensor_MspInit:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:276    .text.HAL_TIMEx_HallSensor_MspInit:00000000 HAL_TIMEx_HallSensor_MspInit
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:291    .text.HAL_TIMEx_HallSensor_Init:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:297    .text.HAL_TIMEx_HallSensor_Init:00000000 HAL_TIMEx_HallSensor_Init
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:503    .text.HAL_TIMEx_HallSensor_MspDeInit:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:509    .text.HAL_TIMEx_HallSensor_MspDeInit:00000000 HAL_TIMEx_HallSensor_MspDeInit
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:524    .text.HAL_TIMEx_HallSensor_DeInit:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:530    .text.HAL_TIMEx_HallSensor_DeInit:00000000 HAL_TIMEx_HallSensor_DeInit
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:600    .text.HAL_TIMEx_HallSensor_Start:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:606    .text.HAL_TIMEx_HallSensor_Start:00000000 HAL_TIMEx_HallSensor_Start
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:754    .text.HAL_TIMEx_HallSensor_Start:00000098 $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:759    .text.HAL_TIMEx_HallSensor_Stop:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:765    .text.HAL_TIMEx_HallSensor_Stop:00000000 HAL_TIMEx_HallSensor_Stop
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:824    .text.HAL_TIMEx_HallSensor_Start_IT:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:830    .text.HAL_TIMEx_HallSensor_Start_IT:00000000 HAL_TIMEx_HallSensor_Start_IT
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:986    .text.HAL_TIMEx_HallSensor_Start_IT:000000a4 $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:991    .text.HAL_TIMEx_HallSensor_Stop_IT:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:997    .text.HAL_TIMEx_HallSensor_Stop_IT:00000000 HAL_TIMEx_HallSensor_Stop_IT
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1061   .text.HAL_TIMEx_HallSensor_Start_DMA:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1067   .text.HAL_TIMEx_HallSensor_Start_DMA:00000000 HAL_TIMEx_HallSensor_Start_DMA
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1245   .text.HAL_TIMEx_HallSensor_Start_DMA:000000bc $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1253   .text.HAL_TIMEx_HallSensor_Stop_DMA:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1259   .text.HAL_TIMEx_HallSensor_Stop_DMA:00000000 HAL_TIMEx_HallSensor_Stop_DMA
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1324   .text.HAL_TIMEx_OCN_Start:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1330   .text.HAL_TIMEx_OCN_Start:00000000 HAL_TIMEx_OCN_Start
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1502   .text.HAL_TIMEx_OCN_Start:000000d0 $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1507   .text.HAL_TIMEx_OCN_Stop:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1513   .text.HAL_TIMEx_OCN_Stop:00000000 HAL_TIMEx_OCN_Stop
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1610   .text.HAL_TIMEx_OCN_Start_IT:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1616   .text.HAL_TIMEx_OCN_Start_IT:00000000 HAL_TIMEx_OCN_Start_IT
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1826   .text.HAL_TIMEx_OCN_Start_IT:0000010c $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1831   .text.HAL_TIMEx_OCN_Stop_IT:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1837   .text.HAL_TIMEx_OCN_Stop_IT:00000000 HAL_TIMEx_OCN_Stop_IT
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1989   .text.HAL_TIMEx_OCN_Start_DMA:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:1995   .text.HAL_TIMEx_OCN_Start_DMA:00000000 HAL_TIMEx_OCN_Start_DMA
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:2400   .text.HAL_TIMEx_OCN_Start_DMA:000001ec $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:2408   .text.HAL_TIMEx_OCN_Stop_DMA:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:2414   .text.HAL_TIMEx_OCN_Stop_DMA:00000000 HAL_TIMEx_OCN_Stop_DMA
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:2565   .text.HAL_TIMEx_PWMN_Start:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:2571   .text.HAL_TIMEx_PWMN_Start:00000000 HAL_TIMEx_PWMN_Start
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:2743   .text.HAL_TIMEx_PWMN_Start:000000d0 $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:2748   .text.HAL_TIMEx_PWMN_Stop:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:2754   .text.HAL_TIMEx_PWMN_Stop:00000000 HAL_TIMEx_PWMN_Stop
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:2851   .text.HAL_TIMEx_PWMN_Start_IT:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:2857   .text.HAL_TIMEx_PWMN_Start_IT:00000000 HAL_TIMEx_PWMN_Start_IT
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3067   .text.HAL_TIMEx_PWMN_Start_IT:0000010c $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3072   .text.HAL_TIMEx_PWMN_Stop_IT:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3078   .text.HAL_TIMEx_PWMN_Stop_IT:00000000 HAL_TIMEx_PWMN_Stop_IT
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3230   .text.HAL_TIMEx_PWMN_Start_DMA:00000000 $t
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s 			page 158
 
 
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3236   .text.HAL_TIMEx_PWMN_Start_DMA:00000000 HAL_TIMEx_PWMN_Start_DMA
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3641   .text.HAL_TIMEx_PWMN_Start_DMA:000001ec $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3649   .text.HAL_TIMEx_PWMN_Stop_DMA:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3655   .text.HAL_TIMEx_PWMN_Stop_DMA:00000000 HAL_TIMEx_PWMN_Stop_DMA
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3806   .text.HAL_TIMEx_OnePulseN_Start:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3812   .text.HAL_TIMEx_OnePulseN_Start:00000000 HAL_TIMEx_OnePulseN_Start
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3940   .text.HAL_TIMEx_OnePulseN_Stop:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:3946   .text.HAL_TIMEx_OnePulseN_Stop:00000000 HAL_TIMEx_OnePulseN_Stop
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4041   .text.HAL_TIMEx_OnePulseN_Start_IT:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4047   .text.HAL_TIMEx_OnePulseN_Start_IT:00000000 HAL_TIMEx_OnePulseN_Start_IT
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4185   .text.HAL_TIMEx_OnePulseN_Stop_IT:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4191   .text.HAL_TIMEx_OnePulseN_Stop_IT:00000000 HAL_TIMEx_OnePulseN_Stop_IT
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4296   .text.HAL_TIMEx_ConfigCommutEvent:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4302   .text.HAL_TIMEx_ConfigCommutEvent:00000000 HAL_TIMEx_ConfigCommutEvent
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4415   .text.HAL_TIMEx_ConfigCommutEvent_IT:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4421   .text.HAL_TIMEx_ConfigCommutEvent_IT:00000000 HAL_TIMEx_ConfigCommutEvent_IT
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4534   .text.HAL_TIMEx_ConfigCommutEvent_DMA:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4540   .text.HAL_TIMEx_ConfigCommutEvent_DMA:00000000 HAL_TIMEx_ConfigCommutEvent_DMA
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4670   .text.HAL_TIMEx_ConfigCommutEvent_DMA:00000084 $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4978   .text.TIMEx_DMACommutationCplt:00000000 TIMEx_DMACommutationCplt
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:5035   .text.TIMEx_DMACommutationHalfCplt:00000000 TIMEx_DMACommutationHalfCplt
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4677   .text.HAL_TIMEx_MasterConfigSynchronization:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4683   .text.HAL_TIMEx_MasterConfigSynchronization:00000000 HAL_TIMEx_MasterConfigSynchronization
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4803   .text.HAL_TIMEx_MasterConfigSynchronization:00000068 $d
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4808   .text.HAL_TIMEx_ConfigBreakDeadTime:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4814   .text.HAL_TIMEx_ConfigBreakDeadTime:00000000 HAL_TIMEx_ConfigBreakDeadTime
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4925   .text.HAL_TIMEx_RemapConfig:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4931   .text.HAL_TIMEx_RemapConfig:00000000 HAL_TIMEx_RemapConfig
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4951   .text.HAL_TIMEx_CommutCallback:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4957   .text.HAL_TIMEx_CommutCallback:00000000 HAL_TIMEx_CommutCallback
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:4972   .text.TIMEx_DMACommutationCplt:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:5008   .text.HAL_TIMEx_CommutHalfCpltCallback:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:5014   .text.HAL_TIMEx_CommutHalfCpltCallback:00000000 HAL_TIMEx_CommutHalfCpltCallback
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:5029   .text.TIMEx_DMACommutationHalfCplt:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:5065   .text.HAL_TIMEx_BreakCallback:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:5071   .text.HAL_TIMEx_BreakCallback:00000000 HAL_TIMEx_BreakCallback
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:5086   .text.HAL_TIMEx_HallSensor_GetState:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:5092   .text.HAL_TIMEx_HallSensor_GetState:00000000 HAL_TIMEx_HallSensor_GetState
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:5110   .text.HAL_TIMEx_GetChannelNState:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccnN2j1b.s:5116   .text.HAL_TIMEx_GetChannelNState:00000000 HAL_TIMEx_GetChannelNState
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3236   .text.HAL_TIMEx_PWMN_Start_DMA:00000000 HAL_TIMEx_PWMN_Start_DMA
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3641   .text.HAL_TIMEx_PWMN_Start_DMA:000001ec $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3649   .text.HAL_TIMEx_PWMN_Stop_DMA:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3655   .text.HAL_TIMEx_PWMN_Stop_DMA:00000000 HAL_TIMEx_PWMN_Stop_DMA
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3806   .text.HAL_TIMEx_OnePulseN_Start:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3812   .text.HAL_TIMEx_OnePulseN_Start:00000000 HAL_TIMEx_OnePulseN_Start
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3940   .text.HAL_TIMEx_OnePulseN_Stop:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:3946   .text.HAL_TIMEx_OnePulseN_Stop:00000000 HAL_TIMEx_OnePulseN_Stop
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4041   .text.HAL_TIMEx_OnePulseN_Start_IT:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4047   .text.HAL_TIMEx_OnePulseN_Start_IT:00000000 HAL_TIMEx_OnePulseN_Start_IT
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4185   .text.HAL_TIMEx_OnePulseN_Stop_IT:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4191   .text.HAL_TIMEx_OnePulseN_Stop_IT:00000000 HAL_TIMEx_OnePulseN_Stop_IT
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4296   .text.HAL_TIMEx_ConfigCommutEvent:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4302   .text.HAL_TIMEx_ConfigCommutEvent:00000000 HAL_TIMEx_ConfigCommutEvent
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4415   .text.HAL_TIMEx_ConfigCommutEvent_IT:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4421   .text.HAL_TIMEx_ConfigCommutEvent_IT:00000000 HAL_TIMEx_ConfigCommutEvent_IT
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4534   .text.HAL_TIMEx_ConfigCommutEvent_DMA:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4540   .text.HAL_TIMEx_ConfigCommutEvent_DMA:00000000 HAL_TIMEx_ConfigCommutEvent_DMA
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4670   .text.HAL_TIMEx_ConfigCommutEvent_DMA:00000084 $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4978   .text.TIMEx_DMACommutationCplt:00000000 TIMEx_DMACommutationCplt
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:5035   .text.TIMEx_DMACommutationHalfCplt:00000000 TIMEx_DMACommutationHalfCplt
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4677   .text.HAL_TIMEx_MasterConfigSynchronization:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4683   .text.HAL_TIMEx_MasterConfigSynchronization:00000000 HAL_TIMEx_MasterConfigSynchronization
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4803   .text.HAL_TIMEx_MasterConfigSynchronization:00000068 $d
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4808   .text.HAL_TIMEx_ConfigBreakDeadTime:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4814   .text.HAL_TIMEx_ConfigBreakDeadTime:00000000 HAL_TIMEx_ConfigBreakDeadTime
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4925   .text.HAL_TIMEx_RemapConfig:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4931   .text.HAL_TIMEx_RemapConfig:00000000 HAL_TIMEx_RemapConfig
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4951   .text.HAL_TIMEx_CommutCallback:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4957   .text.HAL_TIMEx_CommutCallback:00000000 HAL_TIMEx_CommutCallback
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:4972   .text.TIMEx_DMACommutationCplt:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:5008   .text.HAL_TIMEx_CommutHalfCpltCallback:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:5014   .text.HAL_TIMEx_CommutHalfCpltCallback:00000000 HAL_TIMEx_CommutHalfCpltCallback
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:5029   .text.TIMEx_DMACommutationHalfCplt:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:5065   .text.HAL_TIMEx_BreakCallback:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:5071   .text.HAL_TIMEx_BreakCallback:00000000 HAL_TIMEx_BreakCallback
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:5086   .text.HAL_TIMEx_HallSensor_GetState:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:5092   .text.HAL_TIMEx_HallSensor_GetState:00000000 HAL_TIMEx_HallSensor_GetState
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:5110   .text.HAL_TIMEx_GetChannelNState:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccVZWoBk.s:5116   .text.HAL_TIMEx_GetChannelNState:00000000 HAL_TIMEx_GetChannelNState
 
 UNDEFINED SYMBOLS
 HAL_TIM_ErrorCallback

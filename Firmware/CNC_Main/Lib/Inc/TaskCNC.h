@@ -12,10 +12,10 @@
 typedef struct
 {
     UART_HandleTypeDef *huart;
-    uint8_t SendToControl[10];
+    uint8_t SendToControl[15];
     char Receive;
     uint8_t index;
-    char ReceiveFromControl[10];
+    char ReceiveFromControl[15];
 } UART;
 
 // typedef struct
@@ -52,6 +52,7 @@ typedef struct
 
     uint8_t state;
     uint8_t mode;
+    uint8_t home;
    
     UART uart;
 

@@ -49,7 +49,7 @@ namespace MiniCNC_ver2
 
         private string convertGcode(string g, double x, double y)
         {
-            string gcode = g + " X" + x.ToString() + " Y" + y.ToString() + '\n';
+            string gcode = g + "X" + x.ToString() + "Y" + y.ToString() + '\n';
             return gcode;
         }
         public void drawFromGcode(string[] data, Grid main)

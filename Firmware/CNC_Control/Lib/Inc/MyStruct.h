@@ -66,7 +66,7 @@ typedef struct
 	char Receive;
 	uint8_t index;
 
-	char TransBuff[10];
+	char TransBuff[15];
 	char ReceiveBuff[10];
 	uint8_t temp;
 } DATA;

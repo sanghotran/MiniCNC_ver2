@@ -65,6 +65,7 @@ namespace MiniCNC_ver2
         private ObservableCollection<ChatItem> MCUchatItems = new ObservableCollection<ChatItem>();
         private ChatItem PCchatItem = new ChatItem("PC");
         private ChatItem mainMCUchatItem = new ChatItem("MCU Main");
+        private ChatItem mainMCUchatItem1 = new ChatItem("MCU Main");
         private ChatItem controlMCUchatItem = new ChatItem("MCU Control");
         #endregion
 
@@ -126,7 +127,8 @@ namespace MiniCNC_ver2
             IsLaptop = true;
 
             cnc.State = 0; // mode disconect
-            cnc.readyReceiveGcode = false; 
+            cnc.readyReceiveGcode = false;
+            //cnc.home = false;
 
             PCChatPage.Visibility = Visibility.Visible;
             MCUChatPage.Visibility = Visibility.Hidden;
@@ -270,7 +272,7 @@ namespace MiniCNC_ver2
         {
             if(cnc.index < cnc.cncGcode.Length)
             {
-                SendData("D 1 " + cnc.cncGcode[cnc.index]); // sending  gcode
+                SendData("D 1 " + cnc.cncGcode[cnc.index] + '.'); // sending  gcode
                 cnc.index++;
             }
             else
@@ -299,10 +301,10 @@ namespace MiniCNC_ver2
                             break;
                         case "DOING":
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I am going to home");
-                            //showMessage(mainMCUchatItem, scrollviewMCU, MCUchatItems, "Let's go to home");
+                            //showMessage(mainMCUchatItem1, scrollviewMCU, MCUchatItems, "Let's go to home");
                             break;
                         case "YES":
-                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I readdy for receive a gcode");
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I ready for receive a gcode");
                             cnc.readyReceiveGcode = true;
                             //SendGcode();
                             break;
@@ -313,8 +315,14 @@ namespace MiniCNC_ver2
                         case "ACK":
                             SendGcode();
                             break;
+                        case "HOME":
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I have just come home");
+                            break;
                         case "DONE":
-                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Succesfully");
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I'm done");
+                            break;
+                        case "NOHOME":
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I have come home, please press HOME");
                             break;
                         default:
                             break;
@@ -371,7 +379,7 @@ namespace MiniCNC_ver2
             // only press when connect state
             if(cnc.State == 1)
             {
-                SendData("C 3");// 3 is command disconnect
+                SendData("C 3");// 3 is command go to home
                 showMessage(PCchatItem, scrollviewPC, PCchatItems, "Let's go to home");
 
             }

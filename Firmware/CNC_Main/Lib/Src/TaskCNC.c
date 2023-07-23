@@ -22,6 +22,8 @@ void InitCNC(CNC* cnc)
 
   cnc->uart.index = 0;
 
+  cnc->home = 0;
+
   //cnc->sd.fresult = f_mount(cnc->sd.FileSystem, "/", 1);
      
 }
@@ -46,7 +48,7 @@ void ProcessBtnPress(CNC *cnc)
     case 2: // state error connect
       if(cnc-> btnPress == 1)// press OK button
       {
-        HAL_GPIO_WritePin(GPIOB, cnc->Led, GPIO_PIN_SET);
+        HAL_GPIO_WritePin(GPIOB, cnc->Led, GPIO_PIN_RESET);
         HAL_GPIO_WritePin(GPIOB, cnc->Buzzer, GPIO_PIN_RESET);
         cnc->state = 0;
       }
@@ -64,7 +66,7 @@ void ProcessMode(CNC *cnc)
     case 3: // mode home
       memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));
       sprintf(cnc->uart.SendToControl, "H.");
-      HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 100);
+      HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, 2, 100);
       break;
 
     case 4: // mode running
@@ -76,7 +78,7 @@ void ProcessMode(CNC *cnc)
       break;
 
     case 6: // mode receive data of gcode
-      memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));          
+      memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));
       sscanf(cnc->DataReceiveFromGUI, "D 1 %s", cnc->uart.SendToControl);
       HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 100);
       //SaveDataToSD(cnc);
@@ -100,6 +102,7 @@ void ReceiveDataFromGUI(CNC *cnc, SemaphoreHandle_t xSemaphoreMode)
       {
         case '0': // connected
           cnc->state = 1; // mode connect with GUI
+          cnc->mode = 0; // reset mode when connect
           sprintf(cnc->DataSendToGUI, "C CONNECTED ");
           break;
 
@@ -114,8 +117,15 @@ void ReceiveDataFromGUI(CNC *cnc, SemaphoreHandle_t xSemaphoreMode)
           break;
 
         case '4': // start
-          cnc->mode = 4; // mode running
-          sprintf(cnc->DataSendToGUI, "C RUNNING ");
+          if( cnc->home == 1)
+          {
+            cnc->mode = 4; // mode running
+            sprintf(cnc->DataSendToGUI, "C RUNNING ");
+          }
+          else
+          {
+            sprintf(cnc->DataSendToGUI, "C NOHOME");
+          }
           break;
           
         case '5': // receive file name of gcode
@@ -153,7 +163,8 @@ void ReceiveDataFromCNC(CNC *cnc)
   switch (cnc->uart.ReceiveFromControl[0])
 	{
 	case 'H':
-		sprintf(cnc->DataSendToGUI, "C DONE ");
+		sprintf(cnc->DataSendToGUI, "C HOME ");
+    cnc->home = 1; // have just come home
 		break;
 	case 'G':
 		sprintf(cnc->DataSendToGUI, "C ACK ");
@@ -161,5 +172,6 @@ void ReceiveDataFromCNC(CNC *cnc)
 	default:
 		return;
   }
+  cnc->uart.index = 0;
   USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
 }

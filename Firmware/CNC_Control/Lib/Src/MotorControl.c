@@ -12,7 +12,18 @@ void ProcessData(CNC *cnc)
 		cnc->Mode = 1; // mode goto home
 		break;
 	case 'G':
-		sscanf(cnc->data.ReceiveBuff, "G0%u X%f Y%f",cnc->data.temp, cnc->x_axis.next, cnc->y_axis.next);		
+		strcat(cnc->data.ReceiveBuff, " ");
+		float x = 0, y = 0;
+		int temp;
+		sscanf(cnc->data.ReceiveBuff, "G0%uX%fY%f ", &temp, &x, &y);
+		cnc->x_axis.next = x;
+		cnc->y_axis.next = y;
+		cnc->data.temp = temp;
+		//strtok(cnc->data.ReceiveBuff,"X");
+		//sscanf("G0", "G%u", cnc->data.temp);
+		//sscanf(cnc->data.ReceiveBuff, "G0%uX%fY%f ",cnc->data.temp, cnc->x_axis.next, cnc->y_axis.next);
+		//sscanf(cnc->data.ReceiveBuff, "X%f", cnc->x_axis.next);
+		//HAL_Delay(100);		
 		if(cnc->data.temp == 1)
 			cnc->drill.enb =true;
 		else
@@ -22,6 +33,7 @@ void ProcessData(CNC *cnc)
 	default:
 		break;
 	}
+	cnc->data.index = 0;
 }
 
 void PWM(AXIS *axis)

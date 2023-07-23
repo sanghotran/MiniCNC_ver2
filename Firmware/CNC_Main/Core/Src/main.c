@@ -129,7 +129,7 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 		}
 		else if (cnc.uart.Receive == '.')
 		{
-			cnc.uart.index = 0;
+			//cnc.uart.index = 0;
 			//ProcessData(&data, &x_axis, &y_axis, &z_axis, &Mode);
       BaseType_t xHigherPriorityTaskWoken = pdFALSE;
       xSemaphoreGiveFromISR(xSemaphoreUART, xHigherPriorityTaskWoken);
@@ -479,6 +479,10 @@ void StartCheckUSBConnect(void *pvParameters)
           HAL_GPIO_WritePin(GPIOB, cnc.Buzzer, GPIO_PIN_SET);
           cnc.state = 2; // mode error connect with GUI
         }    
+      }
+      else if(cnc.state == 2)
+      {
+        HAL_GPIO_TogglePin(GPIOB, cnc.Led);
       }      
     } 
 }
