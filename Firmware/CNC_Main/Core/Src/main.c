@@ -94,6 +94,15 @@ void StartReceiveDataFromCNC(void *pvParameters);
 
 /* Private user code ---------------------------------------------------------*/
 /* USER CODE BEGIN 0 */
+void uart_clear_receive_buffer_and_start_receive_IT() 
+{
+    // Đọc dữ liệu trong bộ nhận cho đến khi không còn dữ liệu trong buffer
+    while (__HAL_UART_GET_FLAG(&huart2, UART_FLAG_RXNE)) {
+        char dummy_data = huart2.Instance->DR; // Đọc dữ liệu từ thanh ghi RDR để xóa dữ liệu trong bộ nhận
+    }
+    HAL_UART_Receive_IT(&huart2, &cnc.uart.Receive, 1);
+}
+
 void HAL_GPIO_EXTI_Callback(uint16_t GPIO_Pin)
 {
   /* Prevent unused argument(s) compilation warning */
@@ -123,17 +132,18 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
 {
   UNUSED(huart);
 	if(huart->Instance == huart2.Instance)
-	{	if(cnc.uart.Receive != '.') //line feed Ascii
+	{	if(cnc.uart.Receive != '!') //line feed Ascii
 		{
 			cnc.uart.ReceiveFromControl[cnc.uart.index++] = cnc.uart.Receive; //Save data in Rxbuff
 		}
-		else if (cnc.uart.Receive == '.')
+		else if (cnc.uart.Receive == '!')
 		{
 			//cnc.uart.index = 0;
 			//ProcessData(&data, &x_axis, &y_axis, &z_axis, &Mode);
       BaseType_t xHigherPriorityTaskWoken = pdFALSE;
       xSemaphoreGiveFromISR(xSemaphoreUART, xHigherPriorityTaskWoken);
-      portYIELD_FROM_ISR(xHigherPriorityTaskWoken);	
+      portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
+      return;	
 		}	
 		HAL_UART_Receive_IT(&huart2, &cnc.uart.Receive, 1);
 	}
@@ -480,10 +490,10 @@ void StartCheckUSBConnect(void *pvParameters)
           cnc.state = 2; // mode error connect with GUI
         }    
       }
-      else if(cnc.state == 2)
-      {
-        HAL_GPIO_TogglePin(GPIOB, cnc.Led);
-      }      
+      // else if(cnc.state == 2)
+      // {
+      //   HAL_GPIO_TogglePin(GPIOB, cnc.Led);
+      // }      
     } 
 }
 
@@ -516,6 +526,7 @@ void StartReceiveDataFromCNC(void *pvParameters)
     if(xSemaphoreTake(xSemaphoreUART, portMAX_DELAY) == pdTRUE)
     {
       ReceiveDataFromCNC(&cnc);
+      uart_clear_receive_buffer_and_start_receive_IT();
     }
   }
 }

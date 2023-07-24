@@ -270,9 +270,9 @@ namespace MiniCNC_ver2
         // send gcode
         private void SendGcode()
         {
-            if(cnc.index < cnc.cncGcode.Length)
+            if(cnc.index < (cnc.cncGcode.Length - 1))
             {
-                SendData("D 1 " + cnc.cncGcode[cnc.index] + '.'); // sending  gcode
+                SendData("D 1 " + cnc.cncGcode[cnc.index] + "! " ); // sending  gcode
                 cnc.index++;
             }
             else
@@ -320,6 +320,9 @@ namespace MiniCNC_ver2
                             break;
                         case "DONE":
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I'm done");
+                            cnc.State = 1; // mode connect
+                            cnc.readyReceiveGcode = false;
+                            IsStarted = !IsStarted;
                             break;
                         case "NOHOME":
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I have come home, please press HOME");

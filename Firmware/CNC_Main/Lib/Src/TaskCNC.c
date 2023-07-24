@@ -65,7 +65,7 @@ void ProcessMode(CNC *cnc)
   {
     case 3: // mode home
       memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));
-      sprintf(cnc->uart.SendToControl, "H.");
+      sprintf(cnc->uart.SendToControl, "H!");
       HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, 2, 100);
       break;
 
@@ -124,7 +124,7 @@ void ReceiveDataFromGUI(CNC *cnc, SemaphoreHandle_t xSemaphoreMode)
           }
           else
           {
-            sprintf(cnc->DataSendToGUI, "C NOHOME");
+            sprintf(cnc->DataSendToGUI, "C NOHOME ");
           }
           break;
           
@@ -138,7 +138,7 @@ void ReceiveDataFromGUI(CNC *cnc, SemaphoreHandle_t xSemaphoreMode)
       }     
       break;
     case 'D': // data
-      if(cnc->DataReceiveFromGUI[2] == 0)
+      if(cnc->DataReceiveFromGUI[2] == '0')
       {
         sprintf(cnc->DataSendToGUI, "C DONE ");
         //f_close (cnc->sd.File);
