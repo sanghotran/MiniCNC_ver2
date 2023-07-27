@@ -14,7 +14,7 @@
 #define DEG_TO_RAD 0.017453292519943295769236907684886
 #define RAD_TO_DEG 57.295779513082320876798154814105
 
-#define TS 0.03
+#define TS 0.04
 
 #define MAX_SPEED 100
 
@@ -28,7 +28,9 @@ void ProcessData(CNC*);
 
 void PWM(AXIS *axis);
 
-void readEncoder(TIM_HandleTypeDef* htim, int *Pos);
+//void readEncoder(TIM_HandleTypeDef* htim, int *Pos);
+
+void readEncoder(AXIS *axis);
 
 void sample(AXIS *axis);
 

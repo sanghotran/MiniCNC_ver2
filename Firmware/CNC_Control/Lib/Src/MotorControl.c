@@ -64,10 +64,20 @@ void PWM(AXIS *axis)
 		}
 }
 
-void readEncoder(TIM_HandleTypeDef* htim, int *Pos)
+// void readEncoder(TIM_HandleTypeDef* htim, int *Pos)
+// {
+// 	//*Pos += __HAL_TIM_GET_COUNTER(htim);
+// 	*Pos += (int16_t)(htim->Instance->CNT);
+// 	htim->Instance->CNT=0;
+// }
+
+void readEncoder(AXIS *axis)
 {
-	*Pos += (int16_t)(htim->Instance->CNT);
-	htim->Instance->CNT=0;
+	// axis->pos += (int16_t)(axis->htim_enc->Instance->CNT);
+	// axis->htim_enc->Instance->CNT = 0;
+
+	axis->pos += (int16_t)*axis->enc;
+	*axis->enc = 0;
 }
 
 void sample(AXIS * axis)
@@ -77,9 +87,12 @@ void sample(AXIS * axis)
 		axis->time_sample++;
 		if( axis->time_sample >= T_SAMPLE )
 		{
-			readEncoder(axis->htim_enc, &axis->pos);
-			PID_control(axis->setpoint, axis);
+			//readEncoder(axis->htim_enc, &axis->pos);
+			//axis->pos += (int16_t)(axis->htim_enc->Instance->CNT);
+			//axis->htim_enc->Instance->CNT = 0;
+			//PID_control(axis->setpoint, axis);
 			axis->time_sample = 0;			
+			axis->sample_flag = true;
 		}
 	}
 }
@@ -121,6 +134,14 @@ void move(AXIS *axis, float pos)
 		axis->setpoint = (int)(pos*axis->mm_pulse);
 	  	axis->pid_process = true;
 	}
+	if(axis->sample_flag)
+	{
+		//readEncoder(axis->htim_enc, &axis->pos);
+		readEncoder(axis);
+		PID_control(axis->setpoint, axis);
+		axis->sample_flag = false;
+		axis->time_sample = 0;
+	}
 	PWM(axis);	
 	if( axis->finish)
 	{
@@ -136,6 +157,13 @@ void moveGcode(AXIS *pAxis)
 	pAxis->pid_process = true;
 	while( pAxis->pid_process)
 	{
+		if(pAxis->sample_flag)
+		{
+			//readEncoder(pAxis->htim_enc, &pAxis->pos);
+			readEncoder(pAxis);
+			PID_control(pAxis->setpoint, pAxis);
+			pAxis->sample_flag = false;
+		}
 		PWM(pAxis);	
 		if( pAxis->finish)
 		{

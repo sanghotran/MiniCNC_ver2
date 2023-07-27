@@ -128,9 +128,13 @@ void axisInit()
 	cnc.z_axis.htim_motor = &htim3;
   cnc.drill.htim_motor = &htim3;
 	
-	cnc.x_axis.htim_enc = &htim4;
-	cnc.y_axis.htim_enc = &htim2;
-	cnc.z_axis.htim_enc = &htim1;
+	// cnc.x_axis.htim_enc = &htim4;
+	// cnc.y_axis.htim_enc = &htim2;
+	// cnc.z_axis.htim_enc = &htim1;
+
+  cnc.x_axis.enc = &htim4.Instance->CNT;
+  cnc.y_axis.enc = &htim2.Instance->CNT;
+  cnc.z_axis.enc = &htim1.Instance->CNT;
 	
 	cnc.x_axis.GPIO_DIR = GPIOB;
 	cnc.y_axis.GPIO_DIR = GPIOB;
@@ -156,14 +160,14 @@ void axisInit()
 	cnc.z_axis.PIN_HOME = GPIO_PIN_10;
 	
 	cnc.x_axis.Kp = 2;
-	cnc.y_axis.Kp = 10;
+	cnc.y_axis.Kp = 2;
 	cnc.z_axis.Kp = 1;
 	
 	cnc.x_axis.Ki = 0.0001;
 	cnc.y_axis.Ki = 0.0001;
 	cnc.z_axis.Ki = 0.0001;
 	
-	cnc.x_axis.Kd = 0.15;
+	cnc.x_axis.Kd = 0.2;
 	cnc.y_axis.Kd = 0.2;
 	cnc.z_axis.Kd = 0.02;
 	
@@ -251,9 +255,13 @@ int main(void)
 			
 			if(cnc.x_axis.home && cnc.y_axis.home && cnc.z_axis.home)
 			{
-			  cnc.x_axis.htim_enc->Instance->CNT = 0;
-				cnc.y_axis.htim_enc->Instance->CNT = 0;
-				cnc.z_axis.htim_enc->Instance->CNT = 0;
+			  // cnc.x_axis.htim_enc->Instance->CNT = 0;
+				// cnc.y_axis.htim_enc->Instance->CNT = 0;
+				// cnc.z_axis.htim_enc->Instance->CNT = 0;
+
+        *cnc.x_axis.enc = 0;
+        *cnc.y_axis.enc = 0;
+        *cnc.z_axis.enc = 0;
 				
 				cnc.x_axis.pos = 0;
 				cnc.y_axis.pos = 0;
@@ -274,9 +282,13 @@ int main(void)
 				cnc.y_axis.finish = false;
 				cnc.z_axis.finish = false;
 
-				cnc.x_axis.htim_enc->Instance->CNT = 0;
-				cnc.y_axis.htim_enc->Instance->CNT = 0;
-				cnc.z_axis.htim_enc->Instance->CNT = 0;
+				// cnc.x_axis.htim_enc->Instance->CNT = 0;
+				// cnc.y_axis.htim_enc->Instance->CNT = 0;
+				// cnc.z_axis.htim_enc->Instance->CNT = 0;
+
+        *cnc.x_axis.enc = 0;
+        *cnc.y_axis.enc = 0;
+        *cnc.z_axis.enc = 0;
 				
 				cnc.x_axis.pos = 0;
 				cnc.y_axis.pos = 0;
@@ -295,12 +307,12 @@ int main(void)
       if(cnc.drill.status != cnc.drill.enb)
 			{
 				if(cnc.drill.enb)
-					cnc.z_axis.next = 1;//thickness;
+					cnc.thickness = 1;//thickness;
 				else
-					cnc.z_axis.next = 0;					
+					cnc.thickness = 10;					
 				while(!cnc.z_axis.finish)
 				{
-					move(&cnc.z_axis, cnc.z_axis.next);
+					move(&cnc.z_axis, Z_MAX - cnc.thickness);
 				}
 				cnc.z_axis.finish = false;
 				cnc.drill.status = cnc.drill.enb;

@@ -6,8 +6,8 @@
 #include <stdint.h>
 #include "stm32f1xx_hal.h"
 
-#define T_SAMPLE 3
-
+#define T_SAMPLE 4
+#define Z_MAX 12
 
 
 
@@ -23,7 +23,8 @@ typedef struct
 	float pwm;
 	int setpoint;
 	
-	TIM_HandleTypeDef* htim_enc;
+	//TIM_HandleTypeDef* htim_enc;
+	uint32_t *enc;
 	
 	TIM_HandleTypeDef* htim_motor;
 	uint32_t CHANNEL;
@@ -39,6 +40,7 @@ typedef struct
 	bool finish;
 	
 	bool pid_process;
+	bool sample_flag;
 	
 	bool home;
 	
@@ -80,6 +82,7 @@ typedef struct
 
 	uint8_t Mode;
 	
+	uint8_t thickness;
 	DRILL drill;
 	//bool drill_status;
 	//bool drill_enb;
