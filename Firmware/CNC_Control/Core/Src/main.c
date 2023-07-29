@@ -72,6 +72,7 @@ void uart_clear_receive_buffer_and_start_receive_IT()
     while (__HAL_UART_GET_FLAG(&huart2, UART_FLAG_RXNE)) {
         char dummy_data = huart2.Instance->DR; // Đọc dữ liệu từ thanh ghi RDR để xóa dữ liệu trong bộ nhận
     }
+    cnc.data.index = 0;
     HAL_UART_Receive_IT(&huart2, &cnc.data.Receive, 1);
 }
 
@@ -106,16 +107,16 @@ void HAL_UART_RxCpltCallback(UART_HandleTypeDef *huart)
   UNUSED(huart);
 	if(huart->Instance == huart2.Instance)
 	{
-		if(cnc.data.Receive != '!') //line feed Ascii
+		if((cnc.data.Receive != '!') && (cnc.data.Receive != 0)) //line feed Ascii
 		{
 			cnc.data.ReceiveBuff[cnc.data.index++] = cnc.data.Receive; //Save data in Rxbuff
 		}
 		else if (cnc.data.Receive == '!')
 		{
-			//cnc.data.index = 0;
+			cnc.data.index = 0;
 			//ProcessData(&cnc);	
       cnc.Mode = 6; //process data
-      return;
+      //return;
 		}
 		HAL_UART_Receive_IT(&huart2, &cnc.data.Receive, 1);
 	}
@@ -159,16 +160,16 @@ void axisInit()
 	cnc.y_axis.PIN_HOME = GPIO_PIN_11;
 	cnc.z_axis.PIN_HOME = GPIO_PIN_10;
 	
-	cnc.x_axis.Kp = 2;
-	cnc.y_axis.Kp = 2;
+	cnc.x_axis.Kp = 20;
+	cnc.y_axis.Kp = 32;
 	cnc.z_axis.Kp = 1;
 	
 	cnc.x_axis.Ki = 0.0001;
 	cnc.y_axis.Ki = 0.0001;
 	cnc.z_axis.Ki = 0.0001;
 	
-	cnc.x_axis.Kd = 0.2;
-	cnc.y_axis.Kd = 0.2;
+	cnc.x_axis.Kd = 0.1;
+	cnc.y_axis.Kd = 0.1;
 	cnc.z_axis.Kd = 0.02;
 	
 	cnc.x_axis.mm_pulse = 249.8886;//142.8571;
@@ -237,10 +238,6 @@ int main(void)
     {
     case 1: // mode Home
 
-      //sprintf(data.TransBuff, "H.");
-      //HAL_UART_Transmit(&huart2, data.TransBuff, sizeof(data.TransBuff), 100);
-      //Mode = 0;
-      //data.index = 0; // because data.index auto increase after Transmit so should set it = 0 at the end of function
       // goto x home
 			HOME(&cnc.x_axis);
 
@@ -298,16 +295,17 @@ int main(void)
         HAL_UART_Transmit(&huart2, cnc.data.TransBuff, 2, 100);
         cnc.data.index = 0;
 				cnc.Mode = 0;
-        uart_clear_receive_buffer_and_start_receive_IT();
-        //HAL_UART_Receive_IT(&huart2, &cnc.data.Receive, 1);
+        //uart_clear_receive_buffer_and_start_receive_IT();
 			}
       break;
 
     case 3: // check drill
       if(cnc.drill.status != cnc.drill.enb)
 			{
-				if(cnc.drill.enb)
-					cnc.thickness = 1;//thickness;
+				if(cnc.drill.enb){
+          cnc.thickness = 1;//thickness;
+          runDrill(&cnc.drill, 70);
+        }					
 				else
 					cnc.thickness = 10;					
 				while(!cnc.z_axis.finish)
@@ -320,7 +318,10 @@ int main(void)
       if(cnc.drill.enb)
         cnc.Mode = 5; // mode G01
       else
-        cnc.Mode = 4; // mode G00      
+      {
+        cnc.Mode = 4; // mode G00
+        runDrill(&cnc.drill, 0);
+      }        
       break;
 
     case 4: // mode G00
@@ -331,31 +332,29 @@ int main(void)
 			}
 			cnc.x_axis.finish = false;
 			cnc.y_axis.finish = false;
-			cnc.x_axis.last = cnc.x_axis.next;
-			cnc.y_axis.last = cnc.y_axis.next;
-      memset(cnc.data.TransBuff, 0, sizeof(cnc.data.TransBuff));
-      sprintf(cnc.data.TransBuff, "G!");
-      HAL_UART_Transmit(&huart2, cnc.data.TransBuff, 2, 100);
-      //cnc.data.index = 0;
-      cnc.Mode = 0;
-      uart_clear_receive_buffer_and_start_receive_IT();
-      //HAL_UART_Receive_IT(&huart2, &cnc.data.Receive, 1);
+			// cnc.x_axis.last = cnc.x_axis.next;
+			// cnc.y_axis.last = cnc.y_axis.next;
+      cnc.x_axis.last = cnc.x_axis.pos / cnc.x_axis.mm_pulse;
+      cnc.y_axis.last = cnc.y_axis.pos / cnc.y_axis.mm_pulse;
+      cnc.Mode = 7; // mode send feedback
       break;
 
     case 5: // mode G01
       drawLine(&cnc.x_axis, &cnc.y_axis);
-      memset(cnc.data.TransBuff, 0, sizeof(cnc.data.TransBuff));
-      sprintf(cnc.data.TransBuff, "G!");
-      HAL_UART_Transmit(&huart2, cnc.data.TransBuff, 2, 100);
-      //cnc.data.index = 0;
-      cnc.Mode = 0;
-      uart_clear_receive_buffer_and_start_receive_IT();
-      //HAL_UART_Receive_IT(&huart2, &cnc.data.Receive, 1);
+      cnc.Mode = 7; // mode send feedback
       break;
 
     case 6: // mode process data
       ProcessData(&cnc);
-      //HAL_UART_Receive_IT(&huart2, &cnc.data.Receive, 1);
+      break;
+
+    case 7: // send feedback to main      
+      memset(cnc.data.TransBuff, 0, sizeof(cnc.data.TransBuff));
+      sprintf(cnc.data.TransBuff, "G0%uX%0.2fY%0.2f!", cnc.drill.enb, cnc.x_axis.last, cnc.y_axis.last);
+      //uart_clear_receive_buffer_and_start_receive_IT();
+      HAL_Delay(100);
+      HAL_UART_Transmit(&huart2, cnc.data.TransBuff, sizeof(cnc.data.TransBuff), 100);
+      cnc.Mode = 0;      
       break;
 
     default:

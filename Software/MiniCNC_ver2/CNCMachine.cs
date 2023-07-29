@@ -17,7 +17,7 @@ using LibUsbDotNet.Main;
 
 namespace MiniCNC_ver2
 {
-    public class CNCMachine 
+    public class CNCMachine
     {
         public string[] DataReceive;
         public int State;
@@ -31,8 +31,8 @@ namespace MiniCNC_ver2
         public string[] cncGcode;
         public int index;
 
-        private const int maxCNCGrid = 600;
-        private const int maxCNC = 150;
+        private const int maxCNCGrid = 610;
+        private const int maxCNC = 145;
         private const int pixelCNC = maxCNCGrid / maxCNC;
         private const int lineMax = 2;
         public struct Draw
@@ -46,6 +46,7 @@ namespace MiniCNC_ver2
             public string[] buff;
         }
         private Draw draw;
+        private Draw feedback;
 
         private string convertGcode(string g, double x, double y)
         {
@@ -218,35 +219,34 @@ namespace MiniCNC_ver2
             // draw final line
             main.Children.Add(drawLine(draw.xNext, draw.yNext));
         }
-       /* private void drawLineCNC(double xNext, double yNext)
+        public void drawFromFeedback(Grid main, string data)
         {
-            Line gcodeLine = new Line();
-            gcodeLine.Visibility = Visibility.Visible;
-            gcodeLine.StrokeThickness = 2;
-            gcodeLine.Stroke = System.Windows.Media.Brushes.Red;
-            gcodeLine.X1 = CNCDraw.xLast * pixelCNC;
-            gcodeLine.Y1 = maxCNCGrid - CNCDraw.yLast * pixelCNC;
-            gcodeLine.X2 = xNext * pixelCNC;
-            gcodeLine.Y2 = maxCNCGrid - yNext * pixelCNC;
-            CNCGrid.Children.Add(gcodeLine);
-            CNCDraw.xLast = xNext;
-            CNCDraw.yLast = yNext;
+            int indexG = data.IndexOf('G');
+            int indexX = data.IndexOf('X');
+            int indexY = data.IndexOf('Y');
+
+            UInt16 gcode = Convert.ToUInt16(data.Substring(indexG + 1, indexX - 1));
+            double xNext = Convert.ToDouble(data.Substring(indexX + 1, indexY - indexX - 1));
+            double yNext = Convert.ToDouble(data.Substring(indexY + 1));
+            if(gcode == 0)
+            {
+                feedback.xLast = xNext;
+                feedback.yLast = yNext;
+            }
+            else
+            {
+                Line feedbackline = new Line();
+                feedbackline.Visibility = Visibility.Visible;
+                feedbackline.StrokeThickness = 2;
+                feedbackline.Stroke = System.Windows.Media.Brushes.Red;
+                feedbackline.X1 = feedback.xLast * pixelCNC;
+                feedbackline.Y1 = maxCNCGrid - feedback.yLast * pixelCNC;
+                feedbackline.X2 = xNext * pixelCNC;
+                feedbackline.Y2 = maxCNCGrid - yNext * pixelCNC;
+                main.Children.Add(feedbackline);
+                feedback.xLast = xNext;
+                feedback.yLast = yNext;
+            }
         }
-        private void drawFromCNC()
-        {
-            if (Convert.ToDouble(CNCDraw.buff[2].Replace("Z", string.Empty)) != 0)
-            {
-                double xNew = Convert.ToDouble(CNCDraw.buff[0].Replace("X", string.Empty));
-                double yNew = Convert.ToDouble(CNCDraw.buff[1].Replace("Y", string.Empty));
-                drawLineCNC(xNew, yNew);
-            }
-            if (Convert.ToDouble(CNCDraw.buff[2].Replace("Z", string.Empty)) == 0)
-            {
-                double xNew = Convert.ToDouble(CNCDraw.buff[0].Replace("X", string.Empty));
-                double yNew = Convert.ToDouble(CNCDraw.buff[1].Replace("Y", string.Empty));
-                CNCDraw.xLast = xNew;
-                CNCDraw.yLast = yNew;
-            }
-        }*/
     }
 }

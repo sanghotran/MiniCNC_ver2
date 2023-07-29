@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 1
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 1
   31:USB_DEVICE/App/usbd_custom_hid_if.c **** 
   32:USB_DEVICE/App/usbd_custom_hid_if.c **** /* USER CODE BEGIN PV */
   33:USB_DEVICE/App/usbd_custom_hid_if.c **** /* Private variables ---------------------------------------------------------*/
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 2
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s 			page 2
 
 
   34:USB_DEVICE/App/usbd_custom_hid_if.c **** extern SemaphoreHandle_t xSemaphoreUSB;
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 1
   88:USB_DEVICE/App/usbd_custom_hid_if.c ****   * @brief Private variables.
   89:USB_DEVICE/App/usbd_custom_hid_if.c ****   * @{
   90:USB_DEVICE/App/usbd_custom_hid_if.c ****   */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 3
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s 			page 3
 
 
   91:USB_DEVICE/App/usbd_custom_hid_if.c **** 
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 1
  145:USB_DEVICE/App/usbd_custom_hid_if.c **** /**
  146:USB_DEVICE/App/usbd_custom_hid_if.c ****   * @}
  147:USB_DEVICE/App/usbd_custom_hid_if.c ****   */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 4
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s 			page 4
 
 
  148:USB_DEVICE/App/usbd_custom_hid_if.c **** 
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 1
   49              		@ frame_needed = 0, uses_anonymous_args = 0
   50              		@ link register save eliminated.
  181:USB_DEVICE/App/usbd_custom_hid_if.c ****   /* USER CODE BEGIN 5 */
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 5
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s 			page 5
 
 
  182:USB_DEVICE/App/usbd_custom_hid_if.c ****   return (USBD_OK);
@@ -272,16 +272,16 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 1
   69              		@ args = 0, pretend = 0, frame = 0
   70              		@ frame_needed = 0, uses_anonymous_args = 0
   71              		.loc 1 193 1 is_stmt 0 view .LVU7
-  72 0000 10B5     		push	{r4, lr}
+  72 0000 08B5     		push	{r3, lr}
   73              	.LCFI0:
   74              		.cfi_def_cfa_offset 8
-  75              		.cfi_offset 4, -8
+  75              		.cfi_offset 3, -8
   76              		.cfi_offset 14, -4
  194:USB_DEVICE/App/usbd_custom_hid_if.c ****   /* USER CODE BEGIN 6 */
  195:USB_DEVICE/App/usbd_custom_hid_if.c ****   USBD_CUSTOM_HID_HandleTypeDef* hhid = (USBD_CUSTOM_HID_HandleTypeDef*)hUsbDeviceFS.pClassData;
   77              		.loc 1 195 3 is_stmt 1 view .LVU8
   78              		.loc 1 195 34 is_stmt 0 view .LVU9
-  79 0002 104B     		ldr	r3, .L7
+  79 0002 0E4B     		ldr	r3, .L7
   80 0004 D3F8B802 		ldr	r0, [r3, #696]
   81              	.LVL1:
  196:USB_DEVICE/App/usbd_custom_hid_if.c **** 	for(uint8_t i = 0; i < 64; i++)
@@ -298,12 +298,12 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 1
  198:USB_DEVICE/App/usbd_custom_hid_if.c **** 		cnc.DataReceiveFromGUI[i] =  hhid -> Report_buf[i];
   91              		.loc 1 198 3 is_stmt 1 discriminator 3 view .LVU14
   92              		.loc 1 198 50 is_stmt 0 discriminator 3 view .LVU15
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 6
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s 			page 6
 
 
   93 000c C15C     		ldrb	r1, [r0, r3]	@ zero_extendqisi2
   94              		.loc 1 198 29 discriminator 3 view .LVU16
-  95 000e 0E4A     		ldr	r2, .L7+4
+  95 000e 0C4A     		ldr	r2, .L7+4
   96 0010 1A44     		add	r2, r2, r3
   97 0012 9173     		strb	r1, [r2, #14]
  196:USB_DEVICE/App/usbd_custom_hid_if.c **** 	for(uint8_t i = 0; i < 64; i++)
@@ -333,97 +333,94 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 1
  115              	.LVL5:
  201:USB_DEVICE/App/usbd_custom_hid_if.c ****   memset(cnc.DataSendToGUI, 0, sizeof(cnc.DataSendToGUI));
  116              		.loc 1 201 3 view .LVU23
- 117 0024 094B     		ldr	r3, .L7+8
- 118 0026 0024     		movs	r4, #0
- 119 0028 1C60     		str	r4, [r3]	@ unaligned
- 120 002a 5C60     		str	r4, [r3, #4]	@ unaligned
- 121 002c 9C60     		str	r4, [r3, #8]	@ unaligned
- 122 002e DC60     		str	r4, [r3, #12]	@ unaligned
- 123 0030 C3F80F40 		str	r4, [r3, #15]	@ unaligned
+ 117 0024 1F22     		movs	r2, #31
+ 118 0026 0021     		movs	r1, #0
+ 119 0028 0648     		ldr	r0, .L7+8
+ 120 002a FFF7FEFF 		bl	memset
+ 121              	.LVL6:
  202:USB_DEVICE/App/usbd_custom_hid_if.c **** 
  203:USB_DEVICE/App/usbd_custom_hid_if.c ****   BaseType_t xHigherPriorityTaskWoken = pdFALSE;
- 124              		.loc 1 203 3 view .LVU24
- 125              	.LVL6:
+ 122              		.loc 1 203 3 view .LVU24
  204:USB_DEVICE/App/usbd_custom_hid_if.c ****   xSemaphoreGiveFromISR(xSemaphoreUSB, xHigherPriorityTaskWoken);
- 126              		.loc 1 204 3 view .LVU25
- 127 0034 2146     		mov	r1, r4
- 128 0036 064B     		ldr	r3, .L7+12
- 129 0038 1868     		ldr	r0, [r3]
- 130 003a FFF7FEFF 		bl	xQueueGiveFromISR
- 131              	.LVL7:
+ 123              		.loc 1 204 3 view .LVU25
+ 124 002e 0021     		movs	r1, #0
+ 125 0030 054B     		ldr	r3, .L7+12
+ 126 0032 1868     		ldr	r0, [r3]
+ 127 0034 FFF7FEFF 		bl	xQueueGiveFromISR
+ 128              	.LVL7:
  205:USB_DEVICE/App/usbd_custom_hid_if.c ****   portYIELD_FROM_ISR(xHigherPriorityTaskWoken);
- 132              		.loc 1 205 3 view .LVU26
- 133              		.loc 1 205 47 view .LVU27
+ 129              		.loc 1 205 3 view .LVU26
+ 130              		.loc 1 205 47 view .LVU27
  206:USB_DEVICE/App/usbd_custom_hid_if.c ****   return (USBD_OK);
- 134              		.loc 1 206 3 view .LVU28
+ 131              		.loc 1 206 3 view .LVU28
  207:USB_DEVICE/App/usbd_custom_hid_if.c ****   /* USER CODE END 6 */
  208:USB_DEVICE/App/usbd_custom_hid_if.c **** }
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 7
+ 132              		.loc 1 208 1 is_stmt 0 view .LVU29
+ 133 0038 0020     		movs	r0, #0
+ 134 003a 08BD     		pop	{r3, pc}
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s 			page 7
 
 
- 135              		.loc 1 208 1 is_stmt 0 view .LVU29
- 136 003e 2046     		mov	r0, r4
- 137 0040 10BD     		pop	{r4, pc}
- 138              	.L8:
- 139 0042 00BF     		.align	2
- 140              	.L7:
- 141 0044 00000000 		.word	hUsbDeviceFS
- 142 0048 00000000 		.word	cnc
- 143 004c 4E000000 		.word	cnc+78
- 144 0050 00000000 		.word	xSemaphoreUSB
- 145              		.cfi_endproc
- 146              	.LFE75:
- 148              		.global	USBD_CustomHID_fops_FS
- 149              		.section	.data.CUSTOM_HID_ReportDesc_FS,"aw"
- 150              		.align	2
- 153              	CUSTOM_HID_ReportDesc_FS:
- 154 0000 0600FF09 		.ascii	"\006\000\377\011\001\241\001\205\002u\010\225@\011\001"
- 154      01A10185 
- 154      02750895 
- 154      400901
- 155 000f 91828501 		.ascii	"\221\202\205\001\011\004u\010\225@\201\202\300"
- 155      09047508 
- 155      95408182 
- 155      C0
- 156              		.section	.data.USBD_CustomHID_fops_FS,"aw"
- 157              		.align	2
- 160              	USBD_CustomHID_fops_FS:
- 161 0000 00000000 		.word	CUSTOM_HID_ReportDesc_FS
- 162 0004 00000000 		.word	CUSTOM_HID_Init_FS
- 163 0008 00000000 		.word	CUSTOM_HID_DeInit_FS
- 164 000c 00000000 		.word	CUSTOM_HID_OutEvent_FS
- 165              		.text
- 166              	.Letext0:
- 167              		.file 2 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 168              		.file 3 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 169              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 170              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 171              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 172              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
- 173              		.file 8 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
- 174              		.file 9 "Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h"
- 175              		.file 10 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
- 176              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 177              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
- 178              		.file 13 "Lib/Inc/TaskCNC.h"
- 179              		.file 14 "USB_DEVICE/App/usbd_custom_hid_if.h"
- 180              		.file 15 "<built-in>"
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s 			page 8
+ 135              	.L8:
+ 136              		.align	2
+ 137              	.L7:
+ 138 003c 00000000 		.word	hUsbDeviceFS
+ 139 0040 00000000 		.word	cnc
+ 140 0044 4E000000 		.word	cnc+78
+ 141 0048 00000000 		.word	xSemaphoreUSB
+ 142              		.cfi_endproc
+ 143              	.LFE75:
+ 145              		.global	USBD_CustomHID_fops_FS
+ 146              		.section	.data.CUSTOM_HID_ReportDesc_FS,"aw"
+ 147              		.align	2
+ 150              	CUSTOM_HID_ReportDesc_FS:
+ 151 0000 0600FF09 		.ascii	"\006\000\377\011\001\241\001\205\002u\010\225@\011\001"
+ 151      01A10185 
+ 151      02750895 
+ 151      400901
+ 152 000f 91828501 		.ascii	"\221\202\205\001\011\004u\010\225@\201\202\300"
+ 152      09047508 
+ 152      95408182 
+ 152      C0
+ 153              		.section	.data.USBD_CustomHID_fops_FS,"aw"
+ 154              		.align	2
+ 157              	USBD_CustomHID_fops_FS:
+ 158 0000 00000000 		.word	CUSTOM_HID_ReportDesc_FS
+ 159 0004 00000000 		.word	CUSTOM_HID_Init_FS
+ 160 0008 00000000 		.word	CUSTOM_HID_DeInit_FS
+ 161 000c 00000000 		.word	CUSTOM_HID_OutEvent_FS
+ 162              		.text
+ 163              	.Letext0:
+ 164              		.file 2 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 165              		.file 3 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 166              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 167              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 168              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 169              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 170              		.file 8 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 171              		.file 9 "Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h"
+ 172              		.file 10 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 173              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 174              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 175              		.file 13 "Lib/Inc/TaskCNC.h"
+ 176              		.file 14 "USB_DEVICE/App/usbd_custom_hid_if.h"
+ 177              		.file 15 "<built-in>"
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s 			page 8
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 usbd_custom_hid_if.c
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:18     .text.CUSTOM_HID_Init_FS:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:23     .text.CUSTOM_HID_Init_FS:00000000 CUSTOM_HID_Init_FS
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:39     .text.CUSTOM_HID_DeInit_FS:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:44     .text.CUSTOM_HID_DeInit_FS:00000000 CUSTOM_HID_DeInit_FS
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:59     .text.CUSTOM_HID_OutEvent_FS:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:64     .text.CUSTOM_HID_OutEvent_FS:00000000 CUSTOM_HID_OutEvent_FS
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:141    .text.CUSTOM_HID_OutEvent_FS:00000044 $d
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:160    .data.USBD_CustomHID_fops_FS:00000000 USBD_CustomHID_fops_FS
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:150    .data.CUSTOM_HID_ReportDesc_FS:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:153    .data.CUSTOM_HID_ReportDesc_FS:00000000 CUSTOM_HID_ReportDesc_FS
-C:\Users\Chicken\AppData\Local\Temp\ccBH9va7.s:157    .data.USBD_CustomHID_fops_FS:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:18     .text.CUSTOM_HID_Init_FS:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:23     .text.CUSTOM_HID_Init_FS:00000000 CUSTOM_HID_Init_FS
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:39     .text.CUSTOM_HID_DeInit_FS:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:44     .text.CUSTOM_HID_DeInit_FS:00000000 CUSTOM_HID_DeInit_FS
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:59     .text.CUSTOM_HID_OutEvent_FS:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:64     .text.CUSTOM_HID_OutEvent_FS:00000000 CUSTOM_HID_OutEvent_FS
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:138    .text.CUSTOM_HID_OutEvent_FS:0000003c $d
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:157    .data.USBD_CustomHID_fops_FS:00000000 USBD_CustomHID_fops_FS
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:147    .data.CUSTOM_HID_ReportDesc_FS:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:150    .data.CUSTOM_HID_ReportDesc_FS:00000000 CUSTOM_HID_ReportDesc_FS
+C:\Users\Chicken\AppData\Local\Temp\ccjHAEPK.s:154    .data.USBD_CustomHID_fops_FS:00000000 $d
 
 UNDEFINED SYMBOLS
 memset

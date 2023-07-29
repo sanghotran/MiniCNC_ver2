@@ -167,11 +167,12 @@ void ReceiveDataFromCNC(CNC *cnc)
     cnc->home = 1; // have just come home
 		break;
 	case 'G':
-		sprintf(cnc->DataSendToGUI, "C ACK ");
+		sprintf(cnc->DataSendToGUI, "C ACK %s ", cnc->uart.ReceiveFromControl);
 		break;	
 	default:
 		return;
   }
+  memset(cnc->uart.ReceiveFromControl, 0, sizeof(cnc->uart.ReceiveFromControl));
   cnc->uart.index = 0;
   USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
 }

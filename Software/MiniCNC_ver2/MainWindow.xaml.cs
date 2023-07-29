@@ -137,6 +137,8 @@ namespace MiniCNC_ver2
             MCUchatMCU.ItemsSource = MCUchatItems;
 
             showPage(MainShow);
+
+            //cnc.drawFromFeedback(MainShow, "G01X20.23Y20.05");
         }
         
         //showMessage(controlMCUchatItem, scrollviewMCU, MCUchatItems, "X Y Z");
@@ -313,6 +315,7 @@ namespace MiniCNC_ver2
                             SendGcode();
                             break;
                         case "ACK":
+                            cnc.drawFromFeedback(MainShow, cnc.DataReceive[2]);
                             SendGcode();
                             break;
                         case "HOME":

@@ -16,14 +16,10 @@ void ProcessData(CNC *cnc)
 		float x = 0, y = 0;
 		int temp;
 		sscanf(cnc->data.ReceiveBuff, "G0%uX%fY%f ", &temp, &x, &y);
+		memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
 		cnc->x_axis.next = x;
 		cnc->y_axis.next = y;
 		cnc->data.temp = temp;
-		//strtok(cnc->data.ReceiveBuff,"X");
-		//sscanf("G0", "G%u", cnc->data.temp);
-		//sscanf(cnc->data.ReceiveBuff, "G0%uX%fY%f ",cnc->data.temp, cnc->x_axis.next, cnc->y_axis.next);
-		//sscanf(cnc->data.ReceiveBuff, "X%f", cnc->x_axis.next);
-		//HAL_Delay(100);		
 		if(cnc->data.temp == 1)
 			cnc->drill.enb =true;
 		else

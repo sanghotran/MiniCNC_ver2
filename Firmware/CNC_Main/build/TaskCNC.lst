@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -58,7 +58,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
   49              	.L2:
   50              		.loc 1 6 8 is_stmt 1 discriminator 1 view .LVU8
   51              		.loc 1 6 9 is_stmt 0 discriminator 1 view .LVU9
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 2
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 2
 
 
   52 0008 13F8012B 		ldrb	r2, [r3], #1	@ zero_extendqisi2
@@ -94,11 +94,11 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
   78              		.loc 1 12 3 view .LVU14
   79              		.loc 1 12 14 is_stmt 0 view .LVU15
   80 0000 0023     		movs	r3, #0
-  81 0002 80F86830 		strb	r3, [r0, #104]
+  81 0002 80F87430 		strb	r3, [r0, #116]
   13:Lib/Src/TaskCNC.c ****   cnc->mode = 0; // mode idle
   82              		.loc 1 13 3 is_stmt 1 view .LVU16
   83              		.loc 1 13 13 is_stmt 0 view .LVU17
-  84 0006 80F86930 		strb	r3, [r0, #105]
+  84 0006 80F87530 		strb	r3, [r0, #117]
   14:Lib/Src/TaskCNC.c **** 
   15:Lib/Src/TaskCNC.c ****   cnc->btnOK = GPIO_PIN_4;
   85              		.loc 1 15 3 is_stmt 1 view .LVU18
@@ -118,7 +118,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
   18:Lib/Src/TaskCNC.c ****   cnc->btnDown = GPIO_PIN_15;
   97              		.loc 1 18 3 is_stmt 1 view .LVU24
   98              		.loc 1 18 16 is_stmt 0 view .LVU25
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 3
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 3
 
 
   99 0016 4FF40042 		mov	r2, #32768
@@ -138,12 +138,12 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
   23:Lib/Src/TaskCNC.c ****   cnc->uart.index = 0;
  109              		.loc 1 23 3 is_stmt 1 view .LVU30
  110              		.loc 1 23 19 is_stmt 0 view .LVU31
- 111 0024 80F88030 		strb	r3, [r0, #128]
+ 111 0024 80F8A530 		strb	r3, [r0, #165]
   24:Lib/Src/TaskCNC.c **** 
   25:Lib/Src/TaskCNC.c ****   cnc->home = 0;
  112              		.loc 1 25 3 is_stmt 1 view .LVU32
  113              		.loc 1 25 13 is_stmt 0 view .LVU33
- 114 0028 80F86A30 		strb	r3, [r0, #106]
+ 114 0028 80F87630 		strb	r3, [r0, #118]
   26:Lib/Src/TaskCNC.c **** 
   27:Lib/Src/TaskCNC.c ****   //cnc->sd.fresult = f_mount(cnc->sd.FileSystem, "/", 1);
   28:Lib/Src/TaskCNC.c ****      
@@ -178,7 +178,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
   39:Lib/Src/TaskCNC.c ****   	//cnc->sd.fresult = f_puts(cnc->sd.data, cnc->sd.File);
   40:Lib/Src/TaskCNC.c **** 
   41:Lib/Src/TaskCNC.c ****   	//f_close (&fil);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 4
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 4
 
 
   42:Lib/Src/TaskCNC.c **** }
@@ -213,7 +213,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
   46:Lib/Src/TaskCNC.c ****   switch (cnc->state)
  162              		.loc 1 46 3 is_stmt 1 view .LVU39
  163              		.loc 1 46 14 is_stmt 0 view .LVU40
- 164 0002 90F86830 		ldrb	r3, [r0, #104]	@ zero_extendqisi2
+ 164 0002 90F87430 		ldrb	r3, [r0, #116]	@ zero_extendqisi2
  165              		.loc 1 46 3 view .LVU41
  166 0006 022B     		cmp	r3, #2
  167 0008 00D0     		beq	.L9
@@ -238,7 +238,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
  172              	.LVL10:
  173              	.L9:
  174              		.loc 1 60 1 view .LVU43
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 5
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 5
 
 
  175 000c 0446     		mov	r4, r0
@@ -274,7 +274,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
   53:Lib/Src/TaskCNC.c ****       }
  198              		.loc 1 53 20 is_stmt 0 view .LVU51
  199 002a 0023     		movs	r3, #0
- 200 002c 84F86830 		strb	r3, [r4, #104]
+ 200 002c 84F87430 		strb	r3, [r4, #116]
  201              		.loc 1 60 1 view .LVU52
  202 0030 EBE7     		b	.L6
  203              	.L11:
@@ -298,7 +298,7 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
  221              		.thumb
  222              		.thumb_func
  224              	ProcessMode:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 6
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 6
 
 
  225              	.LVL14:
@@ -311,23 +311,23 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
  229              		@ args = 0, pretend = 0, frame = 0
  230              		@ frame_needed = 0, uses_anonymous_args = 0
  231              		.loc 1 63 1 is_stmt 0 view .LVU54
- 232 0000 38B5     		push	{r3, r4, r5, lr}
+ 232 0000 70B5     		push	{r4, r5, r6, lr}
  233              	.LCFI1:
  234              		.cfi_def_cfa_offset 16
- 235              		.cfi_offset 3, -16
- 236              		.cfi_offset 4, -12
- 237              		.cfi_offset 5, -8
+ 235              		.cfi_offset 4, -16
+ 236              		.cfi_offset 5, -12
+ 237              		.cfi_offset 6, -8
  238              		.cfi_offset 14, -4
  239 0002 0446     		mov	r4, r0
   64:Lib/Src/TaskCNC.c ****   switch (cnc->mode)
  240              		.loc 1 64 3 is_stmt 1 view .LVU55
  241              		.loc 1 64 14 is_stmt 0 view .LVU56
- 242 0004 90F86930 		ldrb	r3, [r0, #105]	@ zero_extendqisi2
+ 242 0004 90F87530 		ldrb	r3, [r0, #117]	@ zero_extendqisi2
  243              		.loc 1 64 3 view .LVU57
  244 0008 032B     		cmp	r3, #3
  245 000a 02D0     		beq	.L13
  246 000c 062B     		cmp	r3, #6
- 247 000e 14D0     		beq	.L14
+ 247 000e 15D0     		beq	.L14
  248              	.LVL15:
  249              	.L12:
   65:Lib/Src/TaskCNC.c ****   {
@@ -358,169 +358,171 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
   90:Lib/Src/TaskCNC.c ****     default:
   91:Lib/Src/TaskCNC.c ****       break;
   92:Lib/Src/TaskCNC.c ****   } 
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 7
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 7
 
 
   93:Lib/Src/TaskCNC.c **** }
  250              		.loc 1 93 1 view .LVU58
- 251 0010 38BD     		pop	{r3, r4, r5, pc}
+ 251 0010 70BD     		pop	{r4, r5, r6, pc}
  252              	.LVL16:
  253              	.L13:
   67:Lib/Src/TaskCNC.c ****       sprintf(cnc->uart.SendToControl, "H!");
  254              		.loc 1 67 7 is_stmt 1 view .LVU59
   67:Lib/Src/TaskCNC.c ****       sprintf(cnc->uart.SendToControl, "H!");
  255              		.loc 1 67 23 is_stmt 0 view .LVU60
- 256 0012 00F17001 		add	r1, r0, #112
+ 256 0012 00F17C05 		add	r5, r0, #124
   67:Lib/Src/TaskCNC.c ****       sprintf(cnc->uart.SendToControl, "H!");
  257              		.loc 1 67 7 view .LVU61
- 258 0016 0023     		movs	r3, #0
- 259 0018 0367     		str	r3, [r0, #112]	@ unaligned
- 260 001a 4367     		str	r3, [r0, #116]	@ unaligned
- 261 001c 8367     		str	r3, [r0, #120]	@ unaligned
- 262 001e C0F87B30 		str	r3, [r0, #123]	@ unaligned
+ 258 0016 2822     		movs	r2, #40
+ 259 0018 0021     		movs	r1, #0
+ 260 001a 2846     		mov	r0, r5
+ 261              	.LVL17:
+  67:Lib/Src/TaskCNC.c ****       sprintf(cnc->uart.SendToControl, "H!");
+ 262              		.loc 1 67 7 view .LVU62
+ 263 001c FFF7FEFF 		bl	memset
+ 264              	.LVL18:
   68:Lib/Src/TaskCNC.c ****       HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, 2, 100);
- 263              		.loc 1 68 7 is_stmt 1 view .LVU62
- 264 0022 104B     		ldr	r3, .L17
- 265 0024 1A88     		ldrh	r2, [r3]	@ unaligned
- 266 0026 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
- 267 0028 A0F87020 		strh	r2, [r0, #112]	@ unaligned
- 268 002c 8B70     		strb	r3, [r1, #2]
+ 265              		.loc 1 68 7 is_stmt 1 view .LVU63
+ 266 0020 114B     		ldr	r3, .L17
+ 267 0022 1A88     		ldrh	r2, [r3]	@ unaligned
+ 268 0024 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 269 0026 A4F87C20 		strh	r2, [r4, #124]	@ unaligned
+ 270 002a 84F87E30 		strb	r3, [r4, #126]
   69:Lib/Src/TaskCNC.c ****       break;
- 269              		.loc 1 69 7 view .LVU63
- 270 002e 6423     		movs	r3, #100
- 271 0030 0222     		movs	r2, #2
- 272 0032 C06E     		ldr	r0, [r0, #108]
- 273              	.LVL17:
-  69:Lib/Src/TaskCNC.c ****       break;
- 274              		.loc 1 69 7 is_stmt 0 view .LVU64
- 275 0034 FFF7FEFF 		bl	HAL_UART_Transmit
- 276              	.LVL18:
+ 271              		.loc 1 69 7 view .LVU64
+ 272 002e 6423     		movs	r3, #100
+ 273 0030 0222     		movs	r2, #2
+ 274 0032 2946     		mov	r1, r5
+ 275 0034 A06F     		ldr	r0, [r4, #120]
+ 276 0036 FFF7FEFF 		bl	HAL_UART_Transmit
+ 277              	.LVL19:
   70:Lib/Src/TaskCNC.c **** 
- 277              		.loc 1 70 7 is_stmt 1 view .LVU65
- 278 0038 EAE7     		b	.L12
- 279              	.LVL19:
- 280              	.L14:
+ 278              		.loc 1 70 7 view .LVU65
+ 279 003a E9E7     		b	.L12
+ 280              	.LVL20:
+ 281              	.L14:
   81:Lib/Src/TaskCNC.c ****       sscanf(cnc->DataReceiveFromGUI, "D 1 %s", cnc->uart.SendToControl);
- 281              		.loc 1 81 7 view .LVU66
+ 282              		.loc 1 81 7 view .LVU66
   81:Lib/Src/TaskCNC.c ****       sscanf(cnc->DataReceiveFromGUI, "D 1 %s", cnc->uart.SendToControl);
- 282              		.loc 1 81 23 is_stmt 0 view .LVU67
- 283 003a 00F17005 		add	r5, r0, #112
+ 283              		.loc 1 81 23 is_stmt 0 view .LVU67
+ 284 003c 00F17C05 		add	r5, r0, #124
   81:Lib/Src/TaskCNC.c ****       sscanf(cnc->DataReceiveFromGUI, "D 1 %s", cnc->uart.SendToControl);
- 284              		.loc 1 81 7 view .LVU68
- 285 003e 0023     		movs	r3, #0
- 286 0040 0367     		str	r3, [r0, #112]	@ unaligned
- 287 0042 4367     		str	r3, [r0, #116]	@ unaligned
- 288 0044 8367     		str	r3, [r0, #120]	@ unaligned
- 289 0046 C0F87B30 		str	r3, [r0, #123]	@ unaligned
+ 285              		.loc 1 81 7 view .LVU68
+ 286 0040 2826     		movs	r6, #40
+ 287 0042 3246     		mov	r2, r6
+ 288 0044 0021     		movs	r1, #0
+ 289 0046 2846     		mov	r0, r5
+ 290              	.LVL21:
+  81:Lib/Src/TaskCNC.c ****       sscanf(cnc->DataReceiveFromGUI, "D 1 %s", cnc->uart.SendToControl);
+ 291              		.loc 1 81 7 view .LVU69
+ 292 0048 FFF7FEFF 		bl	memset
+ 293              	.LVL22:
   82:Lib/Src/TaskCNC.c ****       HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 
- 290              		.loc 1 82 7 is_stmt 1 view .LVU69
- 291 004a 2A46     		mov	r2, r5
- 292 004c 0649     		ldr	r1, .L17+4
- 293 004e 0E30     		adds	r0, r0, #14
- 294              	.LVL20:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 8
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 8
 
 
-  82:Lib/Src/TaskCNC.c ****       HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 
- 295              		.loc 1 82 7 is_stmt 0 view .LVU70
- 296 0050 FFF7FEFF 		bl	sscanf
- 297              	.LVL21:
+ 294              		.loc 1 82 7 is_stmt 1 view .LVU70
+ 295 004c 2A46     		mov	r2, r5
+ 296 004e 0749     		ldr	r1, .L17+4
+ 297 0050 04F10E00 		add	r0, r4, #14
+ 298 0054 FFF7FEFF 		bl	sscanf
+ 299              	.LVL23:
   83:Lib/Src/TaskCNC.c ****       //SaveDataToSD(cnc);
- 298              		.loc 1 83 7 is_stmt 1 view .LVU71
- 299 0054 6423     		movs	r3, #100
- 300 0056 0F22     		movs	r2, #15
- 301 0058 2946     		mov	r1, r5
- 302 005a E06E     		ldr	r0, [r4, #108]
- 303 005c FFF7FEFF 		bl	HAL_UART_Transmit
- 304              	.LVL22:
+ 300              		.loc 1 83 7 view .LVU71
+ 301 0058 6423     		movs	r3, #100
+ 302 005a 3246     		mov	r2, r6
+ 303 005c 2946     		mov	r1, r5
+ 304 005e A06F     		ldr	r0, [r4, #120]
+ 305 0060 FFF7FEFF 		bl	HAL_UART_Transmit
+ 306              	.LVL24:
   88:Lib/Src/TaskCNC.c **** 
- 305              		.loc 1 88 7 view .LVU72
- 306              		.loc 1 93 1 is_stmt 0 view .LVU73
- 307 0060 D6E7     		b	.L12
- 308              	.L18:
- 309 0062 00BF     		.align	2
- 310              	.L17:
- 311 0064 00000000 		.word	.LC0
- 312 0068 04000000 		.word	.LC1
- 313              		.cfi_endproc
- 314              	.LFE77:
- 316              		.section	.rodata.ReceiveDataFromGUI.str1.4,"aMS",%progbits,1
- 317              		.align	2
- 318              	.LC2:
- 319 0000 4320434F 		.ascii	"C CONNECTED \000"
- 319      4E4E4543 
- 319      54454420 
- 319      00
- 320 000d 000000   		.align	2
- 321              	.LC3:
- 322 0010 43204449 		.ascii	"C DISCONNECTED \000"
- 322      53434F4E 
- 322      4E454354 
- 322      45442000 
- 323              		.align	2
- 324              	.LC4:
- 325 0020 4320444F 		.ascii	"C DOING \000"
- 325      494E4720 
- 325      00
- 326 0029 000000   		.align	2
- 327              	.LC5:
- 328 002c 43205255 		.ascii	"C RUNNING \000"
- 328      4E4E494E 
- 328      472000
- 329 0037 00       		.align	2
- 330              	.LC6:
- 331 0038 43204E4F 		.ascii	"C NOHOME \000"
- 331      484F4D45 
- 331      2000
- 332 0042 0000     		.align	2
- 333              	.LC7:
- 334 0044 43205945 		.ascii	"C YES \000"
- 334      532000
- 335 004b 00       		.align	2
- 336              	.LC8:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 9
+ 307              		.loc 1 88 7 view .LVU72
+ 308              		.loc 1 93 1 is_stmt 0 view .LVU73
+ 309 0064 D4E7     		b	.L12
+ 310              	.L18:
+ 311 0066 00BF     		.align	2
+ 312              	.L17:
+ 313 0068 00000000 		.word	.LC0
+ 314 006c 04000000 		.word	.LC1
+ 315              		.cfi_endproc
+ 316              	.LFE77:
+ 318              		.section	.rodata.ReceiveDataFromGUI.str1.4,"aMS",%progbits,1
+ 319              		.align	2
+ 320              	.LC2:
+ 321 0000 4320434F 		.ascii	"C CONNECTED \000"
+ 321      4E4E4543 
+ 321      54454420 
+ 321      00
+ 322 000d 000000   		.align	2
+ 323              	.LC3:
+ 324 0010 43204449 		.ascii	"C DISCONNECTED \000"
+ 324      53434F4E 
+ 324      4E454354 
+ 324      45442000 
+ 325              		.align	2
+ 326              	.LC4:
+ 327 0020 4320444F 		.ascii	"C DOING \000"
+ 327      494E4720 
+ 327      00
+ 328 0029 000000   		.align	2
+ 329              	.LC5:
+ 330 002c 43205255 		.ascii	"C RUNNING \000"
+ 330      4E4E494E 
+ 330      472000
+ 331 0037 00       		.align	2
+ 332              	.LC6:
+ 333 0038 43204E4F 		.ascii	"C NOHOME \000"
+ 333      484F4D45 
+ 333      2000
+ 334 0042 0000     		.align	2
+ 335              	.LC7:
+ 336 0044 43205945 		.ascii	"C YES \000"
+ 336      532000
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 9
 
 
- 337 004c 4320444F 		.ascii	"C DONE \000"
- 337      4E452000 
- 338              		.section	.text.ReceiveDataFromGUI,"ax",%progbits
- 339              		.align	1
- 340              		.global	ReceiveDataFromGUI
- 341              		.syntax unified
- 342              		.thumb
- 343              		.thumb_func
- 345              	ReceiveDataFromGUI:
- 346              	.LVL23:
- 347              	.LFB78:
+ 337 004b 00       		.align	2
+ 338              	.LC8:
+ 339 004c 4320444F 		.ascii	"C DONE \000"
+ 339      4E452000 
+ 340              		.section	.text.ReceiveDataFromGUI,"ax",%progbits
+ 341              		.align	1
+ 342              		.global	ReceiveDataFromGUI
+ 343              		.syntax unified
+ 344              		.thumb
+ 345              		.thumb_func
+ 347              	ReceiveDataFromGUI:
+ 348              	.LVL25:
+ 349              	.LFB78:
   94:Lib/Src/TaskCNC.c **** 
   95:Lib/Src/TaskCNC.c **** 
   96:Lib/Src/TaskCNC.c **** void ReceiveDataFromGUI(CNC *cnc, SemaphoreHandle_t xSemaphoreMode)
   97:Lib/Src/TaskCNC.c **** {
- 348              		.loc 1 97 1 is_stmt 1 view -0
- 349              		.cfi_startproc
- 350              		@ args = 0, pretend = 0, frame = 0
- 351              		@ frame_needed = 0, uses_anonymous_args = 0
- 352              		.loc 1 97 1 is_stmt 0 view .LVU75
- 353 0000 70B5     		push	{r4, r5, r6, lr}
- 354              	.LCFI2:
- 355              		.cfi_def_cfa_offset 16
- 356              		.cfi_offset 4, -16
- 357              		.cfi_offset 5, -12
- 358              		.cfi_offset 6, -8
- 359              		.cfi_offset 14, -4
- 360 0002 0446     		mov	r4, r0
- 361 0004 0D46     		mov	r5, r1
+ 350              		.loc 1 97 1 is_stmt 1 view -0
+ 351              		.cfi_startproc
+ 352              		@ args = 0, pretend = 0, frame = 0
+ 353              		@ frame_needed = 0, uses_anonymous_args = 0
+ 354              		.loc 1 97 1 is_stmt 0 view .LVU75
+ 355 0000 70B5     		push	{r4, r5, r6, lr}
+ 356              	.LCFI2:
+ 357              		.cfi_def_cfa_offset 16
+ 358              		.cfi_offset 4, -16
+ 359              		.cfi_offset 5, -12
+ 360              		.cfi_offset 6, -8
+ 361              		.cfi_offset 14, -4
+ 362 0002 0446     		mov	r4, r0
+ 363 0004 0D46     		mov	r5, r1
   98:Lib/Src/TaskCNC.c ****   switch (cnc->DataReceiveFromGUI[0])
- 362              		.loc 1 98 3 is_stmt 1 view .LVU76
- 363              		.loc 1 98 34 is_stmt 0 view .LVU77
- 364 0006 837B     		ldrb	r3, [r0, #14]	@ zero_extendqisi2
- 365              		.loc 1 98 3 view .LVU78
- 366 0008 432B     		cmp	r3, #67
- 367 000a 02D0     		beq	.L20
- 368 000c 442B     		cmp	r3, #68
- 369 000e 62D0     		beq	.L21
- 370              	.LVL24:
- 371              	.L19:
+ 364              		.loc 1 98 3 is_stmt 1 view .LVU76
+ 365              		.loc 1 98 34 is_stmt 0 view .LVU77
+ 366 0006 837B     		ldrb	r3, [r0, #14]	@ zero_extendqisi2
+ 367              		.loc 1 98 3 view .LVU78
+ 368 0008 432B     		cmp	r3, #67
+ 369 000a 02D0     		beq	.L20
+ 370 000c 442B     		cmp	r3, #68
+ 371 000e 62D0     		beq	.L21
+ 372              	.LVL26:
+ 373              	.L19:
   99:Lib/Src/TaskCNC.c ****   {
  100:Lib/Src/TaskCNC.c ****     case 'C': // command          
  101:Lib/Src/TaskCNC.c ****       switch (cnc->DataReceiveFromGUI[2])
@@ -536,11 +538,11 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
  111:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "C DISCONNECTED ");
  112:Lib/Src/TaskCNC.c ****           break;
  113:Lib/Src/TaskCNC.c **** 
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 10
+
+
  114:Lib/Src/TaskCNC.c ****         case '3': // home
  115:Lib/Src/TaskCNC.c ****           cnc->mode = 3; // mode home
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 10
-
-
  116:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "C DOING ");
  117:Lib/Src/TaskCNC.c ****           break;
  118:Lib/Src/TaskCNC.c **** 
@@ -585,415 +587,424 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 1
  157:Lib/Src/TaskCNC.c ****   if(cnc->mode > 2)   
  158:Lib/Src/TaskCNC.c ****     xSemaphoreGive(xSemaphoreMode);
  159:Lib/Src/TaskCNC.c **** }
- 372              		.loc 1 159 1 view .LVU79
- 373 0010 70BD     		pop	{r4, r5, r6, pc}
- 374              	.LVL25:
- 375              	.L20:
+ 374              		.loc 1 159 1 view .LVU79
+ 375 0010 70BD     		pop	{r4, r5, r6, pc}
+ 376              	.LVL27:
+ 377              	.L20:
  101:Lib/Src/TaskCNC.c ****       {
- 376              		.loc 1 101 7 is_stmt 1 view .LVU80
+ 378              		.loc 1 101 7 is_stmt 1 view .LVU80
  101:Lib/Src/TaskCNC.c ****       {
- 377              		.loc 1 101 38 is_stmt 0 view .LVU81
- 378 0012 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
- 379 0014 303B     		subs	r3, r3, #48
- 380 0016 052B     		cmp	r3, #5
- 381 0018 63D8     		bhi	.L23
- 382 001a DFE803F0 		tbb	[pc, r3]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 11
+ 379              		.loc 1 101 38 is_stmt 0 view .LVU81
+ 380 0012 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
+ 381 0014 303B     		subs	r3, r3, #48
+ 382 0016 052B     		cmp	r3, #5
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 11
 
 
- 383              	.L25:
- 384 001e 03       		.byte	(.L29-.L25)/2
- 385 001f 15       		.byte	(.L28-.L25)/2
- 386 0020 62       		.byte	(.L23-.L25)/2
- 387 0021 23       		.byte	(.L27-.L25)/2
- 388 0022 30       		.byte	(.L26-.L25)/2
- 389 0023 4E       		.byte	(.L24-.L25)/2
- 390              		.p2align 1
- 391              	.L29:
+ 383 0018 63D8     		bhi	.L23
+ 384 001a DFE803F0 		tbb	[pc, r3]
+ 385              	.L25:
+ 386 001e 03       		.byte	(.L29-.L25)/2
+ 387 001f 15       		.byte	(.L28-.L25)/2
+ 388 0020 62       		.byte	(.L23-.L25)/2
+ 389 0021 23       		.byte	(.L27-.L25)/2
+ 390 0022 30       		.byte	(.L26-.L25)/2
+ 391 0023 4E       		.byte	(.L24-.L25)/2
+ 392              		.p2align 1
+ 393              	.L29:
  104:Lib/Src/TaskCNC.c ****           cnc->mode = 0; // reset mode when connect
- 392              		.loc 1 104 11 is_stmt 1 view .LVU82
+ 394              		.loc 1 104 11 is_stmt 1 view .LVU82
  104:Lib/Src/TaskCNC.c ****           cnc->mode = 0; // reset mode when connect
- 393              		.loc 1 104 22 is_stmt 0 view .LVU83
- 394 0024 0123     		movs	r3, #1
- 395 0026 80F86830 		strb	r3, [r0, #104]
+ 395              		.loc 1 104 22 is_stmt 0 view .LVU83
+ 396 0024 0123     		movs	r3, #1
+ 397 0026 80F87430 		strb	r3, [r0, #116]
  105:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "C CONNECTED ");
- 396              		.loc 1 105 11 is_stmt 1 view .LVU84
+ 398              		.loc 1 105 11 is_stmt 1 view .LVU84
  105:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "C CONNECTED ");
- 397              		.loc 1 105 21 is_stmt 0 view .LVU85
- 398 002a 0023     		movs	r3, #0
- 399 002c 80F86930 		strb	r3, [r0, #105]
+ 399              		.loc 1 105 21 is_stmt 0 view .LVU85
+ 400 002a 0023     		movs	r3, #0
+ 401 002c 80F87530 		strb	r3, [r0, #117]
  106:Lib/Src/TaskCNC.c ****           break;
- 400              		.loc 1 106 11 is_stmt 1 view .LVU86
- 401 0030 394B     		ldr	r3, .L35
- 402 0032 07CB     		ldmia	r3!, {r0, r1, r2}
- 403              	.LVL26:
+ 402              		.loc 1 106 11 is_stmt 1 view .LVU86
+ 403 0030 394B     		ldr	r3, .L35
+ 404 0032 07CB     		ldmia	r3!, {r0, r1, r2}
+ 405              	.LVL28:
  106:Lib/Src/TaskCNC.c ****           break;
- 404              		.loc 1 106 11 is_stmt 0 view .LVU87
- 405 0034 C4F84E00 		str	r0, [r4, #78]	@ unaligned
- 406 0038 C4F85210 		str	r1, [r4, #82]	@ unaligned
- 407 003c C4F85620 		str	r2, [r4, #86]	@ unaligned
- 408 0040 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 409 0042 84F85A30 		strb	r3, [r4, #90]
+ 406              		.loc 1 106 11 is_stmt 0 view .LVU87
+ 407 0034 C4F84E00 		str	r0, [r4, #78]	@ unaligned
+ 408 0038 C4F85210 		str	r1, [r4, #82]	@ unaligned
+ 409 003c C4F85620 		str	r2, [r4, #86]	@ unaligned
+ 410 0040 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 411 0042 84F85A30 		strb	r3, [r4, #90]
  107:Lib/Src/TaskCNC.c **** 
- 410              		.loc 1 107 11 is_stmt 1 view .LVU88
- 411 0046 4CE0     		b	.L23
- 412              	.LVL27:
- 413              	.L28:
+ 412              		.loc 1 107 11 is_stmt 1 view .LVU88
+ 413 0046 4CE0     		b	.L23
+ 414              	.LVL29:
+ 415              	.L28:
  110:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "C DISCONNECTED ");
- 414              		.loc 1 110 11 view .LVU89
+ 416              		.loc 1 110 11 view .LVU89
  110:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "C DISCONNECTED ");
- 415              		.loc 1 110 22 is_stmt 0 view .LVU90
- 416 0048 0023     		movs	r3, #0
- 417 004a 80F86830 		strb	r3, [r0, #104]
+ 417              		.loc 1 110 22 is_stmt 0 view .LVU90
+ 418 0048 0023     		movs	r3, #0
+ 419 004a 80F87430 		strb	r3, [r0, #116]
  111:Lib/Src/TaskCNC.c ****           break;
- 418              		.loc 1 111 11 is_stmt 1 view .LVU91
- 419 004e 334E     		ldr	r6, .L35+4
- 420 0050 0FCE     		ldmia	r6!, {r0, r1, r2, r3}
- 421              	.LVL28:
+ 420              		.loc 1 111 11 is_stmt 1 view .LVU91
+ 421 004e 334E     		ldr	r6, .L35+4
+ 422 0050 0FCE     		ldmia	r6!, {r0, r1, r2, r3}
+ 423              	.LVL30:
  111:Lib/Src/TaskCNC.c ****           break;
- 422              		.loc 1 111 11 is_stmt 0 view .LVU92
- 423 0052 C4F84E00 		str	r0, [r4, #78]	@ unaligned
- 424 0056 C4F85210 		str	r1, [r4, #82]	@ unaligned
- 425 005a C4F85620 		str	r2, [r4, #86]	@ unaligned
- 426 005e C4F85A30 		str	r3, [r4, #90]	@ unaligned
+ 424              		.loc 1 111 11 is_stmt 0 view .LVU92
+ 425 0052 C4F84E00 		str	r0, [r4, #78]	@ unaligned
+ 426 0056 C4F85210 		str	r1, [r4, #82]	@ unaligned
+ 427 005a C4F85620 		str	r2, [r4, #86]	@ unaligned
+ 428 005e C4F85A30 		str	r3, [r4, #90]	@ unaligned
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 12
+
+
  112:Lib/Src/TaskCNC.c **** 
- 427              		.loc 1 112 11 is_stmt 1 view .LVU93
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 12
-
-
- 428 0062 3EE0     		b	.L23
- 429              	.LVL29:
- 430              	.L27:
+ 429              		.loc 1 112 11 is_stmt 1 view .LVU93
+ 430 0062 3EE0     		b	.L23
+ 431              	.LVL31:
+ 432              	.L27:
  115:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "C DOING ");
- 431              		.loc 1 115 11 view .LVU94
+ 433              		.loc 1 115 11 view .LVU94
  115:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "C DOING ");
- 432              		.loc 1 115 21 is_stmt 0 view .LVU95
- 433 0064 0323     		movs	r3, #3
- 434 0066 80F86930 		strb	r3, [r0, #105]
+ 434              		.loc 1 115 21 is_stmt 0 view .LVU95
+ 435 0064 0323     		movs	r3, #3
+ 436 0066 80F87530 		strb	r3, [r0, #117]
  116:Lib/Src/TaskCNC.c ****           break;
- 435              		.loc 1 116 11 is_stmt 1 view .LVU96
- 436 006a 2D4B     		ldr	r3, .L35+8
- 437 006c 03CB     		ldmia	r3!, {r0, r1}
- 438              	.LVL30:
+ 437              		.loc 1 116 11 is_stmt 1 view .LVU96
+ 438 006a 2D4B     		ldr	r3, .L35+8
+ 439 006c 03CB     		ldmia	r3!, {r0, r1}
+ 440              	.LVL32:
  116:Lib/Src/TaskCNC.c ****           break;
- 439              		.loc 1 116 11 is_stmt 0 view .LVU97
- 440 006e C4F84E00 		str	r0, [r4, #78]	@ unaligned
- 441 0072 C4F85210 		str	r1, [r4, #82]	@ unaligned
- 442 0076 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
- 443 0078 84F85630 		strb	r3, [r4, #86]
+ 441              		.loc 1 116 11 is_stmt 0 view .LVU97
+ 442 006e C4F84E00 		str	r0, [r4, #78]	@ unaligned
+ 443 0072 C4F85210 		str	r1, [r4, #82]	@ unaligned
+ 444 0076 1B78     		ldrb	r3, [r3]	@ zero_extendqisi2
+ 445 0078 84F85630 		strb	r3, [r4, #86]
  117:Lib/Src/TaskCNC.c **** 
- 444              		.loc 1 117 11 is_stmt 1 view .LVU98
- 445 007c 31E0     		b	.L23
- 446              	.LVL31:
- 447              	.L26:
+ 446              		.loc 1 117 11 is_stmt 1 view .LVU98
+ 447 007c 31E0     		b	.L23
+ 448              	.LVL33:
+ 449              	.L26:
  120:Lib/Src/TaskCNC.c ****           {
- 448              		.loc 1 120 11 view .LVU99
+ 450              		.loc 1 120 11 view .LVU99
  120:Lib/Src/TaskCNC.c ****           {
- 449              		.loc 1 120 18 is_stmt 0 view .LVU100
- 450 007e 90F86A30 		ldrb	r3, [r0, #106]	@ zero_extendqisi2
+ 451              		.loc 1 120 18 is_stmt 0 view .LVU100
+ 452 007e 90F87630 		ldrb	r3, [r0, #118]	@ zero_extendqisi2
  120:Lib/Src/TaskCNC.c ****           {
- 451              		.loc 1 120 13 view .LVU101
- 452 0082 012B     		cmp	r3, #1
- 453 0084 09D0     		beq	.L33
+ 453              		.loc 1 120 13 view .LVU101
+ 454 0082 012B     		cmp	r3, #1
+ 455 0084 09D0     		beq	.L33
  127:Lib/Src/TaskCNC.c ****           }
- 454              		.loc 1 127 13 is_stmt 1 view .LVU102
- 455 0086 274B     		ldr	r3, .L35+12
- 456 0088 03CB     		ldmia	r3!, {r0, r1}
- 457              	.LVL32:
+ 456              		.loc 1 127 13 is_stmt 1 view .LVU102
+ 457 0086 274B     		ldr	r3, .L35+12
+ 458 0088 03CB     		ldmia	r3!, {r0, r1}
+ 459              	.LVL34:
  127:Lib/Src/TaskCNC.c ****           }
- 458              		.loc 1 127 13 is_stmt 0 view .LVU103
- 459 008a C4F84E00 		str	r0, [r4, #78]	@ unaligned
- 460 008e C4F85210 		str	r1, [r4, #82]	@ unaligned
- 461 0092 1B88     		ldrh	r3, [r3]	@ unaligned
- 462 0094 A4F85630 		strh	r3, [r4, #86]	@ unaligned
- 463 0098 23E0     		b	.L23
- 464              	.LVL33:
- 465              	.L33:
+ 460              		.loc 1 127 13 is_stmt 0 view .LVU103
+ 461 008a C4F84E00 		str	r0, [r4, #78]	@ unaligned
+ 462 008e C4F85210 		str	r1, [r4, #82]	@ unaligned
+ 463 0092 1B88     		ldrh	r3, [r3]	@ unaligned
+ 464 0094 A4F85630 		strh	r3, [r4, #86]	@ unaligned
+ 465 0098 23E0     		b	.L23
+ 466              	.LVL35:
+ 467              	.L33:
  122:Lib/Src/TaskCNC.c ****             sprintf(cnc->DataSendToGUI, "C RUNNING ");
- 466              		.loc 1 122 13 is_stmt 1 view .LVU104
+ 468              		.loc 1 122 13 is_stmt 1 view .LVU104
  122:Lib/Src/TaskCNC.c ****             sprintf(cnc->DataSendToGUI, "C RUNNING ");
- 467              		.loc 1 122 23 is_stmt 0 view .LVU105
- 468 009a 0423     		movs	r3, #4
- 469 009c 80F86930 		strb	r3, [r0, #105]
+ 469              		.loc 1 122 23 is_stmt 0 view .LVU105
+ 470 009a 0423     		movs	r3, #4
+ 471 009c 80F87530 		strb	r3, [r0, #117]
  123:Lib/Src/TaskCNC.c ****           }
- 470              		.loc 1 123 13 is_stmt 1 view .LVU106
- 471 00a0 214B     		ldr	r3, .L35+16
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 13
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 13
 
 
- 472 00a2 03CB     		ldmia	r3!, {r0, r1}
- 473              	.LVL34:
+ 472              		.loc 1 123 13 is_stmt 1 view .LVU106
+ 473 00a0 214B     		ldr	r3, .L35+16
+ 474 00a2 03CB     		ldmia	r3!, {r0, r1}
+ 475              	.LVL36:
  123:Lib/Src/TaskCNC.c ****           }
- 474              		.loc 1 123 13 is_stmt 0 view .LVU107
- 475 00a4 C4F84E00 		str	r0, [r4, #78]	@ unaligned
- 476 00a8 C4F85210 		str	r1, [r4, #82]	@ unaligned
- 477 00ac 1A88     		ldrh	r2, [r3]	@ unaligned
- 478 00ae 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
- 479 00b0 A4F85620 		strh	r2, [r4, #86]	@ unaligned
- 480 00b4 84F85830 		strb	r3, [r4, #88]
- 481 00b8 13E0     		b	.L23
- 482              	.LVL35:
- 483              	.L24:
+ 476              		.loc 1 123 13 is_stmt 0 view .LVU107
+ 477 00a4 C4F84E00 		str	r0, [r4, #78]	@ unaligned
+ 478 00a8 C4F85210 		str	r1, [r4, #82]	@ unaligned
+ 479 00ac 1A88     		ldrh	r2, [r3]	@ unaligned
+ 480 00ae 9B78     		ldrb	r3, [r3, #2]	@ zero_extendqisi2
+ 481 00b0 A4F85620 		strh	r2, [r4, #86]	@ unaligned
+ 482 00b4 84F85830 		strb	r3, [r4, #88]
+ 483 00b8 13E0     		b	.L23
+ 484              	.LVL37:
+ 485              	.L24:
  132:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "C YES ");
- 484              		.loc 1 132 11 is_stmt 1 view .LVU108
+ 486              		.loc 1 132 11 is_stmt 1 view .LVU108
  132:Lib/Src/TaskCNC.c ****           sprintf(cnc->DataSendToGUI, "C YES ");
- 485              		.loc 1 132 21 is_stmt 0 view .LVU109
- 486 00ba 0523     		movs	r3, #5
- 487 00bc 80F86930 		strb	r3, [r0, #105]
+ 487              		.loc 1 132 21 is_stmt 0 view .LVU109
+ 488 00ba 0523     		movs	r3, #5
+ 489 00bc 80F87530 		strb	r3, [r0, #117]
  133:Lib/Src/TaskCNC.c ****           break;
- 488              		.loc 1 133 11 is_stmt 1 view .LVU110
- 489 00c0 1A4B     		ldr	r3, .L35+20
- 490 00c2 1868     		ldr	r0, [r3]
- 491              	.LVL36:
+ 490              		.loc 1 133 11 is_stmt 1 view .LVU110
+ 491 00c0 1A4B     		ldr	r3, .L35+20
+ 492 00c2 1868     		ldr	r0, [r3]
+ 493              	.LVL38:
  133:Lib/Src/TaskCNC.c ****           break;
- 492              		.loc 1 133 11 is_stmt 0 view .LVU111
- 493 00c4 C4F84E00 		str	r0, [r4, #78]	@ unaligned
- 494 00c8 9A88     		ldrh	r2, [r3, #4]	@ unaligned
- 495 00ca 9B79     		ldrb	r3, [r3, #6]	@ zero_extendqisi2
- 496 00cc A4F85220 		strh	r2, [r4, #82]	@ unaligned
- 497 00d0 84F85430 		strb	r3, [r4, #84]
+ 494              		.loc 1 133 11 is_stmt 0 view .LVU111
+ 495 00c4 C4F84E00 		str	r0, [r4, #78]	@ unaligned
+ 496 00c8 9A88     		ldrh	r2, [r3, #4]	@ unaligned
+ 497 00ca 9B79     		ldrb	r3, [r3, #6]	@ zero_extendqisi2
+ 498 00cc A4F85220 		strh	r2, [r4, #82]	@ unaligned
+ 499 00d0 84F85430 		strb	r3, [r4, #84]
  134:Lib/Src/TaskCNC.c **** 
- 498              		.loc 1 134 11 is_stmt 1 view .LVU112
- 499 00d4 05E0     		b	.L23
- 500              	.LVL37:
- 501              	.L21:
+ 500              		.loc 1 134 11 is_stmt 1 view .LVU112
+ 501 00d4 05E0     		b	.L23
+ 502              	.LVL39:
+ 503              	.L21:
  141:Lib/Src/TaskCNC.c ****       {
- 502              		.loc 1 141 7 view .LVU113
+ 504              		.loc 1 141 7 view .LVU113
  141:Lib/Src/TaskCNC.c ****       {
- 503              		.loc 1 141 33 is_stmt 0 view .LVU114
- 504 00d6 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
+ 505              		.loc 1 141 33 is_stmt 0 view .LVU114
+ 506 00d6 037C     		ldrb	r3, [r0, #16]	@ zero_extendqisi2
  141:Lib/Src/TaskCNC.c ****       {
- 505              		.loc 1 141 9 view .LVU115
- 506 00d8 302B     		cmp	r3, #48
- 507 00da 13D0     		beq	.L34
+ 507              		.loc 1 141 9 view .LVU115
+ 508 00d8 302B     		cmp	r3, #48
+ 509 00da 13D0     		beq	.L34
  149:Lib/Src/TaskCNC.c ****       }          
- 508              		.loc 1 149 9 is_stmt 1 view .LVU116
+ 510              		.loc 1 149 9 is_stmt 1 view .LVU116
  149:Lib/Src/TaskCNC.c ****       }          
- 509              		.loc 1 149 19 is_stmt 0 view .LVU117
- 510 00dc 0623     		movs	r3, #6
- 511 00de 80F86930 		strb	r3, [r0, #105]
- 512              	.LVL38:
- 513              	.L23:
+ 511              		.loc 1 149 19 is_stmt 0 view .LVU117
+ 512 00dc 0623     		movs	r3, #6
+ 513 00de 80F87530 		strb	r3, [r0, #117]
+ 514              	.LVL40:
+ 515              	.L23:
  156:Lib/Src/TaskCNC.c ****   if(cnc->mode > 2)   
- 514              		.loc 1 156 3 is_stmt 1 view .LVU118
- 515 00e2 1322     		movs	r2, #19
- 516 00e4 04F14E01 		add	r1, r4, #78
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 14
+ 516              		.loc 1 156 3 is_stmt 1 view .LVU118
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 14
 
 
- 517 00e8 606E     		ldr	r0, [r4, #100]
- 518 00ea FFF7FEFF 		bl	USBD_CUSTOM_HID_SendReport
- 519              	.LVL39:
+ 517 00e2 1F22     		movs	r2, #31
+ 518 00e4 04F14E01 		add	r1, r4, #78
+ 519 00e8 206F     		ldr	r0, [r4, #112]
+ 520 00ea FFF7FEFF 		bl	USBD_CUSTOM_HID_SendReport
+ 521              	.LVL41:
  157:Lib/Src/TaskCNC.c ****     xSemaphoreGive(xSemaphoreMode);
- 520              		.loc 1 157 3 view .LVU119
+ 522              		.loc 1 157 3 view .LVU119
  157:Lib/Src/TaskCNC.c ****     xSemaphoreGive(xSemaphoreMode);
- 521              		.loc 1 157 9 is_stmt 0 view .LVU120
- 522 00ee 94F86930 		ldrb	r3, [r4, #105]	@ zero_extendqisi2
+ 523              		.loc 1 157 9 is_stmt 0 view .LVU120
+ 524 00ee 94F87530 		ldrb	r3, [r4, #117]	@ zero_extendqisi2
  157:Lib/Src/TaskCNC.c ****     xSemaphoreGive(xSemaphoreMode);
- 523              		.loc 1 157 5 view .LVU121
- 524 00f2 022B     		cmp	r3, #2
- 525 00f4 8CD9     		bls	.L19
+ 525              		.loc 1 157 5 view .LVU121
+ 526 00f2 022B     		cmp	r3, #2
+ 527 00f4 8CD9     		bls	.L19
  158:Lib/Src/TaskCNC.c **** }
- 526              		.loc 1 158 5 is_stmt 1 view .LVU122
- 527 00f6 0023     		movs	r3, #0
- 528 00f8 1A46     		mov	r2, r3
- 529 00fa 1946     		mov	r1, r3
- 530 00fc 2846     		mov	r0, r5
- 531 00fe FFF7FEFF 		bl	xQueueGenericSend
- 532              	.LVL40:
- 533 0102 85E7     		b	.L19
- 534              	.LVL41:
- 535              	.L34:
+ 528              		.loc 1 158 5 is_stmt 1 view .LVU122
+ 529 00f6 0023     		movs	r3, #0
+ 530 00f8 1A46     		mov	r2, r3
+ 531 00fa 1946     		mov	r1, r3
+ 532 00fc 2846     		mov	r0, r5
+ 533 00fe FFF7FEFF 		bl	xQueueGenericSend
+ 534              	.LVL42:
+ 535 0102 85E7     		b	.L19
+ 536              	.LVL43:
+ 537              	.L34:
  143:Lib/Src/TaskCNC.c ****         //f_close (cnc->sd.File);
- 536              		.loc 1 143 9 view .LVU123
- 537 0104 0A4B     		ldr	r3, .L35+24
- 538 0106 03CB     		ldmia	r3!, {r0, r1}
- 539              	.LVL42:
+ 538              		.loc 1 143 9 view .LVU123
+ 539 0104 0A4B     		ldr	r3, .L35+24
+ 540 0106 03CB     		ldmia	r3!, {r0, r1}
+ 541              	.LVL44:
  143:Lib/Src/TaskCNC.c ****         //f_close (cnc->sd.File);
- 540              		.loc 1 143 9 is_stmt 0 view .LVU124
- 541 0108 C4F84E00 		str	r0, [r4, #78]	@ unaligned
- 542 010c C4F85210 		str	r1, [r4, #82]	@ unaligned
+ 542              		.loc 1 143 9 is_stmt 0 view .LVU124
+ 543 0108 C4F84E00 		str	r0, [r4, #78]	@ unaligned
+ 544 010c C4F85210 		str	r1, [r4, #82]	@ unaligned
  145:Lib/Src/TaskCNC.c ****       }
- 543              		.loc 1 145 9 is_stmt 1 view .LVU125
+ 545              		.loc 1 145 9 is_stmt 1 view .LVU125
  145:Lib/Src/TaskCNC.c ****       }
- 544              		.loc 1 145 19 is_stmt 0 view .LVU126
- 545 0110 0023     		movs	r3, #0
- 546 0112 84F86930 		strb	r3, [r4, #105]
- 547 0116 E4E7     		b	.L23
- 548              	.L36:
- 549              		.align	2
- 550              	.L35:
- 551 0118 00000000 		.word	.LC2
- 552 011c 10000000 		.word	.LC3
- 553 0120 20000000 		.word	.LC4
- 554 0124 38000000 		.word	.LC6
- 555 0128 2C000000 		.word	.LC5
- 556 012c 44000000 		.word	.LC7
- 557 0130 4C000000 		.word	.LC8
- 558              		.cfi_endproc
- 559              	.LFE78:
- 561              		.section	.rodata.ReceiveDataFromCNC.str1.4,"aMS",%progbits,1
- 562              		.align	2
- 563              	.LC9:
- 564 0000 4320484F 		.ascii	"C HOME \000"
- 564      4D452000 
- 565              		.align	2
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 15
+ 546              		.loc 1 145 19 is_stmt 0 view .LVU126
+ 547 0110 0023     		movs	r3, #0
+ 548 0112 84F87530 		strb	r3, [r4, #117]
+ 549 0116 E4E7     		b	.L23
+ 550              	.L36:
+ 551              		.align	2
+ 552              	.L35:
+ 553 0118 00000000 		.word	.LC2
+ 554 011c 10000000 		.word	.LC3
+ 555 0120 20000000 		.word	.LC4
+ 556 0124 38000000 		.word	.LC6
+ 557 0128 2C000000 		.word	.LC5
+ 558 012c 44000000 		.word	.LC7
+ 559 0130 4C000000 		.word	.LC8
+ 560              		.cfi_endproc
+ 561              	.LFE78:
+ 563              		.section	.rodata.ReceiveDataFromCNC.str1.4,"aMS",%progbits,1
+ 564              		.align	2
+ 565              	.LC9:
+ 566 0000 4320484F 		.ascii	"C HOME \000"
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 15
 
 
- 566              	.LC10:
- 567 0008 43204143 		.ascii	"C ACK \000"
- 567      4B2000
- 568              		.section	.text.ReceiveDataFromCNC,"ax",%progbits
- 569              		.align	1
- 570              		.global	ReceiveDataFromCNC
- 571              		.syntax unified
- 572              		.thumb
- 573              		.thumb_func
- 575              	ReceiveDataFromCNC:
- 576              	.LVL43:
- 577              	.LFB79:
+ 566      4D452000 
+ 567              		.align	2
+ 568              	.LC10:
+ 569 0008 43204143 		.ascii	"C ACK %s \000"
+ 569      4B202573 
+ 569      2000
+ 570              		.section	.text.ReceiveDataFromCNC,"ax",%progbits
+ 571              		.align	1
+ 572              		.global	ReceiveDataFromCNC
+ 573              		.syntax unified
+ 574              		.thumb
+ 575              		.thumb_func
+ 577              	ReceiveDataFromCNC:
+ 578              	.LVL45:
+ 579              	.LFB79:
  160:Lib/Src/TaskCNC.c **** 
  161:Lib/Src/TaskCNC.c **** void ReceiveDataFromCNC(CNC *cnc)
  162:Lib/Src/TaskCNC.c **** {
- 578              		.loc 1 162 1 is_stmt 1 view -0
- 579              		.cfi_startproc
- 580              		@ args = 0, pretend = 0, frame = 0
- 581              		@ frame_needed = 0, uses_anonymous_args = 0
- 582              		.loc 1 162 1 is_stmt 0 view .LVU128
- 583 0000 08B5     		push	{r3, lr}
- 584              	.LCFI3:
- 585              		.cfi_def_cfa_offset 8
- 586              		.cfi_offset 3, -8
- 587              		.cfi_offset 14, -4
- 588 0002 0346     		mov	r3, r0
+ 580              		.loc 1 162 1 is_stmt 1 view -0
+ 581              		.cfi_startproc
+ 582              		@ args = 0, pretend = 0, frame = 0
+ 583              		@ frame_needed = 0, uses_anonymous_args = 0
+ 584              		.loc 1 162 1 is_stmt 0 view .LVU128
+ 585 0000 10B5     		push	{r4, lr}
+ 586              	.LCFI3:
+ 587              		.cfi_def_cfa_offset 8
+ 588              		.cfi_offset 4, -8
+ 589              		.cfi_offset 14, -4
+ 590 0002 0446     		mov	r4, r0
  163:Lib/Src/TaskCNC.c ****   switch (cnc->uart.ReceiveFromControl[0])
- 589              		.loc 1 163 3 is_stmt 1 view .LVU129
- 590              		.loc 1 163 39 is_stmt 0 view .LVU130
- 591 0004 90F88120 		ldrb	r2, [r0, #129]	@ zero_extendqisi2
- 592              		.loc 1 163 3 view .LVU131
- 593 0008 472A     		cmp	r2, #71
- 594 000a 14D0     		beq	.L38
- 595 000c 482A     		cmp	r2, #72
- 596 000e 11D1     		bne	.L37
+ 591              		.loc 1 163 3 is_stmt 1 view .LVU129
+ 592              		.loc 1 163 39 is_stmt 0 view .LVU130
+ 593 0004 90F8A630 		ldrb	r3, [r0, #166]	@ zero_extendqisi2
+ 594              		.loc 1 163 3 view .LVU131
+ 595 0008 472B     		cmp	r3, #71
+ 596 000a 1ED0     		beq	.L38
+ 597 000c 482B     		cmp	r3, #72
+ 598 000e 1BD1     		bne	.L37
  164:Lib/Src/TaskCNC.c **** 	{
  165:Lib/Src/TaskCNC.c **** 	case 'H':
  166:Lib/Src/TaskCNC.c **** 		sprintf(cnc->DataSendToGUI, "C HOME ");
- 597              		.loc 1 166 3 is_stmt 1 view .LVU132
- 598 0010 0E4A     		ldr	r2, .L42
- 599 0012 03CA     		ldmia	r2!, {r0, r1}
- 600              	.LVL44:
- 601              		.loc 1 166 3 is_stmt 0 view .LVU133
- 602 0014 C3F84E00 		str	r0, [r3, #78]	@ unaligned
- 603 0018 C3F85210 		str	r1, [r3, #82]	@ unaligned
+ 599              		.loc 1 166 3 is_stmt 1 view .LVU132
+ 600 0010 114B     		ldr	r3, .L42
+ 601 0012 03CB     		ldmia	r3!, {r0, r1}
+ 602              	.LVL46:
+ 603              		.loc 1 166 3 is_stmt 0 view .LVU133
+ 604 0014 C4F84E00 		str	r0, [r4, #78]	@ unaligned
+ 605 0018 C4F85210 		str	r1, [r4, #82]	@ unaligned
  167:Lib/Src/TaskCNC.c ****     cnc->home = 1; // have just come home
- 604              		.loc 1 167 5 is_stmt 1 view .LVU134
- 605              		.loc 1 167 15 is_stmt 0 view .LVU135
- 606 001c 0122     		movs	r2, #1
- 607 001e 83F86A20 		strb	r2, [r3, #106]
+ 606              		.loc 1 167 5 is_stmt 1 view .LVU134
+ 607              		.loc 1 167 15 is_stmt 0 view .LVU135
+ 608 001c 0123     		movs	r3, #1
+ 609 001e 84F87630 		strb	r3, [r4, #118]
  168:Lib/Src/TaskCNC.c **** 		break;
- 608              		.loc 1 168 3 is_stmt 1 view .LVU136
- 609              	.L40:
+ 610              		.loc 1 168 3 is_stmt 1 view .LVU136
+ 611              	.L40:
  169:Lib/Src/TaskCNC.c **** 	case 'G':
- 170:Lib/Src/TaskCNC.c **** 		sprintf(cnc->DataSendToGUI, "C ACK ");
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 16
+
+
+ 170:Lib/Src/TaskCNC.c **** 		sprintf(cnc->DataSendToGUI, "C ACK %s ", cnc->uart.ReceiveFromControl);
  171:Lib/Src/TaskCNC.c **** 		break;	
  172:Lib/Src/TaskCNC.c **** 	default:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 16
-
-
  173:Lib/Src/TaskCNC.c **** 		return;
  174:Lib/Src/TaskCNC.c ****   }
- 175:Lib/Src/TaskCNC.c ****   cnc->uart.index = 0;
- 610              		.loc 1 175 3 view .LVU137
- 611              		.loc 1 175 19 is_stmt 0 view .LVU138
- 612 0022 0022     		movs	r2, #0
- 613 0024 83F88020 		strb	r2, [r3, #128]
- 176:Lib/Src/TaskCNC.c ****   USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
- 614              		.loc 1 176 3 is_stmt 1 view .LVU139
- 615 0028 1322     		movs	r2, #19
- 616 002a 03F14E01 		add	r1, r3, #78
- 617 002e 586E     		ldr	r0, [r3, #100]
- 618 0030 FFF7FEFF 		bl	USBD_CUSTOM_HID_SendReport
- 619              	.LVL45:
- 620              	.L37:
- 177:Lib/Src/TaskCNC.c **** }...
- 621              		.loc 1 177 1 is_stmt 0 view .LVU140
- 622 0034 08BD     		pop	{r3, pc}
- 623              	.LVL46:
- 624              	.L38:
- 170:Lib/Src/TaskCNC.c **** 		sprintf(cnc->DataSendToGUI, "C ACK ");
- 625              		.loc 1 170 3 is_stmt 1 view .LVU141
- 626 0036 064A     		ldr	r2, .L42+4
- 627 0038 1068     		ldr	r0, [r2]
- 628              	.LVL47:
- 170:Lib/Src/TaskCNC.c **** 		sprintf(cnc->DataSendToGUI, "C ACK ");
- 629              		.loc 1 170 3 is_stmt 0 view .LVU142
- 630 003a C3F84E00 		str	r0, [r3, #78]	@ unaligned
- 631 003e 9188     		ldrh	r1, [r2, #4]	@ unaligned
- 632 0040 9279     		ldrb	r2, [r2, #6]	@ zero_extendqisi2
- 633 0042 A3F85210 		strh	r1, [r3, #82]	@ unaligned
- 634 0046 83F85420 		strb	r2, [r3, #84]
+ 175:Lib/Src/TaskCNC.c ****   memset(cnc->uart.ReceiveFromControl, 0, sizeof(cnc->uart.ReceiveFromControl));
+ 612              		.loc 1 175 3 view .LVU137
+ 613 0022 0023     		movs	r3, #0
+ 614 0024 C4F8A630 		str	r3, [r4, #166]	@ unaligned
+ 615 0028 C4F8AA30 		str	r3, [r4, #170]	@ unaligned
+ 616 002c C4F8AE30 		str	r3, [r4, #174]	@ unaligned
+ 617 0030 C4F8B230 		str	r3, [r4, #178]	@ unaligned
+ 618 0034 C4F8B630 		str	r3, [r4, #182]	@ unaligned
+ 176:Lib/Src/TaskCNC.c ****   cnc->uart.index = 0;
+ 619              		.loc 1 176 3 view .LVU138
+ 620              		.loc 1 176 19 is_stmt 0 view .LVU139
+ 621 0038 84F8A530 		strb	r3, [r4, #165]
+ 177:Lib/Src/TaskCNC.c ****   USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
+ 622              		.loc 1 177 3 is_stmt 1 view .LVU140
+ 623 003c 1F22     		movs	r2, #31
+ 624 003e 04F14E01 		add	r1, r4, #78
+ 625 0042 206F     		ldr	r0, [r4, #112]
+ 626 0044 FFF7FEFF 		bl	USBD_CUSTOM_HID_SendReport
+ 627              	.LVL47:
+ 628              	.L37:
+ 178:Lib/Src/TaskCNC.c **** }...
+ 629              		.loc 1 178 1 is_stmt 0 view .LVU141
+ 630 0048 10BD     		pop	{r4, pc}
+ 631              	.LVL48:
+ 632              	.L38:
+ 170:Lib/Src/TaskCNC.c **** 		sprintf(cnc->DataSendToGUI, "C ACK %s ", cnc->uart.ReceiveFromControl);
+ 633              		.loc 1 170 3 is_stmt 1 view .LVU142
+ 634 004a 00F1A602 		add	r2, r0, #166
+ 635 004e 0349     		ldr	r1, .L42+4
+ 636 0050 4E30     		adds	r0, r0, #78
+ 637              	.LVL49:
+ 170:Lib/Src/TaskCNC.c **** 		sprintf(cnc->DataSendToGUI, "C ACK %s ", cnc->uart.ReceiveFromControl);
+ 638              		.loc 1 170 3 is_stmt 0 view .LVU143
+ 639 0052 FFF7FEFF 		bl	sprintf
+ 640              	.LVL50:
  171:Lib/Src/TaskCNC.c **** 		break;	
- 635              		.loc 1 171 3 is_stmt 1 view .LVU143
- 636 004a EAE7     		b	.L40
- 637              	.L43:
- 638              		.align	2
- 639              	.L42:
- 640 004c 00000000 		.word	.LC9
- 641 0050 08000000 		.word	.LC10
- 642              		.cfi_endproc
- 643              	.LFE79:
- 645              		.text
- 646              	.Letext0:
- 647              		.file 2 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 648              		.file 3 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 649              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 650              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 651              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
- 652              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 653              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
- 654              		.file 9 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
- 655              		.file 10 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
- 656              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
- 657              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
- 658              		.file 13 "Lib/Inc/TaskCNC.h"
- 659              		.file 14 "Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h"
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 17
+ 641              		.loc 1 171 3 is_stmt 1 view .LVU144
+ 642 0056 E4E7     		b	.L40
+ 643              	.L43:
+ 644              		.align	2
+ 645              	.L42:
+ 646 0058 00000000 		.word	.LC9
+ 647 005c 08000000 		.word	.LC10
+ 648              		.cfi_endproc
+ 649              	.LFE79:
+ 651              		.text
+ 652              	.Letext0:
+ 653              		.file 2 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 654              		.file 3 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 655              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 656              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 657              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 17
 
 
- 660              		.file 15 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s 			page 18
+ 658              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 659              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_uart.h"
+ 660              		.file 9 "Middlewares/ST/STM32_USB_Device_Library/Core/Inc/usbd_def.h"
+ 661              		.file 10 "Middlewares/Third_Party/FreeRTOS/Source/portable/GCC/ARM_CM3/portmacro.h"
+ 662              		.file 11 "Middlewares/Third_Party/FreeRTOS/Source/include/queue.h"
+ 663              		.file 12 "Middlewares/Third_Party/FreeRTOS/Source/include/semphr.h"
+ 664              		.file 13 "Lib/Inc/TaskCNC.h"
+ 665              		.file 14 "Middlewares/ST/STM32_USB_Device_Library/Class/CustomHID/Inc/usbd_customhid.h"
+ 666              		.file 15 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 667              		.file 16 "<built-in>"
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s 			page 18
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 TaskCNC.c
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:18     .text.bufsize:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:24     .text.bufsize:00000000 bufsize
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:64     .text.InitCNC:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:70     .text.InitCNC:00000000 InitCNC
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:121    .text.SaveDataToSD:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:127    .text.SaveDataToSD:00000000 SaveDataToSD
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:141    .text.ProcessBtnPress:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:147    .text.ProcessBtnPress:00000000 ProcessBtnPress
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:206    .text.ProcessBtnPress:00000034 $d
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:211    .rodata.ProcessMode.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:218    .text.ProcessMode:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:224    .text.ProcessMode:00000000 ProcessMode
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:311    .text.ProcessMode:00000064 $d
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:317    .rodata.ReceiveDataFromGUI.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:339    .text.ReceiveDataFromGUI:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:345    .text.ReceiveDataFromGUI:00000000 ReceiveDataFromGUI
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:384    .text.ReceiveDataFromGUI:0000001e $d
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:390    .text.ReceiveDataFromGUI:00000024 $t
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:551    .text.ReceiveDataFromGUI:00000118 $d
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:562    .rodata.ReceiveDataFromCNC.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:569    .text.ReceiveDataFromCNC:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:575    .text.ReceiveDataFromCNC:00000000 ReceiveDataFromCNC
-C:\Users\Chicken\AppData\Local\Temp\cc6Nw12s.s:640    .text.ReceiveDataFromCNC:0000004c $d
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:18     .text.bufsize:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:24     .text.bufsize:00000000 bufsize
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:64     .text.InitCNC:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:70     .text.InitCNC:00000000 InitCNC
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:121    .text.SaveDataToSD:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:127    .text.SaveDataToSD:00000000 SaveDataToSD
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:141    .text.ProcessBtnPress:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:147    .text.ProcessBtnPress:00000000 ProcessBtnPress
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:206    .text.ProcessBtnPress:00000034 $d
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:211    .rodata.ProcessMode.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:218    .text.ProcessMode:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:224    .text.ProcessMode:00000000 ProcessMode
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:313    .text.ProcessMode:00000068 $d
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:319    .rodata.ReceiveDataFromGUI.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:341    .text.ReceiveDataFromGUI:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:347    .text.ReceiveDataFromGUI:00000000 ReceiveDataFromGUI
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:386    .text.ReceiveDataFromGUI:0000001e $d
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:392    .text.ReceiveDataFromGUI:00000024 $t
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:553    .text.ReceiveDataFromGUI:00000118 $d
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:564    .rodata.ReceiveDataFromCNC.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:571    .text.ReceiveDataFromCNC:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:577    .text.ReceiveDataFromCNC:00000000 ReceiveDataFromCNC
+C:\Users\Chicken\AppData\Local\Temp\ccncQMUe.s:646    .text.ReceiveDataFromCNC:00000058 $d
 
 UNDEFINED SYMBOLS
 HAL_GPIO_WritePin
+memset
 HAL_UART_Transmit
 sscanf
 USBD_CUSTOM_HID_SendReport
 xQueueGenericSend
+sprintf

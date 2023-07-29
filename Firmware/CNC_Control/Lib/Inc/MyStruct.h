@@ -6,8 +6,8 @@
 #include <stdint.h>
 #include "stm32f1xx_hal.h"
 
-#define T_SAMPLE 4
-#define Z_MAX 12
+#define T_SAMPLE 2
+#define Z_MAX 12.4
 
 
 
@@ -19,7 +19,7 @@ typedef struct
 	float I_part;
 	int e_pre;
 	uint8_t time_sample;
-	int pos;
+	uint32_t pos;
 	float pwm;
 	int setpoint;
 	
@@ -68,8 +68,8 @@ typedef struct
 	char Receive;
 	uint8_t index;
 
-	char TransBuff[15];
-	char ReceiveBuff[10];
+	char TransBuff[20];
+	char ReceiveBuff[40];
 	uint8_t temp;
 } DATA;
 

@@ -12,10 +12,10 @@
 typedef struct
 {
     UART_HandleTypeDef *huart;
-    uint8_t SendToControl[15];
+    uint8_t SendToControl[40];
     char Receive;
     uint8_t index;
-    char ReceiveFromControl[15];
+    char ReceiveFromControl[20];
 } UART;
 
 // typedef struct
@@ -47,7 +47,7 @@ typedef struct
     uint16_t Buzzer;
 
     char DataReceiveFromGUI[64];
-    char DataSendToGUI[19];
+    char DataSendToGUI[31];
     USBD_HandleTypeDef *husb;
 
     uint8_t state;
