@@ -48,6 +48,8 @@ typedef struct
 	float last;
 	float New;
 
+	uint8_t ERROR;
+
 } AXIS;
 
 typedef struct MyStruct

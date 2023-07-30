@@ -137,8 +137,6 @@ namespace MiniCNC_ver2
             MCUchatMCU.ItemsSource = MCUchatItems;
 
             showPage(MainShow);
-
-            //cnc.drawFromFeedback(MainShow, "G01X20.23Y20.05");
         }
         
         //showMessage(controlMCUchatItem, scrollviewMCU, MCUchatItems, "X Y Z");
@@ -468,7 +466,16 @@ namespace MiniCNC_ver2
                 MainShow.Children.Clear();
                 cnc.fileName = selectedFile.Name;
                 string data = File.ReadAllText(selectedFile.FullName);
-                cnc.gcode = data.Split('\n');
+                if(selectedFile.Name.Contains(".tap"))
+                {
+                    string data_after_change;
+                    data_after_change = cnc.readGcodeFromAspire(data);
+                    cnc.gcode = data_after_change.Split('\n');
+                }
+                else
+                {
+                    cnc.gcode = data.Split('\n');
+                }                
                 cnc.drawFromGcode(cnc.gcode, MainShow);
                 cnc.index = 0;
                 showPage(MainShow);                

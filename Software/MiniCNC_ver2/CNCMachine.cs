@@ -14,6 +14,7 @@ using System.Windows.Shapes;
 using System.Windows.Threading;
 using LibUsbDotNet;
 using LibUsbDotNet.Main;
+using System.Text.RegularExpressions;
 
 namespace MiniCNC_ver2
 {
@@ -47,7 +48,101 @@ namespace MiniCNC_ver2
         }
         private Draw draw;
         private Draw feedback;
+       
+        private string formOfGcode(string data, string pre)
+        {
+            string gcode = string.Empty;
+            int indexX = data.IndexOf('X');
+            int indexY = data.IndexOf('Y');
 
+            string patternX = @"[X]\d+(\.\d+)?";
+            string patternY = @"[Y]\d+(\.\d+)?";
+            MatchCollection matches;
+            if (indexX != -1)
+            {
+                matches = Regex.Matches(data, patternX);
+                foreach (Match match in matches)
+                {
+                    gcode += match.Value + ' ';
+                }
+
+                matches = Regex.Matches(pre, patternY);
+                foreach (Match match in matches)
+                {
+                    gcode += match.Value;
+                }
+            }
+            else if( indexY != -1)
+            {
+                matches = Regex.Matches(pre, patternX);
+                foreach (Match match in matches)
+                {
+                    gcode += match.Value + ' ';
+                }
+
+                matches = Regex.Matches(data, patternY);
+                foreach (Match match in matches)
+                {
+                    gcode += match.Value;
+                }
+            }
+            
+            return gcode;
+        }
+        private string formOfGcode(string data)
+        {
+            string gcode = string.Empty;
+            string pattern = @"[XY]\d+(\.\d+)?";
+
+            MatchCollection matches = Regex.Matches(data, pattern);
+
+            // Lặp qua các phần tử phù hợp và in kết quả
+            foreach (Match match in matches)
+            {
+                gcode += match.Value + ' ';
+            }
+
+            return gcode;
+        }
+
+        public string readGcodeFromAspire(string data)
+        {
+            int gcode_flag = 2;
+            string gcode = string.Empty;
+            string x_y_pre = string.Empty;
+            string[] aspire_gcode = data.Split('\n');
+            for(int index = 0; index < aspire_gcode.Length; index++)
+            {                
+                string temp = aspire_gcode[index];
+                if (temp.Contains("G0") && temp.Contains('X') && temp.Contains('Y'))
+                {
+                    gcode_flag = 0;
+                    x_y_pre = formOfGcode(temp);
+                    gcode += "G00 " + x_y_pre + '\n';
+                }
+                else if (temp.Contains("G1") && (temp.Contains('X') || temp.Contains('Y')))
+                {
+                    gcode_flag = 1;
+                    x_y_pre = formOfGcode(temp);
+                    gcode += "G01 " + x_y_pre + '\n';
+                }
+                else if (temp.Contains('X') && temp.Contains('Y'))
+                {   
+                    x_y_pre = formOfGcode(temp);
+                    gcode += "G01 " + x_y_pre + '\n';
+                }
+                else if(temp.Contains('X') || temp.Contains('Y'))
+                {                    
+                    x_y_pre = formOfGcode(temp, x_y_pre);
+
+                    if(gcode_flag == 1)
+                        gcode += "G01 " + x_y_pre + '\n';
+                    else if( gcode_flag == 0)
+                        gcode += "G00 " + x_y_pre + '\n';
+                }
+            }
+            return gcode;
+        }
         private string convertGcode(string g, double x, double y)
         {
             string gcode = g + "X" + x.ToString() + "Y" + y.ToString() + '\n';

@@ -100,7 +100,7 @@ void PID_control(int sp, AXIS *pid)
 	pid->I_part += TS*e;
 	pid->pwm = pid->Kp*e + pid->Ki*pid->I_part + pid->Kd*(e-pid->e_pre)/TS;
 	pid->e_pre = e;
-	if(int_abs(e) < ERROR)
+	if(int_abs(e) < pid->ERROR)
 	{
 		pid->finish = true;
 		pid->pwm = 0;
@@ -112,7 +112,7 @@ void HOME(AXIS *axis)
 {
 	if( HAL_GPIO_ReadPin(axis->GPIO_HOME, axis->PIN_HOME) == 1)
 		{
-			axis->pwm = -0.7;
+			axis->pwm = -0.8;
 			PWM(axis);
 			axis->home = false;
 		}
