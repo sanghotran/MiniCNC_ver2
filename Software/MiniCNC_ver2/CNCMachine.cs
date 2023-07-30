@@ -120,10 +120,16 @@ namespace MiniCNC_ver2
                     x_y_pre = formOfGcode(temp);
                     gcode += "G00 " + x_y_pre + '\n';
                 }
-                else if (temp.Contains("G1") && (temp.Contains('X') || temp.Contains('Y')))
+                if (temp.Contains("G1") && temp.Contains('X') && temp.Contains('Y'))
                 {
                     gcode_flag = 1;
                     x_y_pre = formOfGcode(temp);
+                    gcode += "G01 " + x_y_pre + '\n';
+                }
+                else if (temp.Contains("G1") && (temp.Contains('X') || temp.Contains('Y')))
+                {
+                    gcode_flag = 1;
+                    x_y_pre = formOfGcode(temp, x_y_pre);
                     gcode += "G01 " + x_y_pre + '\n';
                 }
                 else if (temp.Contains('X') && temp.Contains('Y'))

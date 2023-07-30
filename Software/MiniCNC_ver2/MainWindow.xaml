@@ -250,7 +250,7 @@
                         <ColumnDefinition />
                     </Grid.ColumnDefinitions>
                     <!-- PC-->                    
-                    <ListView Name="PC_fileList" Grid.Column="0" Background="Transparent" Foreground="Red"
+                    <ListView Name="PC_fileList" Grid.Column="0" Background="Transparent" Foreground="GhostWhite"
                               SelectionChanged="PC_fileList_SelectionChanged" >
                         <ListView.View>
                             <GridView>
@@ -271,16 +271,182 @@
                 </Grid>
                 <!-- Setting-->
                 <Grid Name="SettingShow">
-                    <StackPanel>
-                        <!-- thinkness of material-->
-                        <DockPanel LastChildFill="False" Height="50">
-                            <TextBlock DockPanel.Dock="Left" Text="Thinkness of material" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                            <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="thinkness" 
+                    <Grid.RowDefinitions>
+                        <RowDefinition/>
+                        <RowDefinition/>
+                    </Grid.RowDefinitions>
+                    <!-- User-->
+                    <Grid Grid.Row="0">
+                        <StackPanel>
+                            <!-- Lable-->
+                            <TextBlock Text="User Setting" FontSize="30" Foreground="White" TextAlignment="Center"/>
+                            <!-- thickness of material-->
+                            <DockPanel LastChildFill="False" Height="50">
+                                <TextBlock DockPanel.Dock="Left" Text="Thickness" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="thickness" 
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center"/>
-                            <TextBlock DockPanel.Dock="Left" Margin="10 0 0 0" Text="mm" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                        </DockPanel>
-                    </StackPanel>
+                                <TextBlock DockPanel.Dock="Left" Margin="10 0 0 0" Text="mm" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                            </DockPanel>
+                        </StackPanel>
+                    </Grid>   
+                    <!-- Admin-->
+                    <Grid Grid.Row="1">
+                        <!-- Lable-->
+                        <TextBlock Text="Admin Setting" FontSize="30" Foreground="White" TextAlignment="Center"/>
+                        <DockPanel Margin="0 40 0 0">
+                            <!-- X Axis-->
+                            <StackPanel>
+                                <!-- X lable-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock Margin="40 0 0 0" Text="X Axis" FontSize="30" Foreground="White" TextAlignment="Center"/>
+                                    <CheckBox Name="x_setting" Margin="10 0 0 0" DockPanel.Dock="Left"
+                                              HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </DockPanel>                                
+                                <!-- Kp-->
+                                <DockPanel LastChildFill="False" Height="50">                                   
+                                    <TextBlock DockPanel.Dock="Left" Text="Kp" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="X_Kp" Text="30"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>                                   
+                                </DockPanel>
+                                <!-- Ki-->
+                                <DockPanel LastChildFill="False" Height="50">                                   
+                                    <TextBlock DockPanel.Dock="Left" Text="Ki" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="20 0 0 0" Name="X_Ki" Text="0.0001"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Kd-->
+                                <DockPanel LastChildFill="False" Height="50">                                   
+                                    <TextBlock DockPanel.Dock="Left" Text="Kd" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="X_Kd" Text="2"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>                                
+                            </StackPanel>
+                            <!-- Y Axis-->
+                            <StackPanel Margin="30 0 0 0">
+                                <!-- Y lable-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock Margin="40 0 0 0" Text="Y Axis" FontSize="30" Foreground="White" TextAlignment="Center"/>
+                                    <CheckBox Name="y_setting" Margin="10 0 0 0" DockPanel.Dock="Left"
+                                              HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </DockPanel>
+                                <!-- Kp-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock DockPanel.Dock="Left" Text="Kp" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Y_Kp" Text="57.5"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Ki-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock DockPanel.Dock="Left" Text="Ki" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="20 0 0 0" Name="Y_Ki" Text="0.0001"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Kd-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock DockPanel.Dock="Left" Text="Kd" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Y_Kd" Text="3.01"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                            </StackPanel>
+                            <!-- Z Axis-->
+                            <StackPanel Margin=" 30 0 0 0">
+                                <!-- Z lable-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock Margin="40 0 0 0" Text="Z Axis" FontSize="30" Foreground="White" TextAlignment="Center"/>
+                                    <CheckBox Name="z_setting" Margin="10 0 0 0" DockPanel.Dock="Left"
+                                              HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </DockPanel>
+                                <!-- Kp-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock DockPanel.Dock="Left" Text="Kp" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_Kp" Text="2"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Ki-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock DockPanel.Dock="Left" Text="Ki" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="20 0 0 0" Name="Z_Ki" Text="0.0001"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Kd-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock DockPanel.Dock="Left" Text="Kd" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_Kd" Text="1"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                            </StackPanel>
+                            <!-- ALLOW ERROR-->
+                            <StackPanel Margin=" 30 0 0 0">
+                                <!-- Error lable-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock Margin="30 0 0 0" Text="Error " FontSize="30" Foreground="White" TextAlignment="Center"/>
+                                    <CheckBox Name="error_setting" Margin="10 0 0 0" DockPanel.Dock="Left"
+                                              HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </DockPanel>
+                                <!-- X Error-->
+                                <DockPanel LastChildFill="False" Height="50">                                    
+                                    <TextBlock Text="X " FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="X_Error" Text="3"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Y Error-->
+                                <DockPanel LastChildFill="False" Height="50">                                    
+                                    <TextBlock Text="Y " FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Y_Error" Text="5"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Z Error-->
+                                <DockPanel LastChildFill="False" Height="50">                                   
+                                    <TextBlock Text="Z " FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_Error" Text="1"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                            </StackPanel>
+                            <!-- Others-->
+                            <StackPanel Margin=" 30 0 0 0">
+                                <!-- Others lable-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock Margin="40 0 0 0" Text="(mm)" FontSize="30" Foreground="White" TextAlignment="Center"/>
+                                    <CheckBox Name="other_setting" Margin="10 0 0 0" DockPanel.Dock="Left"
+                                              HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </DockPanel>
+                                <!-- Z max-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock Text="Z max" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_max" Text="12.4"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Step-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock Text="Step" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="32 0 0 0" Name="step" Text="0.05"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                            </StackPanel>
+                        </DockPanel>  
+                        <!-- Send Setting Button -->
+                        <Grid Margin=" 0 0 0 0" Cursor="Hand">
+                            
+                        </Grid>
+                        <!-- Lock Admin-->                        
+                        <Grid Opacity="0.5" Background="Red">                            
+                        </Grid>
+                    </Grid>
                 </Grid>
             </Grid>
         </Grid>

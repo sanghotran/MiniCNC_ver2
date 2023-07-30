@@ -156,7 +156,10 @@ namespace MiniCNC_ver2
             foreach (string file in files)
             {
                 FileInfo fileInfo = new FileInfo(file);
-                fileItems.Add(new FileItem(fileInfo.Name, fileInfo.Length, fileInfo.FullName));
+                if(fileInfo.Name.Contains(".tap") || fileInfo.Name.Contains(".txt"))
+                {
+                    fileItems.Add(new FileItem(fileInfo.Name, fileInfo.Length, fileInfo.FullName));
+                }                
             }
             PC_fileList.ItemsSource = fileItems;
 
