@@ -285,6 +285,36 @@ namespace MiniCNC_ver2
             }
             
         }
+        // send setting
+        private void SendSetting()
+        {
+            if (x_setting.IsChecked == true)
+            {
+                SendData("S X" + "Kp" + X_Kp.Text + "Ki" + X_Ki.Text + "Kd" + X_Kd.Text);
+                x_setting.IsChecked = false;
+                return;
+            }
+            if (y_setting.IsChecked == true)
+            {
+                y_setting.IsChecked = false;
+                return;
+            }
+            if (z_setting.IsChecked == true)
+            {
+                z_setting.IsChecked = false;
+                return;
+            }
+            if (error_setting.IsChecked == true)
+            {
+                error_setting.IsChecked = false;
+                return;
+            }
+            if (other_setting.IsChecked == true)
+            {
+                other_setting.IsChecked = false;
+                return;
+            }
+        }
         // process data
         private void ProcessData(string input)
         {
@@ -507,6 +537,11 @@ namespace MiniCNC_ver2
             disconnect();
             WarningShow.Visibility = Visibility.Hidden;
         }
+        private void Send_Setting(object sender, MouseButtonEventArgs e)
+        {
+            SendSetting();
+        }
+
         #endregion
 
 
