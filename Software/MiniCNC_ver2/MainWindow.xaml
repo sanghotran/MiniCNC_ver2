@@ -233,7 +233,6 @@
                     </Style>
                 </Image.Style>
             </Image>
-
         </DockPanel>
         <!-- Main frame-->
         <Grid Margin="400 120 0 0">
@@ -277,6 +276,20 @@
                     </Grid.RowDefinitions>
                     <!-- User-->
                     <Grid Grid.Row="0">
+                        <!-- Send Setting Button -->
+                        <Image Margin=" 800 20 0 200" Source="Images/submit.PNG" Cursor="Hand" PreviewMouseDown="Send_Setting">
+                            <Image.Style>
+                                <Style TargetType="Image">
+                                    <Setter Property="Width" Value="70"/>
+                                    <Style.Triggers>
+                                        <Trigger Property="IsMouseOver" Value="True">
+                                            <Setter Property="Width" Value="80"/>
+                                        </Trigger>
+                                    </Style.Triggers>
+                                </Style>
+                            </Image.Style>
+                        </Image>
+                        <!-- User setting-->
                         <StackPanel>
                             <!-- Lable-->
                             <TextBlock Text="User Setting" FontSize="30" Foreground="White" TextAlignment="Center"/>
@@ -438,11 +451,7 @@
                                      VerticalAlignment="Center" Background="White"/>
                                 </DockPanel>
                             </StackPanel>
-                        </DockPanel>  
-                        <!-- Send Setting Button -->
-                        <Grid Margin=" 300 250 300 0" Cursor="Hand" PreviewMouseDown="Send_Setting">
-                            
-                        </Grid>
+                        </DockPanel>
                         <!-- Lock Admin-->
                         <!--
                         <Grid Opacity="0.5" Background="Red">                            

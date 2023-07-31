@@ -360,6 +360,13 @@ int main(void)
       HAL_UART_Transmit(&huart2, cnc.data.TransBuff, sizeof(cnc.data.TransBuff), 100);
       cnc.Mode = 0;      
       break;
+    case 8: // send respond for setting
+      memset(cnc.data.TransBuff, 0, sizeof(cnc.data.TransBuff));
+      sprintf(cnc.data.TransBuff, "S!");
+      HAL_Delay(120);
+      HAL_UART_Transmit(&huart2, cnc.data.TransBuff, 2, 100);
+      cnc.Mode = 0;
+      break;
 
     default:
       break;

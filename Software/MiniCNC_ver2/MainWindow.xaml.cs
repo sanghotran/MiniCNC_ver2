@@ -290,30 +290,35 @@ namespace MiniCNC_ver2
         {
             if (x_setting.IsChecked == true)
             {
-                SendData("S X" + "Kp" + X_Kp.Text + "Ki" + X_Ki.Text + "Kd" + X_Kd.Text);
+                SendData("SX" + "Kp" + X_Kp.Text + "Ki" + X_Ki.Text + "Kd" + X_Kd.Text + "! ");
                 x_setting.IsChecked = false;
                 return;
             }
             if (y_setting.IsChecked == true)
             {
+                SendData("SY" + "Kp" + Y_Kp.Text + "Ki" + Y_Ki.Text + "Kd" + Y_Kd.Text + "! ");
                 y_setting.IsChecked = false;
                 return;
             }
             if (z_setting.IsChecked == true)
             {
+                SendData("SZ" + "Kp" + Z_Kp.Text + "Ki" + Z_Ki.Text + "Kd" + Z_Kd.Text + "! ");
                 z_setting.IsChecked = false;
                 return;
             }
             if (error_setting.IsChecked == true)
             {
+                SendData("SE" + "X" + X_Error.Text + "Y" + Y_Error.Text + "Z" + Z_Error.Text + "! ");
                 error_setting.IsChecked = false;
                 return;
             }
             if (other_setting.IsChecked == true)
             {
+                SendData("SO" + "Z" + Z_max.Text + "S" + step.Text + "! ");
                 other_setting.IsChecked = false;
                 return;
             }
+            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Setting done");
         }
         // process data
         private void ProcessData(string input)
@@ -360,6 +365,9 @@ namespace MiniCNC_ver2
                             break;
                         case "NOHOME":
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I have come home, please press HOME");
+                            break;
+                        case "SETTING":
+                            SendSetting();
                             break;
                         default:
                             break;
@@ -539,6 +547,7 @@ namespace MiniCNC_ver2
         }
         private void Send_Setting(object sender, MouseButtonEventArgs e)
         {
+            showMessage(PCchatItem, scrollviewPC, PCchatItems, "I will send you a setting");
             SendSetting();
         }
 

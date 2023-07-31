@@ -186,5 +186,8 @@
   <ItemGroup>
     <Resource Include="cnc.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\submit.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

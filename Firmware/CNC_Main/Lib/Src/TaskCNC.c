@@ -67,32 +67,38 @@ void ProcessMode(CNC *cnc)
       memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));
       sprintf(cnc->uart.SendToControl, "H!");
       HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, 2, 100);
+      cnc->mode = 0;
       break;
 
     case 4: // mode running
-
+      cnc->mode = 0;
       break;
           
     case 5: // mode receive file name of gcode
       //sscanf(cnc->DataReceiveFromGUI, "C 5 %s", cnc->sd.FileName);
+      cnc->mode = 0;
       break;
 
     case 6: // mode receive data of gcode
       memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));
       sscanf(cnc->DataReceiveFromGUI, "D 1 %s", cnc->uart.SendToControl);
       HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 100);
+      cnc->mode = 0;
       //SaveDataToSD(cnc);
       //sprintf(cnc->DataSendToGUI, "C ACK ");
-      //USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));
-      
+      //USBD_CUSTOM_HID_SendReport(cnc->husb, (uint8_t*)cnc->DataSendToGUI, sizeof(cnc->DataSendToGUI));      
+      break;
+    case 7:
+      memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));
+      sscanf(cnc->DataReceiveFromGUI, "%s", cnc->uart.SendToControl);
+      HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 100);
+      cnc->mode = 0;
       break;
 
     default:
       break;
   } 
 }
-
-
 void ReceiveDataFromGUI(CNC *cnc, SemaphoreHandle_t xSemaphoreMode)
 {
   switch (cnc->DataReceiveFromGUI[0])
@@ -108,6 +114,7 @@ void ReceiveDataFromGUI(CNC *cnc, SemaphoreHandle_t xSemaphoreMode)
 
         case '1': // disconnected
           cnc->state = 0; // mode disconect with GUI
+          cnc->mode = 0; // reset mode when disconect
           sprintf(cnc->DataSendToGUI, "C DISCONNECTED ");
           break;
 
@@ -149,6 +156,9 @@ void ReceiveDataFromGUI(CNC *cnc, SemaphoreHandle_t xSemaphoreMode)
         cnc->mode = 6; // mode receive data of gcode
       }          
       break;
+    case 'S': // setting      
+      cnc->mode = 7; // mode setting CNC
+      break;
 
     default:
       return;
@@ -168,7 +178,10 @@ void ReceiveDataFromCNC(CNC *cnc)
 		break;
 	case 'G':
 		sprintf(cnc->DataSendToGUI, "C ACK %s ", cnc->uart.ReceiveFromControl);
-		break;	
+		break;
+  case 'S':
+    sprintf(cnc->DataSendToGUI, "C SETTING ");
+    break;
 	default:
 		return;
   }

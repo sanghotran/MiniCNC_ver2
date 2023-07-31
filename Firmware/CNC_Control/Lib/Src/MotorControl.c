@@ -26,6 +26,53 @@ void ProcessData(CNC *cnc)
 			cnc->drill.enb = false;
 		cnc->Mode = 3; // check drill
 		break;	
+	case 'S': // setting
+		if(cnc->data.ReceiveBuff[1] == 'X')
+		{
+			float ki, kp, kd;
+			sscanf(cnc->data.ReceiveBuff, "SXKp%fKi%fKd%f", &kp, &ki, &kd);
+			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+			cnc->x_axis.Kp = kp;
+			cnc->x_axis.Ki = ki;
+			cnc->x_axis.Kd = kd;
+		}
+		else if(cnc->data.ReceiveBuff[1] == 'Y')
+		{
+			float ki, kp, kd;
+			sscanf(cnc->data.ReceiveBuff, "SYKp%fKi%fKd%f", &kp, &ki, &kd);
+			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+			cnc->y_axis.Kp = kp;
+			cnc->y_axis.Ki = ki;
+			cnc->y_axis.Kd = kd;
+		}
+		else if(cnc->data.ReceiveBuff[1] == 'Z')
+		{
+			float ki, kp, kd;
+			sscanf(cnc->data.ReceiveBuff, "SZKp%fKi%fKd%f", &kp, &ki, &kd);
+			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+			cnc->z_axis.Kp = kp;
+			cnc->z_axis.Ki = ki;
+			cnc->z_axis.Kd = kd;
+		}
+		else if(cnc->data.ReceiveBuff[1] == 'E')
+		{
+			uint8_t err_x, err_y, err_z;
+			sscanf(cnc->data.ReceiveBuff, "SEX%dY%dZ%d", &err_x, &err_y, &err_z);
+			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+			cnc->x_axis.ERROR = err_x;
+			cnc->y_axis.ERROR = err_y;
+			cnc->z_axis.ERROR = err_z;
+		}
+		else if(cnc->data.ReceiveBuff[1] == 'O')
+		{
+			float z_max, step;
+			sscanf(cnc->data.ReceiveBuff, "SOZ%fS%f", &z_max, &step);
+			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+			cnc->x_axis.ERROR = z_max;
+			cnc->y_axis.ERROR = step;
+		}
+		cnc->Mode = 8;
+		break;
 	default:
 		break;
 	}

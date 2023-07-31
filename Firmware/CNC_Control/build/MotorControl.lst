@@ -1,4 +1,4 @@
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 1
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 1
 
 
    1              		.cpu cortex-m3
@@ -26,75 +26,88 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 1
   23 0004 47302575 		.ascii	"G0%uX%fY%f \000"
   23      58256659 
   23      25662000 
-  24              		.section	.text.ProcessData,"ax",%progbits
-  25              		.align	1
-  26              		.global	ProcessData
-  27              		.syntax unified
-  28              		.thumb
-  29              		.thumb_func
-  31              	ProcessData:
-  32              	.LVL0:
-  33              	.LFB68:
-  34              		.file 1 "Lib/Src/MotorControl.c"
+  24              		.align	2
+  25              	.LC2:
+  26 0010 53584B70 		.ascii	"SXKp%fKi%fKd%f\000"
+  26      25664B69 
+  26      25664B64 
+  26      256600
+  27 001f 00       		.align	2
+  28              	.LC3:
+  29 0020 53594B70 		.ascii	"SYKp%fKi%fKd%f\000"
+  29      25664B69 
+  29      25664B64 
+  29      256600
+  30 002f 00       		.align	2
+  31              	.LC4:
+  32 0030 535A4B70 		.ascii	"SZKp%fKi%fKd%f\000"
+  32      25664B69 
+  32      25664B64 
+  32      256600
+  33 003f 00       		.align	2
+  34              	.LC5:
+  35 0040 53455825 		.ascii	"SEX%dY%dZ%d\000"
+  35      64592564 
+  35      5A256400 
+  36              		.align	2
+  37              	.LC6:
+  38 004c 534F5A25 		.ascii	"SOZ%fS%f\000"
+  38      66532566 
+  38      00
+  39              		.global	__aeabi_f2uiz
+  40              		.section	.text.ProcessData,"ax",%progbits
+  41              		.align	1
+  42              		.global	ProcessData
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 2
+
+
+  43              		.syntax unified
+  44              		.thumb
+  45              		.thumb_func
+  47              	ProcessData:
+  48              	.LVL0:
+  49              	.LFB68:
+  50              		.file 1 "Lib/Src/MotorControl.c"
    1:Lib/Src/MotorControl.c **** #include "MotorControl.h"
    2:Lib/Src/MotorControl.c **** #include "string.h"
    3:Lib/Src/MotorControl.c **** 
    4:Lib/Src/MotorControl.c **** void ProcessData(CNC *cnc)
    5:Lib/Src/MotorControl.c **** {
-  35              		.loc 1 5 1 view -0
-  36              		.cfi_startproc
-  37              		@ args = 0, pretend = 0, frame = 16
-  38              		@ frame_needed = 0, uses_anonymous_args = 0
-  39              		.loc 1 5 1 is_stmt 0 view .LVU1
-  40 0000 30B5     		push	{r4, r5, lr}
-  41              	.LCFI0:
-  42              		.cfi_def_cfa_offset 12
-  43              		.cfi_offset 4, -12
-  44              		.cfi_offset 5, -8
-  45              		.cfi_offset 14, -4
-  46 0002 87B0     		sub	sp, sp, #28
-  47              	.LCFI1:
-  48              		.cfi_def_cfa_offset 40
-  49 0004 0446     		mov	r4, r0
+  51              		.loc 1 5 1 view -0
+  52              		.cfi_startproc
+  53              		@ args = 0, pretend = 0, frame = 16
+  54              		@ frame_needed = 0, uses_anonymous_args = 0
+  55              		.loc 1 5 1 is_stmt 0 view .LVU1
+  56 0000 30B5     		push	{r4, r5, lr}
+  57              	.LCFI0:
+  58              		.cfi_def_cfa_offset 12
+  59              		.cfi_offset 4, -12
+  60              		.cfi_offset 5, -8
+  61              		.cfi_offset 14, -4
+  62 0002 87B0     		sub	sp, sp, #28
+  63              	.LCFI1:
+  64              		.cfi_def_cfa_offset 40
+  65 0004 0446     		mov	r4, r0
    6:Lib/Src/MotorControl.c **** 	switch (cnc->data.ReceiveBuff[0])
-  50              		.loc 1 6 2 is_stmt 1 view .LVU2
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 2
-
-
-  51              		.loc 1 6 31 is_stmt 0 view .LVU3
-  52 0006 90F83231 		ldrb	r3, [r0, #306]	@ zero_extendqisi2
-  53              		.loc 1 6 2 view .LVU4
-  54 000a 472B     		cmp	r3, #71
-  55 000c 10D0     		beq	.L2
-  56 000e 482B     		cmp	r3, #72
-  57 0010 09D1     		bne	.L3
-  58              	.LBB2:
+  66              		.loc 1 6 2 is_stmt 1 view .LVU2
+  67              		.loc 1 6 31 is_stmt 0 view .LVU3
+  68 0006 90F83231 		ldrb	r3, [r0, #306]	@ zero_extendqisi2
+  69              		.loc 1 6 2 view .LVU4
+  70 000a 482B     		cmp	r3, #72
+  71 000c 08D0     		beq	.L2
+  72 000e 532B     		cmp	r3, #83
+  73 0010 3ED0     		beq	.L3
+  74 0012 472B     		cmp	r3, #71
+  75 0014 0FD0     		beq	.L14
+  76              	.LVL1:
+  77              	.L5:
    7:Lib/Src/MotorControl.c **** 	{
    8:Lib/Src/MotorControl.c **** 	case 'H':
    9:Lib/Src/MotorControl.c **** 		cnc->x_axis.home = false;
-  59              		.loc 1 9 3 is_stmt 1 view .LVU5
-  60              		.loc 1 9 20 is_stmt 0 view .LVU6
-  61 0012 0023     		movs	r3, #0
-  62 0014 80F84730 		strb	r3, [r0, #71]
   10:Lib/Src/MotorControl.c **** 		cnc->y_axis.home = false;
-  63              		.loc 1 10 3 is_stmt 1 view .LVU7
-  64              		.loc 1 10 20 is_stmt 0 view .LVU8
-  65 0018 80F89F30 		strb	r3, [r0, #159]
   11:Lib/Src/MotorControl.c **** 		cnc->z_axis.home = false;
-  66              		.loc 1 11 3 is_stmt 1 view .LVU9
-  67              		.loc 1 11 20 is_stmt 0 view .LVU10
-  68 001c 80F8F730 		strb	r3, [r0, #247]
   12:Lib/Src/MotorControl.c **** 		cnc->Mode = 1; // mode goto home
-  69              		.loc 1 12 3 is_stmt 1 view .LVU11
-  70              		.loc 1 12 13 is_stmt 0 view .LVU12
-  71 0020 0123     		movs	r3, #1
-  72 0022 80F80831 		strb	r3, [r0, #264]
   13:Lib/Src/MotorControl.c **** 		break;
-  73              		.loc 1 13 3 is_stmt 1 view .LVU13
-  74              	.LVL1:
-  75              	.L3:
-  76              		.loc 1 13 3 is_stmt 0 view .LVU14
-  77              	.LBE2:
   14:Lib/Src/MotorControl.c **** 	case 'G':
   15:Lib/Src/MotorControl.c **** 		strcat(cnc->data.ReceiveBuff, " ");
   16:Lib/Src/MotorControl.c **** 		float x = 0, y = 0;
@@ -105,2005 +118,2396 @@ ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 1
   21:Lib/Src/MotorControl.c **** 		cnc->y_axis.next = y;
   22:Lib/Src/MotorControl.c **** 		cnc->data.temp = temp;
   23:Lib/Src/MotorControl.c **** 		if(cnc->data.temp == 1)
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 3
+
+
   24:Lib/Src/MotorControl.c **** 			cnc->drill.enb =true;
   25:Lib/Src/MotorControl.c **** 		else
   26:Lib/Src/MotorControl.c **** 			cnc->drill.enb = false;
   27:Lib/Src/MotorControl.c **** 		cnc->Mode = 3; // check drill
   28:Lib/Src/MotorControl.c **** 		break;	
-  29:Lib/Src/MotorControl.c **** 	default:
-  30:Lib/Src/MotorControl.c **** 		break;
-  31:Lib/Src/MotorControl.c **** 	}
-  32:Lib/Src/MotorControl.c **** 	cnc->data.index = 0;
-  78              		.loc 1 32 2 is_stmt 1 view .LVU15
-  79              		.loc 1 32 18 is_stmt 0 view .LVU16
-  80 0026 0023     		movs	r3, #0
-  81 0028 84F81D31 		strb	r3, [r4, #285]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 3
+  29:Lib/Src/MotorControl.c **** 	case 'S': // setting
+  30:Lib/Src/MotorControl.c **** 		if(cnc->data.ReceiveBuff[1] == 'X')
+  31:Lib/Src/MotorControl.c **** 		{
+  32:Lib/Src/MotorControl.c **** 			float ki, kp, kd;
+  33:Lib/Src/MotorControl.c **** 			sscanf(cnc->data.ReceiveBuff, "SXKp%fKi%fKd%f", &kp, &ki, &kd);
+  34:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+  35:Lib/Src/MotorControl.c **** 			cnc->x_axis.Kp = kp;
+  36:Lib/Src/MotorControl.c **** 			cnc->x_axis.Ki = ki;
+  37:Lib/Src/MotorControl.c **** 			cnc->x_axis.Kd = kd;
+  38:Lib/Src/MotorControl.c **** 		}
+  39:Lib/Src/MotorControl.c **** 		else if(cnc->data.ReceiveBuff[1] == 'Y')
+  40:Lib/Src/MotorControl.c **** 		{
+  41:Lib/Src/MotorControl.c **** 			float ki, kp, kd;
+  42:Lib/Src/MotorControl.c **** 			sscanf(cnc->data.ReceiveBuff, "SYKp%fKi%fKd%f", &kp, &ki, &kd);
+  43:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+  44:Lib/Src/MotorControl.c **** 			cnc->y_axis.Kp = kp;
+  45:Lib/Src/MotorControl.c **** 			cnc->y_axis.Ki = ki;
+  46:Lib/Src/MotorControl.c **** 			cnc->y_axis.Kd = kd;
+  47:Lib/Src/MotorControl.c **** 		}
+  48:Lib/Src/MotorControl.c **** 		else if(cnc->data.ReceiveBuff[1] == 'Z')
+  49:Lib/Src/MotorControl.c **** 		{
+  50:Lib/Src/MotorControl.c **** 			float ki, kp, kd;
+  51:Lib/Src/MotorControl.c **** 			sscanf(cnc->data.ReceiveBuff, "SZKp%fKi%fKd%f", &kp, &ki, &kd);
+  52:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+  53:Lib/Src/MotorControl.c **** 			cnc->z_axis.Kp = kp;
+  54:Lib/Src/MotorControl.c **** 			cnc->z_axis.Ki = ki;
+  55:Lib/Src/MotorControl.c **** 			cnc->z_axis.Kd = kd;
+  56:Lib/Src/MotorControl.c **** 		}
+  57:Lib/Src/MotorControl.c **** 		else if(cnc->data.ReceiveBuff[1] == 'E')
+  58:Lib/Src/MotorControl.c **** 		{
+  59:Lib/Src/MotorControl.c **** 			uint8_t err_x, err_y, err_z;
+  60:Lib/Src/MotorControl.c **** 			sscanf(cnc->data.ReceiveBuff, "SEX%dY%dZ%d", &err_x, &err_y, &err_z);
+  61:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+  62:Lib/Src/MotorControl.c **** 			cnc->x_axis.ERROR = err_x;
+  63:Lib/Src/MotorControl.c **** 			cnc->y_axis.ERROR = err_y;
+  64:Lib/Src/MotorControl.c **** 			cnc->z_axis.ERROR = err_z;
+  65:Lib/Src/MotorControl.c **** 		}
+  66:Lib/Src/MotorControl.c **** 		else if(cnc->data.ReceiveBuff[1] == 'O')
+  67:Lib/Src/MotorControl.c **** 		{
+  68:Lib/Src/MotorControl.c **** 			float z_max, step;
+  69:Lib/Src/MotorControl.c **** 			sscanf(cnc->data.ReceiveBuff, "SOZ%fS%f", &z_max, &step);
+  70:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+  71:Lib/Src/MotorControl.c **** 			cnc->x_axis.ERROR = z_max;
+  72:Lib/Src/MotorControl.c **** 			cnc->y_axis.ERROR = step;
+  73:Lib/Src/MotorControl.c **** 		}
+  74:Lib/Src/MotorControl.c **** 		cnc->Mode = 8;
+  75:Lib/Src/MotorControl.c **** 		break;
+  76:Lib/Src/MotorControl.c **** 	default:
+  77:Lib/Src/MotorControl.c **** 		break;
+  78:Lib/Src/MotorControl.c **** 	}
+  79:Lib/Src/MotorControl.c **** 	cnc->data.index = 0;
+  78              		.loc 1 79 2 is_stmt 1 view .LVU5
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 4
 
 
-  33:Lib/Src/MotorControl.c **** }
-  82              		.loc 1 33 1 view .LVU17
-  83 002c 07B0     		add	sp, sp, #28
+  79              		.loc 1 79 18 is_stmt 0 view .LVU6
+  80 0016 0023     		movs	r3, #0
+  81 0018 84F81D31 		strb	r3, [r4, #285]
+  80:Lib/Src/MotorControl.c **** }
+  82              		.loc 1 80 1 view .LVU7
+  83 001c 07B0     		add	sp, sp, #28
   84              	.LCFI2:
   85              		.cfi_remember_state
   86              		.cfi_def_cfa_offset 12
   87              		@ sp needed
-  88 002e 30BD     		pop	{r4, r5, pc}
+  88 001e 30BD     		pop	{r4, r5, pc}
   89              	.LVL2:
   90              	.L2:
   91              	.LCFI3:
   92              		.cfi_restore_state
-  93              	.LBB3:
+  93              	.LBB2:
+   9:Lib/Src/MotorControl.c **** 		cnc->y_axis.home = false;
+  94              		.loc 1 9 3 is_stmt 1 view .LVU8
+   9:Lib/Src/MotorControl.c **** 		cnc->y_axis.home = false;
+  95              		.loc 1 9 20 is_stmt 0 view .LVU9
+  96 0020 0023     		movs	r3, #0
+  97 0022 80F84730 		strb	r3, [r0, #71]
+  10:Lib/Src/MotorControl.c **** 		cnc->z_axis.home = false;
+  98              		.loc 1 10 3 is_stmt 1 view .LVU10
+  10:Lib/Src/MotorControl.c **** 		cnc->z_axis.home = false;
+  99              		.loc 1 10 20 is_stmt 0 view .LVU11
+ 100 0026 80F89F30 		strb	r3, [r0, #159]
+  11:Lib/Src/MotorControl.c **** 		cnc->Mode = 1; // mode goto home
+ 101              		.loc 1 11 3 is_stmt 1 view .LVU12
+  11:Lib/Src/MotorControl.c **** 		cnc->Mode = 1; // mode goto home
+ 102              		.loc 1 11 20 is_stmt 0 view .LVU13
+ 103 002a 80F8F730 		strb	r3, [r0, #247]
+  12:Lib/Src/MotorControl.c **** 		break;
+ 104              		.loc 1 12 3 is_stmt 1 view .LVU14
+  12:Lib/Src/MotorControl.c **** 		break;
+ 105              		.loc 1 12 13 is_stmt 0 view .LVU15
+ 106 002e 0123     		movs	r3, #1
+ 107 0030 80F80831 		strb	r3, [r0, #264]
+  13:Lib/Src/MotorControl.c **** 	case 'G':
+ 108              		.loc 1 13 3 is_stmt 1 view .LVU16
+ 109 0034 EFE7     		b	.L5
+ 110              	.L14:
   15:Lib/Src/MotorControl.c **** 		float x = 0, y = 0;
-  94              		.loc 1 15 3 is_stmt 1 view .LVU18
+ 111              		.loc 1 15 3 view .LVU17
   15:Lib/Src/MotorControl.c **** 		float x = 0, y = 0;
-  95              		.loc 1 15 19 is_stmt 0 view .LVU19
-  96 0030 00F59975 		add	r5, r0, #306
+ 112              		.loc 1 15 19 is_stmt 0 view .LVU18
+ 113 0036 00F59975 		add	r5, r0, #306
   15:Lib/Src/MotorControl.c **** 		float x = 0, y = 0;
-  97              		.loc 1 15 3 view .LVU20
-  98 0034 2846     		mov	r0, r5
-  99              	.LVL3:
+ 114              		.loc 1 15 3 view .LVU19
+ 115 003a 2846     		mov	r0, r5
+ 116              	.LVL3:
   15:Lib/Src/MotorControl.c **** 		float x = 0, y = 0;
- 100              		.loc 1 15 3 view .LVU21
- 101 0036 FFF7FEFF 		bl	strlen
- 102              	.LVL4:
- 103 003a 144B     		ldr	r3, .L8
- 104 003c 1B88     		ldrh	r3, [r3]	@ unaligned
- 105 003e 2B52     		strh	r3, [r5, r0]	@ unaligned
+ 117              		.loc 1 15 3 view .LVU20
+ 118 003c FFF7FEFF 		bl	strlen
+ 119              	.LVL4:
+ 120 0040 584B     		ldr	r3, .L21
+ 121 0042 1B88     		ldrh	r3, [r3]	@ unaligned
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 5
+
+
+ 122 0044 2B52     		strh	r3, [r5, r0]	@ unaligned
   16:Lib/Src/MotorControl.c **** 		int temp;
- 106              		.loc 1 16 3 is_stmt 1 view .LVU22
+ 123              		.loc 1 16 3 is_stmt 1 view .LVU21
   16:Lib/Src/MotorControl.c **** 		int temp;
- 107              		.loc 1 16 9 is_stmt 0 view .LVU23
- 108 0040 0023     		movs	r3, #0
- 109 0042 0393     		str	r3, [sp, #12]	@ float
+ 124              		.loc 1 16 9 is_stmt 0 view .LVU22
+ 125 0046 0023     		movs	r3, #0
+ 126 0048 0393     		str	r3, [sp, #12]	@ float
   16:Lib/Src/MotorControl.c **** 		int temp;
- 110              		.loc 1 16 16 view .LVU24
- 111 0044 0493     		str	r3, [sp, #16]	@ float
+ 127              		.loc 1 16 16 view .LVU23
+ 128 004a 0493     		str	r3, [sp, #16]	@ float
   17:Lib/Src/MotorControl.c **** 		sscanf(cnc->data.ReceiveBuff, "G0%uX%fY%f ", &temp, &x, &y);
- 112              		.loc 1 17 3 is_stmt 1 view .LVU25
+ 129              		.loc 1 17 3 is_stmt 1 view .LVU24
   18:Lib/Src/MotorControl.c **** 		memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
- 113              		.loc 1 18 3 view .LVU26
- 114 0046 04AB     		add	r3, sp, #16
- 115 0048 0093     		str	r3, [sp]
- 116 004a 03AB     		add	r3, sp, #12
- 117 004c 05AA     		add	r2, sp, #20
- 118 004e 1049     		ldr	r1, .L8+4
- 119 0050 2846     		mov	r0, r5
- 120 0052 FFF7FEFF 		bl	sscanf
- 121              	.LVL5:
+ 130              		.loc 1 18 3 view .LVU25
+ 131 004c 04AB     		add	r3, sp, #16
+ 132 004e 0093     		str	r3, [sp]
+ 133 0050 03AB     		add	r3, sp, #12
+ 134 0052 05AA     		add	r2, sp, #20
+ 135 0054 5449     		ldr	r1, .L21+4
+ 136 0056 2846     		mov	r0, r5
+ 137 0058 FFF7FEFF 		bl	sscanf
+ 138              	.LVL5:
   19:Lib/Src/MotorControl.c **** 		cnc->x_axis.next = x;
- 122              		.loc 1 19 3 view .LVU27
- 123 0056 2822     		movs	r2, #40
- 124 0058 0021     		movs	r1, #0
- 125 005a 2846     		mov	r0, r5
- 126 005c FFF7FEFF 		bl	memset
- 127              	.LVL6:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 4
-
-
+ 139              		.loc 1 19 3 view .LVU26
+ 140 005c 2822     		movs	r2, #40
+ 141 005e 0021     		movs	r1, #0
+ 142 0060 2846     		mov	r0, r5
+ 143 0062 FFF7FEFF 		bl	memset
+ 144              	.LVL6:
   20:Lib/Src/MotorControl.c **** 		cnc->y_axis.next = y;
- 128              		.loc 1 20 3 view .LVU28
+ 145              		.loc 1 20 3 view .LVU27
   20:Lib/Src/MotorControl.c **** 		cnc->y_axis.next = y;
- 129              		.loc 1 20 20 is_stmt 0 view .LVU29
- 130 0060 039B     		ldr	r3, [sp, #12]	@ float
- 131 0062 A364     		str	r3, [r4, #72]	@ float
+ 146              		.loc 1 20 20 is_stmt 0 view .LVU28
+ 147 0066 039B     		ldr	r3, [sp, #12]	@ float
+ 148 0068 A364     		str	r3, [r4, #72]	@ float
   21:Lib/Src/MotorControl.c **** 		cnc->data.temp = temp;
- 132              		.loc 1 21 3 is_stmt 1 view .LVU30
+ 149              		.loc 1 21 3 is_stmt 1 view .LVU29
   21:Lib/Src/MotorControl.c **** 		cnc->data.temp = temp;
- 133              		.loc 1 21 20 is_stmt 0 view .LVU31
- 134 0064 049B     		ldr	r3, [sp, #16]	@ float
- 135 0066 C4F8A030 		str	r3, [r4, #160]	@ float
+ 150              		.loc 1 21 20 is_stmt 0 view .LVU30
+ 151 006a 049B     		ldr	r3, [sp, #16]	@ float
+ 152 006c C4F8A030 		str	r3, [r4, #160]	@ float
   22:Lib/Src/MotorControl.c **** 		if(cnc->data.temp == 1)
- 136              		.loc 1 22 3 is_stmt 1 view .LVU32
+ 153              		.loc 1 22 3 is_stmt 1 view .LVU31
   22:Lib/Src/MotorControl.c **** 		if(cnc->data.temp == 1)
- 137              		.loc 1 22 18 is_stmt 0 view .LVU33
- 138 006a 9DF81430 		ldrb	r3, [sp, #20]	@ zero_extendqisi2
- 139 006e 84F85A31 		strb	r3, [r4, #346]
+ 154              		.loc 1 22 18 is_stmt 0 view .LVU32
+ 155 0070 9DF81430 		ldrb	r3, [sp, #20]	@ zero_extendqisi2
+ 156 0074 84F85A31 		strb	r3, [r4, #346]
   23:Lib/Src/MotorControl.c **** 			cnc->drill.enb =true;
- 140              		.loc 1 23 3 is_stmt 1 view .LVU34
+ 157              		.loc 1 23 3 is_stmt 1 view .LVU33
   23:Lib/Src/MotorControl.c **** 			cnc->drill.enb =true;
- 141              		.loc 1 23 5 is_stmt 0 view .LVU35
- 142 0072 012B     		cmp	r3, #1
- 143 0074 06D0     		beq	.L7
+ 158              		.loc 1 23 5 is_stmt 0 view .LVU34
+ 159 0078 012B     		cmp	r3, #1
+ 160 007a 06D0     		beq	.L15
   26:Lib/Src/MotorControl.c **** 		cnc->Mode = 3; // check drill
- 144              		.loc 1 26 4 is_stmt 1 view .LVU36
+ 161              		.loc 1 26 4 is_stmt 1 view .LVU35
   26:Lib/Src/MotorControl.c **** 		cnc->Mode = 3; // check drill
- 145              		.loc 1 26 19 is_stmt 0 view .LVU37
- 146 0076 0023     		movs	r3, #0
- 147 0078 84F81B31 		strb	r3, [r4, #283]
- 148              	.L5:
+ 162              		.loc 1 26 19 is_stmt 0 view .LVU36
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 6
+
+
+ 163 007c 0023     		movs	r3, #0
+ 164 007e 84F81B31 		strb	r3, [r4, #283]
+ 165              	.L7:
   27:Lib/Src/MotorControl.c **** 		break;	
- 149              		.loc 1 27 3 is_stmt 1 view .LVU38
+ 166              		.loc 1 27 3 is_stmt 1 view .LVU37
   27:Lib/Src/MotorControl.c **** 		break;	
- 150              		.loc 1 27 13 is_stmt 0 view .LVU39
- 151 007c 0323     		movs	r3, #3
- 152 007e 84F80831 		strb	r3, [r4, #264]
-  28:Lib/Src/MotorControl.c **** 	default:
- 153              		.loc 1 28 3 is_stmt 1 view .LVU40
- 154 0082 D0E7     		b	.L3
- 155              	.L7:
+ 167              		.loc 1 27 13 is_stmt 0 view .LVU38
+ 168 0082 0323     		movs	r3, #3
+ 169 0084 84F80831 		strb	r3, [r4, #264]
+  28:Lib/Src/MotorControl.c **** 	case 'S': // setting
+ 170              		.loc 1 28 3 is_stmt 1 view .LVU39
+ 171 0088 C5E7     		b	.L5
+ 172              	.L15:
   24:Lib/Src/MotorControl.c **** 		else
- 156              		.loc 1 24 4 view .LVU41
+ 173              		.loc 1 24 4 view .LVU40
   24:Lib/Src/MotorControl.c **** 		else
- 157              		.loc 1 24 19 is_stmt 0 view .LVU42
- 158 0084 84F81B31 		strb	r3, [r4, #283]
- 159 0088 F8E7     		b	.L5
- 160              	.L9:
- 161 008a 00BF     		.align	2
- 162              	.L8:
- 163 008c 00000000 		.word	.LC0
- 164 0090 04000000 		.word	.LC1
- 165              	.LBE3:
- 166              		.cfi_endproc
- 167              	.LFE68:
- 169              		.global	__aeabi_fcmpgt
- 170              		.global	__aeabi_fcmpeq
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 5
-
-
- 171              		.global	__aeabi_fcmplt
- 172              		.global	__aeabi_fmul
- 173              		.global	__aeabi_f2iz
- 174              		.section	.text.PWM,"ax",%progbits
- 175              		.align	1
- 176              		.global	PWM
- 177              		.syntax unified
- 178              		.thumb
- 179              		.thumb_func
- 181              	PWM:
- 182              	.LVL7:
- 183              	.LFB69:
-  34:Lib/Src/MotorControl.c **** 
-  35:Lib/Src/MotorControl.c **** void PWM(AXIS *axis)
-  36:Lib/Src/MotorControl.c **** {
- 184              		.loc 1 36 1 is_stmt 1 view -0
- 185              		.cfi_startproc
- 186              		@ args = 0, pretend = 0, frame = 0
- 187              		@ frame_needed = 0, uses_anonymous_args = 0
- 188              		.loc 1 36 1 is_stmt 0 view .LVU44
- 189 0000 38B5     		push	{r3, r4, r5, lr}
- 190              	.LCFI4:
- 191              		.cfi_def_cfa_offset 16
- 192              		.cfi_offset 3, -16
- 193              		.cfi_offset 4, -12
- 194              		.cfi_offset 5, -8
- 195              		.cfi_offset 14, -4
- 196 0002 0446     		mov	r4, r0
-  37:Lib/Src/MotorControl.c **** 	float duty = axis->pwm;
- 197              		.loc 1 37 2 is_stmt 1 view .LVU45
- 198              		.loc 1 37 8 is_stmt 0 view .LVU46
- 199 0004 C569     		ldr	r5, [r0, #28]	@ float
- 200              	.LVL8:
-  38:Lib/Src/MotorControl.c **** 	if (duty > 1) duty = 1;
- 201              		.loc 1 38 2 is_stmt 1 view .LVU47
- 202              		.loc 1 38 5 is_stmt 0 view .LVU48
- 203 0006 4FF07E51 		mov	r1, #1065353216
- 204 000a 2846     		mov	r0, r5
- 205              	.LVL9:
- 206              		.loc 1 38 5 view .LVU49
- 207 000c FFF7FEFF 		bl	__aeabi_fcmpgt
- 208              	.LVL10:
- 209 0010 B8B1     		cbz	r0, .L31
- 210              		.loc 1 38 21 view .LVU50
- 211 0012 4FF07E55 		mov	r5, #1065353216
- 212              	.LVL11:
- 213              	.L11:
-  39:Lib/Src/MotorControl.c **** 	else if(duty ==0)  duty = 0;
-  40:Lib/Src/MotorControl.c **** 	else if (duty < -1) duty = -1;
-  41:Lib/Src/MotorControl.c **** 	int16_t pwm = duty*MAX_SPEED;
- 214              		.loc 1 41 2 is_stmt 1 view .LVU51
- 215              		.loc 1 41 20 is_stmt 0 view .LVU52
- 216 0016 3E49     		ldr	r1, .L38
- 217 0018 2846     		mov	r0, r5
- 218 001a FFF7FEFF 		bl	__aeabi_fmul
- 219              	.LVL12:
- 220              		.loc 1 41 10 view .LVU53
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 6
-
-
- 221 001e FFF7FEFF 		bl	__aeabi_f2iz
- 222              	.LVL13:
- 223 0022 00B2     		sxth	r0, r0
- 224              	.LVL14:
-  42:Lib/Src/MotorControl.c **** 		
-  43:Lib/Src/MotorControl.c **** 	if (pwm > 0)
- 225              		.loc 1 43 2 is_stmt 1 view .LVU54
- 226              		.loc 1 43 5 is_stmt 0 view .LVU55
- 227 0024 0028     		cmp	r0, #0
- 228 0026 31DD     		ble	.L12
-  44:Lib/Src/MotorControl.c **** 		{
-  45:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, 100 - pwm);
- 229              		.loc 1 45 4 is_stmt 1 view .LVU56
- 230 0028 E36A     		ldr	r3, [r4, #44]
- 231 002a CBB9     		cbnz	r3, .L13
- 232              		.loc 1 45 4 is_stmt 0 discriminator 1 view .LVU57
- 233 002c A36A     		ldr	r3, [r4, #40]
- 234 002e 1B68     		ldr	r3, [r3]
- 235 0030 C0F16400 		rsb	r0, r0, #100
- 236              	.LVL15:
- 237              		.loc 1 45 4 discriminator 1 view .LVU58
- 238 0034 5863     		str	r0, [r3, #52]
- 239              	.L14:
-  46:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
- 240              		.loc 1 46 4 is_stmt 1 view .LVU59
- 241 0036 0122     		movs	r2, #1
- 242 0038 A18E     		ldrh	r1, [r4, #52]
- 243 003a 206B     		ldr	r0, [r4, #48]
- 244 003c FFF7FEFF 		bl	HAL_GPIO_WritePin
- 245              	.LVL16:
- 246              	.L10:
-  47:Lib/Src/MotorControl.c **** 		}
-  48:Lib/Src/MotorControl.c **** 	else if (pwm == 0)
-  49:Lib/Src/MotorControl.c **** 		{
-  50:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, 0);
-  51:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
-  52:Lib/Src/MotorControl.c **** 			axis->pwm = 0;
-  53:Lib/Src/MotorControl.c **** 		}
-  54:Lib/Src/MotorControl.c **** 	else if (pwm < 0)
-  55:Lib/Src/MotorControl.c **** 		{
-  56:Lib/Src/MotorControl.c **** 			pwm *= -1;
-  57:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, pwm);
-  58:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
-  59:Lib/Src/MotorControl.c **** 
-  60:Lib/Src/MotorControl.c **** 		}
-  61:Lib/Src/MotorControl.c **** }
- 247              		.loc 1 61 1 is_stmt 0 view .LVU60
- 248 0040 38BD     		pop	{r3, r4, r5, pc}
- 249              	.LVL17:
- 250              	.L31:
-  39:Lib/Src/MotorControl.c **** 	else if (duty < -1) duty = -1;
- 251              		.loc 1 39 7 is_stmt 1 view .LVU61
-  39:Lib/Src/MotorControl.c **** 	else if (duty < -1) duty = -1;
- 252              		.loc 1 39 9 is_stmt 0 view .LVU62
- 253 0042 0021     		movs	r1, #0
- 254 0044 2846     		mov	r0, r5
- 255 0046 FFF7FEFF 		bl	__aeabi_fcmpeq
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 7
-
-
- 256              	.LVL18:
- 257 004a 38B9     		cbnz	r0, .L28
-  40:Lib/Src/MotorControl.c **** 	int16_t pwm = duty*MAX_SPEED;
- 258              		.loc 1 40 7 is_stmt 1 view .LVU63
-  40:Lib/Src/MotorControl.c **** 	int16_t pwm = duty*MAX_SPEED;
- 259              		.loc 1 40 10 is_stmt 0 view .LVU64
- 260 004c 3149     		ldr	r1, .L38+4
- 261 004e 2846     		mov	r0, r5
- 262 0050 FFF7FEFF 		bl	__aeabi_fcmplt
- 263              	.LVL19:
- 264 0054 0028     		cmp	r0, #0
- 265 0056 DED0     		beq	.L11
-  40:Lib/Src/MotorControl.c **** 	int16_t pwm = duty*MAX_SPEED;
- 266              		.loc 1 40 27 view .LVU65
- 267 0058 2E4D     		ldr	r5, .L38+4
- 268              	.LVL20:
-  40:Lib/Src/MotorControl.c **** 	int16_t pwm = duty*MAX_SPEED;
- 269              		.loc 1 40 27 view .LVU66
- 270 005a DCE7     		b	.L11
- 271              	.LVL21:
- 272              	.L28:
-  39:Lib/Src/MotorControl.c **** 	else if (duty < -1) duty = -1;
- 273              		.loc 1 39 26 view .LVU67
- 274 005c 0025     		movs	r5, #0
- 275              	.LVL22:
-  39:Lib/Src/MotorControl.c **** 	else if (duty < -1) duty = -1;
- 276              		.loc 1 39 26 view .LVU68
- 277 005e DAE7     		b	.L11
- 278              	.LVL23:
- 279              	.L13:
-  45:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
- 280              		.loc 1 45 4 discriminator 2 view .LVU69
- 281 0060 042B     		cmp	r3, #4
- 282 0062 07D0     		beq	.L32
-  45:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
- 283              		.loc 1 45 4 discriminator 4 view .LVU70
- 284 0064 082B     		cmp	r3, #8
- 285 0066 0BD0     		beq	.L33
-  45:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
- 286              		.loc 1 45 4 discriminator 7 view .LVU71
- 287 0068 A36A     		ldr	r3, [r4, #40]
- 288 006a 1B68     		ldr	r3, [r3]
- 289 006c C0F16400 		rsb	r0, r0, #100
- 290              	.LVL24:
-  45:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
- 291              		.loc 1 45 4 discriminator 7 view .LVU72
- 292 0070 1864     		str	r0, [r3, #64]
- 293 0072 E0E7     		b	.L14
- 294              	.LVL25:
- 295              	.L32:
-  45:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
- 296              		.loc 1 45 4 discriminator 3 view .LVU73
- 297 0074 A36A     		ldr	r3, [r4, #40]
- 298 0076 1B68     		ldr	r3, [r3]
- 299 0078 C0F16400 		rsb	r0, r0, #100
- 300              	.LVL26:
-  45:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 8
-
-
- 301              		.loc 1 45 4 discriminator 3 view .LVU74
- 302 007c 9863     		str	r0, [r3, #56]
- 303 007e DAE7     		b	.L14
- 304              	.LVL27:
- 305              	.L33:
-  45:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
- 306              		.loc 1 45 4 discriminator 6 view .LVU75
- 307 0080 A36A     		ldr	r3, [r4, #40]
- 308 0082 1B68     		ldr	r3, [r3]
- 309 0084 C0F16400 		rsb	r0, r0, #100
- 310              	.LVL28:
-  45:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
- 311              		.loc 1 45 4 discriminator 6 view .LVU76
- 312 0088 D863     		str	r0, [r3, #60]
- 313 008a D4E7     		b	.L14
- 314              	.LVL29:
- 315              	.L12:
+ 174              		.loc 1 24 19 is_stmt 0 view .LVU41
+ 175 008a 84F81B31 		strb	r3, [r4, #283]
+ 176 008e F8E7     		b	.L7
+ 177              	.LVL7:
+ 178              	.L3:
+  30:Lib/Src/MotorControl.c **** 		{
+ 179              		.loc 1 30 3 is_stmt 1 view .LVU42
+  30:Lib/Src/MotorControl.c **** 		{
+ 180              		.loc 1 30 27 is_stmt 0 view .LVU43
+ 181 0090 90F83331 		ldrb	r3, [r0, #307]	@ zero_extendqisi2
+  30:Lib/Src/MotorControl.c **** 		{
+ 182              		.loc 1 30 5 view .LVU44
+ 183 0094 582B     		cmp	r3, #88
+ 184 0096 0BD0     		beq	.L16
+  39:Lib/Src/MotorControl.c **** 		{
+ 185              		.loc 1 39 8 is_stmt 1 view .LVU45
+  39:Lib/Src/MotorControl.c **** 		{
+ 186              		.loc 1 39 10 is_stmt 0 view .LVU46
+ 187 0098 592B     		cmp	r3, #89
+ 188 009a 1FD0     		beq	.L17
   48:Lib/Src/MotorControl.c **** 		{
- 316              		.loc 1 48 7 is_stmt 1 view .LVU77
+ 189              		.loc 1 48 8 is_stmt 1 view .LVU47
   48:Lib/Src/MotorControl.c **** 		{
- 317              		.loc 1 48 10 is_stmt 0 view .LVU78
- 318 008c 00BB     		cbnz	r0, .L18
-  50:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 319              		.loc 1 50 4 is_stmt 1 view .LVU79
- 320 008e E36A     		ldr	r3, [r4, #44]
- 321 0090 5BB9     		cbnz	r3, .L19
-  50:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 322              		.loc 1 50 4 is_stmt 0 discriminator 1 view .LVU80
- 323 0092 A36A     		ldr	r3, [r4, #40]
- 324 0094 1B68     		ldr	r3, [r3]
- 325 0096 0022     		movs	r2, #0
- 326 0098 5A63     		str	r2, [r3, #52]
- 327              	.L20:
-  51:Lib/Src/MotorControl.c **** 			axis->pwm = 0;
- 328              		.loc 1 51 4 is_stmt 1 view .LVU81
- 329 009a 0022     		movs	r2, #0
- 330 009c A18E     		ldrh	r1, [r4, #52]
- 331 009e 206B     		ldr	r0, [r4, #48]
- 332              	.LVL30:
-  51:Lib/Src/MotorControl.c **** 			axis->pwm = 0;
- 333              		.loc 1 51 4 is_stmt 0 view .LVU82
- 334 00a0 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 335              	.LVL31:
-  52:Lib/Src/MotorControl.c **** 		}
- 336              		.loc 1 52 4 is_stmt 1 view .LVU83
-  52:Lib/Src/MotorControl.c **** 		}
- 337              		.loc 1 52 14 is_stmt 0 view .LVU84
- 338 00a4 0023     		movs	r3, #0
- 339 00a6 E361     		str	r3, [r4, #28]	@ float
- 340 00a8 CAE7     		b	.L10
- 341              	.LVL32:
- 342              	.L19:
-  50:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 343              		.loc 1 50 4 discriminator 2 view .LVU85
- 344 00aa 042B     		cmp	r3, #4
- 345 00ac 06D0     		beq	.L34
-  50:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 9
+ 190              		.loc 1 48 10 is_stmt 0 view .LVU48
+ 191 009c 5A2B     		cmp	r3, #90
+ 192 009e 33D0     		beq	.L18
+  57:Lib/Src/MotorControl.c **** 		{
+ 193              		.loc 1 57 8 is_stmt 1 view .LVU49
+  57:Lib/Src/MotorControl.c **** 		{
+ 194              		.loc 1 57 10 is_stmt 0 view .LVU50
+ 195 00a0 452B     		cmp	r3, #69
+ 196 00a2 4AD0     		beq	.L19
+  66:Lib/Src/MotorControl.c **** 		{
+ 197              		.loc 1 66 8 is_stmt 1 view .LVU51
+  66:Lib/Src/MotorControl.c **** 		{
+ 198              		.loc 1 66 10 is_stmt 0 view .LVU52
+ 199 00a4 4F2B     		cmp	r3, #79
+ 200 00a6 64D0     		beq	.L20
+ 201              	.LVL8:
+ 202              	.L9:
+  74:Lib/Src/MotorControl.c **** 		break;
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 7
 
 
- 346              		.loc 1 50 4 discriminator 4 view .LVU86
- 347 00ae 082B     		cmp	r3, #8
- 348 00b0 09D0     		beq	.L35
-  50:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 349              		.loc 1 50 4 discriminator 7 view .LVU87
- 350 00b2 A36A     		ldr	r3, [r4, #40]
- 351 00b4 1B68     		ldr	r3, [r3]
- 352 00b6 0022     		movs	r2, #0
- 353 00b8 1A64     		str	r2, [r3, #64]
- 354 00ba EEE7     		b	.L20
- 355              	.L34:
-  50:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 356              		.loc 1 50 4 discriminator 3 view .LVU88
- 357 00bc A36A     		ldr	r3, [r4, #40]
- 358 00be 1B68     		ldr	r3, [r3]
- 359 00c0 0022     		movs	r2, #0
- 360 00c2 9A63     		str	r2, [r3, #56]
- 361 00c4 E9E7     		b	.L20
- 362              	.L35:
-  50:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 363              		.loc 1 50 4 discriminator 6 view .LVU89
- 364 00c6 A36A     		ldr	r3, [r4, #40]
- 365 00c8 1B68     		ldr	r3, [r3]
- 366 00ca 0022     		movs	r2, #0
- 367 00cc DA63     		str	r2, [r3, #60]
- 368 00ce E4E7     		b	.L20
- 369              	.L18:
-  54:Lib/Src/MotorControl.c **** 		{
- 370              		.loc 1 54 7 is_stmt 1 view .LVU90
-  54:Lib/Src/MotorControl.c **** 		{
- 371              		.loc 1 54 10 is_stmt 0 view .LVU91
- 372 00d0 0028     		cmp	r0, #0
- 373 00d2 B5DA     		bge	.L10
-  56:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, pwm);
- 374              		.loc 1 56 4 is_stmt 1 view .LVU92
-  56:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, pwm);
- 375              		.loc 1 56 8 is_stmt 0 view .LVU93
- 376 00d4 4042     		rsbs	r0, r0, #0
- 377              	.LVL33:
-  56:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, pwm);
- 378              		.loc 1 56 8 view .LVU94
- 379 00d6 00B2     		sxth	r0, r0
- 380              	.LVL34:
-  57:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 381              		.loc 1 57 4 is_stmt 1 view .LVU95
- 382 00d8 E36A     		ldr	r3, [r4, #44]
- 383 00da 43B9     		cbnz	r3, .L23
-  57:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 384              		.loc 1 57 4 is_stmt 0 discriminator 1 view .LVU96
- 385 00dc A36A     		ldr	r3, [r4, #40]
- 386 00de 1B68     		ldr	r3, [r3]
- 387 00e0 5863     		str	r0, [r3, #52]
- 388              	.L24:
-  58:Lib/Src/MotorControl.c **** 
- 389              		.loc 1 58 4 is_stmt 1 view .LVU97
- 390 00e2 0022     		movs	r2, #0
- 391 00e4 A18E     		ldrh	r1, [r4, #52]
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 10
+ 203              		.loc 1 74 3 is_stmt 1 view .LVU53
+  74:Lib/Src/MotorControl.c **** 		break;
+ 204              		.loc 1 74 13 is_stmt 0 view .LVU54
+ 205 00a8 0823     		movs	r3, #8
+ 206 00aa 84F80831 		strb	r3, [r4, #264]
+  75:Lib/Src/MotorControl.c **** 	default:
+ 207              		.loc 1 75 3 is_stmt 1 view .LVU55
+ 208 00ae B2E7     		b	.L5
+ 209              	.LVL9:
+ 210              	.L16:
+ 211              	.LBB3:
+  32:Lib/Src/MotorControl.c **** 			sscanf(cnc->data.ReceiveBuff, "SXKp%fKi%fKd%f", &kp, &ki, &kd);
+ 212              		.loc 1 32 4 view .LVU56
+  33:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 213              		.loc 1 33 4 view .LVU57
+  33:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 214              		.loc 1 33 20 is_stmt 0 view .LVU58
+ 215 00b0 00F59975 		add	r5, r0, #306
+  33:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 216              		.loc 1 33 4 view .LVU59
+ 217 00b4 05AB     		add	r3, sp, #20
+ 218 00b6 0093     		str	r3, [sp]
+ 219 00b8 03AB     		add	r3, sp, #12
+ 220 00ba 04AA     		add	r2, sp, #16
+ 221 00bc 3B49     		ldr	r1, .L21+8
+ 222 00be 2846     		mov	r0, r5
+ 223              	.LVL10:
+  33:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 224              		.loc 1 33 4 view .LVU60
+ 225 00c0 FFF7FEFF 		bl	sscanf
+ 226              	.LVL11:
+  34:Lib/Src/MotorControl.c **** 			cnc->x_axis.Kp = kp;
+ 227              		.loc 1 34 4 is_stmt 1 view .LVU61
+ 228 00c4 2822     		movs	r2, #40
+ 229 00c6 0021     		movs	r1, #0
+ 230 00c8 2846     		mov	r0, r5
+ 231 00ca FFF7FEFF 		bl	memset
+ 232              	.LVL12:
+  35:Lib/Src/MotorControl.c **** 			cnc->x_axis.Ki = ki;
+ 233              		.loc 1 35 4 view .LVU62
+  35:Lib/Src/MotorControl.c **** 			cnc->x_axis.Ki = ki;
+ 234              		.loc 1 35 19 is_stmt 0 view .LVU63
+ 235 00ce 049B     		ldr	r3, [sp, #16]	@ float
+ 236 00d0 2360     		str	r3, [r4]	@ float
+  36:Lib/Src/MotorControl.c **** 			cnc->x_axis.Kd = kd;
+ 237              		.loc 1 36 4 is_stmt 1 view .LVU64
+  36:Lib/Src/MotorControl.c **** 			cnc->x_axis.Kd = kd;
+ 238              		.loc 1 36 19 is_stmt 0 view .LVU65
+ 239 00d2 039B     		ldr	r3, [sp, #12]	@ float
+ 240 00d4 6360     		str	r3, [r4, #4]	@ float
+  37:Lib/Src/MotorControl.c **** 		}
+ 241              		.loc 1 37 4 is_stmt 1 view .LVU66
+  37:Lib/Src/MotorControl.c **** 		}
+ 242              		.loc 1 37 19 is_stmt 0 view .LVU67
+ 243 00d6 059B     		ldr	r3, [sp, #20]	@ float
+ 244 00d8 A360     		str	r3, [r4, #8]	@ float
+ 245              	.LBE3:
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 8
 
 
- 392 00e6 206B     		ldr	r0, [r4, #48]
- 393              	.LVL35:
-  58:Lib/Src/MotorControl.c **** 
- 394              		.loc 1 58 4 is_stmt 0 view .LVU98
- 395 00e8 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 396              	.LVL36:
- 397              		.loc 1 61 1 view .LVU99
- 398 00ec A8E7     		b	.L10
- 399              	.LVL37:
- 400              	.L23:
-  57:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 401              		.loc 1 57 4 discriminator 2 view .LVU100
- 402 00ee 042B     		cmp	r3, #4
- 403 00f0 05D0     		beq	.L36
-  57:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 404              		.loc 1 57 4 discriminator 4 view .LVU101
- 405 00f2 082B     		cmp	r3, #8
- 406 00f4 07D0     		beq	.L37
-  57:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 407              		.loc 1 57 4 discriminator 7 view .LVU102
- 408 00f6 A36A     		ldr	r3, [r4, #40]
- 409 00f8 1B68     		ldr	r3, [r3]
- 410 00fa 1864     		str	r0, [r3, #64]
- 411 00fc F1E7     		b	.L24
- 412              	.L36:
-  57:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 413              		.loc 1 57 4 discriminator 3 view .LVU103
- 414 00fe A36A     		ldr	r3, [r4, #40]
- 415 0100 1B68     		ldr	r3, [r3]
- 416 0102 9863     		str	r0, [r3, #56]
- 417 0104 EDE7     		b	.L24
- 418              	.L37:
-  57:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
- 419              		.loc 1 57 4 discriminator 6 view .LVU104
- 420 0106 A36A     		ldr	r3, [r4, #40]
- 421 0108 1B68     		ldr	r3, [r3]
- 422 010a D863     		str	r0, [r3, #60]
- 423 010c E9E7     		b	.L24
- 424              	.L39:
- 425 010e 00BF     		.align	2
- 426              	.L38:
- 427 0110 0000C842 		.word	1120403456
- 428 0114 000080BF 		.word	-1082130432
- 429              		.cfi_endproc
- 430              	.LFE69:
- 432              		.section	.text.readEncoder,"ax",%progbits
- 433              		.align	1
- 434              		.global	readEncoder
- 435              		.syntax unified
- 436              		.thumb
- 437              		.thumb_func
- 439              	readEncoder:
- 440              	.LVL38:
- 441              	.LFB70:
-  62:Lib/Src/MotorControl.c **** 
-  63:Lib/Src/MotorControl.c **** // void readEncoder(TIM_HandleTypeDef* htim, int *Pos)
-  64:Lib/Src/MotorControl.c **** // {
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 11
+ 246 00da E5E7     		b	.L9
+ 247              	.LVL13:
+ 248              	.L17:
+ 249              	.LBB4:
+  41:Lib/Src/MotorControl.c **** 			sscanf(cnc->data.ReceiveBuff, "SYKp%fKi%fKd%f", &kp, &ki, &kd);
+ 250              		.loc 1 41 4 is_stmt 1 view .LVU68
+  42:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 251              		.loc 1 42 4 view .LVU69
+  42:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 252              		.loc 1 42 20 is_stmt 0 view .LVU70
+ 253 00dc 00F59975 		add	r5, r0, #306
+  42:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 254              		.loc 1 42 4 view .LVU71
+ 255 00e0 05AB     		add	r3, sp, #20
+ 256 00e2 0093     		str	r3, [sp]
+ 257 00e4 03AB     		add	r3, sp, #12
+ 258 00e6 04AA     		add	r2, sp, #16
+ 259 00e8 3149     		ldr	r1, .L21+12
+ 260 00ea 2846     		mov	r0, r5
+ 261              	.LVL14:
+  42:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 262              		.loc 1 42 4 view .LVU72
+ 263 00ec FFF7FEFF 		bl	sscanf
+ 264              	.LVL15:
+  43:Lib/Src/MotorControl.c **** 			cnc->y_axis.Kp = kp;
+ 265              		.loc 1 43 4 is_stmt 1 view .LVU73
+ 266 00f0 2822     		movs	r2, #40
+ 267 00f2 0021     		movs	r1, #0
+ 268 00f4 2846     		mov	r0, r5
+ 269 00f6 FFF7FEFF 		bl	memset
+ 270              	.LVL16:
+  44:Lib/Src/MotorControl.c **** 			cnc->y_axis.Ki = ki;
+ 271              		.loc 1 44 4 view .LVU74
+  44:Lib/Src/MotorControl.c **** 			cnc->y_axis.Ki = ki;
+ 272              		.loc 1 44 19 is_stmt 0 view .LVU75
+ 273 00fa 049B     		ldr	r3, [sp, #16]	@ float
+ 274 00fc A365     		str	r3, [r4, #88]	@ float
+  45:Lib/Src/MotorControl.c **** 			cnc->y_axis.Kd = kd;
+ 275              		.loc 1 45 4 is_stmt 1 view .LVU76
+  45:Lib/Src/MotorControl.c **** 			cnc->y_axis.Kd = kd;
+ 276              		.loc 1 45 19 is_stmt 0 view .LVU77
+ 277 00fe 039B     		ldr	r3, [sp, #12]	@ float
+ 278 0100 E365     		str	r3, [r4, #92]	@ float
+  46:Lib/Src/MotorControl.c **** 		}
+ 279              		.loc 1 46 4 is_stmt 1 view .LVU78
+  46:Lib/Src/MotorControl.c **** 		}
+ 280              		.loc 1 46 19 is_stmt 0 view .LVU79
+ 281 0102 059B     		ldr	r3, [sp, #20]	@ float
+ 282 0104 2366     		str	r3, [r4, #96]	@ float
+ 283              	.LBE4:
+ 284 0106 CFE7     		b	.L9
+ 285              	.LVL17:
+ 286              	.L18:
+ 287              	.LBB5:
+  50:Lib/Src/MotorControl.c **** 			sscanf(cnc->data.ReceiveBuff, "SZKp%fKi%fKd%f", &kp, &ki, &kd);
+ 288              		.loc 1 50 4 is_stmt 1 view .LVU80
+  51:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 9
 
 
-  65:Lib/Src/MotorControl.c **** // 	//*Pos += __HAL_TIM_GET_COUNTER(htim);
-  66:Lib/Src/MotorControl.c **** // 	*Pos += (int16_t)(htim->Instance->CNT);
-  67:Lib/Src/MotorControl.c **** // 	htim->Instance->CNT=0;
-  68:Lib/Src/MotorControl.c **** // }
-  69:Lib/Src/MotorControl.c **** 
-  70:Lib/Src/MotorControl.c **** void readEncoder(AXIS *axis)
-  71:Lib/Src/MotorControl.c **** {
- 442              		.loc 1 71 1 is_stmt 1 view -0
- 443              		.cfi_startproc
- 444              		@ args = 0, pretend = 0, frame = 0
- 445              		@ frame_needed = 0, uses_anonymous_args = 0
- 446              		@ link register save eliminated.
-  72:Lib/Src/MotorControl.c **** 	// axis->pos += (int16_t)(axis->htim_enc->Instance->CNT);
-  73:Lib/Src/MotorControl.c **** 	// axis->htim_enc->Instance->CNT = 0;
-  74:Lib/Src/MotorControl.c **** 
-  75:Lib/Src/MotorControl.c **** 	axis->pos += (int16_t)*axis->enc;
- 447              		.loc 1 75 2 view .LVU106
- 448              		.loc 1 75 29 is_stmt 0 view .LVU107
- 449 0000 426A     		ldr	r2, [r0, #36]
- 450              		.loc 1 75 15 view .LVU108
- 451 0002 B2F90010 		ldrsh	r1, [r2]
- 452              		.loc 1 75 12 view .LVU109
- 453 0006 8369     		ldr	r3, [r0, #24]
- 454 0008 0B44     		add	r3, r3, r1
- 455 000a 8361     		str	r3, [r0, #24]
-  76:Lib/Src/MotorControl.c **** 	*axis->enc = 0;
- 456              		.loc 1 76 2 is_stmt 1 view .LVU110
- 457              		.loc 1 76 13 is_stmt 0 view .LVU111
- 458 000c 0023     		movs	r3, #0
- 459 000e 1360     		str	r3, [r2]
-  77:Lib/Src/MotorControl.c **** }
- 460              		.loc 1 77 1 view .LVU112
- 461 0010 7047     		bx	lr
- 462              		.cfi_endproc
- 463              	.LFE70:
- 465              		.section	.text.sample,"ax",%progbits
- 466              		.align	1
- 467              		.global	sample
- 468              		.syntax unified
- 469              		.thumb
- 470              		.thumb_func
- 472              	sample:
- 473              	.LVL39:
- 474              	.LFB71:
-  78:Lib/Src/MotorControl.c **** 
-  79:Lib/Src/MotorControl.c **** void sample(AXIS * axis)
-  80:Lib/Src/MotorControl.c **** {
- 475              		.loc 1 80 1 is_stmt 1 view -0
- 476              		.cfi_startproc
- 477              		@ args = 0, pretend = 0, frame = 0
- 478              		@ frame_needed = 0, uses_anonymous_args = 0
- 479              		@ link register save eliminated.
-  81:Lib/Src/MotorControl.c **** 	if(axis->pid_process)
- 480              		.loc 1 81 2 view .LVU114
- 481              		.loc 1 81 9 is_stmt 0 view .LVU115
- 482 0000 90F84530 		ldrb	r3, [r0, #69]	@ zero_extendqisi2
- 483              		.loc 1 81 4 view .LVU116
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 12
+ 289              		.loc 1 51 4 view .LVU81
+  51:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 290              		.loc 1 51 20 is_stmt 0 view .LVU82
+ 291 0108 00F59975 		add	r5, r0, #306
+  51:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 292              		.loc 1 51 4 view .LVU83
+ 293 010c 05AB     		add	r3, sp, #20
+ 294 010e 0093     		str	r3, [sp]
+ 295 0110 03AB     		add	r3, sp, #12
+ 296 0112 04AA     		add	r2, sp, #16
+ 297 0114 2749     		ldr	r1, .L21+16
+ 298 0116 2846     		mov	r0, r5
+ 299              	.LVL18:
+  51:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 300              		.loc 1 51 4 view .LVU84
+ 301 0118 FFF7FEFF 		bl	sscanf
+ 302              	.LVL19:
+  52:Lib/Src/MotorControl.c **** 			cnc->z_axis.Kp = kp;
+ 303              		.loc 1 52 4 is_stmt 1 view .LVU85
+ 304 011c 2822     		movs	r2, #40
+ 305 011e 0021     		movs	r1, #0
+ 306 0120 2846     		mov	r0, r5
+ 307 0122 FFF7FEFF 		bl	memset
+ 308              	.LVL20:
+  53:Lib/Src/MotorControl.c **** 			cnc->z_axis.Ki = ki;
+ 309              		.loc 1 53 4 view .LVU86
+  53:Lib/Src/MotorControl.c **** 			cnc->z_axis.Ki = ki;
+ 310              		.loc 1 53 19 is_stmt 0 view .LVU87
+ 311 0126 049B     		ldr	r3, [sp, #16]	@ float
+ 312 0128 C4F8B030 		str	r3, [r4, #176]	@ float
+  54:Lib/Src/MotorControl.c **** 			cnc->z_axis.Kd = kd;
+ 313              		.loc 1 54 4 is_stmt 1 view .LVU88
+  54:Lib/Src/MotorControl.c **** 			cnc->z_axis.Kd = kd;
+ 314              		.loc 1 54 19 is_stmt 0 view .LVU89
+ 315 012c 039B     		ldr	r3, [sp, #12]	@ float
+ 316 012e C4F8B430 		str	r3, [r4, #180]	@ float
+  55:Lib/Src/MotorControl.c **** 		}
+ 317              		.loc 1 55 4 is_stmt 1 view .LVU90
+  55:Lib/Src/MotorControl.c **** 		}
+ 318              		.loc 1 55 19 is_stmt 0 view .LVU91
+ 319 0132 059B     		ldr	r3, [sp, #20]	@ float
+ 320 0134 C4F8B830 		str	r3, [r4, #184]	@ float
+ 321              	.LBE5:
+ 322 0138 B6E7     		b	.L9
+ 323              	.LVL21:
+ 324              	.L19:
+ 325              	.LBB6:
+  59:Lib/Src/MotorControl.c **** 			sscanf(cnc->data.ReceiveBuff, "SEX%dY%dZ%d", &err_x, &err_y, &err_z);
+ 326              		.loc 1 59 4 is_stmt 1 view .LVU92
+  60:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 327              		.loc 1 60 4 view .LVU93
+  60:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 328              		.loc 1 60 20 is_stmt 0 view .LVU94
+ 329 013a 00F59975 		add	r5, r0, #306
+  60:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 330              		.loc 1 60 4 view .LVU95
+ 331 013e 05AB     		add	r3, sp, #20
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 10
 
 
- 484 0004 53B1     		cbz	r3, .L41
-  82:Lib/Src/MotorControl.c **** 	{
-  83:Lib/Src/MotorControl.c **** 		axis->time_sample++;
- 485              		.loc 1 83 3 is_stmt 1 view .LVU117
- 486              		.loc 1 83 7 is_stmt 0 view .LVU118
- 487 0006 037D     		ldrb	r3, [r0, #20]	@ zero_extendqisi2
- 488              		.loc 1 83 20 view .LVU119
- 489 0008 0133     		adds	r3, r3, #1
- 490 000a DBB2     		uxtb	r3, r3
- 491 000c 0375     		strb	r3, [r0, #20]
-  84:Lib/Src/MotorControl.c **** 		if( axis->time_sample >= T_SAMPLE )
- 492              		.loc 1 84 3 is_stmt 1 view .LVU120
- 493              		.loc 1 84 5 is_stmt 0 view .LVU121
- 494 000e 012B     		cmp	r3, #1
- 495 0010 04D9     		bls	.L41
-  85:Lib/Src/MotorControl.c **** 		{
-  86:Lib/Src/MotorControl.c **** 			//readEncoder(axis->htim_enc, &axis->pos);
-  87:Lib/Src/MotorControl.c **** 			//axis->pos += (int16_t)(axis->htim_enc->Instance->CNT);
-  88:Lib/Src/MotorControl.c **** 			//axis->htim_enc->Instance->CNT = 0;
-  89:Lib/Src/MotorControl.c **** 			//PID_control(axis->setpoint, axis);
-  90:Lib/Src/MotorControl.c **** 			axis->time_sample = 0;			
- 496              		.loc 1 90 4 is_stmt 1 view .LVU122
- 497              		.loc 1 90 22 is_stmt 0 view .LVU123
- 498 0012 0023     		movs	r3, #0
- 499 0014 0375     		strb	r3, [r0, #20]
-  91:Lib/Src/MotorControl.c **** 			axis->sample_flag = true;
- 500              		.loc 1 91 4 is_stmt 1 view .LVU124
- 501              		.loc 1 91 22 is_stmt 0 view .LVU125
- 502 0016 0123     		movs	r3, #1
- 503 0018 80F84630 		strb	r3, [r0, #70]
- 504              	.L41:
-  92:Lib/Src/MotorControl.c **** 		}
-  93:Lib/Src/MotorControl.c **** 	}
-  94:Lib/Src/MotorControl.c **** }
- 505              		.loc 1 94 1 view .LVU126
- 506 001c 7047     		bx	lr
- 507              		.cfi_endproc
- 508              	.LFE71:
- 510              		.global	__aeabi_i2d
- 511              		.global	__aeabi_dmul
- 512              		.global	__aeabi_f2d
- 513              		.global	__aeabi_dadd
- 514              		.global	__aeabi_d2f
- 515              		.global	__aeabi_i2f
- 516              		.global	__aeabi_fadd
- 517              		.global	__aeabi_ddiv
- 518              		.section	.text.PID_control,"ax",%progbits
- 519              		.align	1
- 520              		.global	PID_control
- 521              		.syntax unified
- 522              		.thumb
- 523              		.thumb_func
- 525              	PID_control:
- 526              	.LVL40:
- 527              	.LFB72:
-  95:Lib/Src/MotorControl.c **** 
-  96:Lib/Src/MotorControl.c **** void PID_control(int sp, AXIS *pid)
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 13
+ 332 0140 0093     		str	r3, [sp]
+ 333 0142 04AB     		add	r3, sp, #16
+ 334 0144 03AA     		add	r2, sp, #12
+ 335 0146 1C49     		ldr	r1, .L21+20
+ 336 0148 2846     		mov	r0, r5
+ 337              	.LVL22:
+  60:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 338              		.loc 1 60 4 view .LVU96
+ 339 014a FFF7FEFF 		bl	sscanf
+ 340              	.LVL23:
+  61:Lib/Src/MotorControl.c **** 			cnc->x_axis.ERROR = err_x;
+ 341              		.loc 1 61 4 is_stmt 1 view .LVU97
+ 342 014e 2822     		movs	r2, #40
+ 343 0150 0021     		movs	r1, #0
+ 344 0152 2846     		mov	r0, r5
+ 345 0154 FFF7FEFF 		bl	memset
+ 346              	.LVL24:
+  62:Lib/Src/MotorControl.c **** 			cnc->y_axis.ERROR = err_y;
+ 347              		.loc 1 62 4 view .LVU98
+  62:Lib/Src/MotorControl.c **** 			cnc->y_axis.ERROR = err_y;
+ 348              		.loc 1 62 22 is_stmt 0 view .LVU99
+ 349 0158 9DF80C30 		ldrb	r3, [sp, #12]	@ zero_extendqisi2
+ 350 015c 84F85430 		strb	r3, [r4, #84]
+  63:Lib/Src/MotorControl.c **** 			cnc->z_axis.ERROR = err_z;
+ 351              		.loc 1 63 4 is_stmt 1 view .LVU100
+  63:Lib/Src/MotorControl.c **** 			cnc->z_axis.ERROR = err_z;
+ 352              		.loc 1 63 22 is_stmt 0 view .LVU101
+ 353 0160 9DF81030 		ldrb	r3, [sp, #16]	@ zero_extendqisi2
+ 354 0164 84F8AC30 		strb	r3, [r4, #172]
+  64:Lib/Src/MotorControl.c **** 		}
+ 355              		.loc 1 64 4 is_stmt 1 view .LVU102
+  64:Lib/Src/MotorControl.c **** 		}
+ 356              		.loc 1 64 22 is_stmt 0 view .LVU103
+ 357 0168 9DF81430 		ldrb	r3, [sp, #20]	@ zero_extendqisi2
+ 358 016c 84F80431 		strb	r3, [r4, #260]
+ 359              	.LBE6:
+ 360 0170 9AE7     		b	.L9
+ 361              	.LVL25:
+ 362              	.L20:
+ 363              	.LBB7:
+  68:Lib/Src/MotorControl.c **** 			sscanf(cnc->data.ReceiveBuff, "SOZ%fS%f", &z_max, &step);
+ 364              		.loc 1 68 4 is_stmt 1 view .LVU104
+  69:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 365              		.loc 1 69 4 view .LVU105
+  69:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 366              		.loc 1 69 20 is_stmt 0 view .LVU106
+ 367 0172 00F59975 		add	r5, r0, #306
+  69:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 368              		.loc 1 69 4 view .LVU107
+ 369 0176 05AB     		add	r3, sp, #20
+ 370 0178 04AA     		add	r2, sp, #16
+ 371 017a 1049     		ldr	r1, .L21+24
+ 372 017c 2846     		mov	r0, r5
+ 373              	.LVL26:
+  69:Lib/Src/MotorControl.c **** 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+ 374              		.loc 1 69 4 view .LVU108
+ 375 017e FFF7FEFF 		bl	sscanf
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 11
 
 
-  97:Lib/Src/MotorControl.c **** {
- 528              		.loc 1 97 1 is_stmt 1 view -0
- 529              		.cfi_startproc
- 530              		@ args = 0, pretend = 0, frame = 0
- 531              		@ frame_needed = 0, uses_anonymous_args = 0
- 532              		.loc 1 97 1 is_stmt 0 view .LVU128
- 533 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
- 534              	.LCFI5:
- 535              		.cfi_def_cfa_offset 24
- 536              		.cfi_offset 4, -24
- 537              		.cfi_offset 5, -20
- 538              		.cfi_offset 6, -16
- 539              		.cfi_offset 7, -12
- 540              		.cfi_offset 8, -8
- 541              		.cfi_offset 14, -4
- 542 0004 0C46     		mov	r4, r1
-  98:Lib/Src/MotorControl.c **** 	int e;
- 543              		.loc 1 98 2 is_stmt 1 view .LVU129
-  99:Lib/Src/MotorControl.c **** 	e = sp - pid->pos;	
- 544              		.loc 1 99 2 view .LVU130
- 545              		.loc 1 99 14 is_stmt 0 view .LVU131
- 546 0006 8B69     		ldr	r3, [r1, #24]
- 547              		.loc 1 99 9 view .LVU132
- 548 0008 C51A     		subs	r5, r0, r3
- 549              	.LVL41:
- 100:Lib/Src/MotorControl.c **** 	pid->I_part += TS*e;
- 550              		.loc 1 100 2 is_stmt 1 view .LVU133
- 551              		.loc 1 100 19 is_stmt 0 view .LVU134
- 552 000a 2846     		mov	r0, r5
- 553              	.LVL42:
- 554              		.loc 1 100 19 view .LVU135
- 555 000c FFF7FEFF 		bl	__aeabi_i2d
- 556              	.LVL43:
- 557              		.loc 1 100 19 view .LVU136
- 558 0010 27A3     		adr	r3, .L46
- 559 0012 D3E90023 		ldrd	r2, [r3]
- 560 0016 FFF7FEFF 		bl	__aeabi_dmul
- 561              	.LVL44:
- 562 001a 0646     		mov	r6, r0
- 563 001c 0F46     		mov	r7, r1
- 564              		.loc 1 100 14 view .LVU137
- 565 001e E068     		ldr	r0, [r4, #12]	@ float
- 566 0020 FFF7FEFF 		bl	__aeabi_f2d
- 567              	.LVL45:
- 568 0024 3246     		mov	r2, r6
- 569 0026 3B46     		mov	r3, r7
- 570 0028 FFF7FEFF 		bl	__aeabi_dadd
- 571              	.LVL46:
- 572 002c FFF7FEFF 		bl	__aeabi_d2f
- 573              	.LVL47:
- 574 0030 0646     		mov	r6, r0
- 575 0032 E060     		str	r0, [r4, #12]	@ float
- 101:Lib/Src/MotorControl.c **** 	pid->pwm = pid->Kp*e + pid->Ki*pid->I_part + pid->Kd*(e-pid->e_pre)/TS;
- 576              		.loc 1 101 2 is_stmt 1 view .LVU138
- 577              		.loc 1 101 16 is_stmt 0 view .LVU139
- 578 0034 2768     		ldr	r7, [r4]	@ float
- 579              		.loc 1 101 20 view .LVU140
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 14
+ 376              	.LVL27:
+  70:Lib/Src/MotorControl.c **** 			cnc->x_axis.ERROR = z_max;
+ 377              		.loc 1 70 4 is_stmt 1 view .LVU109
+ 378 0182 2822     		movs	r2, #40
+ 379 0184 0021     		movs	r1, #0
+ 380 0186 2846     		mov	r0, r5
+ 381 0188 FFF7FEFF 		bl	memset
+ 382              	.LVL28:
+  71:Lib/Src/MotorControl.c **** 			cnc->y_axis.ERROR = step;
+ 383              		.loc 1 71 4 view .LVU110
+  71:Lib/Src/MotorControl.c **** 			cnc->y_axis.ERROR = step;
+ 384              		.loc 1 71 22 is_stmt 0 view .LVU111
+ 385 018c 0498     		ldr	r0, [sp, #16]	@ float
+ 386 018e FFF7FEFF 		bl	__aeabi_f2uiz
+ 387              	.LVL29:
+ 388 0192 84F85400 		strb	r0, [r4, #84]
+  72:Lib/Src/MotorControl.c **** 		}
+ 389              		.loc 1 72 4 is_stmt 1 view .LVU112
+  72:Lib/Src/MotorControl.c **** 		}
+ 390              		.loc 1 72 22 is_stmt 0 view .LVU113
+ 391 0196 0598     		ldr	r0, [sp, #20]	@ float
+ 392 0198 FFF7FEFF 		bl	__aeabi_f2uiz
+ 393              	.LVL30:
+ 394 019c 84F8AC00 		strb	r0, [r4, #172]
+ 395 01a0 82E7     		b	.L9
+ 396              	.L22:
+ 397 01a2 00BF     		.align	2
+ 398              	.L21:
+ 399 01a4 00000000 		.word	.LC0
+ 400 01a8 04000000 		.word	.LC1
+ 401 01ac 10000000 		.word	.LC2
+ 402 01b0 20000000 		.word	.LC3
+ 403 01b4 30000000 		.word	.LC4
+ 404 01b8 40000000 		.word	.LC5
+ 405 01bc 4C000000 		.word	.LC6
+ 406              	.LBE7:
+ 407              	.LBE2:
+ 408              		.cfi_endproc
+ 409              	.LFE68:
+ 411              		.global	__aeabi_fcmpgt
+ 412              		.global	__aeabi_fcmpeq
+ 413              		.global	__aeabi_fcmplt
+ 414              		.global	__aeabi_fmul
+ 415              		.global	__aeabi_f2iz
+ 416              		.section	.text.PWM,"ax",%progbits
+ 417              		.align	1
+ 418              		.global	PWM
+ 419              		.syntax unified
+ 420              		.thumb
+ 421              		.thumb_func
+ 423              	PWM:
+ 424              	.LVL31:
+ 425              	.LFB69:
+  81:Lib/Src/MotorControl.c **** 
+  82:Lib/Src/MotorControl.c **** void PWM(AXIS *axis)
+  83:Lib/Src/MotorControl.c **** {
+ 426              		.loc 1 83 1 is_stmt 1 view -0
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 12
 
 
- 580 0036 2846     		mov	r0, r5
- 581 0038 FFF7FEFF 		bl	__aeabi_i2f
- 582              	.LVL48:
- 583 003c 3946     		mov	r1, r7
- 584 003e FFF7FEFF 		bl	__aeabi_fmul
- 585              	.LVL49:
- 586 0042 0746     		mov	r7, r0
- 587              		.loc 1 101 32 view .LVU141
- 588 0044 6168     		ldr	r1, [r4, #4]	@ float
- 589 0046 3046     		mov	r0, r6
- 590 0048 FFF7FEFF 		bl	__aeabi_fmul
- 591              	.LVL50:
- 592 004c 0146     		mov	r1, r0
- 593              		.loc 1 101 23 view .LVU142
- 594 004e 3846     		mov	r0, r7
- 595 0050 FFF7FEFF 		bl	__aeabi_fadd
- 596              	.LVL51:
- 597 0054 FFF7FEFF 		bl	__aeabi_f2d
- 598              	.LVL52:
- 599 0058 0646     		mov	r6, r0
- 600 005a 0F46     		mov	r7, r1
- 601              		.loc 1 101 50 view .LVU143
- 602 005c D4F80880 		ldr	r8, [r4, #8]	@ float
- 603              		.loc 1 101 61 view .LVU144
- 604 0060 2069     		ldr	r0, [r4, #16]
- 605              		.loc 1 101 54 view .LVU145
- 606 0062 281A     		subs	r0, r5, r0
- 607 0064 FFF7FEFF 		bl	__aeabi_i2f
- 608              	.LVL53:
- 609 0068 4146     		mov	r1, r8
- 610 006a FFF7FEFF 		bl	__aeabi_fmul
- 611              	.LVL54:
- 612 006e FFF7FEFF 		bl	__aeabi_f2d
- 613              	.LVL55:
- 614              		.loc 1 101 69 view .LVU146
- 615 0072 0FA3     		adr	r3, .L46
- 616 0074 D3E90023 		ldrd	r2, [r3]
- 617 0078 FFF7FEFF 		bl	__aeabi_ddiv
- 618              	.LVL56:
- 619 007c 0246     		mov	r2, r0
- 620 007e 0B46     		mov	r3, r1
- 621              		.loc 1 101 45 view .LVU147
- 622 0080 3046     		mov	r0, r6
- 623 0082 3946     		mov	r1, r7
- 624 0084 FFF7FEFF 		bl	__aeabi_dadd
- 625              	.LVL57:
- 626 0088 FFF7FEFF 		bl	__aeabi_d2f
- 627              	.LVL58:
- 628              		.loc 1 101 11 view .LVU148
- 629 008c E061     		str	r0, [r4, #28]	@ float
- 102:Lib/Src/MotorControl.c **** 	pid->e_pre = e;
- 630              		.loc 1 102 2 is_stmt 1 view .LVU149
- 631              		.loc 1 102 13 is_stmt 0 view .LVU150
- 632 008e 2561     		str	r5, [r4, #16]
- 103:Lib/Src/MotorControl.c **** 	if(int_abs(e) < pid->ERROR)
- 633              		.loc 1 103 2 is_stmt 1 view .LVU151
- 634              		.loc 1 103 5 is_stmt 0 view .LVU152
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 15
+ 427              		.cfi_startproc
+ 428              		@ args = 0, pretend = 0, frame = 0
+ 429              		@ frame_needed = 0, uses_anonymous_args = 0
+ 430              		.loc 1 83 1 is_stmt 0 view .LVU115
+ 431 0000 38B5     		push	{r3, r4, r5, lr}
+ 432              	.LCFI4:
+ 433              		.cfi_def_cfa_offset 16
+ 434              		.cfi_offset 3, -16
+ 435              		.cfi_offset 4, -12
+ 436              		.cfi_offset 5, -8
+ 437              		.cfi_offset 14, -4
+ 438 0002 0446     		mov	r4, r0
+  84:Lib/Src/MotorControl.c **** 	float duty = axis->pwm;
+ 439              		.loc 1 84 2 is_stmt 1 view .LVU116
+ 440              		.loc 1 84 8 is_stmt 0 view .LVU117
+ 441 0004 C569     		ldr	r5, [r0, #28]	@ float
+ 442              	.LVL32:
+  85:Lib/Src/MotorControl.c **** 	if (duty > 1) duty = 1;
+ 443              		.loc 1 85 2 is_stmt 1 view .LVU118
+ 444              		.loc 1 85 5 is_stmt 0 view .LVU119
+ 445 0006 4FF07E51 		mov	r1, #1065353216
+ 446 000a 2846     		mov	r0, r5
+ 447              	.LVL33:
+ 448              		.loc 1 85 5 view .LVU120
+ 449 000c FFF7FEFF 		bl	__aeabi_fcmpgt
+ 450              	.LVL34:
+ 451 0010 B8B1     		cbz	r0, .L44
+ 452              		.loc 1 85 21 view .LVU121
+ 453 0012 4FF07E55 		mov	r5, #1065353216
+ 454              	.LVL35:
+ 455              	.L24:
+  86:Lib/Src/MotorControl.c **** 	else if(duty ==0)  duty = 0;
+  87:Lib/Src/MotorControl.c **** 	else if (duty < -1) duty = -1;
+  88:Lib/Src/MotorControl.c **** 	int16_t pwm = duty*MAX_SPEED;
+ 456              		.loc 1 88 2 is_stmt 1 view .LVU122
+ 457              		.loc 1 88 20 is_stmt 0 view .LVU123
+ 458 0016 3E49     		ldr	r1, .L51
+ 459 0018 2846     		mov	r0, r5
+ 460 001a FFF7FEFF 		bl	__aeabi_fmul
+ 461              	.LVL36:
+ 462              		.loc 1 88 10 view .LVU124
+ 463 001e FFF7FEFF 		bl	__aeabi_f2iz
+ 464              	.LVL37:
+ 465 0022 00B2     		sxth	r0, r0
+ 466              	.LVL38:
+  89:Lib/Src/MotorControl.c **** 		
+  90:Lib/Src/MotorControl.c **** 	if (pwm > 0)
+ 467              		.loc 1 90 2 is_stmt 1 view .LVU125
+ 468              		.loc 1 90 5 is_stmt 0 view .LVU126
+ 469 0024 0028     		cmp	r0, #0
+ 470 0026 31DD     		ble	.L25
+  91:Lib/Src/MotorControl.c **** 		{
+  92:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, 100 - pwm);
+ 471              		.loc 1 92 4 is_stmt 1 view .LVU127
+ 472 0028 E36A     		ldr	r3, [r4, #44]
+ 473 002a CBB9     		cbnz	r3, .L26
+ 474              		.loc 1 92 4 is_stmt 0 discriminator 1 view .LVU128
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 13
 
 
- 635 0090 2846     		mov	r0, r5
- 636 0092 FFF7FEFF 		bl	int_abs
- 637              	.LVL59:
- 638              		.loc 1 103 21 view .LVU153
- 639 0096 94F85430 		ldrb	r3, [r4, #84]	@ zero_extendqisi2
- 640              		.loc 1 103 4 view .LVU154
- 641 009a 9842     		cmp	r0, r3
- 642 009c 04DA     		bge	.L43
- 104:Lib/Src/MotorControl.c **** 	{
- 105:Lib/Src/MotorControl.c **** 		pid->finish = true;
- 643              		.loc 1 105 3 is_stmt 1 view .LVU155
- 644              		.loc 1 105 15 is_stmt 0 view .LVU156
- 645 009e 0123     		movs	r3, #1
- 646 00a0 84F84430 		strb	r3, [r4, #68]
- 106:Lib/Src/MotorControl.c **** 		pid->pwm = 0;
- 647              		.loc 1 106 3 is_stmt 1 view .LVU157
- 648              		.loc 1 106 12 is_stmt 0 view .LVU158
- 649 00a4 0023     		movs	r3, #0
- 650 00a6 E361     		str	r3, [r4, #28]	@ float
- 651              	.L43:
- 107:Lib/Src/MotorControl.c **** 		//pid->pid_process = false;
- 108:Lib/Src/MotorControl.c **** 	}
- 109:Lib/Src/MotorControl.c **** }
- 652              		.loc 1 109 1 view .LVU159
- 653 00a8 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
- 654              	.LVL60:
- 655              	.L47:
- 656              		.loc 1 109 1 view .LVU160
- 657 00ac AFF30080 		.align	3
- 658              	.L46:
- 659 00b0 7B14AE47 		.word	1202590843
- 660 00b4 E17A943F 		.word	1066695393
- 661              		.cfi_endproc
- 662              	.LFE72:
- 664              		.section	.text.HOME,"ax",%progbits
- 665              		.align	1
- 666              		.global	HOME
- 667              		.syntax unified
- 668              		.thumb
- 669              		.thumb_func
- 671              	HOME:
- 672              	.LVL61:
- 673              	.LFB73:
- 110:Lib/Src/MotorControl.c **** 
- 111:Lib/Src/MotorControl.c **** void HOME(AXIS *axis)
- 112:Lib/Src/MotorControl.c **** {
- 674              		.loc 1 112 1 is_stmt 1 view -0
- 675              		.cfi_startproc
- 676              		@ args = 0, pretend = 0, frame = 0
- 677              		@ frame_needed = 0, uses_anonymous_args = 0
- 678              		.loc 1 112 1 is_stmt 0 view .LVU162
- 679 0000 10B5     		push	{r4, lr}
- 680              	.LCFI6:
- 681              		.cfi_def_cfa_offset 8
- 682              		.cfi_offset 4, -8
- 683              		.cfi_offset 14, -4
- 684 0002 0446     		mov	r4, r0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 16
+ 475 002c A36A     		ldr	r3, [r4, #40]
+ 476 002e 1B68     		ldr	r3, [r3]
+ 477 0030 C0F16400 		rsb	r0, r0, #100
+ 478              	.LVL39:
+ 479              		.loc 1 92 4 discriminator 1 view .LVU129
+ 480 0034 5863     		str	r0, [r3, #52]
+ 481              	.L27:
+  93:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
+ 482              		.loc 1 93 4 is_stmt 1 view .LVU130
+ 483 0036 0122     		movs	r2, #1
+ 484 0038 A18E     		ldrh	r1, [r4, #52]
+ 485 003a 206B     		ldr	r0, [r4, #48]
+ 486 003c FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 487              	.LVL40:
+ 488              	.L23:
+  94:Lib/Src/MotorControl.c **** 		}
+  95:Lib/Src/MotorControl.c **** 	else if (pwm == 0)
+  96:Lib/Src/MotorControl.c **** 		{
+  97:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, 0);
+  98:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+  99:Lib/Src/MotorControl.c **** 			axis->pwm = 0;
+ 100:Lib/Src/MotorControl.c **** 		}
+ 101:Lib/Src/MotorControl.c **** 	else if (pwm < 0)
+ 102:Lib/Src/MotorControl.c **** 		{
+ 103:Lib/Src/MotorControl.c **** 			pwm *= -1;
+ 104:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, pwm);
+ 105:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 106:Lib/Src/MotorControl.c **** 
+ 107:Lib/Src/MotorControl.c **** 		}
+ 108:Lib/Src/MotorControl.c **** }
+ 489              		.loc 1 108 1 is_stmt 0 view .LVU131
+ 490 0040 38BD     		pop	{r3, r4, r5, pc}
+ 491              	.LVL41:
+ 492              	.L44:
+  86:Lib/Src/MotorControl.c **** 	else if (duty < -1) duty = -1;
+ 493              		.loc 1 86 7 is_stmt 1 view .LVU132
+  86:Lib/Src/MotorControl.c **** 	else if (duty < -1) duty = -1;
+ 494              		.loc 1 86 9 is_stmt 0 view .LVU133
+ 495 0042 0021     		movs	r1, #0
+ 496 0044 2846     		mov	r0, r5
+ 497 0046 FFF7FEFF 		bl	__aeabi_fcmpeq
+ 498              	.LVL42:
+ 499 004a 38B9     		cbnz	r0, .L41
+  87:Lib/Src/MotorControl.c **** 	int16_t pwm = duty*MAX_SPEED;
+ 500              		.loc 1 87 7 is_stmt 1 view .LVU134
+  87:Lib/Src/MotorControl.c **** 	int16_t pwm = duty*MAX_SPEED;
+ 501              		.loc 1 87 10 is_stmt 0 view .LVU135
+ 502 004c 3149     		ldr	r1, .L51+4
+ 503 004e 2846     		mov	r0, r5
+ 504 0050 FFF7FEFF 		bl	__aeabi_fcmplt
+ 505              	.LVL43:
+ 506 0054 0028     		cmp	r0, #0
+ 507 0056 DED0     		beq	.L24
+  87:Lib/Src/MotorControl.c **** 	int16_t pwm = duty*MAX_SPEED;
+ 508              		.loc 1 87 27 view .LVU136
+ 509 0058 2E4D     		ldr	r5, .L51+4
+ 510              	.LVL44:
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 14
 
 
- 113:Lib/Src/MotorControl.c **** 	if( HAL_GPIO_ReadPin(axis->GPIO_HOME, axis->PIN_HOME) == 1)
- 685              		.loc 1 113 2 is_stmt 1 view .LVU163
- 686              		.loc 1 113 6 is_stmt 0 view .LVU164
- 687 0004 818F     		ldrh	r1, [r0, #60]
- 688 0006 806B     		ldr	r0, [r0, #56]
- 689              	.LVL62:
- 690              		.loc 1 113 6 view .LVU165
- 691 0008 FFF7FEFF 		bl	HAL_GPIO_ReadPin
- 692              	.LVL63:
- 693              		.loc 1 113 4 view .LVU166
- 694 000c 0128     		cmp	r0, #1
- 695 000e 08D0     		beq	.L52
- 114:Lib/Src/MotorControl.c **** 		{
- 115:Lib/Src/MotorControl.c **** 			axis->pwm = -0.8;
- 116:Lib/Src/MotorControl.c **** 			PWM(axis);
- 117:Lib/Src/MotorControl.c **** 			axis->home = false;
- 118:Lib/Src/MotorControl.c **** 		}
- 119:Lib/Src/MotorControl.c **** 	else
- 120:Lib/Src/MotorControl.c **** 		{
- 121:Lib/Src/MotorControl.c **** 			axis->pwm = 0;
- 696              		.loc 1 121 4 is_stmt 1 view .LVU167
- 697              		.loc 1 121 14 is_stmt 0 view .LVU168
- 698 0010 0023     		movs	r3, #0
- 699 0012 E361     		str	r3, [r4, #28]	@ float
- 122:Lib/Src/MotorControl.c **** 			PWM(axis);
- 700              		.loc 1 122 4 is_stmt 1 view .LVU169
- 701 0014 2046     		mov	r0, r4
- 702 0016 FFF7FEFF 		bl	PWM
- 703              	.LVL64:
- 123:Lib/Src/MotorControl.c **** 			axis->home = true;
- 704              		.loc 1 123 4 view .LVU170
- 705              		.loc 1 123 15 is_stmt 0 view .LVU171
- 706 001a 0123     		movs	r3, #1
- 707 001c 84F84730 		strb	r3, [r4, #71]
- 708              	.L48:
- 124:Lib/Src/MotorControl.c **** 		}
- 125:Lib/Src/MotorControl.c **** }
- 709              		.loc 1 125 1 view .LVU172
- 710 0020 10BD     		pop	{r4, pc}
- 711              	.LVL65:
- 712              	.L52:
- 115:Lib/Src/MotorControl.c **** 			PWM(axis);
- 713              		.loc 1 115 4 is_stmt 1 view .LVU173
- 115:Lib/Src/MotorControl.c **** 			PWM(axis);
- 714              		.loc 1 115 14 is_stmt 0 view .LVU174
- 715 0022 044B     		ldr	r3, .L53
- 716 0024 E361     		str	r3, [r4, #28]	@ float
- 116:Lib/Src/MotorControl.c **** 			axis->home = false;
- 717              		.loc 1 116 4 is_stmt 1 view .LVU175
- 718 0026 2046     		mov	r0, r4
- 719 0028 FFF7FEFF 		bl	PWM
- 720              	.LVL66:
- 117:Lib/Src/MotorControl.c **** 		}
- 721              		.loc 1 117 4 view .LVU176
- 117:Lib/Src/MotorControl.c **** 		}
- 722              		.loc 1 117 15 is_stmt 0 view .LVU177
- 723 002c 0023     		movs	r3, #0
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 17
+  87:Lib/Src/MotorControl.c **** 	int16_t pwm = duty*MAX_SPEED;
+ 511              		.loc 1 87 27 view .LVU137
+ 512 005a DCE7     		b	.L24
+ 513              	.LVL45:
+ 514              	.L41:
+  86:Lib/Src/MotorControl.c **** 	else if (duty < -1) duty = -1;
+ 515              		.loc 1 86 26 view .LVU138
+ 516 005c 0025     		movs	r5, #0
+ 517              	.LVL46:
+  86:Lib/Src/MotorControl.c **** 	else if (duty < -1) duty = -1;
+ 518              		.loc 1 86 26 view .LVU139
+ 519 005e DAE7     		b	.L24
+ 520              	.LVL47:
+ 521              	.L26:
+  92:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
+ 522              		.loc 1 92 4 discriminator 2 view .LVU140
+ 523 0060 042B     		cmp	r3, #4
+ 524 0062 07D0     		beq	.L45
+  92:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
+ 525              		.loc 1 92 4 discriminator 4 view .LVU141
+ 526 0064 082B     		cmp	r3, #8
+ 527 0066 0BD0     		beq	.L46
+  92:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
+ 528              		.loc 1 92 4 discriminator 7 view .LVU142
+ 529 0068 A36A     		ldr	r3, [r4, #40]
+ 530 006a 1B68     		ldr	r3, [r3]
+ 531 006c C0F16400 		rsb	r0, r0, #100
+ 532              	.LVL48:
+  92:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
+ 533              		.loc 1 92 4 discriminator 7 view .LVU143
+ 534 0070 1864     		str	r0, [r3, #64]
+ 535 0072 E0E7     		b	.L27
+ 536              	.LVL49:
+ 537              	.L45:
+  92:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
+ 538              		.loc 1 92 4 discriminator 3 view .LVU144
+ 539 0074 A36A     		ldr	r3, [r4, #40]
+ 540 0076 1B68     		ldr	r3, [r3]
+ 541 0078 C0F16400 		rsb	r0, r0, #100
+ 542              	.LVL50:
+  92:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
+ 543              		.loc 1 92 4 discriminator 3 view .LVU145
+ 544 007c 9863     		str	r0, [r3, #56]
+ 545 007e DAE7     		b	.L27
+ 546              	.LVL51:
+ 547              	.L46:
+  92:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
+ 548              		.loc 1 92 4 discriminator 6 view .LVU146
+ 549 0080 A36A     		ldr	r3, [r4, #40]
+ 550 0082 1B68     		ldr	r3, [r3]
+ 551 0084 C0F16400 		rsb	r0, r0, #100
+ 552              	.LVL52:
+  92:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_SET);
+ 553              		.loc 1 92 4 discriminator 6 view .LVU147
+ 554 0088 D863     		str	r0, [r3, #60]
+ 555 008a D4E7     		b	.L27
+ 556              	.LVL53:
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 15
 
 
- 724 002e 84F84730 		strb	r3, [r4, #71]
- 725 0032 F5E7     		b	.L48
- 726              	.L54:
- 727              		.align	2
- 728              	.L53:
- 729 0034 CDCC4CBF 		.word	-1085485875
- 730              		.cfi_endproc
- 731              	.LFE73:
- 733              		.section	.text.move,"ax",%progbits
- 734              		.align	1
- 735              		.global	move
- 736              		.syntax unified
- 737              		.thumb
- 738              		.thumb_func
- 740              	move:
- 741              	.LVL67:
- 742              	.LFB74:
- 126:Lib/Src/MotorControl.c **** void move(AXIS *axis, float pos)
+ 557              	.L25:
+  95:Lib/Src/MotorControl.c **** 		{
+ 558              		.loc 1 95 7 is_stmt 1 view .LVU148
+  95:Lib/Src/MotorControl.c **** 		{
+ 559              		.loc 1 95 10 is_stmt 0 view .LVU149
+ 560 008c 00BB     		cbnz	r0, .L31
+  97:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 561              		.loc 1 97 4 is_stmt 1 view .LVU150
+ 562 008e E36A     		ldr	r3, [r4, #44]
+ 563 0090 5BB9     		cbnz	r3, .L32
+  97:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 564              		.loc 1 97 4 is_stmt 0 discriminator 1 view .LVU151
+ 565 0092 A36A     		ldr	r3, [r4, #40]
+ 566 0094 1B68     		ldr	r3, [r3]
+ 567 0096 0022     		movs	r2, #0
+ 568 0098 5A63     		str	r2, [r3, #52]
+ 569              	.L33:
+  98:Lib/Src/MotorControl.c **** 			axis->pwm = 0;
+ 570              		.loc 1 98 4 is_stmt 1 view .LVU152
+ 571 009a 0022     		movs	r2, #0
+ 572 009c A18E     		ldrh	r1, [r4, #52]
+ 573 009e 206B     		ldr	r0, [r4, #48]
+ 574              	.LVL54:
+  98:Lib/Src/MotorControl.c **** 			axis->pwm = 0;
+ 575              		.loc 1 98 4 is_stmt 0 view .LVU153
+ 576 00a0 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 577              	.LVL55:
+  99:Lib/Src/MotorControl.c **** 		}
+ 578              		.loc 1 99 4 is_stmt 1 view .LVU154
+  99:Lib/Src/MotorControl.c **** 		}
+ 579              		.loc 1 99 14 is_stmt 0 view .LVU155
+ 580 00a4 0023     		movs	r3, #0
+ 581 00a6 E361     		str	r3, [r4, #28]	@ float
+ 582 00a8 CAE7     		b	.L23
+ 583              	.LVL56:
+ 584              	.L32:
+  97:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 585              		.loc 1 97 4 discriminator 2 view .LVU156
+ 586 00aa 042B     		cmp	r3, #4
+ 587 00ac 06D0     		beq	.L47
+  97:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 588              		.loc 1 97 4 discriminator 4 view .LVU157
+ 589 00ae 082B     		cmp	r3, #8
+ 590 00b0 09D0     		beq	.L48
+  97:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 591              		.loc 1 97 4 discriminator 7 view .LVU158
+ 592 00b2 A36A     		ldr	r3, [r4, #40]
+ 593 00b4 1B68     		ldr	r3, [r3]
+ 594 00b6 0022     		movs	r2, #0
+ 595 00b8 1A64     		str	r2, [r3, #64]
+ 596 00ba EEE7     		b	.L33
+ 597              	.L47:
+  97:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 598              		.loc 1 97 4 discriminator 3 view .LVU159
+ 599 00bc A36A     		ldr	r3, [r4, #40]
+ 600 00be 1B68     		ldr	r3, [r3]
+ 601 00c0 0022     		movs	r2, #0
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 16
+
+
+ 602 00c2 9A63     		str	r2, [r3, #56]
+ 603 00c4 E9E7     		b	.L33
+ 604              	.L48:
+  97:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 605              		.loc 1 97 4 discriminator 6 view .LVU160
+ 606 00c6 A36A     		ldr	r3, [r4, #40]
+ 607 00c8 1B68     		ldr	r3, [r3]
+ 608 00ca 0022     		movs	r2, #0
+ 609 00cc DA63     		str	r2, [r3, #60]
+ 610 00ce E4E7     		b	.L33
+ 611              	.L31:
+ 101:Lib/Src/MotorControl.c **** 		{
+ 612              		.loc 1 101 7 is_stmt 1 view .LVU161
+ 101:Lib/Src/MotorControl.c **** 		{
+ 613              		.loc 1 101 10 is_stmt 0 view .LVU162
+ 614 00d0 0028     		cmp	r0, #0
+ 615 00d2 B5DA     		bge	.L23
+ 103:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, pwm);
+ 616              		.loc 1 103 4 is_stmt 1 view .LVU163
+ 103:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, pwm);
+ 617              		.loc 1 103 8 is_stmt 0 view .LVU164
+ 618 00d4 4042     		rsbs	r0, r0, #0
+ 619              	.LVL57:
+ 103:Lib/Src/MotorControl.c **** 			__HAL_TIM_SetCompare(axis->htim_motor, axis->CHANNEL, pwm);
+ 620              		.loc 1 103 8 view .LVU165
+ 621 00d6 00B2     		sxth	r0, r0
+ 622              	.LVL58:
+ 104:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 623              		.loc 1 104 4 is_stmt 1 view .LVU166
+ 624 00d8 E36A     		ldr	r3, [r4, #44]
+ 625 00da 43B9     		cbnz	r3, .L36
+ 104:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 626              		.loc 1 104 4 is_stmt 0 discriminator 1 view .LVU167
+ 627 00dc A36A     		ldr	r3, [r4, #40]
+ 628 00de 1B68     		ldr	r3, [r3]
+ 629 00e0 5863     		str	r0, [r3, #52]
+ 630              	.L37:
+ 105:Lib/Src/MotorControl.c **** 
+ 631              		.loc 1 105 4 is_stmt 1 view .LVU168
+ 632 00e2 0022     		movs	r2, #0
+ 633 00e4 A18E     		ldrh	r1, [r4, #52]
+ 634 00e6 206B     		ldr	r0, [r4, #48]
+ 635              	.LVL59:
+ 105:Lib/Src/MotorControl.c **** 
+ 636              		.loc 1 105 4 is_stmt 0 view .LVU169
+ 637 00e8 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 638              	.LVL60:
+ 639              		.loc 1 108 1 view .LVU170
+ 640 00ec A8E7     		b	.L23
+ 641              	.LVL61:
+ 642              	.L36:
+ 104:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 643              		.loc 1 104 4 discriminator 2 view .LVU171
+ 644 00ee 042B     		cmp	r3, #4
+ 645 00f0 05D0     		beq	.L49
+ 104:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 646              		.loc 1 104 4 discriminator 4 view .LVU172
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 17
+
+
+ 647 00f2 082B     		cmp	r3, #8
+ 648 00f4 07D0     		beq	.L50
+ 104:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 649              		.loc 1 104 4 discriminator 7 view .LVU173
+ 650 00f6 A36A     		ldr	r3, [r4, #40]
+ 651 00f8 1B68     		ldr	r3, [r3]
+ 652 00fa 1864     		str	r0, [r3, #64]
+ 653 00fc F1E7     		b	.L37
+ 654              	.L49:
+ 104:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 655              		.loc 1 104 4 discriminator 3 view .LVU174
+ 656 00fe A36A     		ldr	r3, [r4, #40]
+ 657 0100 1B68     		ldr	r3, [r3]
+ 658 0102 9863     		str	r0, [r3, #56]
+ 659 0104 EDE7     		b	.L37
+ 660              	.L50:
+ 104:Lib/Src/MotorControl.c **** 			HAL_GPIO_WritePin(axis->GPIO_DIR, axis->PIN_DIR, GPIO_PIN_RESET);
+ 661              		.loc 1 104 4 discriminator 6 view .LVU175
+ 662 0106 A36A     		ldr	r3, [r4, #40]
+ 663 0108 1B68     		ldr	r3, [r3]
+ 664 010a D863     		str	r0, [r3, #60]
+ 665 010c E9E7     		b	.L37
+ 666              	.L52:
+ 667 010e 00BF     		.align	2
+ 668              	.L51:
+ 669 0110 0000C842 		.word	1120403456
+ 670 0114 000080BF 		.word	-1082130432
+ 671              		.cfi_endproc
+ 672              	.LFE69:
+ 674              		.section	.text.readEncoder,"ax",%progbits
+ 675              		.align	1
+ 676              		.global	readEncoder
+ 677              		.syntax unified
+ 678              		.thumb
+ 679              		.thumb_func
+ 681              	readEncoder:
+ 682              	.LVL62:
+ 683              	.LFB70:
+ 109:Lib/Src/MotorControl.c **** 
+ 110:Lib/Src/MotorControl.c **** // void readEncoder(TIM_HandleTypeDef* htim, int *Pos)
+ 111:Lib/Src/MotorControl.c **** // {
+ 112:Lib/Src/MotorControl.c **** // 	//*Pos += __HAL_TIM_GET_COUNTER(htim);
+ 113:Lib/Src/MotorControl.c **** // 	*Pos += (int16_t)(htim->Instance->CNT);
+ 114:Lib/Src/MotorControl.c **** // 	htim->Instance->CNT=0;
+ 115:Lib/Src/MotorControl.c **** // }
+ 116:Lib/Src/MotorControl.c **** 
+ 117:Lib/Src/MotorControl.c **** void readEncoder(AXIS *axis)
+ 118:Lib/Src/MotorControl.c **** {
+ 684              		.loc 1 118 1 is_stmt 1 view -0
+ 685              		.cfi_startproc
+ 686              		@ args = 0, pretend = 0, frame = 0
+ 687              		@ frame_needed = 0, uses_anonymous_args = 0
+ 688              		@ link register save eliminated.
+ 119:Lib/Src/MotorControl.c **** 	// axis->pos += (int16_t)(axis->htim_enc->Instance->CNT);
+ 120:Lib/Src/MotorControl.c **** 	// axis->htim_enc->Instance->CNT = 0;
+ 121:Lib/Src/MotorControl.c **** 
+ 122:Lib/Src/MotorControl.c **** 	axis->pos += (int16_t)*axis->enc;
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 18
+
+
+ 689              		.loc 1 122 2 view .LVU177
+ 690              		.loc 1 122 29 is_stmt 0 view .LVU178
+ 691 0000 426A     		ldr	r2, [r0, #36]
+ 692              		.loc 1 122 15 view .LVU179
+ 693 0002 B2F90010 		ldrsh	r1, [r2]
+ 694              		.loc 1 122 12 view .LVU180
+ 695 0006 8369     		ldr	r3, [r0, #24]
+ 696 0008 0B44     		add	r3, r3, r1
+ 697 000a 8361     		str	r3, [r0, #24]
+ 123:Lib/Src/MotorControl.c **** 	*axis->enc = 0;
+ 698              		.loc 1 123 2 is_stmt 1 view .LVU181
+ 699              		.loc 1 123 13 is_stmt 0 view .LVU182
+ 700 000c 0023     		movs	r3, #0
+ 701 000e 1360     		str	r3, [r2]
+ 124:Lib/Src/MotorControl.c **** }
+ 702              		.loc 1 124 1 view .LVU183
+ 703 0010 7047     		bx	lr
+ 704              		.cfi_endproc
+ 705              	.LFE70:
+ 707              		.section	.text.sample,"ax",%progbits
+ 708              		.align	1
+ 709              		.global	sample
+ 710              		.syntax unified
+ 711              		.thumb
+ 712              		.thumb_func
+ 714              	sample:
+ 715              	.LVL63:
+ 716              	.LFB71:
+ 125:Lib/Src/MotorControl.c **** 
+ 126:Lib/Src/MotorControl.c **** void sample(AXIS * axis)
  127:Lib/Src/MotorControl.c **** {
- 743              		.loc 1 127 1 is_stmt 1 view -0
- 744              		.cfi_startproc
- 745              		@ args = 0, pretend = 0, frame = 0
- 746              		@ frame_needed = 0, uses_anonymous_args = 0
- 747              		.loc 1 127 1 is_stmt 0 view .LVU179
- 748 0000 10B5     		push	{r4, lr}
- 749              	.LCFI7:
- 750              		.cfi_def_cfa_offset 8
- 751              		.cfi_offset 4, -8
- 752              		.cfi_offset 14, -4
- 753 0002 0446     		mov	r4, r0
- 128:Lib/Src/MotorControl.c **** 	if( axis->pid_process == false)
- 754              		.loc 1 128 2 is_stmt 1 view .LVU180
- 755              		.loc 1 128 10 is_stmt 0 view .LVU181
- 756 0004 90F84530 		ldrb	r3, [r0, #69]	@ zero_extendqisi2
- 757              		.loc 1 128 4 view .LVU182
- 758 0008 43B9     		cbnz	r3, .L56
+ 717              		.loc 1 127 1 is_stmt 1 view -0
+ 718              		.cfi_startproc
+ 719              		@ args = 0, pretend = 0, frame = 0
+ 720              		@ frame_needed = 0, uses_anonymous_args = 0
+ 721              		@ link register save eliminated.
+ 128:Lib/Src/MotorControl.c **** 	if(axis->pid_process)
+ 722              		.loc 1 128 2 view .LVU185
+ 723              		.loc 1 128 9 is_stmt 0 view .LVU186
+ 724 0000 90F84530 		ldrb	r3, [r0, #69]	@ zero_extendqisi2
+ 725              		.loc 1 128 4 view .LVU187
+ 726 0004 53B1     		cbz	r3, .L54
  129:Lib/Src/MotorControl.c **** 	{
- 130:Lib/Src/MotorControl.c **** 		axis->setpoint = (int)(pos*axis->mm_pulse);
- 759              		.loc 1 130 3 is_stmt 1 view .LVU183
- 760              		.loc 1 130 29 is_stmt 0 view .LVU184
- 761 000a 006C     		ldr	r0, [r0, #64]	@ float
- 762              	.LVL68:
- 763              		.loc 1 130 29 view .LVU185
- 764 000c FFF7FEFF 		bl	__aeabi_fmul
- 765              	.LVL69:
- 766              		.loc 1 130 20 view .LVU186
- 767 0010 FFF7FEFF 		bl	__aeabi_f2iz
- 768              	.LVL70:
- 769              		.loc 1 130 18 view .LVU187
- 770 0014 2062     		str	r0, [r4, #32]
- 131:Lib/Src/MotorControl.c **** 	  	axis->pid_process = true;
- 771              		.loc 1 131 5 is_stmt 1 view .LVU188
- 772              		.loc 1 131 23 is_stmt 0 view .LVU189
- 773 0016 0123     		movs	r3, #1
- 774 0018 84F84530 		strb	r3, [r4, #69]
- 775              	.L56:
- 132:Lib/Src/MotorControl.c **** 	}
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 18
+ 130:Lib/Src/MotorControl.c **** 		axis->time_sample++;
+ 727              		.loc 1 130 3 is_stmt 1 view .LVU188
+ 728              		.loc 1 130 7 is_stmt 0 view .LVU189
+ 729 0006 037D     		ldrb	r3, [r0, #20]	@ zero_extendqisi2
+ 730              		.loc 1 130 20 view .LVU190
+ 731 0008 0133     		adds	r3, r3, #1
+ 732 000a DBB2     		uxtb	r3, r3
+ 733 000c 0375     		strb	r3, [r0, #20]
+ 131:Lib/Src/MotorControl.c **** 		if( axis->time_sample >= T_SAMPLE )
+ 734              		.loc 1 131 3 is_stmt 1 view .LVU191
+ 735              		.loc 1 131 5 is_stmt 0 view .LVU192
+ 736 000e 012B     		cmp	r3, #1
+ 737 0010 04D9     		bls	.L54
+ 132:Lib/Src/MotorControl.c **** 		{
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 19
 
 
- 133:Lib/Src/MotorControl.c **** 	if(axis->sample_flag)
- 776              		.loc 1 133 2 is_stmt 1 view .LVU190
- 777              		.loc 1 133 9 is_stmt 0 view .LVU191
- 778 001c 94F84630 		ldrb	r3, [r4, #70]	@ zero_extendqisi2
- 779              		.loc 1 133 4 view .LVU192
- 780 0020 33B9     		cbnz	r3, .L60
- 781              	.L57:
- 134:Lib/Src/MotorControl.c **** 	{
- 135:Lib/Src/MotorControl.c **** 		//readEncoder(axis->htim_enc, &axis->pos);
- 136:Lib/Src/MotorControl.c **** 		readEncoder(axis);
- 137:Lib/Src/MotorControl.c **** 		PID_control(axis->setpoint, axis);
- 138:Lib/Src/MotorControl.c **** 		axis->sample_flag = false;
- 139:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;
+ 133:Lib/Src/MotorControl.c **** 			//readEncoder(axis->htim_enc, &axis->pos);
+ 134:Lib/Src/MotorControl.c **** 			//axis->pos += (int16_t)(axis->htim_enc->Instance->CNT);
+ 135:Lib/Src/MotorControl.c **** 			//axis->htim_enc->Instance->CNT = 0;
+ 136:Lib/Src/MotorControl.c **** 			//PID_control(axis->setpoint, axis);
+ 137:Lib/Src/MotorControl.c **** 			axis->time_sample = 0;			
+ 738              		.loc 1 137 4 is_stmt 1 view .LVU193
+ 739              		.loc 1 137 22 is_stmt 0 view .LVU194
+ 740 0012 0023     		movs	r3, #0
+ 741 0014 0375     		strb	r3, [r0, #20]
+ 138:Lib/Src/MotorControl.c **** 			axis->sample_flag = true;
+ 742              		.loc 1 138 4 is_stmt 1 view .LVU195
+ 743              		.loc 1 138 22 is_stmt 0 view .LVU196
+ 744 0016 0123     		movs	r3, #1
+ 745 0018 80F84630 		strb	r3, [r0, #70]
+ 746              	.L54:
+ 139:Lib/Src/MotorControl.c **** 		}
  140:Lib/Src/MotorControl.c **** 	}
- 141:Lib/Src/MotorControl.c **** 	PWM(axis);	
- 782              		.loc 1 141 2 is_stmt 1 view .LVU193
- 783 0022 2046     		mov	r0, r4
- 784 0024 FFF7FEFF 		bl	PWM
- 785              	.LVL71:
- 142:Lib/Src/MotorControl.c **** 	if( axis->finish)
- 786              		.loc 1 142 2 view .LVU194
- 787              		.loc 1 142 10 is_stmt 0 view .LVU195
- 788 0028 94F84430 		ldrb	r3, [r4, #68]	@ zero_extendqisi2
- 789              		.loc 1 142 4 view .LVU196
- 790 002c 63B9     		cbnz	r3, .L61
- 791              	.L55:
- 143:Lib/Src/MotorControl.c **** 	{
- 144:Lib/Src/MotorControl.c **** 		axis->pwm = 0;
- 145:Lib/Src/MotorControl.c **** 		PWM(axis);
- 146:Lib/Src/MotorControl.c **** 		axis->pid_process = false;		
- 147:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;		
- 148:Lib/Src/MotorControl.c **** 	}
- 149:Lib/Src/MotorControl.c **** }
- 792              		.loc 1 149 1 view .LVU197
- 793 002e 10BD     		pop	{r4, pc}
- 794              	.LVL72:
- 795              	.L60:
- 136:Lib/Src/MotorControl.c **** 		PID_control(axis->setpoint, axis);
- 796              		.loc 1 136 3 is_stmt 1 view .LVU198
- 797 0030 2046     		mov	r0, r4
- 798 0032 FFF7FEFF 		bl	readEncoder
- 799              	.LVL73:
- 137:Lib/Src/MotorControl.c **** 		axis->sample_flag = false;
- 800              		.loc 1 137 3 view .LVU199
- 801 0036 2146     		mov	r1, r4
- 802 0038 206A     		ldr	r0, [r4, #32]
- 803 003a FFF7FEFF 		bl	PID_control
- 804              	.LVL74:
- 138:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;
- 805              		.loc 1 138 3 view .LVU200
- 138:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;
- 806              		.loc 1 138 21 is_stmt 0 view .LVU201
- 807 003e 0023     		movs	r3, #0
- 808 0040 84F84630 		strb	r3, [r4, #70]
- 139:Lib/Src/MotorControl.c **** 	}
- 809              		.loc 1 139 3 is_stmt 1 view .LVU202
- 139:Lib/Src/MotorControl.c **** 	}
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 19
+ 141:Lib/Src/MotorControl.c **** }
+ 747              		.loc 1 141 1 view .LVU197
+ 748 001c 7047     		bx	lr
+ 749              		.cfi_endproc
+ 750              	.LFE71:
+ 752              		.global	__aeabi_i2d
+ 753              		.global	__aeabi_dmul
+ 754              		.global	__aeabi_f2d
+ 755              		.global	__aeabi_dadd
+ 756              		.global	__aeabi_d2f
+ 757              		.global	__aeabi_i2f
+ 758              		.global	__aeabi_fadd
+ 759              		.global	__aeabi_ddiv
+ 760              		.section	.text.PID_control,"ax",%progbits
+ 761              		.align	1
+ 762              		.global	PID_control
+ 763              		.syntax unified
+ 764              		.thumb
+ 765              		.thumb_func
+ 767              	PID_control:
+ 768              	.LVL64:
+ 769              	.LFB72:
+ 142:Lib/Src/MotorControl.c **** 
+ 143:Lib/Src/MotorControl.c **** void PID_control(int sp, AXIS *pid)
+ 144:Lib/Src/MotorControl.c **** {
+ 770              		.loc 1 144 1 is_stmt 1 view -0
+ 771              		.cfi_startproc
+ 772              		@ args = 0, pretend = 0, frame = 0
+ 773              		@ frame_needed = 0, uses_anonymous_args = 0
+ 774              		.loc 1 144 1 is_stmt 0 view .LVU199
+ 775 0000 2DE9F041 		push	{r4, r5, r6, r7, r8, lr}
+ 776              	.LCFI5:
+ 777              		.cfi_def_cfa_offset 24
+ 778              		.cfi_offset 4, -24
+ 779              		.cfi_offset 5, -20
+ 780              		.cfi_offset 6, -16
+ 781              		.cfi_offset 7, -12
+ 782              		.cfi_offset 8, -8
+ 783              		.cfi_offset 14, -4
+ 784 0004 0C46     		mov	r4, r1
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 20
 
 
- 810              		.loc 1 139 21 is_stmt 0 view .LVU203
- 811 0044 2375     		strb	r3, [r4, #20]
- 812 0046 ECE7     		b	.L57
- 813              	.L61:
- 144:Lib/Src/MotorControl.c **** 		PWM(axis);
- 814              		.loc 1 144 3 is_stmt 1 view .LVU204
- 144:Lib/Src/MotorControl.c **** 		PWM(axis);
- 815              		.loc 1 144 13 is_stmt 0 view .LVU205
- 816 0048 0023     		movs	r3, #0
- 817 004a E361     		str	r3, [r4, #28]	@ float
- 145:Lib/Src/MotorControl.c **** 		axis->pid_process = false;		
- 818              		.loc 1 145 3 is_stmt 1 view .LVU206
- 819 004c 2046     		mov	r0, r4
- 820 004e FFF7FEFF 		bl	PWM
- 821              	.LVL75:
- 146:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;		
- 822              		.loc 1 146 3 view .LVU207
- 146:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;		
- 823              		.loc 1 146 21 is_stmt 0 view .LVU208
- 824 0052 0023     		movs	r3, #0
- 825 0054 84F84530 		strb	r3, [r4, #69]
- 147:Lib/Src/MotorControl.c **** 	}
- 826              		.loc 1 147 3 is_stmt 1 view .LVU209
- 147:Lib/Src/MotorControl.c **** 	}
- 827              		.loc 1 147 21 is_stmt 0 view .LVU210
- 828 0058 2375     		strb	r3, [r4, #20]
- 829              		.loc 1 149 1 view .LVU211
- 830 005a E8E7     		b	.L55
- 831              		.cfi_endproc
- 832              	.LFE74:
- 834              		.section	.text.moveGcode,"ax",%progbits
- 835              		.align	1
- 836              		.global	moveGcode
- 837              		.syntax unified
- 838              		.thumb
- 839              		.thumb_func
- 841              	moveGcode:
- 842              	.LVL76:
- 843              	.LFB75:
- 150:Lib/Src/MotorControl.c **** void moveGcode(AXIS *pAxis)
- 151:Lib/Src/MotorControl.c **** {
- 844              		.loc 1 151 1 is_stmt 1 view -0
- 845              		.cfi_startproc
- 846              		@ args = 0, pretend = 0, frame = 0
- 847              		@ frame_needed = 0, uses_anonymous_args = 0
- 848              		.loc 1 151 1 is_stmt 0 view .LVU213
- 849 0000 10B5     		push	{r4, lr}
- 850              	.LCFI8:
- 851              		.cfi_def_cfa_offset 8
- 852              		.cfi_offset 4, -8
- 853              		.cfi_offset 14, -4
- 854 0002 0446     		mov	r4, r0
- 152:Lib/Src/MotorControl.c **** 	pAxis->setpoint = (int)(pAxis->last * pAxis->mm_pulse);
- 855              		.loc 1 152 2 is_stmt 1 view .LVU214
- 856              		.loc 1 152 38 is_stmt 0 view .LVU215
- 857 0004 016C     		ldr	r1, [r0, #64]	@ float
- 858 0006 C06C     		ldr	r0, [r0, #76]	@ float
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 20
+ 145:Lib/Src/MotorControl.c **** 	int e;
+ 785              		.loc 1 145 2 is_stmt 1 view .LVU200
+ 146:Lib/Src/MotorControl.c **** 	e = sp - pid->pos;	
+ 786              		.loc 1 146 2 view .LVU201
+ 787              		.loc 1 146 14 is_stmt 0 view .LVU202
+ 788 0006 8B69     		ldr	r3, [r1, #24]
+ 789              		.loc 1 146 9 view .LVU203
+ 790 0008 C51A     		subs	r5, r0, r3
+ 791              	.LVL65:
+ 147:Lib/Src/MotorControl.c **** 	pid->I_part += TS*e;
+ 792              		.loc 1 147 2 is_stmt 1 view .LVU204
+ 793              		.loc 1 147 19 is_stmt 0 view .LVU205
+ 794 000a 2846     		mov	r0, r5
+ 795              	.LVL66:
+ 796              		.loc 1 147 19 view .LVU206
+ 797 000c FFF7FEFF 		bl	__aeabi_i2d
+ 798              	.LVL67:
+ 799              		.loc 1 147 19 view .LVU207
+ 800 0010 27A3     		adr	r3, .L59
+ 801 0012 D3E90023 		ldrd	r2, [r3]
+ 802 0016 FFF7FEFF 		bl	__aeabi_dmul
+ 803              	.LVL68:
+ 804 001a 0646     		mov	r6, r0
+ 805 001c 0F46     		mov	r7, r1
+ 806              		.loc 1 147 14 view .LVU208
+ 807 001e E068     		ldr	r0, [r4, #12]	@ float
+ 808 0020 FFF7FEFF 		bl	__aeabi_f2d
+ 809              	.LVL69:
+ 810 0024 3246     		mov	r2, r6
+ 811 0026 3B46     		mov	r3, r7
+ 812 0028 FFF7FEFF 		bl	__aeabi_dadd
+ 813              	.LVL70:
+ 814 002c FFF7FEFF 		bl	__aeabi_d2f
+ 815              	.LVL71:
+ 816 0030 0646     		mov	r6, r0
+ 817 0032 E060     		str	r0, [r4, #12]	@ float
+ 148:Lib/Src/MotorControl.c **** 	pid->pwm = pid->Kp*e + pid->Ki*pid->I_part + pid->Kd*(e-pid->e_pre)/TS;
+ 818              		.loc 1 148 2 is_stmt 1 view .LVU209
+ 819              		.loc 1 148 16 is_stmt 0 view .LVU210
+ 820 0034 2768     		ldr	r7, [r4]	@ float
+ 821              		.loc 1 148 20 view .LVU211
+ 822 0036 2846     		mov	r0, r5
+ 823 0038 FFF7FEFF 		bl	__aeabi_i2f
+ 824              	.LVL72:
+ 825 003c 3946     		mov	r1, r7
+ 826 003e FFF7FEFF 		bl	__aeabi_fmul
+ 827              	.LVL73:
+ 828 0042 0746     		mov	r7, r0
+ 829              		.loc 1 148 32 view .LVU212
+ 830 0044 6168     		ldr	r1, [r4, #4]	@ float
+ 831 0046 3046     		mov	r0, r6
+ 832 0048 FFF7FEFF 		bl	__aeabi_fmul
+ 833              	.LVL74:
+ 834 004c 0146     		mov	r1, r0
+ 835              		.loc 1 148 23 view .LVU213
+ 836 004e 3846     		mov	r0, r7
+ 837 0050 FFF7FEFF 		bl	__aeabi_fadd
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 21
 
 
- 859              	.LVL77:
- 860              		.loc 1 152 38 view .LVU216
- 861 0008 FFF7FEFF 		bl	__aeabi_fmul
- 862              	.LVL78:
- 863              		.loc 1 152 20 view .LVU217
- 864 000c FFF7FEFF 		bl	__aeabi_f2iz
- 865              	.LVL79:
- 866              		.loc 1 152 18 view .LVU218
- 867 0010 2062     		str	r0, [r4, #32]
- 153:Lib/Src/MotorControl.c **** 	pAxis->pid_process = true;
- 868              		.loc 1 153 2 is_stmt 1 view .LVU219
- 869              		.loc 1 153 21 is_stmt 0 view .LVU220
- 870 0012 0123     		movs	r3, #1
- 871 0014 84F84530 		strb	r3, [r4, #69]
- 154:Lib/Src/MotorControl.c **** 	while( pAxis->pid_process)
- 872              		.loc 1 154 2 is_stmt 1 view .LVU221
- 873              		.loc 1 154 7 is_stmt 0 view .LVU222
- 874 0018 05E0     		b	.L65
- 875              	.L64:
- 155:Lib/Src/MotorControl.c **** 	{
- 156:Lib/Src/MotorControl.c **** 		if(pAxis->sample_flag)
- 157:Lib/Src/MotorControl.c **** 		{
- 158:Lib/Src/MotorControl.c **** 			//readEncoder(pAxis->htim_enc, &pAxis->pos);
- 159:Lib/Src/MotorControl.c **** 			readEncoder(pAxis);
- 160:Lib/Src/MotorControl.c **** 			PID_control(pAxis->setpoint, pAxis);
- 161:Lib/Src/MotorControl.c **** 			pAxis->sample_flag = false;
- 162:Lib/Src/MotorControl.c **** 		}
- 163:Lib/Src/MotorControl.c **** 		PWM(pAxis);	
- 876              		.loc 1 163 3 is_stmt 1 view .LVU223
- 877 001a 2046     		mov	r0, r4
- 878 001c FFF7FEFF 		bl	PWM
- 879              	.LVL80:
- 164:Lib/Src/MotorControl.c **** 		if( pAxis->finish)
- 880              		.loc 1 164 3 view .LVU224
- 881              		.loc 1 164 12 is_stmt 0 view .LVU225
- 882 0020 94F84430 		ldrb	r3, [r4, #68]	@ zero_extendqisi2
- 883              		.loc 1 164 5 view .LVU226
- 884 0024 8BB9     		cbnz	r3, .L68
- 885              	.L65:
- 154:Lib/Src/MotorControl.c **** 	while( pAxis->pid_process)
- 886              		.loc 1 154 7 is_stmt 1 view .LVU227
- 154:Lib/Src/MotorControl.c **** 	while( pAxis->pid_process)
- 887              		.loc 1 154 14 is_stmt 0 view .LVU228
- 888 0026 94F84530 		ldrb	r3, [r4, #69]	@ zero_extendqisi2
- 154:Lib/Src/MotorControl.c **** 	while( pAxis->pid_process)
- 889              		.loc 1 154 7 view .LVU229
- 890 002a D3B1     		cbz	r3, .L69
- 156:Lib/Src/MotorControl.c **** 		{
- 891              		.loc 1 156 3 is_stmt 1 view .LVU230
- 156:Lib/Src/MotorControl.c **** 		{
- 892              		.loc 1 156 11 is_stmt 0 view .LVU231
- 893 002c 94F84630 		ldrb	r3, [r4, #70]	@ zero_extendqisi2
- 156:Lib/Src/MotorControl.c **** 		{
- 894              		.loc 1 156 5 view .LVU232
- 895 0030 002B     		cmp	r3, #0
- 896 0032 F2D0     		beq	.L64
- 159:Lib/Src/MotorControl.c **** 			PID_control(pAxis->setpoint, pAxis);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 21
+ 838              	.LVL75:
+ 839 0054 FFF7FEFF 		bl	__aeabi_f2d
+ 840              	.LVL76:
+ 841 0058 0646     		mov	r6, r0
+ 842 005a 0F46     		mov	r7, r1
+ 843              		.loc 1 148 50 view .LVU214
+ 844 005c D4F80880 		ldr	r8, [r4, #8]	@ float
+ 845              		.loc 1 148 61 view .LVU215
+ 846 0060 2069     		ldr	r0, [r4, #16]
+ 847              		.loc 1 148 54 view .LVU216
+ 848 0062 281A     		subs	r0, r5, r0
+ 849 0064 FFF7FEFF 		bl	__aeabi_i2f
+ 850              	.LVL77:
+ 851 0068 4146     		mov	r1, r8
+ 852 006a FFF7FEFF 		bl	__aeabi_fmul
+ 853              	.LVL78:
+ 854 006e FFF7FEFF 		bl	__aeabi_f2d
+ 855              	.LVL79:
+ 856              		.loc 1 148 69 view .LVU217
+ 857 0072 0FA3     		adr	r3, .L59
+ 858 0074 D3E90023 		ldrd	r2, [r3]
+ 859 0078 FFF7FEFF 		bl	__aeabi_ddiv
+ 860              	.LVL80:
+ 861 007c 0246     		mov	r2, r0
+ 862 007e 0B46     		mov	r3, r1
+ 863              		.loc 1 148 45 view .LVU218
+ 864 0080 3046     		mov	r0, r6
+ 865 0082 3946     		mov	r1, r7
+ 866 0084 FFF7FEFF 		bl	__aeabi_dadd
+ 867              	.LVL81:
+ 868 0088 FFF7FEFF 		bl	__aeabi_d2f
+ 869              	.LVL82:
+ 870              		.loc 1 148 11 view .LVU219
+ 871 008c E061     		str	r0, [r4, #28]	@ float
+ 149:Lib/Src/MotorControl.c **** 	pid->e_pre = e;
+ 872              		.loc 1 149 2 is_stmt 1 view .LVU220
+ 873              		.loc 1 149 13 is_stmt 0 view .LVU221
+ 874 008e 2561     		str	r5, [r4, #16]
+ 150:Lib/Src/MotorControl.c **** 	if(int_abs(e) < pid->ERROR)
+ 875              		.loc 1 150 2 is_stmt 1 view .LVU222
+ 876              		.loc 1 150 5 is_stmt 0 view .LVU223
+ 877 0090 2846     		mov	r0, r5
+ 878 0092 FFF7FEFF 		bl	int_abs
+ 879              	.LVL83:
+ 880              		.loc 1 150 21 view .LVU224
+ 881 0096 94F85430 		ldrb	r3, [r4, #84]	@ zero_extendqisi2
+ 882              		.loc 1 150 4 view .LVU225
+ 883 009a 9842     		cmp	r0, r3
+ 884 009c 04DA     		bge	.L56
+ 151:Lib/Src/MotorControl.c **** 	{
+ 152:Lib/Src/MotorControl.c **** 		pid->finish = true;
+ 885              		.loc 1 152 3 is_stmt 1 view .LVU226
+ 886              		.loc 1 152 15 is_stmt 0 view .LVU227
+ 887 009e 0123     		movs	r3, #1
+ 888 00a0 84F84430 		strb	r3, [r4, #68]
+ 153:Lib/Src/MotorControl.c **** 		pid->pwm = 0;
+ 889              		.loc 1 153 3 is_stmt 1 view .LVU228
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 22
 
 
- 897              		.loc 1 159 4 is_stmt 1 view .LVU233
- 898 0034 2046     		mov	r0, r4
- 899 0036 FFF7FEFF 		bl	readEncoder
- 900              	.LVL81:
- 160:Lib/Src/MotorControl.c **** 			pAxis->sample_flag = false;
- 901              		.loc 1 160 4 view .LVU234
- 902 003a 2146     		mov	r1, r4
- 903 003c 206A     		ldr	r0, [r4, #32]
- 904 003e FFF7FEFF 		bl	PID_control
- 905              	.LVL82:
- 161:Lib/Src/MotorControl.c **** 		}
- 906              		.loc 1 161 4 view .LVU235
- 161:Lib/Src/MotorControl.c **** 		}
- 907              		.loc 1 161 23 is_stmt 0 view .LVU236
- 908 0042 0023     		movs	r3, #0
- 909 0044 84F84630 		strb	r3, [r4, #70]
- 910 0048 E7E7     		b	.L64
- 911              	.L68:
- 165:Lib/Src/MotorControl.c **** 		{
- 166:Lib/Src/MotorControl.c **** 			pAxis->pwm = 0;
- 912              		.loc 1 166 4 is_stmt 1 view .LVU237
- 913              		.loc 1 166 15 is_stmt 0 view .LVU238
- 914 004a 0023     		movs	r3, #0
- 915 004c E361     		str	r3, [r4, #28]	@ float
- 167:Lib/Src/MotorControl.c **** 			PWM(pAxis);
- 916              		.loc 1 167 4 is_stmt 1 view .LVU239
- 917 004e 2046     		mov	r0, r4
- 918 0050 FFF7FEFF 		bl	PWM
- 919              	.LVL83:
- 168:Lib/Src/MotorControl.c **** 			pAxis->pid_process = false;		
- 920              		.loc 1 168 4 view .LVU240
- 921              		.loc 1 168 23 is_stmt 0 view .LVU241
- 922 0054 0023     		movs	r3, #0
- 923 0056 84F84530 		strb	r3, [r4, #69]
- 169:Lib/Src/MotorControl.c **** 			pAxis->time_sample = 0;		
- 924              		.loc 1 169 4 is_stmt 1 view .LVU242
- 925              		.loc 1 169 23 is_stmt 0 view .LVU243
- 926 005a 2375     		strb	r3, [r4, #20]
- 170:Lib/Src/MotorControl.c **** 			pAxis->finish = false;
- 927              		.loc 1 170 4 is_stmt 1 view .LVU244
- 928              		.loc 1 170 18 is_stmt 0 view .LVU245
- 929 005c 84F84430 		strb	r3, [r4, #68]
- 930 0060 E1E7     		b	.L65
- 931              	.L69:
+ 890              		.loc 1 153 12 is_stmt 0 view .LVU229
+ 891 00a4 0023     		movs	r3, #0
+ 892 00a6 E361     		str	r3, [r4, #28]	@ float
+ 893              	.L56:
+ 154:Lib/Src/MotorControl.c **** 		//pid->pid_process = false;
+ 155:Lib/Src/MotorControl.c **** 	}
+ 156:Lib/Src/MotorControl.c **** }
+ 894              		.loc 1 156 1 view .LVU230
+ 895 00a8 BDE8F081 		pop	{r4, r5, r6, r7, r8, pc}
+ 896              	.LVL84:
+ 897              	.L60:
+ 898              		.loc 1 156 1 view .LVU231
+ 899 00ac AFF30080 		.align	3
+ 900              	.L59:
+ 901 00b0 7B14AE47 		.word	1202590843
+ 902 00b4 E17A943F 		.word	1066695393
+ 903              		.cfi_endproc
+ 904              	.LFE72:
+ 906              		.section	.text.HOME,"ax",%progbits
+ 907              		.align	1
+ 908              		.global	HOME
+ 909              		.syntax unified
+ 910              		.thumb
+ 911              		.thumb_func
+ 913              	HOME:
+ 914              	.LVL85:
+ 915              	.LFB73:
+ 157:Lib/Src/MotorControl.c **** 
+ 158:Lib/Src/MotorControl.c **** void HOME(AXIS *axis)
+ 159:Lib/Src/MotorControl.c **** {
+ 916              		.loc 1 159 1 is_stmt 1 view -0
+ 917              		.cfi_startproc
+ 918              		@ args = 0, pretend = 0, frame = 0
+ 919              		@ frame_needed = 0, uses_anonymous_args = 0
+ 920              		.loc 1 159 1 is_stmt 0 view .LVU233
+ 921 0000 10B5     		push	{r4, lr}
+ 922              	.LCFI6:
+ 923              		.cfi_def_cfa_offset 8
+ 924              		.cfi_offset 4, -8
+ 925              		.cfi_offset 14, -4
+ 926 0002 0446     		mov	r4, r0
+ 160:Lib/Src/MotorControl.c **** 	if( HAL_GPIO_ReadPin(axis->GPIO_HOME, axis->PIN_HOME) == 1)
+ 927              		.loc 1 160 2 is_stmt 1 view .LVU234
+ 928              		.loc 1 160 6 is_stmt 0 view .LVU235
+ 929 0004 818F     		ldrh	r1, [r0, #60]
+ 930 0006 806B     		ldr	r0, [r0, #56]
+ 931              	.LVL86:
+ 932              		.loc 1 160 6 view .LVU236
+ 933 0008 FFF7FEFF 		bl	HAL_GPIO_ReadPin
+ 934              	.LVL87:
+ 935              		.loc 1 160 4 view .LVU237
+ 936 000c 0128     		cmp	r0, #1
+ 937 000e 08D0     		beq	.L65
+ 161:Lib/Src/MotorControl.c **** 		{
+ 162:Lib/Src/MotorControl.c **** 			axis->pwm = -0.8;
+ 163:Lib/Src/MotorControl.c **** 			PWM(axis);
+ 164:Lib/Src/MotorControl.c **** 			axis->home = false;
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 23
+
+
+ 165:Lib/Src/MotorControl.c **** 		}
+ 166:Lib/Src/MotorControl.c **** 	else
+ 167:Lib/Src/MotorControl.c **** 		{
+ 168:Lib/Src/MotorControl.c **** 			axis->pwm = 0;
+ 938              		.loc 1 168 4 is_stmt 1 view .LVU238
+ 939              		.loc 1 168 14 is_stmt 0 view .LVU239
+ 940 0010 0023     		movs	r3, #0
+ 941 0012 E361     		str	r3, [r4, #28]	@ float
+ 169:Lib/Src/MotorControl.c **** 			PWM(axis);
+ 942              		.loc 1 169 4 is_stmt 1 view .LVU240
+ 943 0014 2046     		mov	r0, r4
+ 944 0016 FFF7FEFF 		bl	PWM
+ 945              	.LVL88:
+ 170:Lib/Src/MotorControl.c **** 			axis->home = true;
+ 946              		.loc 1 170 4 view .LVU241
+ 947              		.loc 1 170 15 is_stmt 0 view .LVU242
+ 948 001a 0123     		movs	r3, #1
+ 949 001c 84F84730 		strb	r3, [r4, #71]
+ 950              	.L61:
  171:Lib/Src/MotorControl.c **** 		}
- 172:Lib/Src/MotorControl.c **** 	}
- 173:Lib/Src/MotorControl.c **** }
- 932              		.loc 1 173 1 view .LVU246
- 933 0062 10BD     		pop	{r4, pc}
- 934              		.loc 1 173 1 view .LVU247
- 935              		.cfi_endproc
- 936              	.LFE75:
- 938              		.global	__aeabi_fsub
- 939              		.global	__aeabi_d2iz
- 940              		.global	__aeabi_dsub
- 941              		.global	__aeabi_dcmplt
- 942              		.section	.text.drawLine,"ax",%progbits
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 22
+ 172:Lib/Src/MotorControl.c **** }
+ 951              		.loc 1 172 1 view .LVU243
+ 952 0020 10BD     		pop	{r4, pc}
+ 953              	.LVL89:
+ 954              	.L65:
+ 162:Lib/Src/MotorControl.c **** 			PWM(axis);
+ 955              		.loc 1 162 4 is_stmt 1 view .LVU244
+ 162:Lib/Src/MotorControl.c **** 			PWM(axis);
+ 956              		.loc 1 162 14 is_stmt 0 view .LVU245
+ 957 0022 044B     		ldr	r3, .L66
+ 958 0024 E361     		str	r3, [r4, #28]	@ float
+ 163:Lib/Src/MotorControl.c **** 			axis->home = false;
+ 959              		.loc 1 163 4 is_stmt 1 view .LVU246
+ 960 0026 2046     		mov	r0, r4
+ 961 0028 FFF7FEFF 		bl	PWM
+ 962              	.LVL90:
+ 164:Lib/Src/MotorControl.c **** 		}
+ 963              		.loc 1 164 4 view .LVU247
+ 164:Lib/Src/MotorControl.c **** 		}
+ 964              		.loc 1 164 15 is_stmt 0 view .LVU248
+ 965 002c 0023     		movs	r3, #0
+ 966 002e 84F84730 		strb	r3, [r4, #71]
+ 967 0032 F5E7     		b	.L61
+ 968              	.L67:
+ 969              		.align	2
+ 970              	.L66:
+ 971 0034 CDCC4CBF 		.word	-1085485875
+ 972              		.cfi_endproc
+ 973              	.LFE73:
+ 975              		.section	.text.move,"ax",%progbits
+ 976              		.align	1
+ 977              		.global	move
+ 978              		.syntax unified
+ 979              		.thumb
+ 980              		.thumb_func
+ 982              	move:
+ 983              	.LVL91:
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 24
 
 
- 943              		.align	1
- 944              		.global	drawLine
- 945              		.syntax unified
- 946              		.thumb
- 947              		.thumb_func
- 949              	drawLine:
- 950              	.LVL84:
- 951              	.LFB76:
- 174:Lib/Src/MotorControl.c **** void drawLine(AXIS *pXAxis, AXIS *pYAxis)
- 175:Lib/Src/MotorControl.c **** {
- 952              		.loc 1 175 1 is_stmt 1 view -0
- 953              		.cfi_startproc
- 954              		@ args = 0, pretend = 0, frame = 16
- 955              		@ frame_needed = 0, uses_anonymous_args = 0
- 956              		.loc 1 175 1 is_stmt 0 view .LVU249
- 957 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
- 958              	.LCFI9:
- 959              		.cfi_def_cfa_offset 36
- 960              		.cfi_offset 4, -36
- 961              		.cfi_offset 5, -32
- 962              		.cfi_offset 6, -28
- 963              		.cfi_offset 7, -24
- 964              		.cfi_offset 8, -20
- 965              		.cfi_offset 9, -16
- 966              		.cfi_offset 10, -12
- 967              		.cfi_offset 11, -8
- 968              		.cfi_offset 14, -4
- 969 0004 85B0     		sub	sp, sp, #20
- 970              	.LCFI10:
- 971              		.cfi_def_cfa_offset 56
- 972 0006 8046     		mov	r8, r0
- 973 0008 8946     		mov	r9, r1
- 176:Lib/Src/MotorControl.c **** 	// declare variable
- 177:Lib/Src/MotorControl.c **** 	int dx = round(pXAxis->next - pXAxis->last);
- 974              		.loc 1 177 2 is_stmt 1 view .LVU250
- 975              		.loc 1 177 30 is_stmt 0 view .LVU251
- 976 000a C16C     		ldr	r1, [r0, #76]	@ float
- 977              	.LVL85:
- 978              		.loc 1 177 30 view .LVU252
- 979 000c 806C     		ldr	r0, [r0, #72]	@ float
- 980              	.LVL86:
- 981              		.loc 1 177 30 view .LVU253
- 982 000e FFF7FEFF 		bl	__aeabi_fsub
- 983              	.LVL87:
- 984              		.loc 1 177 11 view .LVU254
- 985 0012 FFF7FEFF 		bl	__aeabi_f2d
- 986              	.LVL88:
- 987 0016 FFF7FEFF 		bl	round
- 988              	.LVL89:
- 989              		.loc 1 177 6 view .LVU255
- 990 001a FFF7FEFF 		bl	__aeabi_d2iz
- 991              	.LVL90:
- 992 001e 0546     		mov	r5, r0
- 993              	.LVL91:
- 178:Lib/Src/MotorControl.c **** 	int dy = round(pYAxis->next - pYAxis->last);
- 994              		.loc 1 178 2 is_stmt 1 view .LVU256
- 995              		.loc 1 178 30 is_stmt 0 view .LVU257
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 23
+ 984              	.LFB74:
+ 173:Lib/Src/MotorControl.c **** void move(AXIS *axis, float pos)
+ 174:Lib/Src/MotorControl.c **** {
+ 985              		.loc 1 174 1 is_stmt 1 view -0
+ 986              		.cfi_startproc
+ 987              		@ args = 0, pretend = 0, frame = 0
+ 988              		@ frame_needed = 0, uses_anonymous_args = 0
+ 989              		.loc 1 174 1 is_stmt 0 view .LVU250
+ 990 0000 10B5     		push	{r4, lr}
+ 991              	.LCFI7:
+ 992              		.cfi_def_cfa_offset 8
+ 993              		.cfi_offset 4, -8
+ 994              		.cfi_offset 14, -4
+ 995 0002 0446     		mov	r4, r0
+ 175:Lib/Src/MotorControl.c **** 	if( axis->pid_process == false)
+ 996              		.loc 1 175 2 is_stmt 1 view .LVU251
+ 997              		.loc 1 175 10 is_stmt 0 view .LVU252
+ 998 0004 90F84530 		ldrb	r3, [r0, #69]	@ zero_extendqisi2
+ 999              		.loc 1 175 4 view .LVU253
+ 1000 0008 43B9     		cbnz	r3, .L69
+ 176:Lib/Src/MotorControl.c **** 	{
+ 177:Lib/Src/MotorControl.c **** 		axis->setpoint = (int)(pos*axis->mm_pulse);
+ 1001              		.loc 1 177 3 is_stmt 1 view .LVU254
+ 1002              		.loc 1 177 29 is_stmt 0 view .LVU255
+ 1003 000a 006C     		ldr	r0, [r0, #64]	@ float
+ 1004              	.LVL92:
+ 1005              		.loc 1 177 29 view .LVU256
+ 1006 000c FFF7FEFF 		bl	__aeabi_fmul
+ 1007              	.LVL93:
+ 1008              		.loc 1 177 20 view .LVU257
+ 1009 0010 FFF7FEFF 		bl	__aeabi_f2iz
+ 1010              	.LVL94:
+ 1011              		.loc 1 177 18 view .LVU258
+ 1012 0014 2062     		str	r0, [r4, #32]
+ 178:Lib/Src/MotorControl.c **** 	  	axis->pid_process = true;
+ 1013              		.loc 1 178 5 is_stmt 1 view .LVU259
+ 1014              		.loc 1 178 23 is_stmt 0 view .LVU260
+ 1015 0016 0123     		movs	r3, #1
+ 1016 0018 84F84530 		strb	r3, [r4, #69]
+ 1017              	.L69:
+ 179:Lib/Src/MotorControl.c **** 	}
+ 180:Lib/Src/MotorControl.c **** 	if(axis->sample_flag)
+ 1018              		.loc 1 180 2 is_stmt 1 view .LVU261
+ 1019              		.loc 1 180 9 is_stmt 0 view .LVU262
+ 1020 001c 94F84630 		ldrb	r3, [r4, #70]	@ zero_extendqisi2
+ 1021              		.loc 1 180 4 view .LVU263
+ 1022 0020 33B9     		cbnz	r3, .L73
+ 1023              	.L70:
+ 181:Lib/Src/MotorControl.c **** 	{
+ 182:Lib/Src/MotorControl.c **** 		//readEncoder(axis->htim_enc, &axis->pos);
+ 183:Lib/Src/MotorControl.c **** 		readEncoder(axis);
+ 184:Lib/Src/MotorControl.c **** 		PID_control(axis->setpoint, axis);
+ 185:Lib/Src/MotorControl.c **** 		axis->sample_flag = false;
+ 186:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;
+ 187:Lib/Src/MotorControl.c **** 	}
+ 188:Lib/Src/MotorControl.c **** 	PWM(axis);	
+ 1024              		.loc 1 188 2 is_stmt 1 view .LVU264
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 25
 
 
- 996 0020 D9F84C10 		ldr	r1, [r9, #76]	@ float
- 997 0024 D9F84800 		ldr	r0, [r9, #72]	@ float
- 998              	.LVL92:
- 999              		.loc 1 178 30 view .LVU258
- 1000 0028 FFF7FEFF 		bl	__aeabi_fsub
- 1001              	.LVL93:
- 1002              		.loc 1 178 11 view .LVU259
- 1003 002c FFF7FEFF 		bl	__aeabi_f2d
- 1004              	.LVL94:
- 1005 0030 FFF7FEFF 		bl	round
- 1006              	.LVL95:
- 1007              		.loc 1 178 6 view .LVU260
- 1008 0034 FFF7FEFF 		bl	__aeabi_d2iz
- 1009              	.LVL96:
- 1010 0038 8346     		mov	fp, r0
- 1011 003a 0290     		str	r0, [sp, #8]
- 1012              	.LVL97:
- 179:Lib/Src/MotorControl.c **** 	int longest = int_max(int_abs(dx), int_abs(dy));
- 1013              		.loc 1 179 2 is_stmt 1 view .LVU261
- 1014              		.loc 1 179 16 is_stmt 0 view .LVU262
- 1015 003c 2846     		mov	r0, r5
- 1016              	.LVL98:
- 1017              		.loc 1 179 16 view .LVU263
- 1018 003e FFF7FEFF 		bl	int_abs
- 1019              	.LVL99:
- 1020 0042 0446     		mov	r4, r0
- 1021 0044 5846     		mov	r0, fp
- 1022 0046 FFF7FEFF 		bl	int_abs
- 1023              	.LVL100:
- 1024 004a 0146     		mov	r1, r0
- 1025 004c 2046     		mov	r0, r4
- 1026 004e FFF7FEFF 		bl	int_max
- 1027              	.LVL101:
- 1028 0052 8246     		mov	r10, r0
- 1029              	.LVL102:
- 180:Lib/Src/MotorControl.c **** 	int shortest = int_min(int_abs(dx), int_abs(dy));
- 1030              		.loc 1 180 2 is_stmt 1 view .LVU264
- 1031              		.loc 1 180 17 is_stmt 0 view .LVU265
- 1032 0054 2846     		mov	r0, r5
- 1033              	.LVL103:
- 1034              		.loc 1 180 17 view .LVU266
- 1035 0056 FFF7FEFF 		bl	int_abs
- 1036              	.LVL104:
- 1037 005a 0446     		mov	r4, r0
- 1038 005c 5846     		mov	r0, fp
- 1039 005e FFF7FEFF 		bl	int_abs
- 1040              	.LVL105:
- 1041 0062 0146     		mov	r1, r0
- 1042 0064 2046     		mov	r0, r4
- 1043 0066 FFF7FEFF 		bl	int_min
- 1044              	.LVL106:
- 181:Lib/Src/MotorControl.c **** 	int error = - longest;
- 1045              		.loc 1 181 2 is_stmt 1 view .LVU267
- 1046              		.loc 1 181 6 is_stmt 0 view .LVU268
- 1047 006a CAF10006 		rsb	r6, r10, #0
- 1048              	.LVL107:
- 182:Lib/Src/MotorControl.c **** 	int slope = shortest<<1;
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 24
+ 1025 0022 2046     		mov	r0, r4
+ 1026 0024 FFF7FEFF 		bl	PWM
+ 1027              	.LVL95:
+ 189:Lib/Src/MotorControl.c **** 	if( axis->finish)
+ 1028              		.loc 1 189 2 view .LVU265
+ 1029              		.loc 1 189 10 is_stmt 0 view .LVU266
+ 1030 0028 94F84430 		ldrb	r3, [r4, #68]	@ zero_extendqisi2
+ 1031              		.loc 1 189 4 view .LVU267
+ 1032 002c 63B9     		cbnz	r3, .L74
+ 1033              	.L68:
+ 190:Lib/Src/MotorControl.c **** 	{
+ 191:Lib/Src/MotorControl.c **** 		axis->pwm = 0;
+ 192:Lib/Src/MotorControl.c **** 		PWM(axis);
+ 193:Lib/Src/MotorControl.c **** 		axis->pid_process = false;		
+ 194:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;		
+ 195:Lib/Src/MotorControl.c **** 	}
+ 196:Lib/Src/MotorControl.c **** }
+ 1034              		.loc 1 196 1 view .LVU268
+ 1035 002e 10BD     		pop	{r4, pc}
+ 1036              	.LVL96:
+ 1037              	.L73:
+ 183:Lib/Src/MotorControl.c **** 		PID_control(axis->setpoint, axis);
+ 1038              		.loc 1 183 3 is_stmt 1 view .LVU269
+ 1039 0030 2046     		mov	r0, r4
+ 1040 0032 FFF7FEFF 		bl	readEncoder
+ 1041              	.LVL97:
+ 184:Lib/Src/MotorControl.c **** 		axis->sample_flag = false;
+ 1042              		.loc 1 184 3 view .LVU270
+ 1043 0036 2146     		mov	r1, r4
+ 1044 0038 206A     		ldr	r0, [r4, #32]
+ 1045 003a FFF7FEFF 		bl	PID_control
+ 1046              	.LVL98:
+ 185:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;
+ 1047              		.loc 1 185 3 view .LVU271
+ 185:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;
+ 1048              		.loc 1 185 21 is_stmt 0 view .LVU272
+ 1049 003e 0023     		movs	r3, #0
+ 1050 0040 84F84630 		strb	r3, [r4, #70]
+ 186:Lib/Src/MotorControl.c **** 	}
+ 1051              		.loc 1 186 3 is_stmt 1 view .LVU273
+ 186:Lib/Src/MotorControl.c **** 	}
+ 1052              		.loc 1 186 21 is_stmt 0 view .LVU274
+ 1053 0044 2375     		strb	r3, [r4, #20]
+ 1054 0046 ECE7     		b	.L70
+ 1055              	.L74:
+ 191:Lib/Src/MotorControl.c **** 		PWM(axis);
+ 1056              		.loc 1 191 3 is_stmt 1 view .LVU275
+ 191:Lib/Src/MotorControl.c **** 		PWM(axis);
+ 1057              		.loc 1 191 13 is_stmt 0 view .LVU276
+ 1058 0048 0023     		movs	r3, #0
+ 1059 004a E361     		str	r3, [r4, #28]	@ float
+ 192:Lib/Src/MotorControl.c **** 		axis->pid_process = false;		
+ 1060              		.loc 1 192 3 is_stmt 1 view .LVU277
+ 1061 004c 2046     		mov	r0, r4
+ 1062 004e FFF7FEFF 		bl	PWM
+ 1063              	.LVL99:
+ 193:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;		
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 26
 
 
- 1049              		.loc 1 182 2 is_stmt 1 view .LVU269
- 1050              		.loc 1 182 6 is_stmt 0 view .LVU270
- 1051 006e 4400     		lsls	r4, r0, #1
- 1052              	.LVL108:
- 183:Lib/Src/MotorControl.c **** 	int max = longest<<1;
- 1053              		.loc 1 183 2 is_stmt 1 view .LVU271
- 1054              		.loc 1 183 6 is_stmt 0 view .LVU272
- 1055 0070 4FEA4A03 		lsl	r3, r10, #1
- 1056 0074 0393     		str	r3, [sp, #12]
- 1057              	.LVL109:
- 184:Lib/Src/MotorControl.c **** 	int threshold = 0;
- 1058              		.loc 1 184 2 is_stmt 1 view .LVU273
- 185:Lib/Src/MotorControl.c **** 	bool swapXY = true;
- 1059              		.loc 1 185 2 view .LVU274
- 186:Lib/Src/MotorControl.c **** 	
- 187:Lib/Src/MotorControl.c **** 	// swap x and y if dy > dx
- 188:Lib/Src/MotorControl.c **** 	if(int_abs(dx) > int_abs(dy))
- 1060              		.loc 1 188 2 view .LVU275
- 1061              		.loc 1 188 5 is_stmt 0 view .LVU276
- 1062 0076 2846     		mov	r0, r5
- 1063              	.LVL110:
- 1064              		.loc 1 188 5 view .LVU277
- 1065 0078 FFF7FEFF 		bl	int_abs
- 1066              	.LVL111:
- 1067              		.loc 1 188 5 view .LVU278
- 1068 007c 0746     		mov	r7, r0
- 1069              		.loc 1 188 19 view .LVU279
- 1070 007e 5846     		mov	r0, fp
- 1071 0080 FFF7FEFF 		bl	int_abs
- 1072              	.LVL112:
- 1073              		.loc 1 188 4 view .LVU280
- 1074 0084 8742     		cmp	r7, r0
- 1075 0086 06DC     		bgt	.L86
- 185:Lib/Src/MotorControl.c **** 	bool swapXY = true;
- 1076              		.loc 1 185 7 view .LVU281
- 1077 0088 4FF0010B 		mov	fp, #1
- 1078              	.LVL113:
- 1079              	.L71:
- 189:Lib/Src/MotorControl.c **** 		swapXY = false;
- 190:Lib/Src/MotorControl.c **** 	
- 191:Lib/Src/MotorControl.c **** 	// Bresenham Algorithm
- 192:Lib/Src/MotorControl.c **** 	for(int i = 0; i < longest/STEP ; i++)
- 1080              		.loc 1 192 2 is_stmt 1 view .LVU282
- 1081              	.LBB4:
- 1082              		.loc 1 192 6 view .LVU283
- 1083              		.loc 1 192 10 is_stmt 0 view .LVU284
- 1084 008c 0027     		movs	r7, #0
- 1085 008e 2B46     		mov	r3, r5
- 1086 0090 5D46     		mov	r5, fp
- 1087              	.LVL114:
- 1088              		.loc 1 192 10 view .LVU285
- 1089 0092 9B46     		mov	fp, r3
- 1090              	.LVL115:
- 1091              		.loc 1 192 2 view .LVU286
- 1092 0094 43E0     		b	.L72
- 1093              	.LVL116:
- 1094              	.L86:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 25
+ 1064              		.loc 1 193 3 view .LVU278
+ 193:Lib/Src/MotorControl.c **** 		axis->time_sample = 0;		
+ 1065              		.loc 1 193 21 is_stmt 0 view .LVU279
+ 1066 0052 0023     		movs	r3, #0
+ 1067 0054 84F84530 		strb	r3, [r4, #69]
+ 194:Lib/Src/MotorControl.c **** 	}
+ 1068              		.loc 1 194 3 is_stmt 1 view .LVU280
+ 194:Lib/Src/MotorControl.c **** 	}
+ 1069              		.loc 1 194 21 is_stmt 0 view .LVU281
+ 1070 0058 2375     		strb	r3, [r4, #20]
+ 1071              		.loc 1 196 1 view .LVU282
+ 1072 005a E8E7     		b	.L68
+ 1073              		.cfi_endproc
+ 1074              	.LFE74:
+ 1076              		.section	.text.moveGcode,"ax",%progbits
+ 1077              		.align	1
+ 1078              		.global	moveGcode
+ 1079              		.syntax unified
+ 1080              		.thumb
+ 1081              		.thumb_func
+ 1083              	moveGcode:
+ 1084              	.LVL100:
+ 1085              	.LFB75:
+ 197:Lib/Src/MotorControl.c **** void moveGcode(AXIS *pAxis)
+ 198:Lib/Src/MotorControl.c **** {
+ 1086              		.loc 1 198 1 is_stmt 1 view -0
+ 1087              		.cfi_startproc
+ 1088              		@ args = 0, pretend = 0, frame = 0
+ 1089              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1090              		.loc 1 198 1 is_stmt 0 view .LVU284
+ 1091 0000 10B5     		push	{r4, lr}
+ 1092              	.LCFI8:
+ 1093              		.cfi_def_cfa_offset 8
+ 1094              		.cfi_offset 4, -8
+ 1095              		.cfi_offset 14, -4
+ 1096 0002 0446     		mov	r4, r0
+ 199:Lib/Src/MotorControl.c **** 	pAxis->setpoint = (int)(pAxis->last * pAxis->mm_pulse);
+ 1097              		.loc 1 199 2 is_stmt 1 view .LVU285
+ 1098              		.loc 1 199 38 is_stmt 0 view .LVU286
+ 1099 0004 016C     		ldr	r1, [r0, #64]	@ float
+ 1100 0006 C06C     		ldr	r0, [r0, #76]	@ float
+ 1101              	.LVL101:
+ 1102              		.loc 1 199 38 view .LVU287
+ 1103 0008 FFF7FEFF 		bl	__aeabi_fmul
+ 1104              	.LVL102:
+ 1105              		.loc 1 199 20 view .LVU288
+ 1106 000c FFF7FEFF 		bl	__aeabi_f2iz
+ 1107              	.LVL103:
+ 1108              		.loc 1 199 18 view .LVU289
+ 1109 0010 2062     		str	r0, [r4, #32]
+ 200:Lib/Src/MotorControl.c **** 	pAxis->pid_process = true;
+ 1110              		.loc 1 200 2 is_stmt 1 view .LVU290
+ 1111              		.loc 1 200 21 is_stmt 0 view .LVU291
+ 1112 0012 0123     		movs	r3, #1
+ 1113 0014 84F84530 		strb	r3, [r4, #69]
+ 201:Lib/Src/MotorControl.c **** 	while( pAxis->pid_process)
+ 1114              		.loc 1 201 2 is_stmt 1 view .LVU292
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 27
 
 
- 1095              		.loc 1 192 2 view .LVU287
- 1096              	.LBE4:
- 189:Lib/Src/MotorControl.c **** 		swapXY = false;
- 1097              		.loc 1 189 10 view .LVU288
- 1098 0096 4FF0000B 		mov	fp, #0
- 1099              	.LVL117:
- 189:Lib/Src/MotorControl.c **** 		swapXY = false;
- 1100              		.loc 1 189 10 view .LVU289
- 1101 009a F7E7     		b	.L71
- 1102              	.LVL118:
- 1103              	.L74:
- 1104              	.LBB5:
- 193:Lib/Src/MotorControl.c **** 	{
- 194:Lib/Src/MotorControl.c **** 		if(swapXY)
- 195:Lib/Src/MotorControl.c **** 		{
- 196:Lib/Src/MotorControl.c **** 			if( dy > 0)
- 197:Lib/Src/MotorControl.c **** 				pYAxis->last += STEP;
- 198:Lib/Src/MotorControl.c **** 			else
- 199:Lib/Src/MotorControl.c **** 				pYAxis->last -= STEP;
- 1105              		.loc 1 199 5 is_stmt 1 view .LVU290
- 1106              		.loc 1 199 18 is_stmt 0 view .LVU291
- 1107 009c D9F84C00 		ldr	r0, [r9, #76]	@ float
- 1108 00a0 FFF7FEFF 		bl	__aeabi_f2d
- 1109              	.LVL119:
- 1110 00a4 50A3     		adr	r3, .L89
- 1111 00a6 D3E90023 		ldrd	r2, [r3]
- 1112 00aa FFF7FEFF 		bl	__aeabi_dsub
- 1113              	.LVL120:
- 1114 00ae FFF7FEFF 		bl	__aeabi_d2f
- 1115              	.LVL121:
- 1116 00b2 C9F84C00 		str	r0, [r9, #76]	@ float
- 1117 00b6 59E0     		b	.L75
- 1118              	.L73:
- 200:Lib/Src/MotorControl.c **** 			moveGcode(pYAxis);
- 201:Lib/Src/MotorControl.c **** 		}
- 202:Lib/Src/MotorControl.c **** 		else
- 203:Lib/Src/MotorControl.c **** 		{
- 204:Lib/Src/MotorControl.c **** 			if( dx > 0)
- 1119              		.loc 1 204 4 is_stmt 1 view .LVU292
- 1120              		.loc 1 204 6 is_stmt 0 view .LVU293
- 1121 00b8 BBF1000F 		cmp	fp, #0
- 1122 00bc 10DD     		ble	.L77
- 205:Lib/Src/MotorControl.c **** 				pXAxis->last += STEP;
- 1123              		.loc 1 205 5 is_stmt 1 view .LVU294
- 1124              		.loc 1 205 18 is_stmt 0 view .LVU295
- 1125 00be D8F84C00 		ldr	r0, [r8, #76]	@ float
- 1126 00c2 FFF7FEFF 		bl	__aeabi_f2d
- 1127              	.LVL122:
- 1128 00c6 48A3     		adr	r3, .L89
- 1129 00c8 D3E90023 		ldrd	r2, [r3]
- 1130 00cc FFF7FEFF 		bl	__aeabi_dadd
- 1131              	.LVL123:
- 1132 00d0 FFF7FEFF 		bl	__aeabi_d2f
- 1133              	.LVL124:
- 1134 00d4 C8F84C00 		str	r0, [r8, #76]	@ float
- 1135              	.L78:
- 206:Lib/Src/MotorControl.c **** 			else
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 26
-
-
- 207:Lib/Src/MotorControl.c **** 				pXAxis->last -= STEP;
- 208:Lib/Src/MotorControl.c **** 			moveGcode(pXAxis);
- 1136              		.loc 1 208 4 is_stmt 1 view .LVU296
- 1137 00d8 4046     		mov	r0, r8
- 1138 00da FFF7FEFF 		bl	moveGcode
- 1139              	.LVL125:
- 1140 00de 48E0     		b	.L76
- 1141              	.L77:
- 207:Lib/Src/MotorControl.c **** 			moveGcode(pXAxis);
- 1142              		.loc 1 207 5 view .LVU297
- 207:Lib/Src/MotorControl.c **** 			moveGcode(pXAxis);
- 1143              		.loc 1 207 18 is_stmt 0 view .LVU298
- 1144 00e0 D8F84C00 		ldr	r0, [r8, #76]	@ float
- 1145 00e4 FFF7FEFF 		bl	__aeabi_f2d
- 1146              	.LVL126:
- 1147 00e8 3FA3     		adr	r3, .L89
- 1148 00ea D3E90023 		ldrd	r2, [r3]
- 1149 00ee FFF7FEFF 		bl	__aeabi_dsub
- 1150              	.LVL127:
- 1151 00f2 FFF7FEFF 		bl	__aeabi_d2f
- 1152              	.LVL128:
- 1153 00f6 C8F84C00 		str	r0, [r8, #76]	@ float
- 1154 00fa EDE7     		b	.L78
- 1155              	.L81:
+ 1115              		.loc 1 201 7 is_stmt 0 view .LVU293
+ 1116 0018 05E0     		b	.L78
+ 1117              	.L77:
+ 202:Lib/Src/MotorControl.c **** 	{
+ 203:Lib/Src/MotorControl.c **** 		if(pAxis->sample_flag)
+ 204:Lib/Src/MotorControl.c **** 		{
+ 205:Lib/Src/MotorControl.c **** 			//readEncoder(pAxis->htim_enc, &pAxis->pos);
+ 206:Lib/Src/MotorControl.c **** 			readEncoder(pAxis);
+ 207:Lib/Src/MotorControl.c **** 			PID_control(pAxis->setpoint, pAxis);
+ 208:Lib/Src/MotorControl.c **** 			pAxis->sample_flag = false;
  209:Lib/Src/MotorControl.c **** 		}
- 210:Lib/Src/MotorControl.c **** 		error = error + slope;
- 211:Lib/Src/MotorControl.c **** 		if(error >= threshold)
+ 210:Lib/Src/MotorControl.c **** 		PWM(pAxis);	
+ 1118              		.loc 1 210 3 is_stmt 1 view .LVU294
+ 1119 001a 2046     		mov	r0, r4
+ 1120 001c FFF7FEFF 		bl	PWM
+ 1121              	.LVL104:
+ 211:Lib/Src/MotorControl.c **** 		if( pAxis->finish)
+ 1122              		.loc 1 211 3 view .LVU295
+ 1123              		.loc 1 211 12 is_stmt 0 view .LVU296
+ 1124 0020 94F84430 		ldrb	r3, [r4, #68]	@ zero_extendqisi2
+ 1125              		.loc 1 211 5 view .LVU297
+ 1126 0024 8BB9     		cbnz	r3, .L81
+ 1127              	.L78:
+ 201:Lib/Src/MotorControl.c **** 	while( pAxis->pid_process)
+ 1128              		.loc 1 201 7 is_stmt 1 view .LVU298
+ 201:Lib/Src/MotorControl.c **** 	while( pAxis->pid_process)
+ 1129              		.loc 1 201 14 is_stmt 0 view .LVU299
+ 1130 0026 94F84530 		ldrb	r3, [r4, #69]	@ zero_extendqisi2
+ 201:Lib/Src/MotorControl.c **** 	while( pAxis->pid_process)
+ 1131              		.loc 1 201 7 view .LVU300
+ 1132 002a D3B1     		cbz	r3, .L82
+ 203:Lib/Src/MotorControl.c **** 		{
+ 1133              		.loc 1 203 3 is_stmt 1 view .LVU301
+ 203:Lib/Src/MotorControl.c **** 		{
+ 1134              		.loc 1 203 11 is_stmt 0 view .LVU302
+ 1135 002c 94F84630 		ldrb	r3, [r4, #70]	@ zero_extendqisi2
+ 203:Lib/Src/MotorControl.c **** 		{
+ 1136              		.loc 1 203 5 view .LVU303
+ 1137 0030 002B     		cmp	r3, #0
+ 1138 0032 F2D0     		beq	.L77
+ 206:Lib/Src/MotorControl.c **** 			PID_control(pAxis->setpoint, pAxis);
+ 1139              		.loc 1 206 4 is_stmt 1 view .LVU304
+ 1140 0034 2046     		mov	r0, r4
+ 1141 0036 FFF7FEFF 		bl	readEncoder
+ 1142              	.LVL105:
+ 207:Lib/Src/MotorControl.c **** 			pAxis->sample_flag = false;
+ 1143              		.loc 1 207 4 view .LVU305
+ 1144 003a 2146     		mov	r1, r4
+ 1145 003c 206A     		ldr	r0, [r4, #32]
+ 1146 003e FFF7FEFF 		bl	PID_control
+ 1147              	.LVL106:
+ 208:Lib/Src/MotorControl.c **** 		}
+ 1148              		.loc 1 208 4 view .LVU306
+ 208:Lib/Src/MotorControl.c **** 		}
+ 1149              		.loc 1 208 23 is_stmt 0 view .LVU307
+ 1150 0042 0023     		movs	r3, #0
+ 1151 0044 84F84630 		strb	r3, [r4, #70]
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 28
+
+
+ 1152 0048 E7E7     		b	.L77
+ 1153              	.L81:
  212:Lib/Src/MotorControl.c **** 		{
- 213:Lib/Src/MotorControl.c **** 			error = error - max;
- 214:Lib/Src/MotorControl.c **** 			if(!swapXY)
- 215:Lib/Src/MotorControl.c **** 			{
- 216:Lib/Src/MotorControl.c **** 				if( dy > 0)
- 217:Lib/Src/MotorControl.c **** 					pYAxis->last += STEP;
- 218:Lib/Src/MotorControl.c **** 				else
- 219:Lib/Src/MotorControl.c **** 					pYAxis->last -= STEP;
- 1156              		.loc 1 219 6 is_stmt 1 view .LVU299
- 1157              		.loc 1 219 19 is_stmt 0 view .LVU300
- 1158 00fc D9F84C00 		ldr	r0, [r9, #76]	@ float
- 1159 0100 FFF7FEFF 		bl	__aeabi_f2d
- 1160              	.LVL129:
- 1161 0104 38A3     		adr	r3, .L89
- 1162 0106 D3E90023 		ldrd	r2, [r3]
- 1163 010a FFF7FEFF 		bl	__aeabi_dsub
- 1164              	.LVL130:
- 1165 010e FFF7FEFF 		bl	__aeabi_d2f
- 1166              	.LVL131:
- 1167 0112 C9F84C00 		str	r0, [r9, #76]	@ float
- 1168              	.L82:
- 220:Lib/Src/MotorControl.c **** 				moveGcode(pYAxis);
- 1169              		.loc 1 220 5 is_stmt 1 view .LVU301
- 1170 0116 4846     		mov	r0, r9
- 1171 0118 FFF7FEFF 		bl	moveGcode
- 1172              	.LVL132:
- 1173              	.L79:
- 192:Lib/Src/MotorControl.c **** 	{
- 1174              		.loc 1 192 36 discriminator 2 view .LVU302
- 192:Lib/Src/MotorControl.c **** 	{
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 27
+ 213:Lib/Src/MotorControl.c **** 			pAxis->pwm = 0;
+ 1154              		.loc 1 213 4 is_stmt 1 view .LVU308
+ 1155              		.loc 1 213 15 is_stmt 0 view .LVU309
+ 1156 004a 0023     		movs	r3, #0
+ 1157 004c E361     		str	r3, [r4, #28]	@ float
+ 214:Lib/Src/MotorControl.c **** 			PWM(pAxis);
+ 1158              		.loc 1 214 4 is_stmt 1 view .LVU310
+ 1159 004e 2046     		mov	r0, r4
+ 1160 0050 FFF7FEFF 		bl	PWM
+ 1161              	.LVL107:
+ 215:Lib/Src/MotorControl.c **** 			pAxis->pid_process = false;		
+ 1162              		.loc 1 215 4 view .LVU311
+ 1163              		.loc 1 215 23 is_stmt 0 view .LVU312
+ 1164 0054 0023     		movs	r3, #0
+ 1165 0056 84F84530 		strb	r3, [r4, #69]
+ 216:Lib/Src/MotorControl.c **** 			pAxis->time_sample = 0;		
+ 1166              		.loc 1 216 4 is_stmt 1 view .LVU313
+ 1167              		.loc 1 216 23 is_stmt 0 view .LVU314
+ 1168 005a 2375     		strb	r3, [r4, #20]
+ 217:Lib/Src/MotorControl.c **** 			pAxis->finish = false;
+ 1169              		.loc 1 217 4 is_stmt 1 view .LVU315
+ 1170              		.loc 1 217 18 is_stmt 0 view .LVU316
+ 1171 005c 84F84430 		strb	r3, [r4, #68]
+ 1172 0060 E1E7     		b	.L78
+ 1173              	.L82:
+ 218:Lib/Src/MotorControl.c **** 		}
+ 219:Lib/Src/MotorControl.c **** 	}
+ 220:Lib/Src/MotorControl.c **** }
+ 1174              		.loc 1 220 1 view .LVU317
+ 1175 0062 10BD     		pop	{r4, pc}
+ 1176              		.loc 1 220 1 view .LVU318
+ 1177              		.cfi_endproc
+ 1178              	.LFE75:
+ 1180              		.global	__aeabi_fsub
+ 1181              		.global	__aeabi_d2iz
+ 1182              		.global	__aeabi_dsub
+ 1183              		.global	__aeabi_dcmplt
+ 1184              		.section	.text.drawLine,"ax",%progbits
+ 1185              		.align	1
+ 1186              		.global	drawLine
+ 1187              		.syntax unified
+ 1188              		.thumb
+ 1189              		.thumb_func
+ 1191              	drawLine:
+ 1192              	.LVL108:
+ 1193              	.LFB76:
+ 221:Lib/Src/MotorControl.c **** void drawLine(AXIS *pXAxis, AXIS *pYAxis)
+ 222:Lib/Src/MotorControl.c **** {
+ 1194              		.loc 1 222 1 is_stmt 1 view -0
+ 1195              		.cfi_startproc
+ 1196              		@ args = 0, pretend = 0, frame = 16
+ 1197              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1198              		.loc 1 222 1 is_stmt 0 view .LVU320
+ 1199 0000 2DE9F04F 		push	{r4, r5, r6, r7, r8, r9, r10, fp, lr}
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 29
 
 
- 1175              		.loc 1 192 37 is_stmt 0 discriminator 2 view .LVU303
- 1176 011c 0137     		adds	r7, r7, #1
- 1177              	.LVL133:
- 1178              	.L72:
- 192:Lib/Src/MotorControl.c **** 	{
- 1179              		.loc 1 192 17 is_stmt 1 discriminator 1 view .LVU304
- 192:Lib/Src/MotorControl.c **** 	{
- 1180              		.loc 1 192 19 is_stmt 0 discriminator 1 view .LVU305
- 1181 011e 3846     		mov	r0, r7
- 1182 0120 FFF7FEFF 		bl	__aeabi_i2d
- 1183              	.LVL134:
- 1184 0124 CDE90001 		strd	r0, [sp]
- 192:Lib/Src/MotorControl.c **** 	{
- 1185              		.loc 1 192 28 discriminator 1 view .LVU306
- 1186 0128 5046     		mov	r0, r10
- 1187 012a FFF7FEFF 		bl	__aeabi_i2d
- 1188              	.LVL135:
- 1189 012e 2EA3     		adr	r3, .L89
- 1190 0130 D3E90023 		ldrd	r2, [r3]
- 1191 0134 FFF7FEFF 		bl	__aeabi_ddiv
- 1192              	.LVL136:
- 1193 0138 0246     		mov	r2, r0
- 1194 013a 0B46     		mov	r3, r1
- 192:Lib/Src/MotorControl.c **** 	{
- 1195              		.loc 1 192 2 discriminator 1 view .LVU307
- 1196 013c DDE90001 		ldrd	r0, [sp]
- 1197 0140 FFF7FEFF 		bl	__aeabi_dcmplt
- 1198              	.LVL137:
- 1199 0144 0028     		cmp	r0, #0
- 1200 0146 4CD0     		beq	.L88
- 194:Lib/Src/MotorControl.c **** 		{
- 1201              		.loc 1 194 3 is_stmt 1 view .LVU308
- 194:Lib/Src/MotorControl.c **** 		{
- 1202              		.loc 1 194 5 is_stmt 0 view .LVU309
- 1203 0148 002D     		cmp	r5, #0
- 1204 014a B5D0     		beq	.L73
- 196:Lib/Src/MotorControl.c **** 				pYAxis->last += STEP;
- 1205              		.loc 1 196 4 is_stmt 1 view .LVU310
- 196:Lib/Src/MotorControl.c **** 				pYAxis->last += STEP;
- 1206              		.loc 1 196 6 is_stmt 0 view .LVU311
- 1207 014c 029B     		ldr	r3, [sp, #8]
- 1208 014e 002B     		cmp	r3, #0
- 1209 0150 A4DD     		ble	.L74
- 197:Lib/Src/MotorControl.c **** 			else
- 1210              		.loc 1 197 5 is_stmt 1 view .LVU312
- 197:Lib/Src/MotorControl.c **** 			else
- 1211              		.loc 1 197 18 is_stmt 0 view .LVU313
- 1212 0152 D9F84C00 		ldr	r0, [r9, #76]	@ float
- 1213 0156 FFF7FEFF 		bl	__aeabi_f2d
- 1214              	.LVL138:
- 1215 015a 23A3     		adr	r3, .L89
- 1216 015c D3E90023 		ldrd	r2, [r3]
- 1217 0160 FFF7FEFF 		bl	__aeabi_dadd
- 1218              	.LVL139:
- 1219 0164 FFF7FEFF 		bl	__aeabi_d2f
- 1220              	.LVL140:
- 1221 0168 C9F84C00 		str	r0, [r9, #76]	@ float
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 28
+ 1200              	.LCFI9:
+ 1201              		.cfi_def_cfa_offset 36
+ 1202              		.cfi_offset 4, -36
+ 1203              		.cfi_offset 5, -32
+ 1204              		.cfi_offset 6, -28
+ 1205              		.cfi_offset 7, -24
+ 1206              		.cfi_offset 8, -20
+ 1207              		.cfi_offset 9, -16
+ 1208              		.cfi_offset 10, -12
+ 1209              		.cfi_offset 11, -8
+ 1210              		.cfi_offset 14, -4
+ 1211 0004 85B0     		sub	sp, sp, #20
+ 1212              	.LCFI10:
+ 1213              		.cfi_def_cfa_offset 56
+ 1214 0006 8046     		mov	r8, r0
+ 1215 0008 8946     		mov	r9, r1
+ 223:Lib/Src/MotorControl.c **** 	// declare variable
+ 224:Lib/Src/MotorControl.c **** 	int dx = round(pXAxis->next - pXAxis->last);
+ 1216              		.loc 1 224 2 is_stmt 1 view .LVU321
+ 1217              		.loc 1 224 30 is_stmt 0 view .LVU322
+ 1218 000a C16C     		ldr	r1, [r0, #76]	@ float
+ 1219              	.LVL109:
+ 1220              		.loc 1 224 30 view .LVU323
+ 1221 000c 806C     		ldr	r0, [r0, #72]	@ float
+ 1222              	.LVL110:
+ 1223              		.loc 1 224 30 view .LVU324
+ 1224 000e FFF7FEFF 		bl	__aeabi_fsub
+ 1225              	.LVL111:
+ 1226              		.loc 1 224 11 view .LVU325
+ 1227 0012 FFF7FEFF 		bl	__aeabi_f2d
+ 1228              	.LVL112:
+ 1229 0016 FFF7FEFF 		bl	round
+ 1230              	.LVL113:
+ 1231              		.loc 1 224 6 view .LVU326
+ 1232 001a FFF7FEFF 		bl	__aeabi_d2iz
+ 1233              	.LVL114:
+ 1234 001e 0546     		mov	r5, r0
+ 1235              	.LVL115:
+ 225:Lib/Src/MotorControl.c **** 	int dy = round(pYAxis->next - pYAxis->last);
+ 1236              		.loc 1 225 2 is_stmt 1 view .LVU327
+ 1237              		.loc 1 225 30 is_stmt 0 view .LVU328
+ 1238 0020 D9F84C10 		ldr	r1, [r9, #76]	@ float
+ 1239 0024 D9F84800 		ldr	r0, [r9, #72]	@ float
+ 1240              	.LVL116:
+ 1241              		.loc 1 225 30 view .LVU329
+ 1242 0028 FFF7FEFF 		bl	__aeabi_fsub
+ 1243              	.LVL117:
+ 1244              		.loc 1 225 11 view .LVU330
+ 1245 002c FFF7FEFF 		bl	__aeabi_f2d
+ 1246              	.LVL118:
+ 1247 0030 FFF7FEFF 		bl	round
+ 1248              	.LVL119:
+ 1249              		.loc 1 225 6 view .LVU331
+ 1250 0034 FFF7FEFF 		bl	__aeabi_d2iz
+ 1251              	.LVL120:
+ 1252 0038 8346     		mov	fp, r0
+ 1253 003a 0290     		str	r0, [sp, #8]
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 30
 
 
- 1222              	.L75:
- 200:Lib/Src/MotorControl.c **** 		}
- 1223              		.loc 1 200 4 is_stmt 1 view .LVU314
- 1224 016c 4846     		mov	r0, r9
- 1225 016e FFF7FEFF 		bl	moveGcode
- 1226              	.LVL141:
- 1227              	.L76:
- 210:Lib/Src/MotorControl.c **** 		if(error >= threshold)
- 1228              		.loc 1 210 3 view .LVU315
- 211:Lib/Src/MotorControl.c **** 		{
- 1229              		.loc 1 211 3 view .LVU316
- 211:Lib/Src/MotorControl.c **** 		{
- 1230              		.loc 1 211 5 is_stmt 0 view .LVU317
- 1231 0172 3619     		adds	r6, r6, r4
- 1232              	.LVL142:
- 211:Lib/Src/MotorControl.c **** 		{
- 1233              		.loc 1 211 5 view .LVU318
- 1234 0174 D2D4     		bmi	.L79
- 213:Lib/Src/MotorControl.c **** 			if(!swapXY)
- 1235              		.loc 1 213 4 is_stmt 1 view .LVU319
- 213:Lib/Src/MotorControl.c **** 			if(!swapXY)
- 1236              		.loc 1 213 10 is_stmt 0 view .LVU320
- 1237 0176 039B     		ldr	r3, [sp, #12]
- 1238 0178 F61A     		subs	r6, r6, r3
- 1239              	.LVL143:
- 214:Lib/Src/MotorControl.c **** 			{
- 1240              		.loc 1 214 4 is_stmt 1 view .LVU321
- 214:Lib/Src/MotorControl.c **** 			{
- 1241              		.loc 1 214 6 is_stmt 0 view .LVU322
- 1242 017a 85B9     		cbnz	r5, .L80
- 216:Lib/Src/MotorControl.c **** 					pYAxis->last += STEP;
- 1243              		.loc 1 216 5 is_stmt 1 view .LVU323
- 216:Lib/Src/MotorControl.c **** 					pYAxis->last += STEP;
- 1244              		.loc 1 216 7 is_stmt 0 view .LVU324
- 1245 017c 029B     		ldr	r3, [sp, #8]
- 1246 017e 002B     		cmp	r3, #0
- 1247 0180 BCDD     		ble	.L81
- 217:Lib/Src/MotorControl.c **** 				else
- 1248              		.loc 1 217 6 is_stmt 1 view .LVU325
- 217:Lib/Src/MotorControl.c **** 				else
- 1249              		.loc 1 217 19 is_stmt 0 view .LVU326
- 1250 0182 D9F84C00 		ldr	r0, [r9, #76]	@ float
- 1251 0186 FFF7FEFF 		bl	__aeabi_f2d
- 1252              	.LVL144:
- 1253 018a 17A3     		adr	r3, .L89
- 1254 018c D3E90023 		ldrd	r2, [r3]
- 1255 0190 FFF7FEFF 		bl	__aeabi_dadd
- 1256              	.LVL145:
- 1257 0194 FFF7FEFF 		bl	__aeabi_d2f
- 1258              	.LVL146:
- 1259 0198 C9F84C00 		str	r0, [r9, #76]	@ float
- 1260 019c BBE7     		b	.L82
- 1261              	.L80:
- 221:Lib/Src/MotorControl.c **** 			}
- 222:Lib/Src/MotorControl.c **** 			else
- 223:Lib/Src/MotorControl.c **** 			{
- 224:Lib/Src/MotorControl.c **** 				if( dx > 0)
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 29
+ 1254              	.LVL121:
+ 226:Lib/Src/MotorControl.c **** 	int longest = int_max(int_abs(dx), int_abs(dy));
+ 1255              		.loc 1 226 2 is_stmt 1 view .LVU332
+ 1256              		.loc 1 226 16 is_stmt 0 view .LVU333
+ 1257 003c 2846     		mov	r0, r5
+ 1258              	.LVL122:
+ 1259              		.loc 1 226 16 view .LVU334
+ 1260 003e FFF7FEFF 		bl	int_abs
+ 1261              	.LVL123:
+ 1262 0042 0446     		mov	r4, r0
+ 1263 0044 5846     		mov	r0, fp
+ 1264 0046 FFF7FEFF 		bl	int_abs
+ 1265              	.LVL124:
+ 1266 004a 0146     		mov	r1, r0
+ 1267 004c 2046     		mov	r0, r4
+ 1268 004e FFF7FEFF 		bl	int_max
+ 1269              	.LVL125:
+ 1270 0052 8246     		mov	r10, r0
+ 1271              	.LVL126:
+ 227:Lib/Src/MotorControl.c **** 	int shortest = int_min(int_abs(dx), int_abs(dy));
+ 1272              		.loc 1 227 2 is_stmt 1 view .LVU335
+ 1273              		.loc 1 227 17 is_stmt 0 view .LVU336
+ 1274 0054 2846     		mov	r0, r5
+ 1275              	.LVL127:
+ 1276              		.loc 1 227 17 view .LVU337
+ 1277 0056 FFF7FEFF 		bl	int_abs
+ 1278              	.LVL128:
+ 1279 005a 0446     		mov	r4, r0
+ 1280 005c 5846     		mov	r0, fp
+ 1281 005e FFF7FEFF 		bl	int_abs
+ 1282              	.LVL129:
+ 1283 0062 0146     		mov	r1, r0
+ 1284 0064 2046     		mov	r0, r4
+ 1285 0066 FFF7FEFF 		bl	int_min
+ 1286              	.LVL130:
+ 228:Lib/Src/MotorControl.c **** 	int error = - longest;
+ 1287              		.loc 1 228 2 is_stmt 1 view .LVU338
+ 1288              		.loc 1 228 6 is_stmt 0 view .LVU339
+ 1289 006a CAF10006 		rsb	r6, r10, #0
+ 1290              	.LVL131:
+ 229:Lib/Src/MotorControl.c **** 	int slope = shortest<<1;
+ 1291              		.loc 1 229 2 is_stmt 1 view .LVU340
+ 1292              		.loc 1 229 6 is_stmt 0 view .LVU341
+ 1293 006e 4400     		lsls	r4, r0, #1
+ 1294              	.LVL132:
+ 230:Lib/Src/MotorControl.c **** 	int max = longest<<1;
+ 1295              		.loc 1 230 2 is_stmt 1 view .LVU342
+ 1296              		.loc 1 230 6 is_stmt 0 view .LVU343
+ 1297 0070 4FEA4A03 		lsl	r3, r10, #1
+ 1298 0074 0393     		str	r3, [sp, #12]
+ 1299              	.LVL133:
+ 231:Lib/Src/MotorControl.c **** 	int threshold = 0;
+ 1300              		.loc 1 231 2 is_stmt 1 view .LVU344
+ 232:Lib/Src/MotorControl.c **** 	bool swapXY = true;
+ 1301              		.loc 1 232 2 view .LVU345
+ 233:Lib/Src/MotorControl.c **** 	
+ 234:Lib/Src/MotorControl.c **** 	// swap x and y if dy > dx
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 31
 
 
- 1262              		.loc 1 224 5 is_stmt 1 view .LVU327
- 1263              		.loc 1 224 7 is_stmt 0 view .LVU328
- 1264 019e BBF1000F 		cmp	fp, #0
- 1265 01a2 10DD     		ble	.L83
- 225:Lib/Src/MotorControl.c **** 					pXAxis->last += STEP;
- 1266              		.loc 1 225 6 is_stmt 1 view .LVU329
- 1267              		.loc 1 225 19 is_stmt 0 view .LVU330
- 1268 01a4 D8F84C00 		ldr	r0, [r8, #76]	@ float
- 1269 01a8 FFF7FEFF 		bl	__aeabi_f2d
- 1270              	.LVL147:
- 1271 01ac 0EA3     		adr	r3, .L89
- 1272 01ae D3E90023 		ldrd	r2, [r3]
- 1273 01b2 FFF7FEFF 		bl	__aeabi_dadd
- 1274              	.LVL148:
- 1275 01b6 FFF7FEFF 		bl	__aeabi_d2f
- 1276              	.LVL149:
- 1277 01ba C8F84C00 		str	r0, [r8, #76]	@ float
- 1278              	.L84:
- 226:Lib/Src/MotorControl.c **** 				else
- 227:Lib/Src/MotorControl.c **** 					pXAxis->last -= STEP;
- 228:Lib/Src/MotorControl.c **** 				moveGcode(pXAxis);
- 1279              		.loc 1 228 5 is_stmt 1 view .LVU331
- 1280 01be 4046     		mov	r0, r8
- 1281 01c0 FFF7FEFF 		bl	moveGcode
- 1282              	.LVL150:
- 1283 01c4 AAE7     		b	.L79
- 1284              	.L83:
- 227:Lib/Src/MotorControl.c **** 				moveGcode(pXAxis);
- 1285              		.loc 1 227 6 view .LVU332
- 227:Lib/Src/MotorControl.c **** 				moveGcode(pXAxis);
- 1286              		.loc 1 227 19 is_stmt 0 view .LVU333
- 1287 01c6 D8F84C00 		ldr	r0, [r8, #76]	@ float
- 1288 01ca FFF7FEFF 		bl	__aeabi_f2d
- 1289              	.LVL151:
- 1290 01ce 06A3     		adr	r3, .L89
- 1291 01d0 D3E90023 		ldrd	r2, [r3]
- 1292 01d4 FFF7FEFF 		bl	__aeabi_dsub
- 1293              	.LVL152:
- 1294 01d8 FFF7FEFF 		bl	__aeabi_d2f
- 1295              	.LVL153:
- 1296 01dc C8F84C00 		str	r0, [r8, #76]	@ float
- 1297 01e0 EDE7     		b	.L84
- 1298              	.L88:
- 227:Lib/Src/MotorControl.c **** 				moveGcode(pXAxis);
- 1299              		.loc 1 227 19 view .LVU334
- 1300              	.LBE5:
- 229:Lib/Src/MotorControl.c **** 			}
- 230:Lib/Src/MotorControl.c **** 		}
- 231:Lib/Src/MotorControl.c **** 	}
- 232:Lib/Src/MotorControl.c **** }
- 1301              		.loc 1 232 1 view .LVU335
- 1302 01e2 05B0     		add	sp, sp, #20
- 1303              	.LCFI11:
- 1304              		.cfi_def_cfa_offset 36
- 1305              		@ sp needed
- 1306 01e4 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
- 1307              	.LVL154:
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 30
+ 235:Lib/Src/MotorControl.c **** 	if(int_abs(dx) > int_abs(dy))
+ 1302              		.loc 1 235 2 view .LVU346
+ 1303              		.loc 1 235 5 is_stmt 0 view .LVU347
+ 1304 0076 2846     		mov	r0, r5
+ 1305              	.LVL134:
+ 1306              		.loc 1 235 5 view .LVU348
+ 1307 0078 FFF7FEFF 		bl	int_abs
+ 1308              	.LVL135:
+ 1309              		.loc 1 235 5 view .LVU349
+ 1310 007c 0746     		mov	r7, r0
+ 1311              		.loc 1 235 19 view .LVU350
+ 1312 007e 5846     		mov	r0, fp
+ 1313 0080 FFF7FEFF 		bl	int_abs
+ 1314              	.LVL136:
+ 1315              		.loc 1 235 4 view .LVU351
+ 1316 0084 8742     		cmp	r7, r0
+ 1317 0086 06DC     		bgt	.L99
+ 232:Lib/Src/MotorControl.c **** 	bool swapXY = true;
+ 1318              		.loc 1 232 7 view .LVU352
+ 1319 0088 4FF0010B 		mov	fp, #1
+ 1320              	.LVL137:
+ 1321              	.L84:
+ 236:Lib/Src/MotorControl.c **** 		swapXY = false;
+ 237:Lib/Src/MotorControl.c **** 	
+ 238:Lib/Src/MotorControl.c **** 	// Bresenham Algorithm
+ 239:Lib/Src/MotorControl.c **** 	for(int i = 0; i < longest/STEP ; i++)
+ 1322              		.loc 1 239 2 is_stmt 1 view .LVU353
+ 1323              	.LBB8:
+ 1324              		.loc 1 239 6 view .LVU354
+ 1325              		.loc 1 239 10 is_stmt 0 view .LVU355
+ 1326 008c 0027     		movs	r7, #0
+ 1327 008e 2B46     		mov	r3, r5
+ 1328 0090 5D46     		mov	r5, fp
+ 1329              	.LVL138:
+ 1330              		.loc 1 239 10 view .LVU356
+ 1331 0092 9B46     		mov	fp, r3
+ 1332              	.LVL139:
+ 1333              		.loc 1 239 2 view .LVU357
+ 1334 0094 43E0     		b	.L85
+ 1335              	.LVL140:
+ 1336              	.L99:
+ 1337              		.loc 1 239 2 view .LVU358
+ 1338              	.LBE8:
+ 236:Lib/Src/MotorControl.c **** 		swapXY = false;
+ 1339              		.loc 1 236 10 view .LVU359
+ 1340 0096 4FF0000B 		mov	fp, #0
+ 1341              	.LVL141:
+ 236:Lib/Src/MotorControl.c **** 		swapXY = false;
+ 1342              		.loc 1 236 10 view .LVU360
+ 1343 009a F7E7     		b	.L84
+ 1344              	.LVL142:
+ 1345              	.L87:
+ 1346              	.LBB9:
+ 240:Lib/Src/MotorControl.c **** 	{
+ 241:Lib/Src/MotorControl.c **** 		if(swapXY)
+ 242:Lib/Src/MotorControl.c **** 		{
+ 243:Lib/Src/MotorControl.c **** 			if( dy > 0)
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 32
 
 
- 1308              	.L90:
- 1309              		.loc 1 232 1 view .LVU336
- 1310              		.align	3
- 1311              	.L89:
- 1312 01e8 9A999999 		.word	-1717986918
- 1313 01ec 9999A93F 		.word	1068079513
- 1314              		.cfi_endproc
- 1315              	.LFE76:
- 1317              		.global	__aeabi_f2uiz
- 1318              		.section	.text.runDrill,"ax",%progbits
- 1319              		.align	1
- 1320              		.global	runDrill
- 1321              		.syntax unified
- 1322              		.thumb
- 1323              		.thumb_func
- 1325              	runDrill:
- 1326              	.LVL155:
- 1327              	.LFB77:
- 233:Lib/Src/MotorControl.c **** 
- 234:Lib/Src/MotorControl.c **** void runDrill(DRILL *drill, float pwm)
- 235:Lib/Src/MotorControl.c **** {
- 1328              		.loc 1 235 1 is_stmt 1 view -0
- 1329              		.cfi_startproc
- 1330              		@ args = 0, pretend = 0, frame = 0
- 1331              		@ frame_needed = 0, uses_anonymous_args = 0
- 1332              		.loc 1 235 1 is_stmt 0 view .LVU338
- 1333 0000 38B5     		push	{r3, r4, r5, lr}
- 1334              	.LCFI12:
- 1335              		.cfi_def_cfa_offset 16
- 1336              		.cfi_offset 3, -16
- 1337              		.cfi_offset 4, -12
- 1338              		.cfi_offset 5, -8
- 1339              		.cfi_offset 14, -4
- 1340 0002 0446     		mov	r4, r0
- 1341 0004 0D46     		mov	r5, r1
- 236:Lib/Src/MotorControl.c **** 	if (pwm > 0)
- 1342              		.loc 1 236 2 is_stmt 1 view .LVU339
- 1343              		.loc 1 236 5 is_stmt 0 view .LVU340
- 1344 0006 0021     		movs	r1, #0
- 1345              	.LVL156:
- 1346              		.loc 1 236 5 view .LVU341
- 1347 0008 2846     		mov	r0, r5
- 1348              	.LVL157:
- 1349              		.loc 1 236 5 view .LVU342
- 1350 000a FFF7FEFF 		bl	__aeabi_fcmpgt
- 1351              	.LVL158:
- 1352 000e 0028     		cmp	r0, #0
- 1353 0010 32D0     		beq	.L113
- 237:Lib/Src/MotorControl.c **** 	{
- 238:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, 100 - pwm);
- 1354              		.loc 1 238 3 is_stmt 1 view .LVU343
- 1355 0012 6368     		ldr	r3, [r4, #4]
- 1356 0014 73B9     		cbnz	r3, .L94
- 1357              		.loc 1 238 3 is_stmt 0 discriminator 1 view .LVU344
- 1358 0016 2946     		mov	r1, r5
- 1359 0018 3F48     		ldr	r0, .L122
- 1360 001a FFF7FEFF 		bl	__aeabi_fsub
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 31
+ 244:Lib/Src/MotorControl.c **** 				pYAxis->last += STEP;
+ 245:Lib/Src/MotorControl.c **** 			else
+ 246:Lib/Src/MotorControl.c **** 				pYAxis->last -= STEP;
+ 1347              		.loc 1 246 5 is_stmt 1 view .LVU361
+ 1348              		.loc 1 246 18 is_stmt 0 view .LVU362
+ 1349 009c D9F84C00 		ldr	r0, [r9, #76]	@ float
+ 1350 00a0 FFF7FEFF 		bl	__aeabi_f2d
+ 1351              	.LVL143:
+ 1352 00a4 50A3     		adr	r3, .L102
+ 1353 00a6 D3E90023 		ldrd	r2, [r3]
+ 1354 00aa FFF7FEFF 		bl	__aeabi_dsub
+ 1355              	.LVL144:
+ 1356 00ae FFF7FEFF 		bl	__aeabi_d2f
+ 1357              	.LVL145:
+ 1358 00b2 C9F84C00 		str	r0, [r9, #76]	@ float
+ 1359 00b6 59E0     		b	.L88
+ 1360              	.L86:
+ 247:Lib/Src/MotorControl.c **** 			moveGcode(pYAxis);
+ 248:Lib/Src/MotorControl.c **** 		}
+ 249:Lib/Src/MotorControl.c **** 		else
+ 250:Lib/Src/MotorControl.c **** 		{
+ 251:Lib/Src/MotorControl.c **** 			if( dx > 0)
+ 1361              		.loc 1 251 4 is_stmt 1 view .LVU363
+ 1362              		.loc 1 251 6 is_stmt 0 view .LVU364
+ 1363 00b8 BBF1000F 		cmp	fp, #0
+ 1364 00bc 10DD     		ble	.L90
+ 252:Lib/Src/MotorControl.c **** 				pXAxis->last += STEP;
+ 1365              		.loc 1 252 5 is_stmt 1 view .LVU365
+ 1366              		.loc 1 252 18 is_stmt 0 view .LVU366
+ 1367 00be D8F84C00 		ldr	r0, [r8, #76]	@ float
+ 1368 00c2 FFF7FEFF 		bl	__aeabi_f2d
+ 1369              	.LVL146:
+ 1370 00c6 48A3     		adr	r3, .L102
+ 1371 00c8 D3E90023 		ldrd	r2, [r3]
+ 1372 00cc FFF7FEFF 		bl	__aeabi_dadd
+ 1373              	.LVL147:
+ 1374 00d0 FFF7FEFF 		bl	__aeabi_d2f
+ 1375              	.LVL148:
+ 1376 00d4 C8F84C00 		str	r0, [r8, #76]	@ float
+ 1377              	.L91:
+ 253:Lib/Src/MotorControl.c **** 			else
+ 254:Lib/Src/MotorControl.c **** 				pXAxis->last -= STEP;
+ 255:Lib/Src/MotorControl.c **** 			moveGcode(pXAxis);
+ 1378              		.loc 1 255 4 is_stmt 1 view .LVU367
+ 1379 00d8 4046     		mov	r0, r8
+ 1380 00da FFF7FEFF 		bl	moveGcode
+ 1381              	.LVL149:
+ 1382 00de 48E0     		b	.L89
+ 1383              	.L90:
+ 254:Lib/Src/MotorControl.c **** 			moveGcode(pXAxis);
+ 1384              		.loc 1 254 5 view .LVU368
+ 254:Lib/Src/MotorControl.c **** 			moveGcode(pXAxis);
+ 1385              		.loc 1 254 18 is_stmt 0 view .LVU369
+ 1386 00e0 D8F84C00 		ldr	r0, [r8, #76]	@ float
+ 1387 00e4 FFF7FEFF 		bl	__aeabi_f2d
+ 1388              	.LVL150:
+ 1389 00e8 3FA3     		adr	r3, .L102
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 33
 
 
- 1361              	.LVL159:
- 1362 001e 2368     		ldr	r3, [r4]
- 1363 0020 1D68     		ldr	r5, [r3]
- 1364              	.LVL160:
- 1365              		.loc 1 238 3 discriminator 1 view .LVU345
- 1366 0022 FFF7FEFF 		bl	__aeabi_f2uiz
- 1367              	.LVL161:
- 1368 0026 6863     		str	r0, [r5, #52]
- 1369              	.L95:
- 239:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
- 1370              		.loc 1 239 3 is_stmt 1 view .LVU346
- 1371 0028 0122     		movs	r2, #1
- 1372 002a A189     		ldrh	r1, [r4, #12]
- 1373 002c A068     		ldr	r0, [r4, #8]
- 1374 002e FFF7FEFF 		bl	HAL_GPIO_WritePin
- 1375              	.LVL162:
- 1376              	.L91:
- 240:Lib/Src/MotorControl.c **** 	}
- 241:Lib/Src/MotorControl.c **** 	else if (pwm == 0)
- 242:Lib/Src/MotorControl.c **** 	{
- 243:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, 0);
- 244:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 245:Lib/Src/MotorControl.c **** 	}
- 246:Lib/Src/MotorControl.c **** 	else if (pwm < 0)
- 247:Lib/Src/MotorControl.c **** 	{
- 248:Lib/Src/MotorControl.c **** 		pwm *= -1;
- 249:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, pwm);
- 250:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 251:Lib/Src/MotorControl.c **** 	}
- 252:Lib/Src/MotorControl.c **** }
- 1377              		.loc 1 252 1 is_stmt 0 view .LVU347
- 1378 0032 38BD     		pop	{r3, r4, r5, pc}
- 1379              	.LVL163:
- 1380              	.L94:
- 238:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
- 1381              		.loc 1 238 3 discriminator 2 view .LVU348
- 1382 0034 042B     		cmp	r3, #4
- 1383 0036 0BD0     		beq	.L116
- 238:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
- 1384              		.loc 1 238 3 discriminator 4 view .LVU349
- 1385 0038 082B     		cmp	r3, #8
- 1386 003a 13D0     		beq	.L117
- 238:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
- 1387              		.loc 1 238 3 discriminator 7 view .LVU350
- 1388 003c 2946     		mov	r1, r5
- 1389 003e 3648     		ldr	r0, .L122
- 1390 0040 FFF7FEFF 		bl	__aeabi_fsub
- 1391              	.LVL164:
- 1392 0044 2368     		ldr	r3, [r4]
- 1393 0046 1D68     		ldr	r5, [r3]
- 1394              	.LVL165:
- 238:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
- 1395              		.loc 1 238 3 discriminator 7 view .LVU351
- 1396 0048 FFF7FEFF 		bl	__aeabi_f2uiz
- 1397              	.LVL166:
- 1398 004c 2864     		str	r0, [r5, #64]
- 1399 004e EBE7     		b	.L95
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 32
+ 1390 00ea D3E90023 		ldrd	r2, [r3]
+ 1391 00ee FFF7FEFF 		bl	__aeabi_dsub
+ 1392              	.LVL151:
+ 1393 00f2 FFF7FEFF 		bl	__aeabi_d2f
+ 1394              	.LVL152:
+ 1395 00f6 C8F84C00 		str	r0, [r8, #76]	@ float
+ 1396 00fa EDE7     		b	.L91
+ 1397              	.L94:
+ 256:Lib/Src/MotorControl.c **** 		}
+ 257:Lib/Src/MotorControl.c **** 		error = error + slope;
+ 258:Lib/Src/MotorControl.c **** 		if(error >= threshold)
+ 259:Lib/Src/MotorControl.c **** 		{
+ 260:Lib/Src/MotorControl.c **** 			error = error - max;
+ 261:Lib/Src/MotorControl.c **** 			if(!swapXY)
+ 262:Lib/Src/MotorControl.c **** 			{
+ 263:Lib/Src/MotorControl.c **** 				if( dy > 0)
+ 264:Lib/Src/MotorControl.c **** 					pYAxis->last += STEP;
+ 265:Lib/Src/MotorControl.c **** 				else
+ 266:Lib/Src/MotorControl.c **** 					pYAxis->last -= STEP;
+ 1398              		.loc 1 266 6 is_stmt 1 view .LVU370
+ 1399              		.loc 1 266 19 is_stmt 0 view .LVU371
+ 1400 00fc D9F84C00 		ldr	r0, [r9, #76]	@ float
+ 1401 0100 FFF7FEFF 		bl	__aeabi_f2d
+ 1402              	.LVL153:
+ 1403 0104 38A3     		adr	r3, .L102
+ 1404 0106 D3E90023 		ldrd	r2, [r3]
+ 1405 010a FFF7FEFF 		bl	__aeabi_dsub
+ 1406              	.LVL154:
+ 1407 010e FFF7FEFF 		bl	__aeabi_d2f
+ 1408              	.LVL155:
+ 1409 0112 C9F84C00 		str	r0, [r9, #76]	@ float
+ 1410              	.L95:
+ 267:Lib/Src/MotorControl.c **** 				moveGcode(pYAxis);
+ 1411              		.loc 1 267 5 is_stmt 1 view .LVU372
+ 1412 0116 4846     		mov	r0, r9
+ 1413 0118 FFF7FEFF 		bl	moveGcode
+ 1414              	.LVL156:
+ 1415              	.L92:
+ 239:Lib/Src/MotorControl.c **** 	{
+ 1416              		.loc 1 239 36 discriminator 2 view .LVU373
+ 239:Lib/Src/MotorControl.c **** 	{
+ 1417              		.loc 1 239 37 is_stmt 0 discriminator 2 view .LVU374
+ 1418 011c 0137     		adds	r7, r7, #1
+ 1419              	.LVL157:
+ 1420              	.L85:
+ 239:Lib/Src/MotorControl.c **** 	{
+ 1421              		.loc 1 239 17 is_stmt 1 discriminator 1 view .LVU375
+ 239:Lib/Src/MotorControl.c **** 	{
+ 1422              		.loc 1 239 19 is_stmt 0 discriminator 1 view .LVU376
+ 1423 011e 3846     		mov	r0, r7
+ 1424 0120 FFF7FEFF 		bl	__aeabi_i2d
+ 1425              	.LVL158:
+ 1426 0124 CDE90001 		strd	r0, [sp]
+ 239:Lib/Src/MotorControl.c **** 	{
+ 1427              		.loc 1 239 28 discriminator 1 view .LVU377
+ 1428 0128 5046     		mov	r0, r10
+ 1429 012a FFF7FEFF 		bl	__aeabi_i2d
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 34
 
 
- 1400              	.LVL167:
- 1401              	.L116:
- 238:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
- 1402              		.loc 1 238 3 discriminator 3 view .LVU352
- 1403 0050 2946     		mov	r1, r5
- 1404 0052 3148     		ldr	r0, .L122
- 1405 0054 FFF7FEFF 		bl	__aeabi_fsub
- 1406              	.LVL168:
- 1407 0058 2368     		ldr	r3, [r4]
- 1408 005a 1D68     		ldr	r5, [r3]
- 1409              	.LVL169:
- 238:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
- 1410              		.loc 1 238 3 discriminator 3 view .LVU353
- 1411 005c FFF7FEFF 		bl	__aeabi_f2uiz
- 1412              	.LVL170:
- 1413 0060 A863     		str	r0, [r5, #56]
- 1414 0062 E1E7     		b	.L95
- 1415              	.LVL171:
- 1416              	.L117:
- 238:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
- 1417              		.loc 1 238 3 discriminator 6 view .LVU354
- 1418 0064 2946     		mov	r1, r5
- 1419 0066 2C48     		ldr	r0, .L122
- 1420 0068 FFF7FEFF 		bl	__aeabi_fsub
- 1421              	.LVL172:
- 1422 006c 2368     		ldr	r3, [r4]
- 1423 006e 1D68     		ldr	r5, [r3]
- 1424              	.LVL173:
- 238:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
- 1425              		.loc 1 238 3 discriminator 6 view .LVU355
- 1426 0070 FFF7FEFF 		bl	__aeabi_f2uiz
- 1427              	.LVL174:
- 1428 0074 E863     		str	r0, [r5, #60]
- 1429 0076 D7E7     		b	.L95
- 1430              	.LVL175:
- 1431              	.L113:
- 241:Lib/Src/MotorControl.c **** 	{
- 1432              		.loc 1 241 7 is_stmt 1 view .LVU356
- 241:Lib/Src/MotorControl.c **** 	{
- 1433              		.loc 1 241 10 is_stmt 0 view .LVU357
- 1434 0078 0021     		movs	r1, #0
- 1435 007a 2846     		mov	r0, r5
- 1436 007c FFF7FEFF 		bl	__aeabi_fcmpeq
- 1437              	.LVL176:
- 1438 0080 F0B1     		cbz	r0, .L114
- 243:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1439              		.loc 1 243 3 is_stmt 1 view .LVU358
- 1440 0082 6368     		ldr	r3, [r4, #4]
- 1441 0084 4BB9     		cbnz	r3, .L101
- 243:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1442              		.loc 1 243 3 is_stmt 0 discriminator 1 view .LVU359
- 1443 0086 2368     		ldr	r3, [r4]
- 1444 0088 1B68     		ldr	r3, [r3]
- 1445 008a 0022     		movs	r2, #0
- 1446 008c 5A63     		str	r2, [r3, #52]
- 1447              	.L102:
- 244:Lib/Src/MotorControl.c **** 	}
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 33
+ 1430              	.LVL159:
+ 1431 012e 2EA3     		adr	r3, .L102
+ 1432 0130 D3E90023 		ldrd	r2, [r3]
+ 1433 0134 FFF7FEFF 		bl	__aeabi_ddiv
+ 1434              	.LVL160:
+ 1435 0138 0246     		mov	r2, r0
+ 1436 013a 0B46     		mov	r3, r1
+ 239:Lib/Src/MotorControl.c **** 	{
+ 1437              		.loc 1 239 2 discriminator 1 view .LVU378
+ 1438 013c DDE90001 		ldrd	r0, [sp]
+ 1439 0140 FFF7FEFF 		bl	__aeabi_dcmplt
+ 1440              	.LVL161:
+ 1441 0144 0028     		cmp	r0, #0
+ 1442 0146 4CD0     		beq	.L101
+ 241:Lib/Src/MotorControl.c **** 		{
+ 1443              		.loc 1 241 3 is_stmt 1 view .LVU379
+ 241:Lib/Src/MotorControl.c **** 		{
+ 1444              		.loc 1 241 5 is_stmt 0 view .LVU380
+ 1445 0148 002D     		cmp	r5, #0
+ 1446 014a B5D0     		beq	.L86
+ 243:Lib/Src/MotorControl.c **** 				pYAxis->last += STEP;
+ 1447              		.loc 1 243 4 is_stmt 1 view .LVU381
+ 243:Lib/Src/MotorControl.c **** 				pYAxis->last += STEP;
+ 1448              		.loc 1 243 6 is_stmt 0 view .LVU382
+ 1449 014c 029B     		ldr	r3, [sp, #8]
+ 1450 014e 002B     		cmp	r3, #0
+ 1451 0150 A4DD     		ble	.L87
+ 244:Lib/Src/MotorControl.c **** 			else
+ 1452              		.loc 1 244 5 is_stmt 1 view .LVU383
+ 244:Lib/Src/MotorControl.c **** 			else
+ 1453              		.loc 1 244 18 is_stmt 0 view .LVU384
+ 1454 0152 D9F84C00 		ldr	r0, [r9, #76]	@ float
+ 1455 0156 FFF7FEFF 		bl	__aeabi_f2d
+ 1456              	.LVL162:
+ 1457 015a 23A3     		adr	r3, .L102
+ 1458 015c D3E90023 		ldrd	r2, [r3]
+ 1459 0160 FFF7FEFF 		bl	__aeabi_dadd
+ 1460              	.LVL163:
+ 1461 0164 FFF7FEFF 		bl	__aeabi_d2f
+ 1462              	.LVL164:
+ 1463 0168 C9F84C00 		str	r0, [r9, #76]	@ float
+ 1464              	.L88:
+ 247:Lib/Src/MotorControl.c **** 		}
+ 1465              		.loc 1 247 4 is_stmt 1 view .LVU385
+ 1466 016c 4846     		mov	r0, r9
+ 1467 016e FFF7FEFF 		bl	moveGcode
+ 1468              	.LVL165:
+ 1469              	.L89:
+ 257:Lib/Src/MotorControl.c **** 		if(error >= threshold)
+ 1470              		.loc 1 257 3 view .LVU386
+ 258:Lib/Src/MotorControl.c **** 		{
+ 1471              		.loc 1 258 3 view .LVU387
+ 258:Lib/Src/MotorControl.c **** 		{
+ 1472              		.loc 1 258 5 is_stmt 0 view .LVU388
+ 1473 0172 3619     		adds	r6, r6, r4
+ 1474              	.LVL166:
+ 258:Lib/Src/MotorControl.c **** 		{
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 35
 
 
- 1448              		.loc 1 244 3 is_stmt 1 view .LVU360
- 1449 008e 0022     		movs	r2, #0
- 1450 0090 A189     		ldrh	r1, [r4, #12]
- 1451 0092 A068     		ldr	r0, [r4, #8]
- 1452 0094 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 1453              	.LVL177:
- 1454 0098 CBE7     		b	.L91
- 1455              	.L101:
- 243:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1456              		.loc 1 243 3 is_stmt 0 discriminator 2 view .LVU361
- 1457 009a 042B     		cmp	r3, #4
- 1458 009c 06D0     		beq	.L118
- 243:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1459              		.loc 1 243 3 discriminator 4 view .LVU362
- 1460 009e 082B     		cmp	r3, #8
- 1461 00a0 09D0     		beq	.L119
- 243:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1462              		.loc 1 243 3 discriminator 7 view .LVU363
- 1463 00a2 2368     		ldr	r3, [r4]
- 1464 00a4 1B68     		ldr	r3, [r3]
- 1465 00a6 0022     		movs	r2, #0
- 1466 00a8 1A64     		str	r2, [r3, #64]
- 1467 00aa F0E7     		b	.L102
- 1468              	.L118:
- 243:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1469              		.loc 1 243 3 discriminator 3 view .LVU364
- 1470 00ac 2368     		ldr	r3, [r4]
- 1471 00ae 1B68     		ldr	r3, [r3]
- 1472 00b0 0022     		movs	r2, #0
- 1473 00b2 9A63     		str	r2, [r3, #56]
- 1474 00b4 EBE7     		b	.L102
- 1475              	.L119:
- 243:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1476              		.loc 1 243 3 discriminator 6 view .LVU365
- 1477 00b6 2368     		ldr	r3, [r4]
- 1478 00b8 1B68     		ldr	r3, [r3]
- 1479 00ba 0022     		movs	r2, #0
- 1480 00bc DA63     		str	r2, [r3, #60]
- 1481 00be E6E7     		b	.L102
- 1482              	.L114:
- 246:Lib/Src/MotorControl.c **** 	{
- 1483              		.loc 1 246 7 is_stmt 1 view .LVU366
- 246:Lib/Src/MotorControl.c **** 	{
- 1484              		.loc 1 246 10 is_stmt 0 view .LVU367
- 1485 00c0 0021     		movs	r1, #0
- 1486 00c2 2846     		mov	r0, r5
- 1487 00c4 FFF7FEFF 		bl	__aeabi_fcmplt
- 1488              	.LVL178:
- 1489 00c8 0028     		cmp	r0, #0
- 1490 00ca B2D0     		beq	.L91
- 248:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, pwm);
- 1491              		.loc 1 248 3 is_stmt 1 view .LVU368
- 248:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, pwm);
- 1492              		.loc 1 248 7 is_stmt 0 view .LVU369
- 1493 00cc 05F10040 		add	r0, r5, #-2147483648
- 1494              	.LVL179:
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 34
+ 1475              		.loc 1 258 5 view .LVU389
+ 1476 0174 D2D4     		bmi	.L92
+ 260:Lib/Src/MotorControl.c **** 			if(!swapXY)
+ 1477              		.loc 1 260 4 is_stmt 1 view .LVU390
+ 260:Lib/Src/MotorControl.c **** 			if(!swapXY)
+ 1478              		.loc 1 260 10 is_stmt 0 view .LVU391
+ 1479 0176 039B     		ldr	r3, [sp, #12]
+ 1480 0178 F61A     		subs	r6, r6, r3
+ 1481              	.LVL167:
+ 261:Lib/Src/MotorControl.c **** 			{
+ 1482              		.loc 1 261 4 is_stmt 1 view .LVU392
+ 261:Lib/Src/MotorControl.c **** 			{
+ 1483              		.loc 1 261 6 is_stmt 0 view .LVU393
+ 1484 017a 85B9     		cbnz	r5, .L93
+ 263:Lib/Src/MotorControl.c **** 					pYAxis->last += STEP;
+ 1485              		.loc 1 263 5 is_stmt 1 view .LVU394
+ 263:Lib/Src/MotorControl.c **** 					pYAxis->last += STEP;
+ 1486              		.loc 1 263 7 is_stmt 0 view .LVU395
+ 1487 017c 029B     		ldr	r3, [sp, #8]
+ 1488 017e 002B     		cmp	r3, #0
+ 1489 0180 BCDD     		ble	.L94
+ 264:Lib/Src/MotorControl.c **** 				else
+ 1490              		.loc 1 264 6 is_stmt 1 view .LVU396
+ 264:Lib/Src/MotorControl.c **** 				else
+ 1491              		.loc 1 264 19 is_stmt 0 view .LVU397
+ 1492 0182 D9F84C00 		ldr	r0, [r9, #76]	@ float
+ 1493 0186 FFF7FEFF 		bl	__aeabi_f2d
+ 1494              	.LVL168:
+ 1495 018a 17A3     		adr	r3, .L102
+ 1496 018c D3E90023 		ldrd	r2, [r3]
+ 1497 0190 FFF7FEFF 		bl	__aeabi_dadd
+ 1498              	.LVL169:
+ 1499 0194 FFF7FEFF 		bl	__aeabi_d2f
+ 1500              	.LVL170:
+ 1501 0198 C9F84C00 		str	r0, [r9, #76]	@ float
+ 1502 019c BBE7     		b	.L95
+ 1503              	.L93:
+ 268:Lib/Src/MotorControl.c **** 			}
+ 269:Lib/Src/MotorControl.c **** 			else
+ 270:Lib/Src/MotorControl.c **** 			{
+ 271:Lib/Src/MotorControl.c **** 				if( dx > 0)
+ 1504              		.loc 1 271 5 is_stmt 1 view .LVU398
+ 1505              		.loc 1 271 7 is_stmt 0 view .LVU399
+ 1506 019e BBF1000F 		cmp	fp, #0
+ 1507 01a2 10DD     		ble	.L96
+ 272:Lib/Src/MotorControl.c **** 					pXAxis->last += STEP;
+ 1508              		.loc 1 272 6 is_stmt 1 view .LVU400
+ 1509              		.loc 1 272 19 is_stmt 0 view .LVU401
+ 1510 01a4 D8F84C00 		ldr	r0, [r8, #76]	@ float
+ 1511 01a8 FFF7FEFF 		bl	__aeabi_f2d
+ 1512              	.LVL171:
+ 1513 01ac 0EA3     		adr	r3, .L102
+ 1514 01ae D3E90023 		ldrd	r2, [r3]
+ 1515 01b2 FFF7FEFF 		bl	__aeabi_dadd
+ 1516              	.LVL172:
+ 1517 01b6 FFF7FEFF 		bl	__aeabi_d2f
+ 1518              	.LVL173:
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 36
 
 
- 1495              		.loc 1 249 3 is_stmt 1 view .LVU370
- 1496 00d0 6368     		ldr	r3, [r4, #4]
- 1497 00d2 53B9     		cbnz	r3, .L106
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1498              		.loc 1 249 3 is_stmt 0 discriminator 1 view .LVU371
- 1499 00d4 2368     		ldr	r3, [r4]
- 1500 00d6 1D68     		ldr	r5, [r3]
- 1501 00d8 FFF7FEFF 		bl	__aeabi_f2uiz
- 1502              	.LVL180:
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1503              		.loc 1 249 3 discriminator 1 view .LVU372
- 1504 00dc 6863     		str	r0, [r5, #52]
- 1505              	.L107:
- 250:Lib/Src/MotorControl.c **** 	}
- 1506              		.loc 1 250 3 is_stmt 1 view .LVU373
- 1507 00de 0022     		movs	r2, #0
- 1508 00e0 A189     		ldrh	r1, [r4, #12]
- 1509 00e2 A068     		ldr	r0, [r4, #8]
- 1510 00e4 FFF7FEFF 		bl	HAL_GPIO_WritePin
- 1511              	.LVL181:
- 1512              		.loc 1 252 1 is_stmt 0 view .LVU374
- 1513 00e8 A3E7     		b	.L91
- 1514              	.LVL182:
- 1515              	.L106:
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1516              		.loc 1 249 3 discriminator 2 view .LVU375
- 1517 00ea 042B     		cmp	r3, #4
- 1518 00ec 07D0     		beq	.L120
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1519              		.loc 1 249 3 discriminator 4 view .LVU376
- 1520 00ee 082B     		cmp	r3, #8
- 1521 00f0 0BD0     		beq	.L121
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1522              		.loc 1 249 3 discriminator 7 view .LVU377
- 1523 00f2 2368     		ldr	r3, [r4]
- 1524 00f4 1D68     		ldr	r5, [r3]
- 1525 00f6 FFF7FEFF 		bl	__aeabi_f2uiz
- 1526              	.LVL183:
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1527              		.loc 1 249 3 discriminator 7 view .LVU378
- 1528 00fa 2864     		str	r0, [r5, #64]
- 1529 00fc EFE7     		b	.L107
- 1530              	.LVL184:
- 1531              	.L120:
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1532              		.loc 1 249 3 discriminator 3 view .LVU379
- 1533 00fe 2368     		ldr	r3, [r4]
- 1534 0100 1D68     		ldr	r5, [r3]
- 1535 0102 FFF7FEFF 		bl	__aeabi_f2uiz
- 1536              	.LVL185:
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1537              		.loc 1 249 3 discriminator 3 view .LVU380
- 1538 0106 A863     		str	r0, [r5, #56]
- 1539 0108 E9E7     		b	.L107
- 1540              	.LVL186:
- 1541              	.L121:
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 35
+ 1519 01ba C8F84C00 		str	r0, [r8, #76]	@ float
+ 1520              	.L97:
+ 273:Lib/Src/MotorControl.c **** 				else
+ 274:Lib/Src/MotorControl.c **** 					pXAxis->last -= STEP;
+ 275:Lib/Src/MotorControl.c **** 				moveGcode(pXAxis);
+ 1521              		.loc 1 275 5 is_stmt 1 view .LVU402
+ 1522 01be 4046     		mov	r0, r8
+ 1523 01c0 FFF7FEFF 		bl	moveGcode
+ 1524              	.LVL174:
+ 1525 01c4 AAE7     		b	.L92
+ 1526              	.L96:
+ 274:Lib/Src/MotorControl.c **** 				moveGcode(pXAxis);
+ 1527              		.loc 1 274 6 view .LVU403
+ 274:Lib/Src/MotorControl.c **** 				moveGcode(pXAxis);
+ 1528              		.loc 1 274 19 is_stmt 0 view .LVU404
+ 1529 01c6 D8F84C00 		ldr	r0, [r8, #76]	@ float
+ 1530 01ca FFF7FEFF 		bl	__aeabi_f2d
+ 1531              	.LVL175:
+ 1532 01ce 06A3     		adr	r3, .L102
+ 1533 01d0 D3E90023 		ldrd	r2, [r3]
+ 1534 01d4 FFF7FEFF 		bl	__aeabi_dsub
+ 1535              	.LVL176:
+ 1536 01d8 FFF7FEFF 		bl	__aeabi_d2f
+ 1537              	.LVL177:
+ 1538 01dc C8F84C00 		str	r0, [r8, #76]	@ float
+ 1539 01e0 EDE7     		b	.L97
+ 1540              	.L101:
+ 274:Lib/Src/MotorControl.c **** 				moveGcode(pXAxis);
+ 1541              		.loc 1 274 19 view .LVU405
+ 1542              	.LBE9:
+ 276:Lib/Src/MotorControl.c **** 			}
+ 277:Lib/Src/MotorControl.c **** 		}
+ 278:Lib/Src/MotorControl.c **** 	}
+ 279:Lib/Src/MotorControl.c **** }
+ 1543              		.loc 1 279 1 view .LVU406
+ 1544 01e2 05B0     		add	sp, sp, #20
+ 1545              	.LCFI11:
+ 1546              		.cfi_def_cfa_offset 36
+ 1547              		@ sp needed
+ 1548 01e4 BDE8F08F 		pop	{r4, r5, r6, r7, r8, r9, r10, fp, pc}
+ 1549              	.LVL178:
+ 1550              	.L103:
+ 1551              		.loc 1 279 1 view .LVU407
+ 1552              		.align	3
+ 1553              	.L102:
+ 1554 01e8 9A999999 		.word	-1717986918
+ 1555 01ec 9999A93F 		.word	1068079513
+ 1556              		.cfi_endproc
+ 1557              	.LFE76:
+ 1559              		.section	.text.runDrill,"ax",%progbits
+ 1560              		.align	1
+ 1561              		.global	runDrill
+ 1562              		.syntax unified
+ 1563              		.thumb
+ 1564              		.thumb_func
+ 1566              	runDrill:
+ 1567              	.LVL179:
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 37
 
 
- 1542              		.loc 1 249 3 discriminator 6 view .LVU381
- 1543 010a 2368     		ldr	r3, [r4]
- 1544 010c 1D68     		ldr	r5, [r3]
- 1545 010e FFF7FEFF 		bl	__aeabi_f2uiz
- 1546              	.LVL187:
- 249:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
- 1547              		.loc 1 249 3 discriminator 6 view .LVU382
- 1548 0112 E863     		str	r0, [r5, #60]
- 1549 0114 E3E7     		b	.L107
- 1550              	.L123:
- 1551 0116 00BF     		.align	2
- 1552              	.L122:
- 1553 0118 0000C842 		.word	1120403456
- 1554              		.cfi_endproc
- 1555              	.LFE77:
- 1557              		.text
- 1558              	.Letext0:
- 1559              		.file 2 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 1560              		.file 3 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
- 1561              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
- 1562              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
- 1563              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
- 1564              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
- 1565              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
- 1566              		.file 9 "Lib/Inc/MyStruct.h"
- 1567              		.file 10 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 1568              		.file 11 "Lib/Inc/MyMath.h"
- 1569              		.file 12 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
- 1570              		.file 13 "<built-in>"
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 36
+ 1568              	.LFB77:
+ 280:Lib/Src/MotorControl.c **** 
+ 281:Lib/Src/MotorControl.c **** void runDrill(DRILL *drill, float pwm)
+ 282:Lib/Src/MotorControl.c **** {
+ 1569              		.loc 1 282 1 is_stmt 1 view -0
+ 1570              		.cfi_startproc
+ 1571              		@ args = 0, pretend = 0, frame = 0
+ 1572              		@ frame_needed = 0, uses_anonymous_args = 0
+ 1573              		.loc 1 282 1 is_stmt 0 view .LVU409
+ 1574 0000 38B5     		push	{r3, r4, r5, lr}
+ 1575              	.LCFI12:
+ 1576              		.cfi_def_cfa_offset 16
+ 1577              		.cfi_offset 3, -16
+ 1578              		.cfi_offset 4, -12
+ 1579              		.cfi_offset 5, -8
+ 1580              		.cfi_offset 14, -4
+ 1581 0002 0446     		mov	r4, r0
+ 1582 0004 0D46     		mov	r5, r1
+ 283:Lib/Src/MotorControl.c **** 	if (pwm > 0)
+ 1583              		.loc 1 283 2 is_stmt 1 view .LVU410
+ 1584              		.loc 1 283 5 is_stmt 0 view .LVU411
+ 1585 0006 0021     		movs	r1, #0
+ 1586              	.LVL180:
+ 1587              		.loc 1 283 5 view .LVU412
+ 1588 0008 2846     		mov	r0, r5
+ 1589              	.LVL181:
+ 1590              		.loc 1 283 5 view .LVU413
+ 1591 000a FFF7FEFF 		bl	__aeabi_fcmpgt
+ 1592              	.LVL182:
+ 1593 000e 0028     		cmp	r0, #0
+ 1594 0010 32D0     		beq	.L126
+ 284:Lib/Src/MotorControl.c **** 	{
+ 285:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, 100 - pwm);
+ 1595              		.loc 1 285 3 is_stmt 1 view .LVU414
+ 1596 0012 6368     		ldr	r3, [r4, #4]
+ 1597 0014 73B9     		cbnz	r3, .L107
+ 1598              		.loc 1 285 3 is_stmt 0 discriminator 1 view .LVU415
+ 1599 0016 2946     		mov	r1, r5
+ 1600 0018 3F48     		ldr	r0, .L135
+ 1601 001a FFF7FEFF 		bl	__aeabi_fsub
+ 1602              	.LVL183:
+ 1603 001e 2368     		ldr	r3, [r4]
+ 1604 0020 1D68     		ldr	r5, [r3]
+ 1605              	.LVL184:
+ 1606              		.loc 1 285 3 discriminator 1 view .LVU416
+ 1607 0022 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1608              	.LVL185:
+ 1609 0026 6863     		str	r0, [r5, #52]
+ 1610              	.L108:
+ 286:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1611              		.loc 1 286 3 is_stmt 1 view .LVU417
+ 1612 0028 0122     		movs	r2, #1
+ 1613 002a A189     		ldrh	r1, [r4, #12]
+ 1614 002c A068     		ldr	r0, [r4, #8]
+ 1615 002e FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1616              	.LVL186:
+ 1617              	.L104:
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 38
+
+
+ 287:Lib/Src/MotorControl.c **** 	}
+ 288:Lib/Src/MotorControl.c **** 	else if (pwm == 0)
+ 289:Lib/Src/MotorControl.c **** 	{
+ 290:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, 0);
+ 291:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 292:Lib/Src/MotorControl.c **** 	}
+ 293:Lib/Src/MotorControl.c **** 	else if (pwm < 0)
+ 294:Lib/Src/MotorControl.c **** 	{
+ 295:Lib/Src/MotorControl.c **** 		pwm *= -1;
+ 296:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, pwm);
+ 297:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 298:Lib/Src/MotorControl.c **** 	}
+ 299:Lib/Src/MotorControl.c **** }
+ 1618              		.loc 1 299 1 is_stmt 0 view .LVU418
+ 1619 0032 38BD     		pop	{r3, r4, r5, pc}
+ 1620              	.LVL187:
+ 1621              	.L107:
+ 285:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1622              		.loc 1 285 3 discriminator 2 view .LVU419
+ 1623 0034 042B     		cmp	r3, #4
+ 1624 0036 0BD0     		beq	.L129
+ 285:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1625              		.loc 1 285 3 discriminator 4 view .LVU420
+ 1626 0038 082B     		cmp	r3, #8
+ 1627 003a 13D0     		beq	.L130
+ 285:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1628              		.loc 1 285 3 discriminator 7 view .LVU421
+ 1629 003c 2946     		mov	r1, r5
+ 1630 003e 3648     		ldr	r0, .L135
+ 1631 0040 FFF7FEFF 		bl	__aeabi_fsub
+ 1632              	.LVL188:
+ 1633 0044 2368     		ldr	r3, [r4]
+ 1634 0046 1D68     		ldr	r5, [r3]
+ 1635              	.LVL189:
+ 285:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1636              		.loc 1 285 3 discriminator 7 view .LVU422
+ 1637 0048 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1638              	.LVL190:
+ 1639 004c 2864     		str	r0, [r5, #64]
+ 1640 004e EBE7     		b	.L108
+ 1641              	.LVL191:
+ 1642              	.L129:
+ 285:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1643              		.loc 1 285 3 discriminator 3 view .LVU423
+ 1644 0050 2946     		mov	r1, r5
+ 1645 0052 3148     		ldr	r0, .L135
+ 1646 0054 FFF7FEFF 		bl	__aeabi_fsub
+ 1647              	.LVL192:
+ 1648 0058 2368     		ldr	r3, [r4]
+ 1649 005a 1D68     		ldr	r5, [r3]
+ 1650              	.LVL193:
+ 285:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1651              		.loc 1 285 3 discriminator 3 view .LVU424
+ 1652 005c FFF7FEFF 		bl	__aeabi_f2uiz
+ 1653              	.LVL194:
+ 1654 0060 A863     		str	r0, [r5, #56]
+ 1655 0062 E1E7     		b	.L108
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 39
+
+
+ 1656              	.LVL195:
+ 1657              	.L130:
+ 285:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1658              		.loc 1 285 3 discriminator 6 view .LVU425
+ 1659 0064 2946     		mov	r1, r5
+ 1660 0066 2C48     		ldr	r0, .L135
+ 1661 0068 FFF7FEFF 		bl	__aeabi_fsub
+ 1662              	.LVL196:
+ 1663 006c 2368     		ldr	r3, [r4]
+ 1664 006e 1D68     		ldr	r5, [r3]
+ 1665              	.LVL197:
+ 285:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_SET);
+ 1666              		.loc 1 285 3 discriminator 6 view .LVU426
+ 1667 0070 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1668              	.LVL198:
+ 1669 0074 E863     		str	r0, [r5, #60]
+ 1670 0076 D7E7     		b	.L108
+ 1671              	.LVL199:
+ 1672              	.L126:
+ 288:Lib/Src/MotorControl.c **** 	{
+ 1673              		.loc 1 288 7 is_stmt 1 view .LVU427
+ 288:Lib/Src/MotorControl.c **** 	{
+ 1674              		.loc 1 288 10 is_stmt 0 view .LVU428
+ 1675 0078 0021     		movs	r1, #0
+ 1676 007a 2846     		mov	r0, r5
+ 1677 007c FFF7FEFF 		bl	__aeabi_fcmpeq
+ 1678              	.LVL200:
+ 1679 0080 F0B1     		cbz	r0, .L127
+ 290:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1680              		.loc 1 290 3 is_stmt 1 view .LVU429
+ 1681 0082 6368     		ldr	r3, [r4, #4]
+ 1682 0084 4BB9     		cbnz	r3, .L114
+ 290:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1683              		.loc 1 290 3 is_stmt 0 discriminator 1 view .LVU430
+ 1684 0086 2368     		ldr	r3, [r4]
+ 1685 0088 1B68     		ldr	r3, [r3]
+ 1686 008a 0022     		movs	r2, #0
+ 1687 008c 5A63     		str	r2, [r3, #52]
+ 1688              	.L115:
+ 291:Lib/Src/MotorControl.c **** 	}
+ 1689              		.loc 1 291 3 is_stmt 1 view .LVU431
+ 1690 008e 0022     		movs	r2, #0
+ 1691 0090 A189     		ldrh	r1, [r4, #12]
+ 1692 0092 A068     		ldr	r0, [r4, #8]
+ 1693 0094 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1694              	.LVL201:
+ 1695 0098 CBE7     		b	.L104
+ 1696              	.L114:
+ 290:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1697              		.loc 1 290 3 is_stmt 0 discriminator 2 view .LVU432
+ 1698 009a 042B     		cmp	r3, #4
+ 1699 009c 06D0     		beq	.L131
+ 290:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1700              		.loc 1 290 3 discriminator 4 view .LVU433
+ 1701 009e 082B     		cmp	r3, #8
+ 1702 00a0 09D0     		beq	.L132
+ 290:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 40
+
+
+ 1703              		.loc 1 290 3 discriminator 7 view .LVU434
+ 1704 00a2 2368     		ldr	r3, [r4]
+ 1705 00a4 1B68     		ldr	r3, [r3]
+ 1706 00a6 0022     		movs	r2, #0
+ 1707 00a8 1A64     		str	r2, [r3, #64]
+ 1708 00aa F0E7     		b	.L115
+ 1709              	.L131:
+ 290:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1710              		.loc 1 290 3 discriminator 3 view .LVU435
+ 1711 00ac 2368     		ldr	r3, [r4]
+ 1712 00ae 1B68     		ldr	r3, [r3]
+ 1713 00b0 0022     		movs	r2, #0
+ 1714 00b2 9A63     		str	r2, [r3, #56]
+ 1715 00b4 EBE7     		b	.L115
+ 1716              	.L132:
+ 290:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1717              		.loc 1 290 3 discriminator 6 view .LVU436
+ 1718 00b6 2368     		ldr	r3, [r4]
+ 1719 00b8 1B68     		ldr	r3, [r3]
+ 1720 00ba 0022     		movs	r2, #0
+ 1721 00bc DA63     		str	r2, [r3, #60]
+ 1722 00be E6E7     		b	.L115
+ 1723              	.L127:
+ 293:Lib/Src/MotorControl.c **** 	{
+ 1724              		.loc 1 293 7 is_stmt 1 view .LVU437
+ 293:Lib/Src/MotorControl.c **** 	{
+ 1725              		.loc 1 293 10 is_stmt 0 view .LVU438
+ 1726 00c0 0021     		movs	r1, #0
+ 1727 00c2 2846     		mov	r0, r5
+ 1728 00c4 FFF7FEFF 		bl	__aeabi_fcmplt
+ 1729              	.LVL202:
+ 1730 00c8 0028     		cmp	r0, #0
+ 1731 00ca B2D0     		beq	.L104
+ 295:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, pwm);
+ 1732              		.loc 1 295 3 is_stmt 1 view .LVU439
+ 295:Lib/Src/MotorControl.c **** 		__HAL_TIM_SetCompare(drill->htim_motor, drill->CHANNEL, pwm);
+ 1733              		.loc 1 295 7 is_stmt 0 view .LVU440
+ 1734 00cc 05F10040 		add	r0, r5, #-2147483648
+ 1735              	.LVL203:
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1736              		.loc 1 296 3 is_stmt 1 view .LVU441
+ 1737 00d0 6368     		ldr	r3, [r4, #4]
+ 1738 00d2 53B9     		cbnz	r3, .L119
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1739              		.loc 1 296 3 is_stmt 0 discriminator 1 view .LVU442
+ 1740 00d4 2368     		ldr	r3, [r4]
+ 1741 00d6 1D68     		ldr	r5, [r3]
+ 1742 00d8 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1743              	.LVL204:
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1744              		.loc 1 296 3 discriminator 1 view .LVU443
+ 1745 00dc 6863     		str	r0, [r5, #52]
+ 1746              	.L120:
+ 297:Lib/Src/MotorControl.c **** 	}
+ 1747              		.loc 1 297 3 is_stmt 1 view .LVU444
+ 1748 00de 0022     		movs	r2, #0
+ 1749 00e0 A189     		ldrh	r1, [r4, #12]
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 41
+
+
+ 1750 00e2 A068     		ldr	r0, [r4, #8]
+ 1751 00e4 FFF7FEFF 		bl	HAL_GPIO_WritePin
+ 1752              	.LVL205:
+ 1753              		.loc 1 299 1 is_stmt 0 view .LVU445
+ 1754 00e8 A3E7     		b	.L104
+ 1755              	.LVL206:
+ 1756              	.L119:
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1757              		.loc 1 296 3 discriminator 2 view .LVU446
+ 1758 00ea 042B     		cmp	r3, #4
+ 1759 00ec 07D0     		beq	.L133
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1760              		.loc 1 296 3 discriminator 4 view .LVU447
+ 1761 00ee 082B     		cmp	r3, #8
+ 1762 00f0 0BD0     		beq	.L134
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1763              		.loc 1 296 3 discriminator 7 view .LVU448
+ 1764 00f2 2368     		ldr	r3, [r4]
+ 1765 00f4 1D68     		ldr	r5, [r3]
+ 1766 00f6 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1767              	.LVL207:
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1768              		.loc 1 296 3 discriminator 7 view .LVU449
+ 1769 00fa 2864     		str	r0, [r5, #64]
+ 1770 00fc EFE7     		b	.L120
+ 1771              	.LVL208:
+ 1772              	.L133:
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1773              		.loc 1 296 3 discriminator 3 view .LVU450
+ 1774 00fe 2368     		ldr	r3, [r4]
+ 1775 0100 1D68     		ldr	r5, [r3]
+ 1776 0102 FFF7FEFF 		bl	__aeabi_f2uiz
+ 1777              	.LVL209:
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1778              		.loc 1 296 3 discriminator 3 view .LVU451
+ 1779 0106 A863     		str	r0, [r5, #56]
+ 1780 0108 E9E7     		b	.L120
+ 1781              	.LVL210:
+ 1782              	.L134:
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1783              		.loc 1 296 3 discriminator 6 view .LVU452
+ 1784 010a 2368     		ldr	r3, [r4]
+ 1785 010c 1D68     		ldr	r5, [r3]
+ 1786 010e FFF7FEFF 		bl	__aeabi_f2uiz
+ 1787              	.LVL211:
+ 296:Lib/Src/MotorControl.c **** 		HAL_GPIO_WritePin(drill->GPIO_DIR, drill->PIN_DIR, GPIO_PIN_RESET);
+ 1788              		.loc 1 296 3 discriminator 6 view .LVU453
+ 1789 0112 E863     		str	r0, [r5, #60]
+ 1790 0114 E3E7     		b	.L120
+ 1791              	.L136:
+ 1792 0116 00BF     		.align	2
+ 1793              	.L135:
+ 1794 0118 0000C842 		.word	1120403456
+ 1795              		.cfi_endproc
+ 1796              	.LFE77:
+ 1798              		.text
+ 1799              	.Letext0:
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 42
+
+
+ 1800              		.file 2 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 1801              		.file 3 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\inclu
+ 1802              		.file 4 "Drivers/CMSIS/Device/ST/STM32F1xx/Include/stm32f103xb.h"
+ 1803              		.file 5 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_def.h"
+ 1804              		.file 6 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_gpio.h"
+ 1805              		.file 7 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_dma.h"
+ 1806              		.file 8 "Drivers/STM32F1xx_HAL_Driver/Inc/stm32f1xx_hal_tim.h"
+ 1807              		.file 9 "Lib/Inc/MyStruct.h"
+ 1808              		.file 10 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 1809              		.file 11 "Lib/Inc/MyMath.h"
+ 1810              		.file 12 "e:\\project\\program\\vscode\\tools\\gcc-arm-none-eabi-10.3-2021.10\\arm-none-eabi\\incl
+ 1811              		.file 13 "<built-in>"
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 43
 
 
 DEFINED SYMBOLS
                             *ABS*:00000000 MotorControl.c
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:18     .rodata.ProcessData.str1.4:00000000 $d
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:25     .text.ProcessData:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:31     .text.ProcessData:00000000 ProcessData
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:163    .text.ProcessData:0000008c $d
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:175    .text.PWM:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:181    .text.PWM:00000000 PWM
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:427    .text.PWM:00000110 $d
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:433    .text.readEncoder:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:439    .text.readEncoder:00000000 readEncoder
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:466    .text.sample:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:472    .text.sample:00000000 sample
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:519    .text.PID_control:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:525    .text.PID_control:00000000 PID_control
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:659    .text.PID_control:000000b0 $d
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:665    .text.HOME:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:671    .text.HOME:00000000 HOME
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:729    .text.HOME:00000034 $d
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:734    .text.move:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:740    .text.move:00000000 move
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:835    .text.moveGcode:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:841    .text.moveGcode:00000000 moveGcode
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:943    .text.drawLine:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:949    .text.drawLine:00000000 drawLine
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:1312   .text.drawLine:000001e8 $d
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:1319   .text.runDrill:00000000 $t
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:1325   .text.runDrill:00000000 runDrill
-C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s:1553   .text.runDrill:00000118 $d
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:18     .rodata.ProcessData.str1.4:00000000 $d
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:41     .text.ProcessData:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:47     .text.ProcessData:00000000 ProcessData
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:399    .text.ProcessData:000001a4 $d
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:417    .text.PWM:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:423    .text.PWM:00000000 PWM
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:669    .text.PWM:00000110 $d
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:675    .text.readEncoder:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:681    .text.readEncoder:00000000 readEncoder
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:708    .text.sample:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:714    .text.sample:00000000 sample
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:761    .text.PID_control:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:767    .text.PID_control:00000000 PID_control
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:901    .text.PID_control:000000b0 $d
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:907    .text.HOME:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:913    .text.HOME:00000000 HOME
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:971    .text.HOME:00000034 $d
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:976    .text.move:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:982    .text.move:00000000 move
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:1077   .text.moveGcode:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:1083   .text.moveGcode:00000000 moveGcode
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:1185   .text.drawLine:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:1191   .text.drawLine:00000000 drawLine
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:1554   .text.drawLine:000001e8 $d
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:1560   .text.runDrill:00000000 $t
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:1566   .text.runDrill:00000000 runDrill
+C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s:1794   .text.runDrill:00000118 $d
 
 UNDEFINED SYMBOLS
+__aeabi_f2uiz
 strlen
 sscanf
 memset
@@ -2129,8 +2533,7 @@ __aeabi_dsub
 __aeabi_dcmplt
 round
 int_max
+ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccO3Dqk4.s 			page 44
+
+
 int_min
-ARM GAS  C:\Users\Chicken\AppData\Local\Temp\ccGEV0Lc.s 			page 37
-
-
-__aeabi_f2uiz
