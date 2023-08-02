@@ -352,6 +352,8 @@ namespace MiniCNC_ver2
                             break;
                         case "ACK":
                             cnc.drawFromFeedback(MainShow, cnc.DataReceive[2]);
+                            if (cnc.State != 2)
+                                return;
                             SendGcode();
                             break;
                         case "HOME":
@@ -365,6 +367,7 @@ namespace MiniCNC_ver2
                             break;
                         case "NOHOME":
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I have come home, please press HOME");
+                            cnc.State = 1; // mode connect
                             break;
                         case "SETTING":
                             SendSetting();
@@ -389,6 +392,9 @@ namespace MiniCNC_ver2
         }
         private void CloseApp(object sender, MouseButtonEventArgs e)
         {
+            // not close when running or pause
+            if (cnc.State >= 2)
+                return;
             this.Close();
         }
         private void MinimizeApp(object sender, MouseButtonEventArgs e)
@@ -397,8 +403,8 @@ namespace MiniCNC_ver2
         }
         private void OpenFile(object sender, MouseButtonEventArgs e)
         {
-            // not press when running state
-            if (cnc.State == 2)
+            // not press when running state and pause state
+            if (cnc.State >= 2)
                 return;
             showPage(FolderShow);
             showFile();
@@ -412,7 +418,7 @@ namespace MiniCNC_ver2
         }
         private void Send(object sender, MouseButtonEventArgs e)
         {
-            // only press when connect state
+            // only press when connect state and selected file
             if (cnc.State == 1)
             {
                 SendData("C 5 " + cnc.fileName);
@@ -450,14 +456,21 @@ namespace MiniCNC_ver2
         }
         private void Pause(object sender, MouseButtonEventArgs e)
         {
-            // not press when disconnect and connect state
+            // only press when running state or pause state
             if (cnc.State == 0 || cnc.State == 1)
                 return;
+
+            cnc.State = (cnc.State == 2) ? 3 : 2; // pause and resume
+            if (cnc.State == 2)
+                SendGcode();
 
             IsPaused = !IsPaused;
         }
         private void Connect(object sender, MouseButtonEventArgs e)
         {
+            // not press when running state or pause state
+            if (cnc.State >= 2)
+                return;
             if (!IsConnected) //kết nối
             {
                 connect();
@@ -547,6 +560,9 @@ namespace MiniCNC_ver2
         }
         private void Send_Setting(object sender, MouseButtonEventArgs e)
         {
+            // not press when disconect state
+            if (cnc.State == 0)
+                return;
             showMessage(PCchatItem, scrollviewPC, PCchatItems, "I will send you a setting");
             SendSetting();
         }

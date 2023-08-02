@@ -228,11 +228,11 @@ int main(void)
 
   xTaskCreate(&StartCheckUSBConnect, "CheckUSBConnect", 128, NULL, 2, &CheckUSBConnectTask);
 
-  xTaskCreate(&StartProcessBtnPress, "ProcessBtnPress", 128, NULL, 2, &ProcessBtnPressTask);
+  xTaskCreate(&StartProcessBtnPress, "ProcessBtnPress", 128, NULL, 4, &ProcessBtnPressTask);
 
   xTaskCreate(&StartProcessMode, "ProcessMode", 128, NULL, 2, &ProcessModeTask);
 
-  xTaskCreate(&StartReceiveDataFromCNC, "ReceiveDataFromCNC", 128, NULL, 2, &ReceiveDataFromCNCTask);
+  xTaskCreate(&StartReceiveDataFromCNC, "ReceiveDataFromCNC", 128, NULL, 3, &ReceiveDataFromCNCTask);
   /* USER CODE END RTOS_THREADS */
 
   /* Start scheduler */
@@ -488,12 +488,14 @@ void StartCheckUSBConnect(void *pvParameters)
           HAL_GPIO_WritePin(GPIOB, cnc.Led, GPIO_PIN_RESET);
           HAL_GPIO_WritePin(GPIOB, cnc.Buzzer, GPIO_PIN_SET);
           cnc.state = 2; // mode error connect with GUI
+          HAL_UART_AbortReceive_IT(&cnc.uart);
         }    
       }
-      // else if(cnc.state == 2)
-      // {
-      //   HAL_GPIO_TogglePin(GPIOB, cnc.Led);
-      // }      
+      while(cnc.state == 2)
+      {
+        HAL_GPIO_TogglePin(GPIOB, cnc.Led);
+        osDelay(500);
+      }      
     } 
 }
 

@@ -68,8 +68,8 @@ void ProcessData(CNC *cnc)
 			float z_max, step;
 			sscanf(cnc->data.ReceiveBuff, "SOZ%fS%f", &z_max, &step);
 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
-			cnc->x_axis.ERROR = z_max;
-			cnc->y_axis.ERROR = step;
+			cnc->z_max = z_max;
+			cnc->step = step;
 		}
 		cnc->Mode = 8;
 		break;

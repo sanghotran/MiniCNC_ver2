@@ -83,6 +83,8 @@ typedef struct
 	AXIS z_axis;
 
 	uint8_t Mode;
+	float step;
+	float z_max;
 	
 	uint8_t thickness;
 	DRILL drill;

@@ -179,6 +179,9 @@ void axisInit()
   cnc.x_axis.ERROR = 3;
   cnc.y_axis.ERROR = 5;
   cnc.z_axis.ERROR = 1;
+
+  cnc.z_max = Z_MAX;
+  cnc.step = STEP;
 }
 /* USER CODE END 0 */
 
@@ -314,7 +317,7 @@ int main(void)
 					cnc.thickness = 10;					
 				while(!cnc.z_axis.finish)
 				{
-					move(&cnc.z_axis, Z_MAX - cnc.thickness);
+					move(&cnc.z_axis, cnc.z_max - cnc.thickness);
 				}
 				cnc.z_axis.finish = false;
 				cnc.drill.status = cnc.drill.enb;
