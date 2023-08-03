@@ -86,7 +86,8 @@ typedef struct
 	float step;
 	float z_max;
 	
-	uint8_t thickness;
+	float thickness;
+	uint8_t speed;
 	DRILL drill;
 	//bool drill_status;
 	//bool drill_enb;

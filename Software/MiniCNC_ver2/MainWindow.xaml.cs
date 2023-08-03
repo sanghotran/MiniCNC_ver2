@@ -128,6 +128,7 @@ namespace MiniCNC_ver2
 
             cnc.State = 0; // mode disconect
             cnc.readyReceiveGcode = false;
+            cnc.user_setting = false;
             //cnc.home = false;
 
             PCChatPage.Visibility = Visibility.Visible;
@@ -294,28 +295,34 @@ namespace MiniCNC_ver2
                 x_setting.IsChecked = false;
                 return;
             }
-            if (y_setting.IsChecked == true)
+            else if (y_setting.IsChecked == true)
             {
                 SendData("SY" + "Kp" + Y_Kp.Text + "Ki" + Y_Ki.Text + "Kd" + Y_Kd.Text + "! ");
                 y_setting.IsChecked = false;
                 return;
             }
-            if (z_setting.IsChecked == true)
+            else if (z_setting.IsChecked == true)
             {
                 SendData("SZ" + "Kp" + Z_Kp.Text + "Ki" + Z_Ki.Text + "Kd" + Z_Kd.Text + "! ");
                 z_setting.IsChecked = false;
                 return;
             }
-            if (error_setting.IsChecked == true)
+            else if (error_setting.IsChecked == true)
             {
                 SendData("SE" + "X" + X_Error.Text + "Y" + Y_Error.Text + "Z" + Z_Error.Text + "! ");
                 error_setting.IsChecked = false;
                 return;
             }
-            if (other_setting.IsChecked == true)
+            else if (other_setting.IsChecked == true)
             {
                 SendData("SO" + "Z" + Z_max.Text + "S" + step.Text + "! ");
                 other_setting.IsChecked = false;
+                return;
+            }
+            else if( cnc.user_setting == true)
+            {
+                SendData("SU" + "T" + thickness.Text + "S" + speed.Text + "! ");
+                cnc.user_setting = false;
                 return;
             }
             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Setting done");
@@ -352,9 +359,20 @@ namespace MiniCNC_ver2
                             break;
                         case "ACK":
                             cnc.drawFromFeedback(MainShow, cnc.DataReceive[2]);
+                            if( cnc.State == 4 )
+                            {
+                                SendData("C 8");
+                                return;
+                            }
                             if (cnc.State != 2)
                                 return;
                             SendGcode();
+                            break;
+                        case "STOP":
+                            showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Stopped");
+                            cnc.readyReceiveGcode = false;
+                            IsPaused = false;
+                            cnc.State = 1; // mode connect
                             break;
                         case "HOME":
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "I have just come home");
@@ -448,8 +466,9 @@ namespace MiniCNC_ver2
             }
             else
             {
-                cnc.State = 1; // mode connect
-                cnc.readyReceiveGcode = false;
+                cnc.State = 4; // mode stop
+                //cnc.readyReceiveGcode = false;
+                //IsPaused = false;
             }
             
             IsStarted = !IsStarted;
@@ -557,6 +576,10 @@ namespace MiniCNC_ver2
         {
             disconnect();
             WarningShow.Visibility = Visibility.Hidden;
+            IsStarted = false;
+            IsPaused = false;
+            cnc.readyReceiveGcode = false;
+
         }
         private void Send_Setting(object sender, MouseButtonEventArgs e)
         {
@@ -564,6 +587,7 @@ namespace MiniCNC_ver2
             if (cnc.State == 0)
                 return;
             showMessage(PCchatItem, scrollviewPC, PCchatItems, "I will send you a setting");
+            cnc.user_setting = true;
             SendSetting();
         }
 

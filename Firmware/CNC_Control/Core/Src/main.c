@@ -182,6 +182,8 @@ void axisInit()
 
   cnc.z_max = Z_MAX;
   cnc.step = STEP;
+  cnc.thickness = 0;
+  cnc.speed = MAX_SPEED;
 }
 /* USER CODE END 0 */
 
@@ -310,14 +312,14 @@ int main(void)
       if(cnc.drill.status != cnc.drill.enb)
 			{
 				if(cnc.drill.enb){
-          cnc.thickness = 1;//thickness;
+          cnc.z_axis.next = cnc.z_max - cnc.thickness;
           runDrill(&cnc.drill, 70);
         }					
 				else
-					cnc.thickness = 10;					
+					cnc.z_axis.next = 0;
 				while(!cnc.z_axis.finish)
 				{
-					move(&cnc.z_axis, cnc.z_max - cnc.thickness);
+					move(&cnc.z_axis, cnc.z_axis.next);
 				}
 				cnc.z_axis.finish = false;
 				cnc.drill.status = cnc.drill.enb;
@@ -370,7 +372,14 @@ int main(void)
       HAL_UART_Transmit(&huart2, cnc.data.TransBuff, 2, 100);
       cnc.Mode = 0;
       break;
-
+    case 9: // stop
+      while(!cnc.z_axis.finish)
+				{
+					move(&cnc.z_axis, 0);
+				}
+      runDrill(&cnc.drill, 0);
+      cnc.Mode = 3; // mode home
+      break;
     default:
       break;
     }

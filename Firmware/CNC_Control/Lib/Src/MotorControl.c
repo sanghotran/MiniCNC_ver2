@@ -26,6 +26,9 @@ void ProcessData(CNC *cnc)
 			cnc->drill.enb = false;
 		cnc->Mode = 3; // check drill
 		break;	
+	case 'E': //stop
+		cnc->Mode = 9;
+		break;
 	case 'S': // setting
 		if(cnc->data.ReceiveBuff[1] == 'X')
 		{
@@ -70,6 +73,15 @@ void ProcessData(CNC *cnc)
 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
 			cnc->z_max = z_max;
 			cnc->step = step;
+		}
+		else if(cnc->data.ReceiveBuff[1] == 'U')
+		{
+			int speed;
+			float thickness;
+			sscanf(cnc->data.ReceiveBuff, "SUT%fS%d", &thickness, &speed);
+			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+			cnc->thickness = thickness;
+			cnc->speed = speed;
 		}
 		cnc->Mode = 8;
 		break;

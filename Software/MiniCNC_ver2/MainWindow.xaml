@@ -296,10 +296,18 @@
                             <!-- thickness of material-->
                             <DockPanel LastChildFill="False" Height="50">
                                 <TextBlock DockPanel.Dock="Left" Text="Thickness" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="thickness" 
+                                <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="thickness" Text="1"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center"/>
                                 <TextBlock DockPanel.Dock="Left" Margin="10 0 0 0" Text="mm" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                            </DockPanel>
+                            <!-- speed of drill-->
+                            <DockPanel LastChildFill="False" Height="50">
+                                <TextBlock DockPanel.Dock="Left" Text="Speed" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="speed" Text="100"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center"/>
+                                <TextBlock DockPanel.Dock="Left" Margin="10 0 0 0" Text="%" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
                             </DockPanel>
                         </StackPanel>
                     </Grid>   
