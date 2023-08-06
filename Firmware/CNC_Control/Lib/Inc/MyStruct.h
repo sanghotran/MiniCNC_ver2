@@ -7,7 +7,7 @@
 #include "stm32f1xx_hal.h"
 
 #define T_SAMPLE 2
-#define Z_MAX 12.4
+#define Z_MAX 11
 
 
 
@@ -22,6 +22,8 @@ typedef struct
 	uint32_t pos;
 	float pwm;
 	int setpoint;
+
+	int speed;
 	
 	//TIM_HandleTypeDef* htim_enc;
 	uint32_t *enc;
@@ -46,7 +48,6 @@ typedef struct
 	
 	float next;
 	float last;
-	float New;
 
 	uint8_t ERROR;
 
@@ -60,7 +61,6 @@ typedef struct MyStruct
 	GPIO_TypeDef* GPIO_DIR;
 	uint16_t PIN_DIR;
 
-	bool status;
 	bool enb;
 } DRILL;
 
@@ -89,8 +89,6 @@ typedef struct
 	float thickness;
 	uint8_t speed;
 	DRILL drill;
-	//bool drill_status;
-	//bool drill_enb;
 
 	DATA data;
 } CNC;

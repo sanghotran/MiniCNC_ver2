@@ -160,29 +160,33 @@ void axisInit()
 	cnc.y_axis.PIN_HOME = GPIO_PIN_11;
 	cnc.z_axis.PIN_HOME = GPIO_PIN_10;
 	
-	cnc.x_axis.Kp = 30;
-	cnc.y_axis.Kp = 57.5;
-	cnc.z_axis.Kp = 2;
+	cnc.x_axis.Kp = 22;
+	cnc.y_axis.Kp = 27;
+	cnc.z_axis.Kp = 15;
 	
 	cnc.x_axis.Ki = 0.0001;
 	cnc.y_axis.Ki = 0.0001;
 	cnc.z_axis.Ki = 0.0001;
 	
-	cnc.x_axis.Kd = 3;
-	cnc.y_axis.Kd = 3.01;
-	cnc.z_axis.Kd = 1;
+	cnc.x_axis.Kd = 2;
+	cnc.y_axis.Kd = 3;
+	cnc.z_axis.Kd = 10;
 	
 	cnc.x_axis.mm_pulse = 249.8886;//142.8571;
 	cnc.y_axis.mm_pulse = 495.1475;//333.3333;
 	cnc.z_axis.mm_pulse = 500;
 
-  cnc.x_axis.ERROR = 3;
-  cnc.y_axis.ERROR = 5;
+  cnc.x_axis.ERROR = 2;
+  cnc.y_axis.ERROR = 4;
   cnc.z_axis.ERROR = 1;
+
+  cnc.x_axis.speed = MAX_SPEED;
+  cnc.y_axis.speed = MAX_SPEED;
+  cnc.z_axis.speed = MAX_SPEED;
 
   cnc.z_max = Z_MAX;
   cnc.step = STEP;
-  cnc.thickness = 0;
+  cnc.thickness = 1;
   cnc.speed = MAX_SPEED;
 }
 /* USER CODE END 0 */
@@ -307,13 +311,34 @@ int main(void)
         //uart_clear_receive_buffer_and_start_receive_IT();
 			}
       break;
-
-    case 3: // check drill
+    
+    case 3:
+      if(cnc.drill.enb)
+      {
+        runDrill(&cnc.drill, 95);
+        while(!cnc.z_axis.finish)
+				{
+					move(&cnc.z_axis, cnc.z_axis.next);
+				}
+				cnc.z_axis.finish = false;
+      }
+      else
+      {
+        while(!cnc.z_axis.finish)
+				{
+					move(&cnc.z_axis, cnc.z_axis.next);
+				}
+				cnc.z_axis.finish = false;
+        runDrill(&cnc.drill, 0);
+      }        
+      cnc.Mode = 7;
+      break;
+    /*case 3: // check drill
       if(cnc.drill.status != cnc.drill.enb)
 			{
 				if(cnc.drill.enb){
           cnc.z_axis.next = cnc.z_max - cnc.thickness;
-          runDrill(&cnc.drill, 70);
+          runDrill(&cnc.drill, 90);
         }					
 				else
 					cnc.z_axis.next = 0;
@@ -331,7 +356,7 @@ int main(void)
         cnc.Mode = 4; // mode G00
         runDrill(&cnc.drill, 0);
       }        
-      break;
+      break;*/
 
     case 4: // mode G00
       while(!(cnc.x_axis.finish && cnc.y_axis.finish))
@@ -341,8 +366,6 @@ int main(void)
 			}
 			cnc.x_axis.finish = false;
 			cnc.y_axis.finish = false;
-			// cnc.x_axis.last = cnc.x_axis.next;
-			// cnc.y_axis.last = cnc.y_axis.next;
       cnc.x_axis.last = cnc.x_axis.pos / cnc.x_axis.mm_pulse;
       cnc.y_axis.last = cnc.y_axis.pos / cnc.y_axis.mm_pulse;
       cnc.Mode = 7; // mode send feedback
@@ -360,7 +383,6 @@ int main(void)
     case 7: // send feedback to main      
       memset(cnc.data.TransBuff, 0, sizeof(cnc.data.TransBuff));
       sprintf(cnc.data.TransBuff, "G0%uX%0.2fY%0.2f!", cnc.drill.enb, cnc.x_axis.last, cnc.y_axis.last);
-      //uart_clear_receive_buffer_and_start_receive_IT();
       HAL_Delay(120);
       HAL_UART_Transmit(&huart2, cnc.data.TransBuff, sizeof(cnc.data.TransBuff), 100);
       cnc.Mode = 0;      
@@ -374,11 +396,24 @@ int main(void)
       break;
     case 9: // stop
       while(!cnc.z_axis.finish)
-				{
-					move(&cnc.z_axis, 0);
-				}
+      {
+        move(&cnc.z_axis, 0);
+      }
+      cnc.z_axis.finish = false;
       runDrill(&cnc.drill, 0);
-      cnc.Mode = 3; // mode home
+      cnc.Mode = 0; // mode home
+      break;
+    case 10: // z edit
+      while(!cnc.z_axis.finish)
+      {
+        move(&cnc.z_axis, cnc.z_axis.next);
+      }
+      cnc.z_axis.finish = false;
+      memset(cnc.data.TransBuff, 0, sizeof(cnc.data.TransBuff));
+      sprintf(cnc.data.TransBuff, "Z!");
+      HAL_Delay(120);
+      HAL_UART_Transmit(&huart2, cnc.data.TransBuff, 2, 100);
+      cnc.Mode = 0;
       break;
     default:
       break;

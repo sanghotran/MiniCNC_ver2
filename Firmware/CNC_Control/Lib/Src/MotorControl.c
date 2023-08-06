@@ -12,6 +12,31 @@ void ProcessData(CNC *cnc)
 		cnc->Mode = 1; // mode goto home
 		break;
 	case 'G':
+		if(cnc->data.ReceiveBuff[3] == 'Z')
+		{			
+			uint8_t temp;
+			float z;
+			sscanf(cnc->data.ReceiveBuff, "G0%uZ%f ",&temp, &z);
+			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+			if(z >= cnc->z_max)
+				cnc->z_axis.next = 0;
+			else
+				cnc->z_axis.next = cnc->z_max - z;
+			cnc->drill.enb = (temp == 1) ? true : false;
+			cnc->Mode = 3; // move z
+		}
+		else
+		{
+			uint8_t temp;
+			float x, y;
+			sscanf(cnc->data.ReceiveBuff, "G0%uX%fY%f ",&temp, &x, &y);
+			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+			cnc->x_axis.next = x;
+			cnc->y_axis.next = y;
+			cnc->Mode = (temp == 0) ? 4 : 5;
+		}
+		break;
+	/*case 'G':
 		strcat(cnc->data.ReceiveBuff, " ");
 		float x = 0, y = 0;
 		int temp;
@@ -25,37 +50,58 @@ void ProcessData(CNC *cnc)
 		else
 			cnc->drill.enb = false;
 		cnc->Mode = 3; // check drill
-		break;	
+		break;*/	
 	case 'E': //stop
 		cnc->Mode = 9;
 		break;
+	case 'Z': // z edit
+		if(cnc->data.ReceiveBuff[1] == 'S')
+		{
+			cnc->z_max = cnc->z_axis.pos / cnc->z_axis.mm_pulse;
+			cnc->Mode = 8;
+		}
+		else
+		{
+			float z_step;
+			sscanf(cnc->data.ReceiveBuff, "Z%f", &z_step);
+			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
+			cnc->z_axis.next += z_step;
+			cnc->Mode = 10;
+		}		
+	 	break;
 	case 'S': // setting
 		if(cnc->data.ReceiveBuff[1] == 'X')
 		{
 			float ki, kp, kd;
-			sscanf(cnc->data.ReceiveBuff, "SXKp%fKi%fKd%f", &kp, &ki, &kd);
+			int speed;
+			sscanf(cnc->data.ReceiveBuff, "SXKp%fKi%fKd%fS%d", &kp, &ki, &kd, &speed);
 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
 			cnc->x_axis.Kp = kp;
 			cnc->x_axis.Ki = ki;
 			cnc->x_axis.Kd = kd;
+			cnc->x_axis.speed = speed;
 		}
 		else if(cnc->data.ReceiveBuff[1] == 'Y')
 		{
 			float ki, kp, kd;
-			sscanf(cnc->data.ReceiveBuff, "SYKp%fKi%fKd%f", &kp, &ki, &kd);
+			int speed;
+			sscanf(cnc->data.ReceiveBuff, "SYKp%fKi%fKd%fS%d", &kp, &ki, &kd, &speed);
 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
 			cnc->y_axis.Kp = kp;
 			cnc->y_axis.Ki = ki;
 			cnc->y_axis.Kd = kd;
+			cnc->y_axis.speed = speed;
 		}
 		else if(cnc->data.ReceiveBuff[1] == 'Z')
 		{
 			float ki, kp, kd;
-			sscanf(cnc->data.ReceiveBuff, "SZKp%fKi%fKd%f", &kp, &ki, &kd);
+			int speed;
+			sscanf(cnc->data.ReceiveBuff, "SZKp%fKi%fKd%fS%d", &kp, &ki, &kd, &speed);
 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
 			cnc->z_axis.Kp = kp;
 			cnc->z_axis.Ki = ki;
 			cnc->z_axis.Kd = kd;
+			cnc->z_axis.speed = speed;
 		}
 		else if(cnc->data.ReceiveBuff[1] == 'E')
 		{
@@ -97,7 +143,7 @@ void PWM(AXIS *axis)
 	if (duty > 1) duty = 1;
 	else if(duty ==0)  duty = 0;
 	else if (duty < -1) duty = -1;
-	int16_t pwm = duty*MAX_SPEED;
+	int16_t pwm = duty*axis->speed;
 		
 	if (pwm > 0)
 		{
@@ -171,7 +217,7 @@ void HOME(AXIS *axis)
 {
 	if( HAL_GPIO_ReadPin(axis->GPIO_HOME, axis->PIN_HOME) == 1)
 		{
-			axis->pwm = -0.8;
+			axis->pwm = -1;
 			PWM(axis);
 			axis->home = false;
 		}

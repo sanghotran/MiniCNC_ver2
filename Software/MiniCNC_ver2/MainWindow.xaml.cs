@@ -291,19 +291,19 @@ namespace MiniCNC_ver2
         {
             if (x_setting.IsChecked == true)
             {
-                SendData("SX" + "Kp" + X_Kp.Text + "Ki" + X_Ki.Text + "Kd" + X_Kd.Text + "! ");
+                SendData("SX" + "Kp" + X_Kp.Text + "Ki" + X_Ki.Text + "Kd" + X_Kd.Text + "S" + X_speed.Text + "! ");
                 x_setting.IsChecked = false;
                 return;
             }
             else if (y_setting.IsChecked == true)
             {
-                SendData("SY" + "Kp" + Y_Kp.Text + "Ki" + Y_Ki.Text + "Kd" + Y_Kd.Text + "! ");
+                SendData("SY" + "Kp" + Y_Kp.Text + "Ki" + Y_Ki.Text + "Kd" + Y_Kd.Text + "S" + Y_speed.Text + "! ");
                 y_setting.IsChecked = false;
                 return;
             }
             else if (z_setting.IsChecked == true)
             {
-                SendData("SZ" + "Kp" + Z_Kp.Text + "Ki" + Z_Ki.Text + "Kd" + Z_Kd.Text + "! ");
+                SendData("SZ" + "Kp" + Z_Kp.Text + "Ki" + Z_Ki.Text + "Kd" + Z_Kd.Text + "S" + Z_speed.Text + "! ");
                 z_setting.IsChecked = false;
                 return;
             }
@@ -313,6 +313,13 @@ namespace MiniCNC_ver2
                 error_setting.IsChecked = false;
                 return;
             }
+            else if(z_edit.IsChecked == true)
+            {
+                SendData("ZS! ");
+                z_edit.IsChecked = false;
+                return;
+            }
+            /*
             else if (other_setting.IsChecked == true)
             {
                 SendData("SO" + "Z" + Z_max.Text + "S" + step.Text + "! ");
@@ -325,6 +332,7 @@ namespace MiniCNC_ver2
                 cnc.user_setting = false;
                 return;
             }
+            */
             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Setting done");
         }
         // process data
@@ -372,6 +380,7 @@ namespace MiniCNC_ver2
                             showMessage(mainMCUchatItem, scrollviewPC, PCchatItems, "Stopped");
                             cnc.readyReceiveGcode = false;
                             IsPaused = false;
+                            cnc.gcode = Array.Empty<string>();
                             cnc.State = 1; // mode connect
                             break;
                         case "HOME":
@@ -389,6 +398,9 @@ namespace MiniCNC_ver2
                             break;
                         case "SETTING":
                             SendSetting();
+                            break;
+                        case "Z_OK":
+                            cnc.State = 1; // mode connect
                             break;
                         default:
                             break;
@@ -466,7 +478,10 @@ namespace MiniCNC_ver2
             }
             else
             {
-                cnc.State = 4; // mode stop
+                //cnc.State = 4; // mode stop
+
+                // test cho nhanh
+                cnc.State = 1;
                 //cnc.readyReceiveGcode = false;
                 //IsPaused = false;
             }
@@ -589,6 +604,29 @@ namespace MiniCNC_ver2
             showMessage(PCchatItem, scrollviewPC, PCchatItems, "I will send you a setting");
             cnc.user_setting = true;
             SendSetting();
+        }
+        private void Z_up(object sender, MouseButtonEventArgs e)
+        {
+            // not press when disconnect state
+            if (cnc.State == 0)
+                return;
+            // not press when move Z
+            if (cnc.State == 5)
+                return;
+            cnc.State = 5;
+            SendData("Z-" + Z_step.Text + "! ");
+
+        }
+        private void Z_down(object sender, MouseButtonEventArgs e)
+        {
+            // not press when disconnect state
+            if (cnc.State == 0)
+                return;
+            // not press when move Z
+            if (cnc.State == 5)
+                return;
+            cnc.State = 5;
+            SendData("Z" + Z_step.Text + "! ");
         }
 
         #endregion

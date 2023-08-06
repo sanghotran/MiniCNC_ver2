@@ -289,27 +289,51 @@
                                 </Style>
                             </Image.Style>
                         </Image>
-                        <!-- User setting-->
-                        <StackPanel>
-                            <!-- Lable-->
-                            <TextBlock Text="User Setting" FontSize="30" Foreground="White" TextAlignment="Center"/>
-                            <!-- thickness of material-->
-                            <DockPanel LastChildFill="False" Height="50">
-                                <TextBlock DockPanel.Dock="Left" Text="Thickness" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="thickness" Text="1"
+                        <!-- Z edit-->
+                        <Grid Margin="0 10 650 0">
+                            <StackPanel>
+                                <!-- Lable-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock Margin="40 0 0 0" Text="Z Edit" FontSize="30" Foreground="White" TextAlignment="Center"/>
+                                    <CheckBox Name="z_edit" Margin="10 0 0 0" DockPanel.Dock="Left"
+                                              HorizontalAlignment="Right" VerticalAlignment="Center"/>
+                                </DockPanel>
+                                <!-- Up-->
+                                <Image Margin=" 0 0 0 0" Source="Images/up.PNG" Cursor="Hand" PreviewMouseDown="Z_up">
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Setter Property="Width" Value="40"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Width" Value="50"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                                <!-- Z step value-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock Margin="25 0 0 0" DockPanel.Dock="Left" Text="Step" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_step" Text="1"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
-                                     VerticalAlignment="Center"/>
-                                <TextBlock DockPanel.Dock="Left" Margin="10 0 0 0" Text="mm" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                            </DockPanel>
-                            <!-- speed of drill-->
-                            <DockPanel LastChildFill="False" Height="50">
-                                <TextBlock DockPanel.Dock="Left" Text="Speed" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="speed" Text="100"
-                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
-                                     VerticalAlignment="Center"/>
-                                <TextBlock DockPanel.Dock="Left" Margin="10 0 0 0" Text="%" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                            </DockPanel>
-                        </StackPanel>
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Down-->
+                                <Image Margin=" 0 0 0 0" Source="Images/down.PNG" Cursor="Hand" PreviewMouseDown="Z_down">
+                                    <Image.Style>
+                                        <Style TargetType="Image">
+                                            <Setter Property="Width" Value="40"/>
+                                            <Style.Triggers>
+                                                <Trigger Property="IsMouseOver" Value="True">
+                                                    <Setter Property="Width" Value="50"/>
+                                                </Trigger>
+                                            </Style.Triggers>
+                                        </Style>
+                                    </Image.Style>
+                                </Image>
+                            </StackPanel>
+                        </Grid>
+                        <!-- User setting-->                        
                     </Grid>   
                     <!-- Admin-->
                     <Grid Grid.Row="1">
@@ -327,7 +351,7 @@
                                 <!-- Kp-->
                                 <DockPanel LastChildFill="False" Height="50">                                   
                                     <TextBlock DockPanel.Dock="Left" Text="Kp" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="X_Kp" Text="30"
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="X_Kp" Text="20"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center" Background="White"/>                                   
                                 </DockPanel>
@@ -344,7 +368,14 @@
                                     <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="X_Kd" Text="2"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center" Background="White"/>
-                                </DockPanel>                                
+                                </DockPanel>
+                                <!-- Speed-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock DockPanel.Dock="Left" Text="Sp" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="X_speed" Text="60"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
                             </StackPanel>
                             <!-- Y Axis-->
                             <StackPanel Margin="30 0 0 0">
@@ -357,7 +388,7 @@
                                 <!-- Kp-->
                                 <DockPanel LastChildFill="False" Height="50">
                                     <TextBlock DockPanel.Dock="Left" Text="Kp" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Y_Kp" Text="57.5"
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Y_Kp" Text="27"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center" Background="White"/>
                                 </DockPanel>
@@ -371,7 +402,14 @@
                                 <!-- Kd-->
                                 <DockPanel LastChildFill="False" Height="50">
                                     <TextBlock DockPanel.Dock="Left" Text="Kd" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Y_Kd" Text="3.01"
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Y_Kd" Text="3"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Speed-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock DockPanel.Dock="Left" Text="Sp" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Y_speed" Text="60"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center" Background="White"/>
                                 </DockPanel>
@@ -387,7 +425,7 @@
                                 <!-- Kp-->
                                 <DockPanel LastChildFill="False" Height="50">
                                     <TextBlock DockPanel.Dock="Left" Text="Kp" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_Kp" Text="2"
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_Kp" Text="15"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center" Background="White"/>
                                 </DockPanel>
@@ -401,7 +439,14 @@
                                 <!-- Kd-->
                                 <DockPanel LastChildFill="False" Height="50">
                                     <TextBlock DockPanel.Dock="Left" Text="Kd" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_Kd" Text="1"
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_Kd" Text="10"
+                                     Width="100" Height="30" FontSize="25" TextAlignment="Center"
+                                     VerticalAlignment="Center" Background="White"/>
+                                </DockPanel>
+                                <!-- Speed-->
+                                <DockPanel LastChildFill="False" Height="50">
+                                    <TextBlock DockPanel.Dock="Left" Text="Sp" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_speed" Text="60"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center" Background="White"/>
                                 </DockPanel>
@@ -417,14 +462,14 @@
                                 <!-- X Error-->
                                 <DockPanel LastChildFill="False" Height="50">                                    
                                     <TextBlock Text="X " FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="X_Error" Text="3"
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="X_Error" Text="1"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center" Background="White"/>
                                 </DockPanel>
                                 <!-- Y Error-->
                                 <DockPanel LastChildFill="False" Height="50">                                    
                                     <TextBlock Text="Y " FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Y_Error" Text="5"
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Y_Error" Text="4"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center" Background="White"/>
                                 </DockPanel>
@@ -447,14 +492,14 @@
                                 <!-- Z max-->
                                 <DockPanel LastChildFill="False" Height="50">
                                     <TextBlock Text="Z max" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_max" Text="12.4"
+                                    <TextBox DockPanel.Dock="Left" Margin="10 0 0 0" Name="Z_max" Text="17"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center" Background="White"/>
                                 </DockPanel>
                                 <!-- Step-->
                                 <DockPanel LastChildFill="False" Height="50">
                                     <TextBlock Text="Step" FontSize="30" Foreground="White" VerticalAlignment="Center"/>
-                                    <TextBox DockPanel.Dock="Left" Margin="32 0 0 0" Name="step" Text="0.05"
+                                    <TextBox DockPanel.Dock="Left" Margin="32 0 0 0" Name="step" Text="0.01"
                                      Width="100" Height="30" FontSize="25" TextAlignment="Center"
                                      VerticalAlignment="Center" Background="White"/>
                                 </DockPanel>

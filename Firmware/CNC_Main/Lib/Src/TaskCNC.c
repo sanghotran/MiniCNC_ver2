@@ -96,8 +96,14 @@ void ProcessMode(CNC *cnc)
       break;
     case 8: // mode stop
       memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));
-      sscanf(cnc->DataReceiveFromGUI, "E!", cnc->uart.SendToControl);
+      sprintf(cnc->uart.SendToControl, "E!");
       HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, 2, 100);
+      cnc->mode = 0;
+      break;
+    case 9: // mode z edit
+      memset(cnc->uart.SendToControl, 0, sizeof(cnc->uart.SendToControl));
+      sscanf(cnc->DataReceiveFromGUI, "%s", cnc->uart.SendToControl);
+      HAL_UART_Transmit(cnc->uart.huart, cnc->uart.SendToControl, sizeof(cnc->uart.SendToControl), 100);
       cnc->mode = 0;
       break;
     default:
@@ -169,6 +175,9 @@ void ReceiveDataFromGUI(CNC *cnc, SemaphoreHandle_t xSemaphoreMode)
     case 'S': // setting      
       cnc->mode = 7; // mode setting CNC
       break;
+    case 'Z': // z edit
+      cnc->mode = 9; // mode z edit
+      break;
 
     default:
       return;
@@ -191,6 +200,9 @@ void ReceiveDataFromCNC(CNC *cnc)
 		break;
   case 'S':
     sprintf(cnc->DataSendToGUI, "C SETTING ");
+    break;
+  case 'Z':
+    sprintf(cnc->DataSendToGUI, "C Z_OK ");
     break;
 	default:
 		return;

@@ -16,11 +16,11 @@
 
 #define TS 0.02
 
-#define MAX_SPEED 100
+#define MAX_SPEED 60
 
 //#define ERROR 5
 
-#define STEP 0.05
+#define STEP 0.01
 	
 #define LINE_MAX 2 // max line lengh (mm) when draw circle
 

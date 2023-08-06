@@ -121,11 +121,24 @@ namespace MiniCNC_ver2
                     x_y_pre = formOfGcode(temp);
                     gcode += "G00 " + x_y_pre + '\n';
                 }
-                if (temp.Contains("G1") && temp.Contains('X') && temp.Contains('Y'))
+                else if( temp.Contains("G0") && temp.Contains('Z'))
+                {
+                    gcode_flag = 0;
+                    temp = temp.Insert(2, "0 ");
+                    gcode += temp.Replace("\r", string.Empty) + '\n';
+                }                
+                else if (temp.Contains("G1") && temp.Contains('X') && temp.Contains('Y'))
                 {
                     gcode_flag = 1;
                     x_y_pre = formOfGcode(temp);
                     gcode += "G01 " + x_y_pre + '\n';
+                }
+                else if (temp.Contains("G1") && (temp.Contains('Z')))
+                {
+                    gcode_flag = 1;
+                    temp = temp.Replace("G1", "G01 ");
+                    temp = temp.Remove(temp.IndexOf('F'));
+                    gcode += temp + '\n';
                 }
                 else if (temp.Contains("G1") && (temp.Contains('X') || temp.Contains('Y')))
                 {
@@ -160,7 +173,8 @@ namespace MiniCNC_ver2
             gcodeConvert = string.Empty;
             for (int i = 0; i < data.Length; i++)
             {
-                while (!(data[i].Contains("G0") && data[i].Contains("X")))
+                //while (!(data[i].Contains("G0") && data[i].Contains("X")))
+                while (!data[i].Contains("G0"))
                 {
                     i++;
                     if (i == data.Length)
@@ -179,14 +193,28 @@ namespace MiniCNC_ver2
             switch (draw.buff[0])
             {
                 case "G00":
-                    draw.xLast = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
-                    draw.yLast = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
-                    gcodeConvert += convertGcode("G00", draw.xLast, draw.yLast);
+                    if(draw.buff[1].Contains('Z'))
+                    {
+                        gcodeConvert += draw.buff[0] + draw.buff[1].Replace("\r", string.Empty) + '\n';
+                    }
+                    else
+                    {
+                        draw.xLast = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
+                        draw.yLast = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
+                        gcodeConvert += convertGcode("G00", draw.xLast, draw.yLast);
+                    }                    
                     break;
                 case "G01":
-                    draw.xNext = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
-                    draw.yNext = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
-                    main.Children.Add(drawLine(draw.xNext, draw.yNext));
+                    if( draw.buff[1].Contains('Z'))
+                    {
+                        gcodeConvert += draw.buff[0] + draw.buff[1] + '\n';
+                    }
+                    else
+                    {
+                        draw.xNext = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
+                        draw.yNext = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
+                        main.Children.Add(drawLine(draw.xNext, draw.yNext));
+                    }                   
                     break;
                 case "G02":
                     draw.xNext = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
