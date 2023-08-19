@@ -1423,7 +1423,7 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
                 0x08000000                g_pfnVectors
                 0x0800010c                . = ALIGN (0x4)
 
-.text           0x08000110     0x91a4
+.text           0x08000110     0x9174
                 0x08000110                . = ALIGN (0x4)
  *(.text)
  .text          0x08000110       0x40 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
@@ -1786,542 +1786,543 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
                 0x08003c58                moveGcode
  *fill*         0x08003cbc        0x4 
  .text.drawLine
-                0x08003cc0      0x1f0 build/MotorControl.o
+                0x08003cc0      0x1bc build/MotorControl.o
                 0x08003cc0                drawLine
  .text.runDrill
-                0x08003eb0      0x11c build/MotorControl.o
-                0x08003eb0                runDrill
- .text.int_abs  0x08003fcc        0xa build/MyMath.o
-                0x08003fcc                int_abs
- .text.int_min  0x08003fd6        0xc build/MyMath.o
-                0x08003fd6                int_min
- .text.int_max  0x08003fe2        0xc build/MyMath.o
-                0x08003fe2                int_max
- *fill*         0x08003fee        0x2 
+                0x08003e7c      0x11c build/MotorControl.o
+                0x08003e7c                runDrill
+ .text.int_abs  0x08003f98        0xa build/MyMath.o
+                0x08003f98                int_abs
+ .text.int_min  0x08003fa2        0xc build/MyMath.o
+                0x08003fa2                int_min
+ .text.int_max  0x08003fae        0xc build/MyMath.o
+                0x08003fae                int_max
+ *fill*         0x08003fba        0x2 
  .text.Reset_Handler
-                0x08003ff0       0x48 build/startup_stm32f103xb.o
-                0x08003ff0                Reset_Handler
+                0x08003fbc       0x48 build/startup_stm32f103xb.o
+                0x08003fbc                Reset_Handler
  .text.Default_Handler
-                0x08004038        0x2 build/startup_stm32f103xb.o
-                0x08004038                RTC_Alarm_IRQHandler
-                0x08004038                EXTI2_IRQHandler
-                0x08004038                TIM1_CC_IRQHandler
-                0x08004038                PVD_IRQHandler
-                0x08004038                EXTI3_IRQHandler
-                0x08004038                EXTI0_IRQHandler
-                0x08004038                I2C2_EV_IRQHandler
-                0x08004038                ADC1_2_IRQHandler
-                0x08004038                SPI1_IRQHandler
-                0x08004038                TAMPER_IRQHandler
-                0x08004038                DMA1_Channel4_IRQHandler
-                0x08004038                USART3_IRQHandler
-                0x08004038                RTC_IRQHandler
-                0x08004038                DMA1_Channel7_IRQHandler
-                0x08004038                CAN1_RX1_IRQHandler
-                0x08004038                TIM4_IRQHandler
-                0x08004038                I2C1_EV_IRQHandler
-                0x08004038                DMA1_Channel6_IRQHandler
-                0x08004038                TIM3_IRQHandler
-                0x08004038                RCC_IRQHandler
-                0x08004038                TIM1_TRG_COM_IRQHandler
-                0x08004038                DMA1_Channel1_IRQHandler
-                0x08004038                Default_Handler
-                0x08004038                EXTI9_5_IRQHandler
-                0x08004038                SPI2_IRQHandler
-                0x08004038                DMA1_Channel5_IRQHandler
-                0x08004038                EXTI4_IRQHandler
-                0x08004038                USB_LP_CAN1_RX0_IRQHandler
-                0x08004038                USB_HP_CAN1_TX_IRQHandler
-                0x08004038                DMA1_Channel3_IRQHandler
-                0x08004038                TIM1_UP_IRQHandler
-                0x08004038                WWDG_IRQHandler
-                0x08004038                TIM2_IRQHandler
-                0x08004038                TIM1_BRK_IRQHandler
-                0x08004038                EXTI1_IRQHandler
-                0x08004038                I2C2_ER_IRQHandler
-                0x08004038                DMA1_Channel2_IRQHandler
-                0x08004038                CAN1_SCE_IRQHandler
-                0x08004038                FLASH_IRQHandler
-                0x08004038                USART1_IRQHandler
-                0x08004038                I2C1_ER_IRQHandler
-                0x08004038                USBWakeUp_IRQHandler
- *fill*         0x0800403a        0x2 
+                0x08004004        0x2 build/startup_stm32f103xb.o
+                0x08004004                RTC_Alarm_IRQHandler
+                0x08004004                EXTI2_IRQHandler
+                0x08004004                TIM1_CC_IRQHandler
+                0x08004004                PVD_IRQHandler
+                0x08004004                EXTI3_IRQHandler
+                0x08004004                EXTI0_IRQHandler
+                0x08004004                I2C2_EV_IRQHandler
+                0x08004004                ADC1_2_IRQHandler
+                0x08004004                SPI1_IRQHandler
+                0x08004004                TAMPER_IRQHandler
+                0x08004004                DMA1_Channel4_IRQHandler
+                0x08004004                USART3_IRQHandler
+                0x08004004                RTC_IRQHandler
+                0x08004004                DMA1_Channel7_IRQHandler
+                0x08004004                CAN1_RX1_IRQHandler
+                0x08004004                TIM4_IRQHandler
+                0x08004004                I2C1_EV_IRQHandler
+                0x08004004                DMA1_Channel6_IRQHandler
+                0x08004004                TIM3_IRQHandler
+                0x08004004                RCC_IRQHandler
+                0x08004004                TIM1_TRG_COM_IRQHandler
+                0x08004004                DMA1_Channel1_IRQHandler
+                0x08004004                Default_Handler
+                0x08004004                EXTI9_5_IRQHandler
+                0x08004004                SPI2_IRQHandler
+                0x08004004                DMA1_Channel5_IRQHandler
+                0x08004004                EXTI4_IRQHandler
+                0x08004004                USB_LP_CAN1_RX0_IRQHandler
+                0x08004004                USB_HP_CAN1_TX_IRQHandler
+                0x08004004                DMA1_Channel3_IRQHandler
+                0x08004004                TIM1_UP_IRQHandler
+                0x08004004                WWDG_IRQHandler
+                0x08004004                TIM2_IRQHandler
+                0x08004004                TIM1_BRK_IRQHandler
+                0x08004004                EXTI1_IRQHandler
+                0x08004004                I2C2_ER_IRQHandler
+                0x08004004                DMA1_Channel2_IRQHandler
+                0x08004004                CAN1_SCE_IRQHandler
+                0x08004004                FLASH_IRQHandler
+                0x08004004                USART1_IRQHandler
+                0x08004004                I2C1_ER_IRQHandler
+                0x08004004                USBWakeUp_IRQHandler
+ *fill*         0x08004006        0x2 
  .text.__libc_init_array
-                0x0800403c       0x48 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
-                0x0800403c                __libc_init_array
- .text.memset   0x08004084       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
-                0x08004084                memset
- .text.__cvt    0x08004094       0xbe e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_float.o)
-                0x08004094                __cvt
+                0x08004008       0x48 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-init.o)
+                0x08004008                __libc_init_array
+ .text.memset   0x08004050       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memset.o)
+                0x08004050                memset
+ .text.__cvt    0x08004060       0xbe e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_float.o)
+                0x08004060                __cvt
  .text.__exponent
-                0x08004152       0x7c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_float.o)
-                0x08004152                __exponent
- *fill*         0x080041ce        0x2 
+                0x0800411e       0x7c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_float.o)
+                0x0800411e                __exponent
+ *fill*         0x0800419a        0x2 
  .text._printf_float
-                0x080041d0      0x458 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_float.o)
-                0x080041d0                _printf_float
+                0x0800419c      0x458 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_float.o)
+                0x0800419c                _printf_float
  .text._printf_common
-                0x08004628       0xde e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08004628                _printf_common
- *fill*         0x08004706        0x2 
+                0x080045f4       0xde e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x080045f4                _printf_common
+ *fill*         0x080046d2        0x2 
  .text._printf_i
-                0x08004708      0x24c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
-                0x08004708                _printf_i
+                0x080046d4      0x24c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x080046d4                _printf_i
  .text._scanf_float
-                0x08004954      0x41c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_float.o)
-                0x08004954                _scanf_float
- .text.nanf     0x08004d70        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sf_nan.o)
-                0x08004d70                nanf
- .text.sprintf  0x08004d78       0x40 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sprintf.o)
-                0x08004d78                siprintf
-                0x08004d78                sprintf
- .text.sscanf   0x08004db8       0x54 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sscanf.o)
-                0x08004db8                siscanf
-                0x08004db8                sscanf
- .text.__sread  0x08004e0c       0x22 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-stdio.o)
-                0x08004e0c                __sread
+                0x08004920      0x41c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_float.o)
+                0x08004920                _scanf_float
+ .text.nanf     0x08004d3c        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sf_nan.o)
+                0x08004d3c                nanf
+ .text.sprintf  0x08004d44       0x40 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sprintf.o)
+                0x08004d44                siprintf
+                0x08004d44                sprintf
+ .text.sscanf   0x08004d84       0x54 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sscanf.o)
+                0x08004d84                siscanf
+                0x08004d84                sscanf
+ .text.__sread  0x08004dd8       0x22 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-stdio.o)
+                0x08004dd8                __sread
  .text.__seofread
-                0x08004e2e        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-stdio.o)
-                0x08004e2e                __seofread
+                0x08004dfa        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-stdio.o)
+                0x08004dfa                __seofread
  .text.__swrite
-                0x08004e32       0x38 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-stdio.o)
-                0x08004e32                __swrite
- .text.__sseek  0x08004e6a       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-stdio.o)
-                0x08004e6a                __sseek
+                0x08004dfe       0x38 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-stdio.o)
+                0x08004dfe                __swrite
+ .text.__sseek  0x08004e36       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-stdio.o)
+                0x08004e36                __sseek
  .text.__sclose
-                0x08004e8e        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-stdio.o)
-                0x08004e8e                __sclose
- .text.sulp     0x08004e96       0x42 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
+                0x08004e5a        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-stdio.o)
+                0x08004e5a                __sclose
+ .text.sulp     0x08004e62       0x42 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
+ *fill*         0x08004ea4        0x4 
  .text._strtod_l
-                0x08004ed8      0xbd0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
-                0x08004ed8                _strtod_l
+                0x08004ea8      0xbd0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
+                0x08004ea8                _strtod_l
  .text._strtod_r
-                0x08005aa8        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
-                0x08005aa8                _strtod_r
+                0x08005a78        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
+                0x08005a78                _strtod_r
  .text._strtol_l.constprop.0
-                0x08005ab4       0xf8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtol.o)
+                0x08005a84       0xf8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtol.o)
  .text._strtol_r
-                0x08005bac        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtol.o)
-                0x08005bac                _strtol_r
+                0x08005b7c        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtol.o)
+                0x08005b7c                _strtol_r
  .text._write_r
-                0x08005bb0       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-writer.o)
-                0x08005bb0                _write_r
+                0x08005b80       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-writer.o)
+                0x08005b80                _write_r
  .text._close_r
-                0x08005bd4       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-closer.o)
-                0x08005bd4                _close_r
- .text.quorem   0x08005bf4      0x118 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-dtoa.o)
- *fill*         0x08005d0c        0x4 
- .text._dtoa_r  0x08005d10      0xbdc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-dtoa.o)
-                0x08005d10                _dtoa_r
- .text.__errno  0x080068ec        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-errno.o)
-                0x080068ec                __errno
- .text.rshift   0x080068f8       0xa6 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-gethex.o)
+                0x08005ba4       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-closer.o)
+                0x08005ba4                _close_r
+ .text.quorem   0x08005bc4      0x118 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-dtoa.o)
+ *fill*         0x08005cdc        0x4 
+ .text._dtoa_r  0x08005ce0      0xbdc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-dtoa.o)
+                0x08005ce0                _dtoa_r
+ .text.__errno  0x080068bc        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-errno.o)
+                0x080068bc                __errno
+ .text.rshift   0x080068c8       0xa6 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-gethex.o)
  .text.__hexdig_fun
-                0x0800699e       0x2a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-gethex.o)
-                0x0800699e                __hexdig_fun
+                0x0800696e       0x2a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-gethex.o)
+                0x0800696e                __hexdig_fun
  .text.__gethex
-                0x080069c8      0x478 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-gethex.o)
-                0x080069c8                __gethex
- .text.L_shift  0x08006e40       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-hexnan.o)
- .text.__match  0x08006e64       0x28 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-hexnan.o)
-                0x08006e64                __match
+                0x08006998      0x478 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-gethex.o)
+                0x08006998                __gethex
+ .text.L_shift  0x08006e10       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-hexnan.o)
+ .text.__match  0x08006e34       0x28 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-hexnan.o)
+                0x08006e34                __match
  .text.__hexnan
-                0x08006e8c      0x138 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-hexnan.o)
-                0x08006e8c                __hexnan
+                0x08006e5c      0x138 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-hexnan.o)
+                0x08006e5c                __hexnan
  .text._localeconv_r
-                0x08006fc4        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-localeconv.o)
-                0x08006fc4                _localeconv_r
+                0x08006f94        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-localeconv.o)
+                0x08006f94                _localeconv_r
  .text._lseek_r
-                0x08006fcc       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lseekr.o)
-                0x08006fcc                _lseek_r
- .text.malloc   0x08006ff0       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-malloc.o)
-                0x08006ff0                malloc
+                0x08006f9c       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lseekr.o)
+                0x08006f9c                _lseek_r
+ .text.malloc   0x08006fc0       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-malloc.o)
+                0x08006fc0                malloc
  .text.__ascii_mbtowc
-                0x08007000       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mbtowc_r.o)
-                0x08007000                __ascii_mbtowc
- .text.memchr   0x08007024       0x1c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memchr-stub.o)
-                0x08007024                memchr
- .text.memcpy   0x08007040       0x1c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memcpy-stub.o)
-                0x08007040                memcpy
- .text._Balloc  0x0800705c       0x80 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x0800705c                _Balloc
- .text._Bfree   0x080070dc       0x44 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x080070dc                _Bfree
+                0x08006fd0       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mbtowc_r.o)
+                0x08006fd0                __ascii_mbtowc
+ .text.memchr   0x08006ff4       0x1c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memchr-stub.o)
+                0x08006ff4                memchr
+ .text.memcpy   0x08007010       0x1c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memcpy-stub.o)
+                0x08007010                memcpy
+ .text._Balloc  0x0800702c       0x80 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x0800702c                _Balloc
+ .text._Bfree   0x080070ac       0x44 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080070ac                _Bfree
  .text.__multadd
-                0x08007120       0x8c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x08007120                __multadd
- .text.__s2b    0x080071ac       0x94 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x080071ac                __s2b
+                0x080070f0       0x8c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080070f0                __multadd
+ .text.__s2b    0x0800717c       0x94 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x0800717c                __s2b
  .text.__hi0bits
-                0x08007240       0x40 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x08007240                __hi0bits
+                0x08007210       0x40 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x08007210                __hi0bits
  .text.__lo0bits
-                0x08007280       0x5a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x08007280                __lo0bits
- *fill*         0x080072da        0x2 
- .text.__i2b    0x080072dc       0x2c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x080072dc                __i2b
+                0x08007250       0x5a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x08007250                __lo0bits
+ *fill*         0x080072aa        0x2 
+ .text.__i2b    0x080072ac       0x2c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080072ac                __i2b
  .text.__multiply
-                0x08007308      0x150 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x08007308                __multiply
+                0x080072d8      0x150 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080072d8                __multiply
  .text.__pow5mult
-                0x08007458       0xb4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x08007458                __pow5mult
+                0x08007428       0xb4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x08007428                __pow5mult
  .text.__lshift
-                0x0800750c       0xe0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x0800750c                __lshift
- .text.__mcmp   0x080075ec       0x36 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x080075ec                __mcmp
- *fill*         0x08007622        0x2 
- .text.__mdiff  0x08007624      0x118 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x08007624                __mdiff
- .text.__ulp    0x0800773c       0x4c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x0800773c                __ulp
- .text.__b2d    0x08007788       0xa8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x08007788                __b2d
- .text.__d2b    0x08007830       0xb8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x08007830                __d2b
- .text.__ratio  0x080078e8       0x5c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x080078e8                __ratio
+                0x080074dc       0xe0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080074dc                __lshift
+ .text.__mcmp   0x080075bc       0x36 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080075bc                __mcmp
+ *fill*         0x080075f2        0x2 
+ .text.__mdiff  0x080075f4      0x118 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080075f4                __mdiff
+ .text.__ulp    0x0800770c       0x4c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x0800770c                __ulp
+ .text.__b2d    0x08007758       0xa8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x08007758                __b2d
+ .text.__d2b    0x08007800       0xb8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x08007800                __d2b
+ .text.__ratio  0x080078b8       0x5c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080078b8                __ratio
  .text.__copybits
-                0x08007944       0x46 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x08007944                __copybits
+                0x08007914       0x46 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x08007914                __copybits
  .text.__any_on
-                0x0800798a       0x42 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x0800798a                __any_on
+                0x0800795a       0x42 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x0800795a                __any_on
  .text._calloc_r
-                0x080079cc       0x28 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-callocr.o)
-                0x080079cc                _calloc_r
- .text._free_r  0x080079f4       0x90 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-freer.o)
-                0x080079f4                _free_r
+                0x0800799c       0x28 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-callocr.o)
+                0x0800799c                _calloc_r
+ .text._free_r  0x080079c4       0x90 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-freer.o)
+                0x080079c4                _free_r
  .text.sbrk_aligned
-                0x08007a84       0x40 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-mallocr.o)
+                0x08007a54       0x40 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-mallocr.o)
  .text._malloc_r
-                0x08007ac4       0xe8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-mallocr.o)
-                0x08007ac4                _malloc_r
+                0x08007a94       0xe8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-mallocr.o)
+                0x08007a94                _malloc_r
  .text.__ssputs_r
-                0x08007bac       0xb6 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
-                0x08007bac                __ssputs_r
- *fill*         0x08007c62        0x2 
+                0x08007b7c       0xb6 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
+                0x08007b7c                __ssputs_r
+ *fill*         0x08007c32        0x2 
  .text._svfprintf_r
-                0x08007c64      0x200 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
-                0x08007c64                _svfiprintf_r
-                0x08007c64                _svfprintf_r
+                0x08007c34      0x200 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
+                0x08007c34                _svfiprintf_r
+                0x08007c34                _svfprintf_r
  .text._sungetc_r
-                0x08007e64       0x7a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfscanf.o)
-                0x08007e64                _sungetc_r
+                0x08007e34       0x7a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfscanf.o)
+                0x08007e34                _sungetc_r
  .text.__ssrefill_r
-                0x08007ede       0x3a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfscanf.o)
-                0x08007ede                __ssrefill_r
+                0x08007eae       0x3a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfscanf.o)
+                0x08007eae                __ssrefill_r
  .text.__ssvfscanf_r
-                0x08007f18      0x2f4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfscanf.o)
-                0x08007f18                __ssvfiscanf_r
-                0x08007f18                __ssvfscanf_r
+                0x08007ee8      0x2f4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfscanf.o)
+                0x08007ee8                __ssvfiscanf_r
+                0x08007ee8                __ssvfscanf_r
  .text._scanf_chars
-                0x0800820c       0xb4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_i.o)
-                0x0800820c                _scanf_chars
+                0x080081dc       0xb4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_i.o)
+                0x080081dc                _scanf_chars
  .text._scanf_i
-                0x080082c0      0x1f0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_i.o)
-                0x080082c0                _scanf_i
- .text._read_r  0x080084b0       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-readr.o)
-                0x080084b0                _read_r
- .text.nan      0x080084d4        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-s_nan.o)
-                0x080084d4                nan
- .text._sbrk_r  0x080084e0       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sbrkr.o)
-                0x080084e0                _sbrk_r
- .text.__sccl   0x08008500       0x70 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sccl.o)
-                0x08008500                __sccl
- .text.strncmp  0x08008570       0x28 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strncmp.o)
-                0x08008570                strncmp
+                0x08008290      0x1f0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_i.o)
+                0x08008290                _scanf_i
+ .text._read_r  0x08008480       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-readr.o)
+                0x08008480                _read_r
+ .text.nan      0x080084a4        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-s_nan.o)
+                0x080084a4                nan
+ .text._sbrk_r  0x080084b0       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sbrkr.o)
+                0x080084b0                _sbrk_r
+ .text.__sccl   0x080084d0       0x70 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-sccl.o)
+                0x080084d0                __sccl
+ .text.strncmp  0x08008540       0x28 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strncmp.o)
+                0x08008540                strncmp
  .text._strtoul_l.constprop.0
-                0x08008598       0xe4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtoul.o)
+                0x08008568       0xe4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtoul.o)
  .text._strtoul_r
-                0x0800867c        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtoul.o)
-                0x0800867c                _strtoul_r
+                0x0800864c        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtoul.o)
+                0x0800864c                _strtoul_r
  .text.__submore
-                0x08008680       0x70 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-ungetc.o)
-                0x08008680                __submore
+                0x08008650       0x70 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-ungetc.o)
+                0x08008650                __submore
  .text.__ascii_wctomb
-                0x080086f0       0x1a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-wctomb_r.o)
-                0x080086f0                __ascii_wctomb
- *fill*         0x0800870a        0x2 
+                0x080086c0       0x1a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-wctomb_r.o)
+                0x080086c0                __ascii_wctomb
+ *fill*         0x080086da        0x2 
  .text.__assert_func
-                0x0800870c       0x3c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-assert.o)
-                0x0800870c                __assert_func
+                0x080086dc       0x3c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-assert.o)
+                0x080086dc                __assert_func
  .text.__sflush_r
-                0x08008748      0x104 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-fflush.o)
-                0x08008748                __sflush_r
+                0x08008718      0x104 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-fflush.o)
+                0x08008718                __sflush_r
  .text._fflush_r
-                0x0800884c       0x78 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-fflush.o)
-                0x0800884c                _fflush_r
- .text.std      0x080088c4       0x48 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x0800881c       0x78 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-fflush.o)
+                0x0800881c                _fflush_r
+ .text.std      0x08008894       0x48 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
  .text._cleanup_r
-                0x0800890c        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x0800890c                _cleanup_r
+                0x080088dc        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x080088dc                _cleanup_r
  .text.__sfmoreglue
-                0x08008918       0x2c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x08008918                __sfmoreglue
+                0x080088e8       0x2c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x080088e8                __sfmoreglue
  .text.__sfp_lock_acquire
-                0x08008944        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x08008944                __sfp_lock_acquire
+                0x08008914        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x08008914                __sfp_lock_acquire
  .text.__sfp_lock_release
-                0x08008950        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x08008950                __sfp_lock_release
+                0x08008920        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x08008920                __sfp_lock_release
  .text.__sinit_lock_acquire
-                0x0800895c        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x0800895c                __sinit_lock_acquire
+                0x0800892c        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x0800892c                __sinit_lock_acquire
  .text.__sinit_lock_release
-                0x08008968        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x08008968                __sinit_lock_release
- .text.__sinit  0x08008974       0x70 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x08008974                __sinit
- .text.__sfp    0x080089e4       0x8c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x080089e4                __sfp
- .text.fprintf  0x08008a70       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-fprintf.o)
-                0x08008a70                fiprintf
-                0x08008a70                fprintf
+                0x08008938        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x08008938                __sinit_lock_release
+ .text.__sinit  0x08008944       0x70 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x08008944                __sinit
+ .text.__sfp    0x080089b4       0x8c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x080089b4                __sfp
+ .text.fprintf  0x08008a40       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-fprintf.o)
+                0x08008a40                fiprintf
+                0x08008a40                fprintf
  .text._fwalk_reent
-                0x08008a94       0x3e e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-fwalk.o)
-                0x08008a94                _fwalk_reent
+                0x08008a64       0x3e e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-fwalk.o)
+                0x08008a64                _fwalk_reent
  .text.__retarget_lock_init_recursive
-                0x08008ad2        0x2 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
-                0x08008ad2                __retarget_lock_init_recursive
+                0x08008aa2        0x2 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
+                0x08008aa2                __retarget_lock_init_recursive
  .text.__retarget_lock_acquire_recursive
-                0x08008ad4        0x2 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
-                0x08008ad4                __retarget_lock_acquire_recursive
+                0x08008aa4        0x2 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
+                0x08008aa4                __retarget_lock_acquire_recursive
  .text.__retarget_lock_release_recursive
-                0x08008ad6        0x2 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
-                0x08008ad6                __retarget_lock_release_recursive
- .text.memmove  0x08008ad8       0x34 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memmove.o)
-                0x08008ad8                memmove
+                0x08008aa6        0x2 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lock.o)
+                0x08008aa6                __retarget_lock_release_recursive
+ .text.memmove  0x08008aa8       0x34 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-memmove.o)
+                0x08008aa8                memmove
  .text.__malloc_lock
-                0x08008b0c        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mlock.o)
-                0x08008b0c                __malloc_lock
+                0x08008adc        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mlock.o)
+                0x08008adc                __malloc_lock
  .text.__malloc_unlock
-                0x08008b18        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mlock.o)
-                0x08008b18                __malloc_unlock
+                0x08008ae8        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mlock.o)
+                0x08008ae8                __malloc_unlock
  .text._realloc_r
-                0x08008b24       0x5e e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-reallocr.o)
-                0x08008b24                _realloc_r
+                0x08008af4       0x5e e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-reallocr.o)
+                0x08008af4                _realloc_r
  .text.__sfputc_r
-                0x08008b82       0x2a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf.o)
+                0x08008b52       0x2a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf.o)
  .text.__sfputs_r
-                0x08008bac       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf.o)
-                0x08008bac                __sfputs_r
+                0x08008b7c       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf.o)
+                0x08008b7c                __sfputs_r
  .text._vfprintf_r
-                0x08008bd0      0x260 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf.o)
-                0x08008bd0                _vfprintf_r
-                0x08008bd0                _vfiprintf_r
+                0x08008ba0      0x260 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf.o)
+                0x08008ba0                _vfprintf_r
+                0x08008ba0                _vfiprintf_r
  .text.__swbuf_r
-                0x08008e30       0xa4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-wbuf.o)
-                0x08008e30                __swbuf_r
+                0x08008e00       0xa4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-wbuf.o)
+                0x08008e00                __swbuf_r
  .text.__swsetup_r
-                0x08008ed4       0xdc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-wsetup.o)
-                0x08008ed4                __swsetup_r
- .text.abort    0x08008fb0        0xe e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-abort.o)
-                0x08008fb0                abort
+                0x08008ea4       0xdc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-wsetup.o)
+                0x08008ea4                __swsetup_r
+ .text.abort    0x08008f80        0xe e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-abort.o)
+                0x08008f80                abort
  .text.__swhatbuf_r
-                0x08008fbe       0x4a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-makebuf.o)
-                0x08008fbe                __swhatbuf_r
+                0x08008f8e       0x4a e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-makebuf.o)
+                0x08008f8e                __swhatbuf_r
  .text.__smakebuf_r
-                0x08009008       0x80 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-makebuf.o)
-                0x08009008                __smakebuf_r
+                0x08008fd8       0x80 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-makebuf.o)
+                0x08008fd8                __smakebuf_r
  .text._malloc_usable_size_r
-                0x08009088       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-msizer.o)
-                0x08009088                _malloc_usable_size_r
+                0x08009058       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-msizer.o)
+                0x08009058                _malloc_usable_size_r
  .text._raise_r
-                0x08009098       0x50 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-signal.o)
-                0x08009098                _raise_r
- .text.raise    0x080090e8       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-signal.o)
-                0x080090e8                raise
- .text._kill_r  0x080090f8       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-signalr.o)
-                0x080090f8                _kill_r
+                0x08009068       0x50 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-signal.o)
+                0x08009068                _raise_r
+ .text.raise    0x080090b8       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-signal.o)
+                0x080090b8                raise
+ .text._kill_r  0x080090c8       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-signalr.o)
+                0x080090c8                _kill_r
  .text._getpid_r
-                0x0800911c        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-signalr.o)
-                0x0800911c                _getpid_r
+                0x080090ec        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-signalr.o)
+                0x080090ec                _getpid_r
  .text._fstat_r
-                0x08009120       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-fstatr.o)
-                0x08009120                _fstat_r
+                0x080090f0       0x24 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-fstatr.o)
+                0x080090f0                _fstat_r
  .text._isatty_r
-                0x08009144       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-isattyr.o)
-                0x08009144                _isatty_r
- .text.round    0x08009164       0x98 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-s_round.o)
-                0x08009164                round
- .text._close   0x080091fc       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(close.o)
-                0x080091fc                _close
- .text._fstat   0x0800920c       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(fstat.o)
-                0x0800920c                _fstat
- .text._getpid  0x0800921c       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(getpid.o)
-                0x0800921c                _getpid
- .text._isatty  0x0800922c       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(isatty.o)
-                0x0800922c                _isatty
- .text._kill    0x0800923c       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(kill.o)
-                0x0800923c                _kill
- .text._lseek   0x0800924c       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(lseek.o)
-                0x0800924c                _lseek
- .text._read    0x0800925c       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(read.o)
-                0x0800925c                _read
- .text._sbrk    0x0800926c       0x1c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(sbrk.o)
-                0x0800926c                _sbrk
- .text._write   0x08009288       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(write.o)
-                0x08009288                _write
- .text._exit    0x08009298        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
-                0x08009298                _exit
+                0x08009114       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-isattyr.o)
+                0x08009114                _isatty_r
+ .text.round    0x08009134       0x98 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a(lib_a-s_round.o)
+                0x08009134                round
+ .text._close   0x080091cc       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(close.o)
+                0x080091cc                _close
+ .text._fstat   0x080091dc       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(fstat.o)
+                0x080091dc                _fstat
+ .text._getpid  0x080091ec       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(getpid.o)
+                0x080091ec                _getpid
+ .text._isatty  0x080091fc       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(isatty.o)
+                0x080091fc                _isatty
+ .text._kill    0x0800920c       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(kill.o)
+                0x0800920c                _kill
+ .text._lseek   0x0800921c       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(lseek.o)
+                0x0800921c                _lseek
+ .text._read    0x0800922c       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(read.o)
+                0x0800922c                _read
+ .text._sbrk    0x0800923c       0x1c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(sbrk.o)
+                0x0800923c                _sbrk
+ .text._write   0x08009258       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(write.o)
+                0x08009258                _write
+ .text._exit    0x08009268        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libnosys.a(_exit.o)
+                0x08009268                _exit
  *(.glue_7)
- .glue_7        0x0800929c        0x0 linker stubs
+ .glue_7        0x0800926c        0x0 linker stubs
  *(.glue_7t)
- .glue_7t       0x0800929c        0x0 linker stubs
+ .glue_7t       0x0800926c        0x0 linker stubs
  *(.eh_frame)
- .eh_frame      0x0800929c        0x0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
+ .eh_frame      0x0800926c        0x0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
  *(.init)
- .init          0x0800929c        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crti.o
-                0x0800929c                _init
- .init          0x080092a0        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtn.o
+ .init          0x0800926c        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crti.o
+                0x0800926c                _init
+ .init          0x08009270        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtn.o
  *(.fini)
- .fini          0x080092a8        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crti.o
-                0x080092a8                _fini
- .fini          0x080092ac        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtn.o
-                0x080092b4                . = ALIGN (0x4)
-                0x080092b4                _etext = .
+ .fini          0x08009278        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crti.o
+                0x08009278                _fini
+ .fini          0x0800927c        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtn.o
+                0x08009284                . = ALIGN (0x4)
+                0x08009284                _etext = .
 
-.vfp11_veneer   0x080092b4        0x0
- .vfp11_veneer  0x080092b4        0x0 linker stubs
+.vfp11_veneer   0x08009284        0x0
+ .vfp11_veneer  0x08009284        0x0 linker stubs
 
-.v4_bx          0x080092b4        0x0
- .v4_bx         0x080092b4        0x0 linker stubs
+.v4_bx          0x08009284        0x0
+ .v4_bx         0x08009284        0x0 linker stubs
 
-.iplt           0x080092b4        0x0
- .iplt          0x080092b4        0x0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
+.iplt           0x08009284        0x0
+ .iplt          0x08009284        0x0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
 
-.rodata         0x080092b8      0x5f4
-                0x080092b8                . = ALIGN (0x4)
+.rodata         0x08009288      0x5f4
+                0x08009288                . = ALIGN (0x4)
  *(.rodata)
- .rodata        0x080092b8        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_i.o)
+ .rodata        0x08009288        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_i.o)
  *(.rodata*)
  .rodata.main.str1.4
-                0x080092c4       0x1f build/main.o
- *fill*         0x080092e3        0x1 
+                0x08009294       0x1f build/main.o
+ *fill*         0x080092b3        0x1 
  .rodata.HAL_RCC_GetSysClockFreq.str1.4
-                0x080092e4       0x11 build/stm32f1xx_hal_rcc.o
- *fill*         0x080092f5        0x3 
+                0x080092b4       0x11 build/stm32f1xx_hal_rcc.o
+ *fill*         0x080092c5        0x3 
  .rodata.AHBPrescTable
-                0x080092f8       0x10 build/system_stm32f1xx.o
-                0x080092f8                AHBPrescTable
+                0x080092c8       0x10 build/system_stm32f1xx.o
+                0x080092c8                AHBPrescTable
  .rodata.APBPrescTable
-                0x08009308        0x8 build/system_stm32f1xx.o
-                0x08009308                APBPrescTable
+                0x080092d8        0x8 build/system_stm32f1xx.o
+                0x080092d8                APBPrescTable
  .rodata.ProcessData.str1.4
-                0x08009310       0x79 build/MotorControl.o
- *fill*         0x08009389        0x3 
+                0x080092e0       0x79 build/MotorControl.o
+ *fill*         0x08009359        0x3 
  .rodata._global_impure_ptr
-                0x0800938c        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-impure.o)
-                0x0800938c                _global_impure_ptr
+                0x0800935c        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-impure.o)
+                0x0800935c                _global_impure_ptr
  .rodata._printf_float.str1.1
-                0x08009390       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_float.o)
+                0x08009360       0x10 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_float.o)
                                  0x12 (size before relaxing)
  .rodata._printf_i.str1.1
-                0x080093a0       0x22 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
+                0x08009370       0x22 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_i.o)
  .rodata._scanf_float.str1.1
-                0x080093c2        0x5 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_float.o)
+                0x08009392        0x5 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_float.o)
                                   0x6 (size before relaxing)
  .rodata._strtod_l.str1.1
-                0x080093c7        0x5 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
+                0x08009397        0x5 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
                                   0xd (size before relaxing)
- *fill*         0x080093c7        0x1 
- .rodata.fpi.1  0x080093c8       0x14 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
+ *fill*         0x08009397        0x1 
+ .rodata.fpi.1  0x08009398       0x14 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
  .rodata.fpinan.0
-                0x080093dc       0x14 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
+                0x080093ac       0x14 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
  .rodata.tinytens
-                0x080093f0       0x28 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
+                0x080093c0       0x28 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
  .rodata._ctype_
-                0x08009418      0x101 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-ctype_.o)
-                0x08009418                _ctype_
+                0x080093e8      0x101 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-ctype_.o)
+                0x080093e8                _ctype_
  .rodata._dtoa_r.str1.1
-                0x08009519       0xb3 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-dtoa.o)
+                0x080094e9       0xb3 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-dtoa.o)
                                  0xb5 (size before relaxing)
  .rodata.__gethex.str1.1
-                0x080095cc       0x86 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-gethex.o)
+                0x0800959c       0x86 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-gdtoa-gethex.o)
                                  0x97 (size before relaxing)
  .rodata.str1.1
-                0x08009652        0x2 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lnumeric.o)
+                0x08009622        0x2 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lnumeric.o)
                                   0x3 (size before relaxing)
  .rodata._C_numeric_locale
-                0x08009654        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lnumeric.o)
-                0x08009654                _C_numeric_locale
+                0x08009624        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-lnumeric.o)
+                0x08009624                _C_numeric_locale
  .rodata._setlocale_r.str1.1
-                0x08009660        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-locale.o)
+                0x08009630        0x8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-locale.o)
                                   0x9 (size before relaxing)
  .rodata.str1.1
-                0x08009668        0x2 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-locale.o)
+                0x08009638        0x2 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-locale.o)
  .rodata._Balloc.str1.1
-                0x08009668       0x7f e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x08009638       0x7f e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
                                  0x96 (size before relaxing)
  .rodata.__multadd.str1.1
-                0x080096e7       0x11 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
- *fill*         0x080096e7        0x1 
+                0x080096b7       0x11 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+ *fill*         0x080096b7        0x1 
  .rodata.__mprec_bigtens
-                0x080096e8       0x28 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x080096e8                __mprec_bigtens
+                0x080096b8       0x28 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080096b8                __mprec_bigtens
  .rodata.__mprec_tens
-                0x08009710       0xc8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
-                0x08009710                __mprec_tens
- .rodata.p05.0  0x080097d8        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080096e0       0xc8 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
+                0x080096e0                __mprec_tens
+ .rodata.p05.0  0x080097a8        0xc e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-mprec.o)
  .rodata._svfprintf_r.str1.1
-                0x080097e4       0x11 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
+                0x080097b4       0x11 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfprintf.o)
  .rodata.__ssvfscanf_r.str1.1
-                0x080097f5        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfscanf.o)
+                0x080097c5        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-svfscanf.o)
  .rodata.str1.1
-                0x080097f5        0x9 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_i.o)
+                0x080097c5        0x9 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_i.o)
  .rodata._scanf_i.str1.1
-                0x080097fe       0x12 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_i.o)
+                0x080097ce       0x12 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_i.o)
  .rodata.__assert_func.str1.1
-                0x08009810       0x3c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-assert.o)
+                0x080097e0       0x3c e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-assert.o)
                                  0x3d (size before relaxing)
  .rodata.__sf_fake_stderr
-                0x0800984c       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x0800984c                __sf_fake_stderr
+                0x0800981c       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x0800981c                __sf_fake_stderr
  .rodata.__sf_fake_stdin
-                0x0800986c       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x0800986c                __sf_fake_stdin
+                0x0800983c       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x0800983c                __sf_fake_stdin
  .rodata.__sf_fake_stdout
-                0x0800988c       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
-                0x0800988c                __sf_fake_stdout
+                0x0800985c       0x20 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-findfp.o)
+                0x0800985c                __sf_fake_stdout
  .rodata._vfprintf_r.str1.1
-                0x080098ac       0x11 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf.o)
-                0x080098c0                . = ALIGN (0x4)
+                0x0800987c       0x11 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf.o)
+                0x08009890                . = ALIGN (0x4)
 
-.rel.dyn        0x080098ac        0x0
- .rel.iplt      0x080098ac        0x0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
+.rel.dyn        0x0800987c        0x0
+ .rel.iplt      0x0800987c        0x0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
 
 .ARM.extab
  *(.ARM.extab* .gnu.linkonce.armextab.*)
 
-.ARM            0x080098ac        0x0
-                0x080098ac                __exidx_start = .
+.ARM            0x0800987c        0x0
+                0x0800987c                __exidx_start = .
  *(.ARM.exidx*)
-                0x080098ac                __exidx_end = .
+                0x0800987c                __exidx_end = .
 
-.preinit_array  0x080098ac        0x0
-                0x080098ac                PROVIDE (__preinit_array_start = .)
+.preinit_array  0x0800987c        0x0
+                0x0800987c                PROVIDE (__preinit_array_start = .)
  *(.preinit_array*)
-                0x080098ac                PROVIDE (__preinit_array_end = .)
+                0x0800987c                PROVIDE (__preinit_array_end = .)
 
-.init_array     0x080098ac        0x4
-                0x080098ac                PROVIDE (__init_array_start = .)
+.init_array     0x0800987c        0x4
+                0x0800987c                PROVIDE (__init_array_start = .)
  *(SORT_BY_NAME(.init_array.*))
  *(.init_array*)
- .init_array    0x080098ac        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
-                0x080098b0                PROVIDE (__init_array_end = .)
+ .init_array    0x0800987c        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
+                0x08009880                PROVIDE (__init_array_end = .)
 
-.fini_array     0x080098b0        0x4
+.fini_array     0x08009880        0x4
                 [!provide]                PROVIDE (__fini_array_start = .)
  *(SORT_BY_NAME(.fini_array.*))
  *(.fini_array*)
- .fini_array    0x080098b0        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
+ .fini_array    0x08009880        0x4 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
                 [!provide]                PROVIDE (__fini_array_end = .)
-                0x080098b4                _sidata = LOADADDR (.data)
+                0x08009884                _sidata = LOADADDR (.data)
 
-.data           0x20000000      0x1e0 load address 0x080098b4
+.data           0x20000000      0x1e0 load address 0x08009884
                 0x20000000                . = ALIGN (0x4)
                 0x20000000                _sdata = .
  *(.data)
@@ -2350,11 +2351,11 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
                 0x200001e0                . = ALIGN (0x4)
                 0x200001e0                _edata = .
 
-.igot.plt       0x200001e0        0x0 load address 0x08009a94
+.igot.plt       0x200001e0        0x0 load address 0x08009a64
  .igot.plt      0x200001e0        0x0 e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp/crtbegin.o
                 0x200001e0                . = ALIGN (0x4)
 
-.bss            0x200001e0      0x310 load address 0x08009a94
+.bss            0x200001e0      0x310 load address 0x08009a64
                 0x200001e0                _sbss = .
                 0x200001e0                __bss_start__ = _sbss
  *(.bss)
@@ -2400,7 +2401,7 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
                 0x200004f0                __bss_end__ = _ebss
 
 ._user_heap_stack
-                0x200004f0     0x1800 load address 0x08009a94
+                0x200004f0     0x1800 load address 0x08009a64
                 0x200004f0                . = ALIGN (0x8)
                 0x200004f0                PROVIDE (end = .)
                 [!provide]                PROVIDE (_end = .)
@@ -2636,7 +2637,7 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
 LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libm.a
 LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp\libgcc.a
 
-.debug_info     0x00000000    0x10558
+.debug_info     0x00000000    0x1053b
  .debug_info    0x00000000     0x2017 build/main.o
  .debug_info    0x00002017      0xf01 build/stm32f1xx_it.o
  .debug_info    0x00002f18     0x1163 build/stm32f1xx_hal_msp.o
@@ -2649,9 +2650,9 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
  .debug_info    0x0000bcad      0xe2d build/stm32f1xx_hal_cortex.o
  .debug_info    0x0000cada     0x1e12 build/stm32f1xx_hal_uart.o
  .debug_info    0x0000e8ec      0x26e build/system_stm32f1xx.o
- .debug_info    0x0000eb5a     0x18fa build/MotorControl.o
- .debug_info    0x00010454       0xe2 build/MyMath.o
- .debug_info    0x00010536       0x22 build/startup_stm32f103xb.o
+ .debug_info    0x0000eb5a     0x18dd build/MotorControl.o
+ .debug_info    0x00010437       0xe2 build/MyMath.o
+ .debug_info    0x00010519       0x22 build/startup_stm32f103xb.o
 
 .debug_abbrev   0x00000000     0x20ce
  .debug_abbrev  0x00000000      0x33f build/main.o
@@ -2670,7 +2671,7 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
  .debug_abbrev  0x0000203c       0x80 build/MyMath.o
  .debug_abbrev  0x000020bc       0x12 build/startup_stm32f103xb.o
 
-.debug_loc      0x00000000     0xc790
+.debug_loc      0x00000000     0xc769
  .debug_loc     0x00000000      0x2ea build/main.o
  .debug_loc     0x000002ea       0x60 build/stm32f1xx_it.o
  .debug_loc     0x0000034a      0x337 build/stm32f1xx_hal_msp.o
@@ -2683,8 +2684,8 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
  .debug_loc     0x000090ec      0x77f build/stm32f1xx_hal_cortex.o
  .debug_loc     0x0000986b     0x267b build/stm32f1xx_hal_uart.o
  .debug_loc     0x0000bee6       0xff build/system_stm32f1xx.o
- .debug_loc     0x0000bfe5      0x745 build/MotorControl.o
- .debug_loc     0x0000c72a       0x66 build/MyMath.o
+ .debug_loc     0x0000bfe5      0x71e build/MotorControl.o
+ .debug_loc     0x0000c703       0x66 build/MyMath.o
 
 .debug_aranges  0x00000000      0xc40
  .debug_aranges
@@ -2735,7 +2736,7 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
  .debug_ranges  0x00000bf8       0x20 build/MyMath.o
  .debug_ranges  0x00000c18       0x20 build/startup_stm32f103xb.o
 
-.debug_line     0x00000000     0xcc3a
+.debug_line     0x00000000     0xcc31
  .debug_line    0x00000000      0xcde build/main.o
  .debug_line    0x00000cde      0x344 build/stm32f1xx_it.o
  .debug_line    0x00001022      0x48c build/stm32f1xx_hal_msp.o
@@ -2748,11 +2749,11 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
  .debug_line    0x000097e2      0x635 build/stm32f1xx_hal_cortex.o
  .debug_line    0x00009e17     0x20b7 build/stm32f1xx_hal_uart.o
  .debug_line    0x0000bece      0x242 build/system_stm32f1xx.o
- .debug_line    0x0000c110      0xa1a build/MotorControl.o
- .debug_line    0x0000cb2a       0x9b build/MyMath.o
- .debug_line    0x0000cbc5       0x75 build/startup_stm32f103xb.o
+ .debug_line    0x0000c110      0xa11 build/MotorControl.o
+ .debug_line    0x0000cb21       0x9b build/MyMath.o
+ .debug_line    0x0000cbbc       0x75 build/startup_stm32f103xb.o
 
-.debug_str      0x00000000     0x396f
+.debug_str      0x00000000     0x3960
  .debug_str     0x00000000     0x11b4 build/main.o
                                0x12b7 (size before relaxing)
  .debug_str     0x000011b4      0x108 build/stm32f1xx_it.o
@@ -2777,11 +2778,11 @@ LOAD e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/g
                                 0xc6c (size before relaxing)
  .debug_str     0x0000371a       0x4f build/system_stm32f1xx.o
                                 0x232 (size before relaxing)
- .debug_str     0x00003769      0x1ba build/MotorControl.o
-                                0x9f8 (size before relaxing)
- .debug_str     0x00003923       0x28 build/MyMath.o
+ .debug_str     0x00003769      0x1ab build/MotorControl.o
+                                0x9e9 (size before relaxing)
+ .debug_str     0x00003914       0x28 build/MyMath.o
                                  0xfc (size before relaxing)
- .debug_str     0x0000394b       0x24 build/startup_stm32f103xb.o
+ .debug_str     0x0000393c       0x24 build/startup_stm32f103xb.o
                                  0x51 (size before relaxing)
 
 .comment        0x00000000       0x49
@@ -3435,7 +3436,6 @@ __aeabi_dcmplt                                    e:/project/program/vscode/tool
                                                   e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-dtoa.o)
                                                   e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
                                                   e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfprintf_float.o)
-                                                  build/MotorControl.o
 __aeabi_dcmpun                                    e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/thumb/v7-m/nofp\libgcc.a(_arm_unorddf2.o)
                                                   e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-strtod.o)
                                                   e:/project/program/vscode/tools/gcc-arm-none-eabi-10.3-2021.10/bin/../lib/gcc/arm-none-eabi/10.3.1/../../../../arm-none-eabi/lib/thumb/v7-m/nofp\libc_nano.a(lib_a-nano-vfscanf_float.o)

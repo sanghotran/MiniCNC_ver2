@@ -190,47 +190,56 @@ namespace MiniCNC_ver2
         }
         private void gcodeProcess(Grid main)
         {
-            switch (draw.buff[0])
+            try
             {
-                case "G00":
-                    if(draw.buff[1].Contains('Z'))
-                    {
-                        gcodeConvert += draw.buff[0] + draw.buff[1].Replace("\r", string.Empty) + '\n';
-                    }
-                    else
-                    {
-                        draw.xLast = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
-                        draw.yLast = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
-                        gcodeConvert += convertGcode("G00", draw.xLast, draw.yLast);
-                    }                    
-                    break;
-                case "G01":
-                    if( draw.buff[1].Contains('Z'))
-                    {
-                        gcodeConvert += draw.buff[0] + draw.buff[1] + '\n';
-                    }
-                    else
-                    {
+
+                switch (draw.buff[0])
+                {
+                    case "G00":
+                        if (draw.buff[1].Contains('Z'))
+                        {
+                            gcodeConvert += draw.buff[0] + draw.buff[1].Replace("\r", string.Empty) + '\n';
+                        }
+                        else
+                        {
+                            draw.xLast = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
+                            draw.yLast = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
+                            gcodeConvert += convertGcode("G00", draw.xLast, draw.yLast);
+                        }
+                        break;
+                    case "G01":
+                        if (draw.buff[1].Contains('Z'))
+                        {
+                            gcodeConvert += draw.buff[0] + draw.buff[1] + '\n';
+                        }
+                        else
+                        {
+                            draw.xNext = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
+                            draw.yNext = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
+                            main.Children.Add(drawLine(draw.xNext, draw.yNext));
+                        }
+                        break;
+                    case "G02":
                         draw.xNext = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
                         draw.yNext = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
-                        main.Children.Add(drawLine(draw.xNext, draw.yNext));
-                    }                   
-                    break;
-                case "G02":
-                    draw.xNext = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
-                    draw.yNext = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
-                    draw.I = Convert.ToDouble(draw.buff[4].Replace("I", string.Empty));
-                    draw.J = Convert.ToDouble(draw.buff[5].Replace("J", string.Empty));
-                    drawArcCw(main);
-                    break;
-                case "G03":
-                    draw.xNext = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
-                    draw.yNext = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
-                    draw.I = Convert.ToDouble(draw.buff[4].Replace("I", string.Empty));
-                    draw.J = Convert.ToDouble(draw.buff[5].Replace("J", string.Empty));
-                    drawArcCcw(main);
-                    break;
+                        draw.I = Convert.ToDouble(draw.buff[4].Replace("I", string.Empty));
+                        draw.J = Convert.ToDouble(draw.buff[5].Replace("J", string.Empty));
+                        drawArcCw(main);
+                        break;
+                    case "G03":
+                        draw.xNext = Convert.ToDouble(draw.buff[1].Replace("X", string.Empty));
+                        draw.yNext = Convert.ToDouble(draw.buff[2].Replace("Y", string.Empty));
+                        draw.I = Convert.ToDouble(draw.buff[4].Replace("I", string.Empty));
+                        draw.J = Convert.ToDouble(draw.buff[5].Replace("J", string.Empty));
+                        drawArcCcw(main);
+                        break;
+                }
             }
+            catch
+            {
+
+            }
+
         }
         private Line drawLine(double xNext, double yNext)
         {

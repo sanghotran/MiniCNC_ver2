@@ -280,8 +280,8 @@ void moveGcode(AXIS *pAxis)
 void drawLine(AXIS *pXAxis, AXIS *pYAxis)
 {
 	// declare variable
-	int dx = round(pXAxis->next - pXAxis->last);
-	int dy = round(pYAxis->next - pYAxis->last);
+	int dx = round((pXAxis->next - pXAxis->last)*100);
+	int dy = round((pYAxis->next - pYAxis->last)*100);
 	int longest = int_max(int_abs(dx), int_abs(dy));
 	int shortest = int_min(int_abs(dx), int_abs(dy));
 	int error = - longest;
@@ -295,7 +295,7 @@ void drawLine(AXIS *pXAxis, AXIS *pYAxis)
 		swapXY = false;
 	
 	// Bresenham Algorithm
-	for(int i = 0; i < longest/STEP ; i++)
+	for(int i = 0; i < longest/(STEP * 100) ; i++)
 	{
 		if(swapXY)
 		{
