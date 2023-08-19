@@ -160,15 +160,15 @@ void axisInit()
 	cnc.y_axis.PIN_HOME = GPIO_PIN_11;
 	cnc.z_axis.PIN_HOME = GPIO_PIN_10;
 	
-	cnc.x_axis.Kp = 22;
-	cnc.y_axis.Kp = 27;
+	cnc.x_axis.Kp = 5;
+	cnc.y_axis.Kp = 10;
 	cnc.z_axis.Kp = 15;
 	
 	cnc.x_axis.Ki = 0.0001;
 	cnc.y_axis.Ki = 0.0001;
 	cnc.z_axis.Ki = 0.0001;
 	
-	cnc.x_axis.Kd = 2;
+	cnc.x_axis.Kd = 1;
 	cnc.y_axis.Kd = 3;
 	cnc.z_axis.Kd = 10;
 	
@@ -177,11 +177,11 @@ void axisInit()
 	cnc.z_axis.mm_pulse = 500;
 
   cnc.x_axis.ERROR = 2;
-  cnc.y_axis.ERROR = 4;
+  cnc.y_axis.ERROR = 2;
   cnc.z_axis.ERROR = 1;
 
-  cnc.x_axis.speed = MAX_SPEED;
-  cnc.y_axis.speed = MAX_SPEED;
+  cnc.x_axis.speed = 35;
+  cnc.y_axis.speed = 40;
   cnc.z_axis.speed = MAX_SPEED;
 
   cnc.z_max = Z_MAX;
@@ -315,7 +315,7 @@ int main(void)
     case 3:
       if(cnc.drill.enb)
       {
-        runDrill(&cnc.drill, 95);
+        runDrill(&cnc.drill, 100);
         while(!cnc.z_axis.finish)
 				{
 					move(&cnc.z_axis, cnc.z_axis.next);
@@ -368,11 +368,17 @@ int main(void)
 			cnc.y_axis.finish = false;
       cnc.x_axis.last = cnc.x_axis.pos / cnc.x_axis.mm_pulse;
       cnc.y_axis.last = cnc.y_axis.pos / cnc.y_axis.mm_pulse;
+      // cnc.x_axis.last = cnc.x_axis.next;
+      // cnc.y_axis.last = cnc.y_axis.next;
+      // cnc.x_axis.feedback = cnc.y_axis.pos / cnc.x_axis.mm_pulse;
+      // cnc.y_axis.feedback = cnc.y_axis.pos / cnc.y_axis.mm_pulse;
       cnc.Mode = 7; // mode send feedback
       break;
 
     case 5: // mode G01
       drawLine(&cnc.x_axis, &cnc.y_axis);
+      // cnc.x_axis.feedback = cnc.y_axis.pos / cnc.x_axis.mm_pulse;
+      // cnc.y_axis.feedback = cnc.y_axis.pos / cnc.y_axis.mm_pulse;
       cnc.Mode = 7; // mode send feedback
       break;
 
@@ -383,7 +389,7 @@ int main(void)
     case 7: // send feedback to main      
       memset(cnc.data.TransBuff, 0, sizeof(cnc.data.TransBuff));
       sprintf(cnc.data.TransBuff, "G0%uX%0.2fY%0.2f!", cnc.drill.enb, cnc.x_axis.last, cnc.y_axis.last);
-      HAL_Delay(120);
+      HAL_Delay(300);
       HAL_UART_Transmit(&huart2, cnc.data.TransBuff, sizeof(cnc.data.TransBuff), 100);
       cnc.Mode = 0;      
       break;

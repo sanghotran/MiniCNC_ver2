@@ -6,7 +6,7 @@
 #include <stdint.h>
 #include "stm32f1xx_hal.h"
 
-#define T_SAMPLE 2
+#define T_SAMPLE 1
 #define Z_MAX 11
 
 
@@ -48,6 +48,7 @@ typedef struct
 	
 	float next;
 	float last;
+	float feedback;
 
 	uint8_t ERROR;
 

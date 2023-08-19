@@ -14,13 +14,13 @@
 #define DEG_TO_RAD 0.017453292519943295769236907684886
 #define RAD_TO_DEG 57.295779513082320876798154814105
 
-#define TS 0.02
+#define TS 0.001
 
 #define MAX_SPEED 60
 
 //#define ERROR 5
 
-#define STEP 0.01
+#define STEP 0.2
 	
 #define LINE_MAX 2 // max line lengh (mm) when draw circle
 

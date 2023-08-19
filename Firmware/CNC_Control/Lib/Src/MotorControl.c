@@ -33,6 +33,7 @@ void ProcessData(CNC *cnc)
 			memset(cnc->data.ReceiveBuff, 0, sizeof(cnc->data.ReceiveBuff));
 			cnc->x_axis.next = x;
 			cnc->y_axis.next = y;
+			//*cnc->x_axis.enc = 0;
 			cnc->Mode = (temp == 0) ? 4 : 5;
 		}
 		break;
