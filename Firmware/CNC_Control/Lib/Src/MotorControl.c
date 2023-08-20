@@ -201,15 +201,18 @@ void sample(AXIS * axis)
 
 void PID_control(int sp, AXIS *pid)
 {
-	int e;
-	e = sp - pid->pos;	
-	pid->I_part += TS*e;
-	pid->pwm = pid->Kp*e + pid->Ki*pid->I_part + pid->Kd*(e-pid->e_pre)/TS;
-	pid->e_pre = e;
-	if(int_abs(e) < pid->ERROR)
+	int e_pulse;
+	float e_mm;
+	e_pulse = sp - pid->pos;
+	e_mm = e_pulse * pid->mm_pulse;
+	pid->I_part += TS*e_mm;
+	pid->pwm = pid->Kp*e_mm + pid->Ki*pid->I_part + pid->Kd*(e_mm - pid->e_pre)/TS;
+	pid->e_pre = e_mm;
+	if(int_abs(e_pulse) < pid->ERROR)
 	{
 		pid->finish = true;
 		pid->pwm = 0;
+		pid->e_pre = 0;
 		//pid->pid_process = false;
 	}
 }

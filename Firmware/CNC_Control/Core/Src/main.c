@@ -162,15 +162,15 @@ void axisInit()
 	
 	cnc.x_axis.Kp = 5;
 	cnc.y_axis.Kp = 10;
-	cnc.z_axis.Kp = 15;
+	cnc.z_axis.Kp = 5;
 	
 	cnc.x_axis.Ki = 0.0001;
 	cnc.y_axis.Ki = 0.0001;
 	cnc.z_axis.Ki = 0.0001;
 	
-	cnc.x_axis.Kd = 1;
-	cnc.y_axis.Kd = 3;
-	cnc.z_axis.Kd = 10;
+	cnc.x_axis.Kd = 0.2;
+	cnc.y_axis.Kd = 0.3;
+	cnc.z_axis.Kd = 0.1;
 	
 	cnc.x_axis.mm_pulse = 249.8886;//142.8571;
 	cnc.y_axis.mm_pulse = 495.1475;//333.3333;
@@ -182,7 +182,7 @@ void axisInit()
 
   cnc.x_axis.speed = 35;
   cnc.y_axis.speed = 40;
-  cnc.z_axis.speed = MAX_SPEED;
+  cnc.z_axis.speed = 40;
 
   cnc.z_max = Z_MAX;
   cnc.step = STEP;
